@@ -1,0 +1,57 @@
+body {
+    background-color: black;
+    color: #00ff88;
+    font-family: monospace;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 50px;
+    text-shadow: 0 0 10px #00ff88;
+}
+
+hr {
+    border: 1px solid #00ff88;
+}
+
+.mainBox,
+#startScreen,
+#loginScreen {
+    width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+
+    border: 2px solid #00ff88;
+    box-shadow: 0 0 20px #00ff88;
+}
+
+
+button {
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+
+    background-color: black;
+    color: #00ff88;
+
+    border: 1px solid #00ff88;
+    padding: 12px;
+
+    font-family: monospace;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #00ff88;
+    color: black;
+}
+
+
+input {
+    background-color: black;
+    color: #00ff88;
+
+    border: 1px solid #00ff88;
+    padding: 10px;
+}
