@@ -4,34 +4,142 @@ const enterButton = document.getElementById("enterButton");
 const startScreen = document.getElementById("startScreen");
 const loginScreen = document.getElementById("loginScreen");
 
-// 등록된 인원 목록
+
+// SCHMEETTERLING 직원 DB
+
 const users = {
-    "돌로레스": "1234",
-    "관리자": "0000",
-    "연구원": "1111"
+
+    "할파스": {password:"1210", level:"책임자"},
+    "미아": {password:"1210", level:"책임자"},
+    "페르세포네": {password:"1210", level:"직원"},
+    "세실리아": {password:"1210", level:"직원"},
+    "시월": {password:"1210", level:"책임자"},
+    "피피": {password:"1210", level:"직원"},
+    "오닉스": {password:"1210", level:"책임자"},
+    "히메": {password:"1210", level:"직원"},
+    "양메이": {password:"1210", level:"책임자"},
+    "칭위": {password:"1210", level:"직원"},
+    "레이미": {password:"1210", level:"직원"},
+    "셀레스트": {password:"1210", level:"책임자"},
+    "아우구스투스": {password:"1210", level:"직원"},
+    "망량": {password:"1210", level:"직원"},
+    "벨페고르": {password:"1210", level:"책임자"},
+    "녹스": {password:"1210", level:"직원"},
+    "카인 벨라토프": {password:"1210", level:"사장"},
+    "김개화": {password:"1210", level:"신"}
+
 };
 
 
-loginButton.onclick = function () {
-    startScreen.style.display = "none";
-    loginScreen.style.display = "block";
-};
+
+// 로그인 화면 열기
+
+if(loginButton){
+
+    loginButton.onclick = function(){
+
+        startScreen.style.display = "none";
+        loginScreen.style.display = "block";
+
+    };
+
+}
 
 
-enterButton.onclick = function () {
 
-    let name = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+// 로그인
+
+if(enterButton){
+
+    enterButton.onclick = function(){
 
 
-    if (users[name] && users[name] === password) {
+        let name = document.getElementById("username").value.trim();
 
-        alert(name + "님, SCHMEETTERLING 접속 승인.");
+        let password = document.getElementById("password").value.trim();
 
-        window.location.href = "main.html";
 
-    } else {
 
-        alert("접근 권한이 없습니다.");
+        if(users[name] && users[name].password === password){
+
+
+            localStorage.setItem("userName", name);
+
+            localStorage.setItem("userLevel", users[name].level);
+
+
+
+            alert(
+                name + "님, SCHMEETTERLING 접속 승인."
+            );
+
+
+            location.href = "main.html";
+
+
+        }
+
+
+        else{
+
+            alert("접근 권한이 없습니다.");
+
+        }
+
+
+    };
+
+}
+
+
+
+
+// 접속자 표시
+
+window.addEventListener("load", function(){
+
+
+    let name = localStorage.getItem("userName");
+
+    let level = localStorage.getItem("userLevel");
+
+
+
+    // 이미 있으면 중복 생성 안 함
+
+    if(document.querySelector(".userInfo")){
+        return;
     }
-};
+
+
+
+    if(name){
+
+
+        let box = document.createElement("div");
+
+
+        box.className = "userInfo";
+
+
+        box.innerHTML = `
+
+        현재 접속자 :
+        <span>${name}</span>
+
+        <br>
+
+        LEVEL :
+        <span>${level}</span>
+
+        `;
+
+
+        document.body.appendChild(box);
+
+
+    }
+
+
+
+});

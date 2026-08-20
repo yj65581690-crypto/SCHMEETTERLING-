@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>RM-003 RADIOACTIVE REPORT</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="mainBox">
+
+
+<h2>
+RADIOACTIVE MATERIAL REPORT
+</h2>
+
+
+<hr>
+
+
+
+<div class="entityHeader">
+
+
+<h1>
+RM-003 「리튬 반응체」
+</h1>
+
+
+<p>
+STATUS :
+<span class="online">
+● CONTAINED
+</span>
+</p>
+
+
+<p>
+CLASSIFICATION :
+Unknown Lithium Compound
+</p>
+
+
+<p>
+RISK LEVEL :
+HIGH
+</p>
+
+
+</div>
+
+
+
+<hr>
+
+
+
+
+<h3>
+MATERIAL INFORMATION
+</h3>
+
+
+<div class="staffRecord">
+
+
+<p>
+<b>CODE</b> : RM-003
+</p>
+
+
+<p>
+<b>NAME</b> : 리튬 반응체
+</p>
+
+
+<p>
+<b>TYPE</b> : 미확인 리튬 화합물
+</p>
+
+
+<p>
+<b>FORM</b> : 은백색 액체 결정 혼합물
+</p>
+
+
+<p>
+<b>LOCATION</b> : 방사능 격리 구역 C-09
+</p>
+
+
+<p>
+<b>MANAGEMENT</b> : 방사능 부서
+</p>
+
+
+</div>
+
+
+
+<hr>
+
+
+
+
+<h3>
+DESCRIPTION
+</h3>
+
+
+<p>
+RM-003 「리튬 반응체」는
+기존 리튬과 유사한 성질을 가진
+미확인 화합 물질이다.
+</p>
+
+
+<p>
+일반적인 리튬보다 높은 반응성을 보이며,
+수분 및 산소 접촉 시 비정상적인 에너지 방출이 발생한다.
+</p>
+
+
+<p>
+물질 자체의 안정성은 낮으나,
+특정 조건에서는 장시간 유지되는 특성을 보임.
+</p>
+
+
+
+<hr>
+
+
+
+
+<h3>
+CHEMICAL ANALYSIS
+</h3>
+
+
+<p>
+<b>반응성</b> : 매우 높음
+</p>
+
+
+<p>
+<b>수분 반응</b> : 위험
+</p>
+
+
+<p>
+<b>열 발생</b> : 확인됨
+</p>
+
+
+<p>
+<b>안정화 상태</b> : 특수 용기 내부 유지
+</p>
+
+
+
+<hr>
+
+
+
+
+<h3>
+OBSERVATION LOG
+</h3>
+
+
+<p>
+[2026.08.05]
+<br>
+격리 용기 교체 과정에서 순간적인 온도 상승 확인.
+</p>
+
+
+<p>
+[2026.08.18]
+<br>
+물질 표면에서 미세한 결정 구조 변화 관찰.
+</p>
+
+
+
+<hr>
+
+
+
+
+<h3>
+MANAGEMENT PROTOCOL
+</h3>
+
+
+<p>
+- 수분 및 산소와의 접촉을 금지한다.
+</p>
+
+
+<p>
+- 보호 장비 착용 후 접근할 것.
+</p>
+
+
+<p>
+- 격리 용기 손상 발생 시 즉시 대피한다.
+</p>
+
+
+
+<hr>
+
+
+
+
+<h3>
+DOCUMENT APPROVAL
+</h3>
+
+
+<div class="approvalBox">
+
+
+<p>
+작성자 :
+방사능 부서 연구원
+</p>
+
+
+<p>
+검토자 :
+█████
+</p>
+
+
+<p>
+문서 상태 :
+<span id="status">
+검토 대기
+</span>
+</p>
+
+
+<p>
+필요 승인 등급 :
+LEVEL 5
+</p>
+
+
+<button onclick="approve()">
+✓ 보고서 결재 요청
+</button>
+
+
+</div>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+REPORT NAVIGATION
+</h3>
+
+
+<div class="reportNav">
+
+
+<button onclick="location.href='radiation.html'">
+☢ DATABASE
+</button>
+
+
+<button onclick="location.href='rm002.html'">
+← 이전 보고서
+</button>
+
+
+<button onclick="location.href='rm004.html'">
+다음 보고서 →
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<script>
+
+function approve(){
+
+document.getElementById("status").innerHTML =
+"✔ 결재 요청 완료";
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>

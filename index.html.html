@@ -1,0 +1,79 @@
+<!DOCTYPE html>   
+<html lang="ko">   
+   
+<head>   
+<meta charset="UTF-8">   
+<title>SCHMEETTERLING LOGIN</title>   
+   
+<link rel="stylesheet" href="style.css">   
+   
+</head>   
+   
+<body>   
+   
+<div class="loginCard">   
+   
+<img src="logo.png">   
+   
+<h1>
+SCHMEETTERLING
+</h1>   
+   
+<p>
+INTERNAL INFORMATION SYSTEM
+</p>   
+   
+<hr>   
+   
+<input type="text" id="name" placeholder="이름">   
+   
+<input type="password" id="password" placeholder="비밀번호">   
+   
+<button onclick="login()">
+LOGIN
+</button>   
+   
+</div>   
+   
+<script>   
+   
+function login(){   
+   
+let name = document.getElementById("name").value;   
+let password = document.getElementById("password").value;   
+   
+   
+if(name == "" || password == ""){   
+    alert("이름과 비밀번호를 입력하세요.");   
+    return;   
+}   
+
+
+// 이름 저장
+localStorage.setItem("userName", name);
+
+
+// 이름별 직급 설정
+let rank = "NONE";
+
+
+if(name == "미아"){
+    rank = "책임자";
+}
+
+
+localStorage.setItem("rank", rank);
+localStorage.setItem("userRank", rank);
+
+
+// 메인 이동
+location.href = "main.html";
+
+
+}   
+   
+</script>   
+   
+</body>   
+   
+</html>

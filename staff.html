@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>RESEARCHER DATABASE</title>
+
+<link rel="stylesheet" href="../../style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="mainBox">
+
+
+<h2>
+RESEARCHER DATABASE
+</h2>
+
+
+<hr>
+
+
+<p>
+SCHMEETTERLING 내부 연구원 정보
+</p>
+
+
+<hr>
+
+
+<h3>
+STAFF SEARCH
+</h3>
+
+
+<input
+type="text"
+id="searchInput"
+placeholder="이름 / 직급 / 소속 검색"
+onkeyup="searchStaff()"
+>
+
+
+<hr>
+
+
+<h3>
+STAFF LIST
+</h3>
+
+
+
+<div id="staffContainer">
+
+
+
+<div class="staffCard">
+
+
+<h2>
+MIA
+</h2>
+
+
+<p>
+<b>사번</b> : UE-R001
+</p>
+
+
+<p>
+<b>직급</b> : 책임자
+</p>
+
+
+<p>
+<b>소속</b> : 미확인 개체 부서
+</p>
+
+
+<button onclick="location.href='mia.html'">
+프로필 열람
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="staffCard">
+
+
+<h2>
+망량
+</h2>
+
+
+<p>
+<b>사번</b> : UE-R002
+</p>
+
+
+<p>
+<b>직급</b> : 직원
+</p>
+
+
+<p>
+<b>소속</b> : 미확인 개체 부서
+</p>
+
+
+<button onclick="location.href='mangryang.html'">
+프로필 열람
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<hr>
+
+
+
+<button onclick="location.href='../unknown.html'">
+← 미확인 개체 부서
+</button>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+function searchStaff(){
+
+
+let input =
+document.getElementById("searchInput").value.toLowerCase();
+
+
+let cards =
+document.getElementsByClassName("staffCard");
+
+
+
+for(let i = 0; i < cards.length; i++){
+
+
+let text =
+cards[i].innerText.toLowerCase();
+
+
+
+if(text.includes(input)){
+
+cards[i].style.display="block";
+
+}
+
+else{
+
+cards[i].style.display="none";
+
+}
+
+
+}
+
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>

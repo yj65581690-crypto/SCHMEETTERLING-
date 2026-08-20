@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>RM-002 RADIOACTIVE REPORT</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="mainBox">
+
+
+<h2>
+RADIOACTIVE MATERIAL REPORT
+</h2>
+
+
+<hr>
+
+
+
+<div class="entityHeader">
+
+
+<h1>
+RM-002 「우라늄 변종」
+</h1>
+
+
+<p>
+STATUS :
+<span class="online">
+● CONTAINED
+</span>
+</p>
+
+
+<p>
+CLASSIFICATION :
+Uranium Variant
+</p>
+
+
+<p>
+RISK LEVEL :
+MEDIUM
+</p>
+
+
+</div>
+
+
+
+<hr>
+
+
+
+
+<h3>
+MATERIAL INFORMATION
+</h3>
+
+
+
+<div class="staffRecord">
+
+
+<p>
+<b>CODE</b> : RM-002
+</p>
+
+
+<p>
+<b>NAME</b> : 우라늄 변종
+</p>
+
+
+<p>
+<b>TYPE</b> : Uranium Variant
+</p>
+
+
+<p>
+<b>FORM</b> : 금속성 광물
+</p>
+
+
+<p>
+<b>LOCATION</b> : 격리 구역 C-12
+</p>
+
+
+<p>
+<b>MANAGEMENT</b> : 방사능 부서
+</p>
+
+
+</div>
+
+
+
+<hr>
+
+
+
+
+<h3>
+DESCRIPTION
+</h3>
+
+
+<p>
+RM-002 「우라늄 변종」은
+기존 우라늄과 유사한 구조를 가진
+변이 물질이다.
+</p>
+
+
+<p>
+일반적인 우라늄보다 낮은 방사선 수치를 보이나,
+비정상적으로 높은 안정성을 유지한다.
+</p>
+
+
+<p>
+장기간 노출 시 생물 조직에
+영향을 줄 가능성이 확인됨.
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+RADIATION ANALYSIS
+</h3>
+
+
+<p>
+<b>방출량</b> : 낮음
+</p>
+
+
+<p>
+<b>안정성</b> : 높음
+</p>
+
+
+<p>
+<b>반응성</b> : 낮음
+</p>
+
+
+<p>
+<b>위험도</b> : MEDIUM
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+OBSERVATION LOG
+</h3>
+
+
+<p>
+[2026.08.03]
+<br>
+일반 우라늄과 다른 결정 구조 확인.
+</p>
+
+
+<p>
+[2026.08.19]
+<br>
+장시간 보관 후에도 물질 형태 유지 확인.
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+MANAGEMENT PROTOCOL
+</h3>
+
+
+<p>
+- 지정 격리 구역 외 이동 금지.
+</p>
+
+
+<p>
+- 보호 장비 착용 후 접근할 것.
+</p>
+
+
+<p>
+- 장시간 직접 노출을 금지한다.
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+DOCUMENT APPROVAL
+</h3>
+
+
+<div class="approvalBox">
+
+
+<p>
+작성자 :
+방사능 부서 연구원
+</p>
+
+
+<p>
+검토자 :
+█████
+</p>
+
+
+<p>
+문서 상태 :
+<span id="status">
+검토 대기
+</span>
+</p>
+
+
+<p>
+필요 승인 등급 :
+LEVEL 4
+</p>
+
+
+<button onclick="approve()">
+✓ 보고서 결재 요청
+</button>
+
+
+</div>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+REPORT NAVIGATION
+</h3>
+
+
+<div class="reportNav">
+
+
+<button onclick="location.href='radiation.html'">
+☢ DATABASE
+</button>
+
+
+<button onclick="location.href='rm001.html'">
+← 이전 보고서
+</button>
+
+
+<button onclick="location.href='rm003.html'">
+다음 보고서 →
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<script>
+
+function approve(){
+
+document.getElementById("status").innerHTML =
+"✔ 결재 요청 완료";
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
