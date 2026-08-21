@@ -326,3 +326,114 @@ body{
 }
 
 }
+/* 부서별 색상 */
+
+
+.deptBtn span{
+font-size:12px;
+opacity:.7;
+}
+
+
+
+/* 화학 */
+
+.chemical{
+color:#ff7070;
+border-color:#ff3030;
+}
+
+.chemical:hover{
+background:#3b1010;
+box-shadow:0 0 15px red;
+}
+
+
+
+/* 인체개조 */
+
+.human{
+color:#ff8fd8;
+border-color:#ff4fbf;
+}
+
+.human:hover{
+background:#3b1230;
+box-shadow:0 0 15px #ff4fbf;
+}
+
+
+
+/* 백룸 */
+
+.backroom{
+color:white;
+border-color:white;
+}
+
+.backroom:hover{
+background:#222;
+box-shadow:0 0 15px white;
+}
+
+
+
+
+/* 생물 */
+
+.bio{
+color:#7dff8a;
+border-color:#00ff55;
+}
+
+.bio:hover{
+background:#103b1b;
+box-shadow:0 0 15px #00ff55;
+}
+
+
+
+
+/* 방사능 */
+
+.radiation{
+color:#ffe66b;
+border-color:#ffd000;
+}
+
+.radiation:hover{
+background:#403600;
+box-shadow:0 0 15px #ffd000;
+}
+
+
+
+
+
+/* 미확인 개체 */
+
+.unknown{
+color:#ffad5c;
+border-color:#ff8500;
+}
+
+.unknown:hover{
+background:#3b220d;
+box-shadow:0 0 15px #ff8500;
+}
+
+
+
+
+
+/* 마약 */
+
+.drug{
+color:#6bbcff;
+border-color:#007bff;
+}
+
+.drug:hover{
+background:#0b203b;
+box-shadow:0 0 15px #007bff;
+}
