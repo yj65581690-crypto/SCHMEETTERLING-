@@ -629,6 +629,124 @@ alert(
 +"원"
 
 );
+  printReceipt(order);
+  function printReceipt(order){
+
+
+let receipt = `
+
+========================
+
+ SCHMEETTERLING STORE
+
+        RECEIPT
+
+========================
+
+
+주문자 :
+${order.user}
+
+
+시간 :
+${order.time}
+
+
+
+------------------------
+
+
+${order.items.map(
+item =>
+item.name +
+"  " +
+item.price.toLocaleString()+"원"
+).join("\n")}
+
+
+
+------------------------
+
+
+TOTAL :
+
+${order.total.toLocaleString()}원
+
+
+
+========================
+
+SYSTEM : ONLINE
+
+SCHMEETTERLING
+
+========================
+
+`;
+
+
+
+let win =
+window.open(
+"",
+"receipt",
+"width=400,height=600"
+);
+
+
+
+win.document.write(`
+
+<html>
+
+<head>
+
+<title>RECEIPT</title>
+
+<style>
+
+body{
+
+font-family:monospace;
+
+background:black;
+
+color:white;
+
+padding:20px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<pre>
+
+${receipt}
+
+</pre>
+
+
+</body>
+
+</html>
+
+`);
+
+
+
+win.document.close();
+
+
+win.print();
+
+
+  }
 
 
 
