@@ -704,3 +704,58 @@ text-shadow:
 color:#7ef7b7;
 
 }
+/* ACCESS GRANTED 로딩 */
+
+.loadingPage{
+
+background:#000;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+.loadingBox{
+
+text-align:center;
+
+background:#050505;
+
+border:1px solid #00ff99;
+
+padding:50px;
+
+box-shadow:
+0 0 30px rgba(0,255,150,.4);
+
+}
+
+
+
+#loadingText{
+
+color:#00ff99;
+
+font-size:40px;
+
+font-family:monospace;
+
+text-shadow:
+0 0 10px #00ff99,
+0 0 25px #00ff99;
+
+}
+
+
+
+.loadingBox p{
+
+color:#9fffc9;
+
+}
