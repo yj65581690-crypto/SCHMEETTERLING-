@@ -7,7 +7,7 @@
 
 <title>RM-001 RADIOACTIVE REPORT</title>
 
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="./style.css">
 
 </head>
 
@@ -19,7 +19,7 @@
 
 
 <h2>
-RADIOACTIVE MATERIAL REPORT
+☢ RADIOACTIVE MATERIAL REPORT
 </h2>
 
 
@@ -33,6 +33,7 @@ RADIOACTIVE MATERIAL REPORT
 <h1>
 RM-001 「검은 태양」
 </h1>
+
 
 
 <p>
@@ -59,7 +60,9 @@ HIGH
 
 
 
+
 <hr>
+
 
 
 
@@ -69,7 +72,7 @@ MATERIAL INFORMATION
 
 
 
-<div class="staffRecord">
+<div class="recordBox">
 
 
 <p>
@@ -106,7 +109,9 @@ MATERIAL INFORMATION
 
 
 
+
 <hr>
+
 
 
 
@@ -115,16 +120,19 @@ DESCRIPTION
 </h3>
 
 
+
 <p>
 RM-001 「검은 태양」은
 검은색 결정 형태를 가진 미확인 방사성 물질이다.
 </p>
 
 
+
 <p>
 일반적인 방사성 원소와 다른
 비정상적인 에너지 방출 현상이 확인되었다.
 </p>
+
 
 
 <p>
@@ -143,6 +151,10 @@ RM-001 「검은 태양」은
 <h3>
 RADIATION ANALYSIS
 </h3>
+
+
+
+<div class="recordBox">
 
 
 <p>
@@ -165,6 +177,9 @@ RADIATION ANALYSIS
 </p>
 
 
+</div>
+
+
 
 
 <hr>
@@ -177,19 +192,35 @@ OBSERVATION LOG
 </h3>
 
 
+
+<div class="recordBox">
+
+
 <p>
+
 [2026.08.01]
+
 <br>
+
 격리 용기 내부에서 미세한 에너지 변화 확인.
+
 </p>
 
 
+
 <p>
+
 [2026.08.15]
+
 <br>
+
 주변 장비 오류 발생.
 원인 분석 진행 중.
+
 </p>
+
+
+</div>
 
 
 
@@ -261,9 +292,11 @@ LEVEL 5
 </p>
 
 
+
 <button onclick="approve()">
 ✓ 보고서 결재 요청
 </button>
+
 
 
 </div>
@@ -282,26 +315,27 @@ REPORT NAVIGATION
 
 
 
-<div class="reportNav">
+<button onclick="location.href='./radiation.html'">
 
-
-<button onclick="location.href='radiation.html'">
 ☢ DATABASE
+
 </button>
+
 
 
 <button disabled>
+
 ← 이전 보고서
+
 </button>
 
 
-<button onclick="location.href='rm002.html'">
+
+<button onclick="location.href='./rm002.html'">
+
 다음 보고서 →
+
 </button>
-
-
-</div>
-
 
 
 
@@ -312,12 +346,14 @@ REPORT NAVIGATION
 
 <script>
 
+
 function approve(){
 
 document.getElementById("status").innerHTML =
 "✔ 결재 요청 완료";
 
 }
+
 
 </script>
 
