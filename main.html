@@ -92,6 +92,13 @@ ACCESS GRANTED
 <div class="broadcastBox">
 
 <h3>
+<div class="broadcastBox" id="broadcastBox">
+
+<button class="closeBroadcast" onclick="closeBroadcast()">
+✕
+</button>
+
+<h3>
 📡 SCHMEETTERLING BROADCAST
 </h3>
 
@@ -446,7 +453,39 @@ document.getElementById("chatLog").innerHTML = oldChat;
 
 }
 
-loadBroadcast();
+function loadBroadcast(){
+
+
+let message = localStorage.getItem("broadcast");
+
+
+let box =
+document.getElementById("broadcastText");
+
+
+if(message){
+
+box.innerHTML = message;
+
+}
+
+
+else{
+
+box.innerHTML =
+"● SYSTEM ONLINE<br>● ALL FACILITY CONNECTED";
+
+}
+
+
+document.getElementById("broadcastBox").style.display="block";
+
+
+}  function closeBroadcast(){
+
+document.getElementById("broadcastBox").style.display="none";
+
+  }
 
 };
 
