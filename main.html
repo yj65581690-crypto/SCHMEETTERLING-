@@ -89,9 +89,6 @@ INTERNAL INFORMATION SYSTEM
 <h2>
 ACCESS GRANTED
 </h2>
-<div class="broadcastBox">
-
-<h3>
 <div class="broadcastBox" id="broadcastBox">
 
 <button class="closeBroadcast" onclick="closeBroadcast()">
@@ -103,8 +100,9 @@ ACCESS GRANTED
 </h3>
 
 <p id="broadcastText">
-● SYSTEM ONLINE<br>
-● ALL FACILITY CONNECTED
+📡 방사능 부서 장비 정기점검 예정<br>
+<br>
+화학부서 담당자 할파스님은 즉시 사장실로 올라가세요.
 </p>
 
 </div>
@@ -453,39 +451,6 @@ document.getElementById("chatLog").innerHTML = oldChat;
 
 }
 
-function loadBroadcast(){
-
-
-let message = localStorage.getItem("broadcast");
-
-
-let box =
-document.getElementById("broadcastText");
-
-
-if(message){
-
-box.innerHTML = message;
-
-}
-
-
-else{
-
-box.innerHTML =
-"● SYSTEM ONLINE<br>● ALL FACILITY CONNECTED";
-
-}
-
-
-document.getElementById("broadcastBox").style.display="block";
-
-
-}  function closeBroadcast(){
-
-document.getElementById("broadcastBox").style.display="none";
-
-  }
 
 };
 
@@ -629,6 +594,11 @@ box.innerHTML =
 
 
 }
+  function closeBroadcast(){
+
+document.getElementById("broadcastBox").style.display="none";
+
+  }
 </script>
 
 
