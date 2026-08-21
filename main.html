@@ -154,19 +154,19 @@ let level = localStorage.getItem("userLevel");
 
 
 
-if(user){
+// 로그인 확인
+
+if(!user){
+
+location.href="./index.html";
+
+return;
+
+}
+
+
 
 document.getElementById("currentUser").textContent = user;
-
-}
-
-else{
-
-document.getElementById("currentUser").textContent = "GUEST";
-
-}
-
-
 
 
 if(level){
