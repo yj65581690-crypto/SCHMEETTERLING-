@@ -278,6 +278,110 @@ STATUS :
 
 <hr>
 
+<h3>
+🪄 CUSTOM ORDER SYSTEM
+</h3>
+
+<p>
+원하는 재료를 선택해 나만의 음료를 제작합니다.
+</p>
+
+
+<h4>☕ 원두 선택</h4>
+
+<select id="bean">
+<option value="0">선택 없음</option>
+<option value="1000">블랙 원두 (+1000)</option>
+<option value="2000">실버 원두 (+2000)</option>
+<option value="3000">황금 원두 (+3000)</option>
+<option value="5000">심연 원두 (+5000)</option>
+<option value="3000">달빛 원두 (+3000)</option>
+<option value="4000">백룸 원두 (+4000)</option>
+<option value="1000">무카페인 원두 (+1000)</option>
+</select>
+
+
+
+<h4>🔥 로스팅</h4>
+
+<select id="roast">
+
+<option>약배전</option>
+<option>중배전</option>
+<option>강배전</option>
+<option>훈연 로스팅</option>
+<option>장작 로스팅</option>
+
+</select>
+
+
+
+<h4>🥛 우유 선택</h4>
+
+<select id="milk">
+
+<option value="0">일반 우유</option>
+<option value="500">귀리 우유 (+500)</option>
+<option value="1000">아몬드 우유 (+1000)</option>
+<option value="1000">코코넛 우유 (+1000)</option>
+<option value="2000">형광 우유 (+2000)</option>
+<option value="3000">흑우유 (+3000)</option>
+<option value="2000">달빛 우유 (+2000)</option>
+
+</select>
+
+
+
+<h4>🍯 시럽</h4>
+
+<select id="syrup">
+
+<option value="0">없음</option>
+<option value="500">바닐라 (+500)</option>
+<option value="500">카라멜 (+500)</option>
+<option value="500">초콜릿 (+500)</option>
+<option value="500">장미 (+500)</option>
+<option value="500">별꿀 시럽 (+500)</option>
+
+</select>
+
+
+
+<h4>🧊 얼음</h4>
+
+<select id="ice">
+
+<option value="0">일반 얼음</option>
+<option value="500">커피 얼음 (+500)</option>
+<option value="1000">수정 얼음 (+1000)</option>
+<option value="1000">안개 얼음 (+1000)</option>
+
+</select>
+
+
+
+<h4>🥃 컵 디자인</h4>
+
+<select id="cup">
+
+<option value="0">클래식 도자기잔</option>
+<option value="1000">황동 머그컵 (+1000)</option>
+<option value="2000">수정잔 (+2000)</option>
+<option value="2000">흑유리잔 (+2000)</option>
+
+</select>
+
+
+
+<br><br>
+
+
+<button onclick="makeCustom()">
+
+☕ CUSTOM DRINK 제작
+
+</button>
+
 
 
 
@@ -568,6 +672,59 @@ window.onload=function(){
 showOrders();
 
 };
+  function makeCustom(){
+
+
+let price = 5000;
+
+
+let bean =
+document.getElementById("bean");
+
+let milk =
+document.getElementById("milk");
+
+let syrup =
+document.getElementById("syrup");
+
+let ice =
+document.getElementById("ice");
+
+let cup =
+document.getElementById("cup");
+
+
+
+price += Number(bean.value);
+price += Number(milk.value);
+price += Number(syrup.value);
+price += Number(ice.value);
+price += Number(cup.value);
+
+
+
+let name =
+
+"NOCTIS CUSTOM DRINK\n"+
+"원두 : "+bean.options[bean.selectedIndex].text+
+"\n우유 : "+milk.options[milk.selectedIndex].text+
+"\n시럽 : "+syrup.options[syrup.selectedIndex].text+
+"\n얼음 : "+ice.options[ice.selectedIndex].text+
+"\n컵 : "+cup.options[cup.selectedIndex].text;
+
+
+
+addCart(name,price);
+
+
+
+alert(
+"☕ CUSTOM DRINK 제작 완료\n\n"+
+price.toLocaleString()+"원"
+);
+
+
+  }
 </script>
 
 
