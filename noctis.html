@@ -322,6 +322,17 @@ TOTAL :
 
 <hr>
 
+<h3>
+📋 ORDER HISTORY
+</h3>
+
+
+<div class="recordBox" id="orderLog">
+
+주문 기록 없음
+
+</div>
+
 
 
 
@@ -406,6 +417,84 @@ total.toLocaleString();
 
 
 function order(){
+  function showOrders(){
+
+
+let box=document.getElementById("orderLog");
+
+
+let history =
+
+JSON.parse(
+localStorage.getItem("noctisOrders")
+)
+
+||[];
+
+
+
+if(history.length===0){
+
+box.innerHTML="주문 기록 없음";
+
+return;
+
+}
+
+
+
+box.innerHTML="";
+
+
+
+history.reverse().forEach(function(order){
+
+
+box.innerHTML +=
+
+`
+
+<div class="staffRecord">
+
+<p>
+👤 주문자 : ${order.user}
+</p>
+
+
+<p>
+🕒 ${order.time}
+</p>
+
+
+<p>
+☕ 주문 메뉴
+<br>
+
+${order.items.map(
+item=>item.name
+).join("<br>")}
+
+</p>
+
+
+<p>
+💰 TOTAL :
+${order.total.toLocaleString()}원
+</p>
+
+
+</div>
+
+<hr>
+
+`;
+
+
+
+});
+
+
+  }
 
 
 if(cart.length===0){
@@ -475,6 +564,7 @@ total=0;
 
 
 updateCart();
+  showOrders();
 
 
 }
@@ -492,3 +582,8 @@ updateCart();
 </body>
 
 </html>
+window.onload=function(){
+
+showOrders();
+
+};
