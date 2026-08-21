@@ -437,3 +437,97 @@ border-color:#007bff;
 background:#0b203b;
 box-shadow:0 0 15px #007bff;
 }
+/* =====================
+   DEPARTMENT THEME
+===================== */
+
+
+/* 화학 - 빨강 */
+body.chemical{
+    --main-color:#ff3030;
+}
+
+
+/* 인체개조 - 핑크 */
+body.human{
+    --main-color:#ff66cc;
+}
+
+
+/* 백룸 - 흰색 */
+body.backroom{
+    --main-color:#ffffff;
+}
+
+
+/* 생물 - 초록 */
+body.bio{
+    --main-color:#00ff66;
+}
+
+
+/* 방사능 - 노랑 */
+body.radiation{
+    --main-color:#ffee00;
+}
+
+
+/* 미확인 개체 - 주황 */
+body.unknown{
+    --main-color:#ff9900;
+}
+
+
+/* 마약 - 파랑 */
+body.drug{
+    --main-color:#3399ff;
+}
+
+
+
+
+/* 테마 적용 */
+
+
+body[class] .mainBox{
+
+    border-color:var(--main-color);
+
+    box-shadow:
+    0 0 25px var(--main-color);
+
+}
+
+
+
+body[class] h1,
+body[class] h2,
+body[class] h3{
+
+    color:var(--main-color);
+
+    text-shadow:
+    0 0 10px var(--main-color);
+
+}
+
+
+
+body[class] button{
+
+    border-color:var(--main-color);
+
+    color:var(--main-color);
+
+}
+
+
+
+body[class] button:hover{
+
+    background:rgba(255,255,255,0.1);
+
+    box-shadow:
+    0 0 15px var(--main-color);
+
+}
