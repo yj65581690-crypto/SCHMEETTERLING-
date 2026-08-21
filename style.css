@@ -1032,3 +1032,13 @@ box-shadow:0 0 30px orange !important;
 border-color:#3399ff !important;
 box-shadow:0 0 30px #3399ff !important;
 }
+/* SHOP COLOR */
+
+.facilityBtn:hover{
+
+    border-color:#ffaa33 !important;
+
+    box-shadow:
+    0 0 30px #ffaa33 !important;
+
+}
