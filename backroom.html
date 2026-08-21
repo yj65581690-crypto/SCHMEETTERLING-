@@ -15,6 +15,104 @@
 <body class="backroomPage">
 
 
+<div class="layout">
+
+
+
+<div class="sideMenu">
+
+
+<h3>
+SCHMEETTERLING
+</h3>
+
+
+<p style="color:#7ef7b7;">
+● SYSTEM ONLINE
+</p>
+
+
+<hr>
+
+
+<p>
+USER
+<br>
+<b id="userName">
+확인중...
+</b>
+</p>
+
+
+<p>
+LEVEL
+<br>
+<b id="userLevel">
+확인중...
+</b>
+</p>
+
+
+<hr>
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 HOME
+
+</button>
+
+
+
+<button onclick="location.href='./radiation.html'">
+
+☢ 방사능 부서
+
+</button>
+
+
+
+<button onclick="location.href='./unknown.html'">
+
+👾 미확인 개체
+
+</button>
+
+
+
+<button onclick="location.href='./bio.html'">
+
+🧫 생물 부서
+
+</button>
+
+
+
+<button onclick="location.href='./chemical.html'">
+
+🧪 화학 부서
+
+</button>
+
+
+
+<button onclick="location.href='./backroom.html'">
+
+📦 백룸 부서
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
 <div class="mainBox">
 
 
@@ -52,7 +150,6 @@ SCHMEETTERLING
 <h3>
 UNKNOWN SPACE INVESTIGATION DATABASE
 </h3>
-
 
 
 
@@ -119,7 +216,7 @@ DATABASE
 
 <p>
 백룸 내부 발견 위험 개체의
-수거 및 보관 기록을 열람합니다.
+수거 및 보관 기록을 확인합니다.
 </p>
 
 
@@ -134,11 +231,7 @@ DATABASE
 
 
 
-
-
 <br>
-
-
 
 
 
@@ -156,8 +249,8 @@ DATABASE
 
 
 <p>
-탐사 직원들의 내부 기록과
-생존 보고서를 열람합니다.
+백룸 탐사 기록 및
+직원 생존 보고서를 확인합니다.
 </p>
 
 
@@ -172,11 +265,7 @@ DATABASE
 
 
 
-
-
 <br>
-
-
 
 
 
@@ -195,7 +284,7 @@ DATABASE
 
 <p>
 새롭게 발견된 백룸 구역과
-공간 이상 현상을 기록합니다.
+환경 데이터를 확인합니다.
 </p>
 
 
@@ -210,11 +299,7 @@ DATABASE
 
 
 
-
-
 <br>
-
-
 
 
 
@@ -248,21 +333,12 @@ DATABASE
 
 
 </div>
-
-
-
-
-
 <hr>
-
-
-
 
 
 <h3>
 WARP SYSTEM
 </h3>
-
 
 
 
@@ -296,46 +372,6 @@ WARP SYSTEM
 
 
 
-
-<hr>
-
-
-
-
-
-<h3>
-SALARY INFORMATION
-</h3>
-
-
-
-<div class="recordBox">
-
-
-<p>
-<b>월급 :</b> 150억
-</p>
-
-
-<p>
-높은 위험성과 사망 가능성을 고려한
-위험 수당이 포함됩니다.
-</p>
-
-
-<p>
-신체 손실 가능성이 존재하는
-최고 위험 부서 중 하나입니다.
-</p>
-
-
-
-</div>
-
-
-
-
-
 <hr>
 
 
@@ -343,7 +379,6 @@ SALARY INFORMATION
 
 
 <div class="warningBox">
-
 
 
 <h3>
@@ -392,7 +427,9 @@ SYSTEM STATUS
 
 
 <p class="online">
+
 ● ONLINE
+
 </p>
 
 
@@ -408,7 +445,43 @@ SYSTEM STATUS
 
 
 
+
 </div>
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+let user =
+localStorage.getItem("userName");
+
+
+let level =
+localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+user || "UNKNOWN";
+
+
+
+document.getElementById("userLevel").innerHTML =
+level || "NONE";
+
+
+
+</script>
+
+
 
 
 
