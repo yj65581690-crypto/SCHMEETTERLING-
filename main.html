@@ -25,6 +25,15 @@
 LEVEL :
 <span id="currentLevel">확인중...</span>
 
+
+<br><br>
+
+
+<button onclick="logout()">
+🚪 LOGOUT
+</button>
+
+
 </div>
 
 
@@ -175,6 +184,19 @@ document.getElementById("currentLevel").textContent = "NONE";
 
 }
 
+
+
+// 로그아웃
+
+function logout(){
+
+localStorage.removeItem("userName");
+
+localStorage.removeItem("userLevel");
+
+location.href="./index.html";
+
+}
 
 
 </script>
