@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>NOCTIS CAFE</title>
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="mainBox cafePage">
+
+
+
+<h2>
+☕ NOCTIS CAFE
+</h2>
+
+
+<p>
+FACILITY CODE : CAFE-01
+</p>
+
+
+<p>
+STATUS :
+<span class="online">
+● OPEN
+</span>
+</p>
+
+
+
+<hr>
+
+
+
+
+<h3>
+☕ 시그니처 커피
+</h3>
+
+
+
+<button class="cafeBtn" onclick="addCart('흑월 에스프레소',8500)">
+☕ 흑월 에스프레소
+<br>
+8,500원
+</button>
+
+<p>
+새까만 크레마가 특징인 에스프레소.
+첫맛은 쓰지만 끝맛에서는 초콜릿 향이 남는다.
+</p>
+
+
+
+
+<button class="cafeBtn" onclick="addCart('백룸 라떼',9000)">
+☕ 백룸 라떼
+<br>
+9,000원
+</button>
+
+
+
+<p>
+컵을 흔들 때마다 라떼아트가 계속 변한다.
+같은 그림이 두 번 나오는 일은 없다.
+</p>
+
+
+
+
+<button class="cafeBtn" onclick="addCart('심연 아메리카노',7500)">
+☕ 심연 아메리카노
+<br>
+7,500원
+</button>
+
+
+
+
+<button class="cafeBtn" onclick="addCart('별가루 모카',11000)">
+☕ 별가루 모카
+<br>
+11,000원
+</button>
+
+
+
+
+<button class="cafeBtn" onclick="addCart('시간정지 콜드브루',12000)">
+☕ 시간정지 콜드브루
+<br>
+12,000원
+</button>
+
+
+
+
+<button class="cafeBtn" onclick="addCart('형광 바닐라 라떼',9500)">
+☕ 형광 바닐라 라떼
+<br>
+9,500원
+</button>
+
+
+
+
+<button class="cafeBtn" onclick="addCart('블랙홀 카푸치노',13000)">
+☕ 블랙홀 카푸치노
+<br>
+13,000원
+</button>
+
+
+
+
+
+
+<hr>
+
+
+
+<h3>
+🍵 티 & 음료
+</h3>
+
+
+
+<button onclick="addCart('달빛 홍차',8000)">
+달빛 홍차 - 8,000원
+</button>
+
+
+<button onclick="addCart('안개 밀크티',9500)">
+안개 밀크티 - 9,500원
+</button>
+
+
+<button onclick="addCart('장미독차',8500)">
+장미독차 - 8,500원
+</button>
+
+
+<button onclick="addCart('얼음꽃 허브티',8000)">
+얼음꽃 허브티 - 8,000원
+</button>
+
+
+<button onclick="addCart('별빛 레몬에이드',9000)">
+별빛 레몬에이드 - 9,000원
+</button>
+
+
+<button onclick="addCart('은하수 소다',10000)">
+은하수 소다 - 10,000원
+</button>
+
+
+<button onclick="addCart('검은 체리 에이드',9000)">
+검은 체리 에이드 - 9,000원
+</button>
+
+
+<button onclick="addCart('꿈결 코코아',9500)">
+꿈결 코코아 - 9,500원
+</button>
+
+
+
+
+
+
+
+<hr>
+
+
+
+<h3>
+🍰 디저트
+</h3>
+
+
+
+<button onclick="addCart('별조각 치즈케이크',8500)">
+별조각 치즈케이크 - 8,500원
+</button>
+
+
+<button onclick="addCart('검은 숲 티라미수',9500)">
+검은 숲 티라미수 - 9,500원
+</button>
+
+
+<button onclick="addCart('붉은 장미 마카롱',7000)">
+붉은 장미 마카롱 - 7,000원
+</button>
+
+
+<button onclick="addCart('월식 크루아상',8000)">
+월식 크루아상 - 8,000원
+</button>
+
+
+<button onclick="addCart('구름 수플레',10000)">
+구름 수플레 - 10,000원
+</button>
+
+
+<button onclick="addCart('달의 푸딩',7500)">
+달의 푸딩 - 7,500원
+</button>
+
+
+<button onclick="addCart('유령 롤케이크',9000)">
+유령 롤케이크 - 9,000원
+</button>
+
+
+<button onclick="addCart('수정 타르트',8500)">
+수정 타르트 - 8,500원
+</button>
+
+
+
+
+
+
+
+<hr>
+
+
+
+<h3>
+⭐ 특별 메뉴
+</h3>
+
+
+
+<button onclick="addCart('기억 한 잔',25000)">
+『기억 한 잔』 - 25,000원
+</button>
+
+
+<button onclick="addCart('새벽 4시',18000)">
+『새벽 4시』 - 18,000원
+</button>
+
+
+<button onclick="addCart('천국',22000)">
+『천국』 - 22,000원
+</button>
+
+
+<button onclick="addCart('이름 없는 케이크',15000)">
+『이름 없는 케이크』 - 15,000원
+</button>
+
+
+<button onclick="addCart('운명 세트',20000)">
+『운명 세트』 - 20,000원
+</button>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+🛒 주문 카트
+</h3>
+
+
+<div class="recordBox" id="cart">
+
+주문한 메뉴 없음
+
+</div>
+
+
+
+<h3>
+
+TOTAL :
+<span id="total">
+
+0
+
+</span>
+
+원
+
+</h3>
+
+
+
+
+<button onclick="order()">
+
+☕ 주문하기
+
+</button>
+
+
+
+
+
+<hr>
+
+
+
+
+<button onclick="location.href='./main.html'">
+
+← CENTRAL TERMINAL
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+let cart=[];
+
+let total=0;
+
+
+
+
+function addCart(name,price){
+
+
+cart.push({
+
+name:name,
+
+price:price
+
+});
+
+
+total+=price;
+
+
+updateCart();
+
+
+}
+
+
+
+
+
+
+function updateCart(){
+
+
+let box=document.getElementById("cart");
+
+
+box.innerHTML="";
+
+
+
+if(cart.length===0){
+
+
+box.innerHTML="주문한 메뉴 없음";
+
+
+}
+
+else{
+
+
+cart.forEach(function(item){
+
+
+box.innerHTML+=`
+
+<p>
+☕ ${item.name}
+<br>
+${item.price.toLocaleString()}원
+</p>
+
+`;
+
+
+});
+
+
+}
+
+
+
+document.getElementById("total").innerHTML=
+
+total.toLocaleString();
+
+
+
+}
+
+
+
+
+
+
+
+function order(){
+
+
+
+if(cart.length===0){
+
+
+alert("주문할 메뉴가 없습니다.");
+
+return;
+
+
+}
+
+
+
+let user=
+
+localStorage.getItem("userName")
+
+||"UNKNOWN";
+
+
+
+
+let orderData={
+
+
+user:user,
+
+
+time:new Date().toLocaleString(),
+
+
+items:cart,
+
+
+total:total
+
+
+};
+
+
+
+
+
+let history=
+
+
+JSON.parse(
+
+localStorage.getItem("noctisOrders")
+
+)
+
+||[];
+
+
+
+
+history.push(orderData);
+
+
+
+localStorage.setItem(
+
+"noctisOrders",
+
+JSON.stringify(history)
+
+);
+
+
+
+alert(
+
+"NOCTIS CAFE\n\n주문 완료\nTOTAL : "
+
++total.toLocaleString()
+
++"원"
+
+);
+
+
+
+
+
+cart=[];
+
+total=0;
+
+
+updateCart();
+
+
+
+}
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
