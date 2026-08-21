@@ -304,7 +304,6 @@ body::after{
 
 
 .mainLogo h1{
-.mainLogo h1{
 
     font-size:40px;
 
@@ -735,17 +734,17 @@ padding:15px;
 
 .loginTerminal h1{
 
+    font-size:34px;
 
-    letter-spacing:10px;
-
+    letter-spacing:4px;
 
     color:white;
 
-
     text-shadow:
+        0 0 8px #00ff88,
+        0 0 18px #00ff88;
 
-    0 0 15px white;
-
+    margin:0 0 10px;
 
 }
 
@@ -850,20 +849,6 @@ button:hover::after{
 }
 
 
-.mainLogo h1{
-
-    font-size:56px;
-
-    letter-spacing:10px;
-
-    color:#ffffff;
-
-    text-shadow:
-        0 0 8px #00ff88,
-        0 0 20px #00ff88,
-        0 0 40px #00ff88;
-
-}
 
 .mainLogo p{
 
