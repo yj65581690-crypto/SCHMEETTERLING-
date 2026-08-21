@@ -57,9 +57,7 @@ placeholder="비밀번호">
 
 
 <button onclick="login()">
-
 LOGIN
-
 </button>
 
 
@@ -115,8 +113,8 @@ name
 );
 
 
-let rank="NONE";
 
+let rank="NONE";
 
 
 if(name=="미아"){
@@ -144,21 +142,24 @@ location.href="main.html";
 
 
 }
-  function startLilinEvent(){
+
+
+
+
+function startLilinEvent(){
 
 
 document.body.innerHTML=`
 
 <div id="lilinScreen">
 
-<h1 id="glitch">
+<h1>
 SYSTEM ERROR
 </h1>
 
 </div>
 
 `;
-
 
 
 document.body.style.background="black";
@@ -202,13 +203,10 @@ let words=[
 ];
 
 
-
 let count=0;
 
 
-
 let timer=setInterval(function(){
-
 
 
 document.body.style.transform=
@@ -225,15 +223,11 @@ document.body.style.transform=
 
 
 
-
 let p=document.createElement("p");
 
 
-
 p.innerHTML=
-
 words[Math.floor(Math.random()*words.length)];
-
 
 
 p.style.position="absolute";
@@ -244,10 +238,7 @@ p.style.top=Math.random()*90+"%";
 
 p.style.color="red";
 
-p.style.fontFamily="monospace";
-
 p.style.fontSize=
-
 (16+Math.random()*24)+"px";
 
 
@@ -259,13 +250,10 @@ document.body.appendChild(p);
 count++;
 
 
-
 if(count>50){
 
 
-
 clearInterval(timer);
-
 
 
 document.body.innerHTML=`
@@ -292,9 +280,7 @@ animation:flash .2s infinite;
 
 setTimeout(function(){
 
-
 location.href="index.html";
-
 
 },3000);
 
@@ -303,14 +289,12 @@ location.href="index.html";
 }
 
 
-
 },100);
 
 
+}
 
-  }
-
-  </script>
+</script>
 
 
 </body>
