@@ -926,3 +926,39 @@ h2{
     0 0 20px #00ff88;
 
 }
+/* DEPARTMENT ACTIVE COLOR */
+
+button.chemical:hover{
+    border-color:#ff3333 !important;
+    box-shadow:0 0 30px #ff3333 !important;
+}
+
+button.human:hover{
+    border-color:#ff66cc !important;
+    box-shadow:0 0 30px #ff66cc !important;
+}
+
+button.backroom:hover{
+    border-color:#ffffff !important;
+    box-shadow:0 0 30px #ffffff !important;
+}
+
+button.bio:hover{
+    border-color:#00ff66 !important;
+    box-shadow:0 0 30px #00ff66 !important;
+}
+
+button.radiation:hover{
+    border-color:#ffff00 !important;
+    box-shadow:0 0 30px #ffff00 !important;
+}
+
+button.unknown:hover{
+    border-color:#ff8800 !important;
+    box-shadow:0 0 30px #ff8800 !important;
+}
+
+button.drug:hover{
+    border-color:#3399ff !important;
+    box-shadow:0 0 30px #3399ff !important;
+}
