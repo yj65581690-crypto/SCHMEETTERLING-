@@ -18,6 +18,7 @@
 <div class="mainBox">
 
 
+
 <h2>
 🛒 SCHMEETTERLING STORE
 </h2>
@@ -46,11 +47,13 @@ STATUS :
 </h3>
 
 
+
 <div class="recordBox" id="cart">
 
 장바구니가 비어있습니다.
 
 </div>
+
 
 
 <h3>
@@ -62,9 +65,13 @@ TOTAL :
 </h3>
 
 
+
 <button onclick="order()">
+
 ✅ 주문하기
+
 </button>
+
 
 
 
@@ -73,57 +80,120 @@ TOTAL :
 
 
 
+
 <h3>
-대표 인기 메뉴
+📋 ORDER HISTORY
 </h3>
 
 
+
+<div class="recordBox" id="orderLog">
+
+주문 기록 없음
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+⭐ 대표 인기 메뉴
+</h3>
+
+
+
+
 <button onclick="addCart('개구리 파스타',4000)">
+
 🐸 개구리 파스타
+
 <br>
+
 4,000원
+
 </button>
+
+
+
+<p>
+특제 허브소스와 통개구리 다리가 올라간 대표 메뉴.
+닭고기와 생선을 섞은 듯한 식감으로 의외의 단골이 많다.
+</p>
+
+
+
 
 
 <button onclick="addCart('눈알 절임',2000)">
+
 👁 눈알 절임
+
 <br>
+
 2,000원
+
 </button>
+
+
+
+<p>
+커다란 눈알처럼 생긴 절임 요리.
+씹으면 포도 같은 과즙이 터진다.
+</p>
+
+
 
 
 
 <button onclick="addCart('눈물 스낵',1500)">
+
 😭 눈물 스낵
+
 <br>
+
 1,500원
+
 </button>
+
 
 
 
 <button onclick="addCart('손가락 육포',3500)">
+
 🖐 손가락 육포
+
 <br>
+
 3,500원
+
 </button>
 
 
 
+
 <button onclick="addCart('통구이 개구리 다리',2800)">
+
 🐸 통구이 개구리 다리
+
 <br>
+
 2,800원
+
 </button>
 
 
 
 
 <hr>
-
-
-
 <h3>
-식사류
+🍽 식사류
 </h3>
 
 
@@ -157,14 +227,49 @@ TOTAL :
 </button>
 
 
+<button onclick="addCart('피빛 토마토 리조또',5000)">
+피빛 토마토 리조또 - 5,000원
+</button>
+
+
+<button onclick="addCart('까마귀 날개튀김',3700)">
+까마귀 날개튀김 - 3,700원
+</button>
+
+
+<button onclick="addCart('독거미 크림우동',4300)">
+독거미 크림우동 - 4,300원
+</button>
+
+
+<button onclick="addCart('용의 비늘 볶음밥',6000)">
+용의 비늘 볶음밥 - 6,000원
+</button>
+
+
+<button onclick="addCart('백룸 버섯전골',5800)">
+백룸 버섯전골 - 5,800원
+</button>
+
+
+<button onclick="addCart('달빛 오믈렛',3900)">
+달빛 오믈렛 - 3,900원
+</button>
+
+
+
+
 
 <hr>
 
 
 
+
+
 <h3>
-간식
+🍬 간식
 </h3>
+
 
 
 <button onclick="addCart('뇌젤리',1200)">
@@ -177,20 +282,63 @@ TOTAL :
 </button>
 
 
+<button onclick="addCart('뼈다귀 프레첼',1500)">
+🦴 뼈다귀 프레첼 - 1,500원
+</button>
+
+
+<button onclick="addCart('별사탕 벌레맛',900)">
+⭐ 별사탕 벌레맛 - 900원
+</button>
+
+
 <button onclick="addCart('유령 솜사탕',1000)">
 👻 유령 솜사탕 - 1,000원
+</button>
+
+
+<button onclick="addCart('화석 초콜릿',1800)">
+화석 초콜릿 - 1,800원
+</button>
+
+
+<button onclick="addCart('피망 사탕',700)">
+피망 사탕 - 700원
+</button>
+
+
+<button onclick="addCart('미라 핫도그',2000)">
+미라 핫도그 - 2,000원
+</button>
+
+
+<button onclick="addCart('문어눈 팝콘',1300)">
+문어눈 팝콘 - 1,300원
+</button>
+
+
+<button onclick="addCart('독안개 마시멜로',1100)">
+독안개 마시멜로 - 1,100원
+</button>
+
+
+<button onclick="addCart('검은 달걀빵',1500)">
+검은 달걀빵 - 1,500원
+</button>
+
+
+<button onclick="addCart('거미줄 와플',2300)">
+거미줄 와플 - 2,300원
 </button>
 
 
 
 
 <hr>
-
-
-
 <h3>
-음료
+🥤 음료
 </h3>
+
 
 
 <button onclick="addCart('액체 달빛',1800)">
@@ -208,10 +356,39 @@ TOTAL :
 </button>
 
 
+<button onclick="addCart('독버섯 라떼',2300)">
+독버섯 라떼 - 2,300원
+</button>
+
+
+<button onclick="addCart('얼음꽃 차',1700)">
+얼음꽃 차 - 1,700원
+</button>
+
+
+<button onclick="addCart('검은 레몬에이드',2000)">
+검은 레몬에이드 - 2,000원
+</button>
+
+
+<button onclick="addCart('붉은 안개 탄산수',1500)">
+붉은 안개 탄산수 - 1,500원
+</button>
+
+
 <button onclick="addCart('심연 커피',1800)">
 심연 커피 - 1,800원
 </button>
 
+
+<button onclick="addCart('별가루 밀크셰이크',2800)">
+별가루 밀크셰이크 - 2,800원
+</button>
+
+
+<button onclick="addCart('꿈 추출 주스',2400)">
+꿈 추출 주스 - 2,400원
+</button>
 
 
 
@@ -219,9 +396,12 @@ TOTAL :
 
 
 
-<h3>
+<h3 class="warning">
 🔒 SECRET MENU
 </h3>
+
+
+<div class="recordBox">
 
 
 <button onclick="addCart('404번 정식',8000)">
@@ -229,15 +409,30 @@ TOTAL :
 </button>
 
 
+<p>
+주문할 때마다 다른 음식이 제공됨.
+</p>
+
+
+
+<button onclick="addCart('사장 추천 세트',10000)">
+사장 추천 세트 - 10,000원
+</button>
+
+
+
 <button onclick="addCart('백룸 도시락',5000)">
 백룸 도시락 - 5,000원
 </button>
+
 
 
 <button onclick="addCart('최후의 한입',0)">
 최후의 한입 - 무료
 </button>
 
+
+</div>
 
 
 
@@ -246,7 +441,9 @@ TOTAL :
 
 
 <button onclick="location.href='./main.html'">
+
 ← CENTRAL TERMINAL
+
 </button>
 
 
@@ -256,20 +453,25 @@ TOTAL :
 
 
 
-
 <script>
 
 
-let cart=[];
+let cart = [];
 
-let total=0;
-
-
-
-function addCart(name,price){
+let total = 0;
 
 
-cart.push(name);
+
+function addCart(name, price){
+
+
+cart.push({
+
+name:name,
+
+price:price
+
+});
 
 
 total += price;
@@ -282,13 +484,27 @@ updateCart();
 
 
 
+
+
 function updateCart(){
 
 
-let box=document.getElementById("cart");
+let box = document.getElementById("cart");
 
 
 box.innerHTML="";
+
+
+
+if(cart.length===0){
+
+
+box.innerHTML="장바구니가 비어있습니다.";
+
+
+}
+
+else{
 
 
 cart.forEach(function(item){
@@ -296,47 +512,125 @@ cart.forEach(function(item){
 
 box.innerHTML +=
 
-"<p>📦 "+item+"</p>";
+`
+<p>
+📦 ${item.name}
+<br>
+${item.price.toLocaleString()}원
+</p>
+`;
+
 
 
 });
 
 
-
-if(cart.length===0){
-
-box.innerHTML="장바구니가 비어있습니다.";
-
 }
 
 
 
-document.getElementById("total").innerHTML=total;
+document.getElementById("total").innerHTML =
+total.toLocaleString();
 
 
 
 }
+
 
 
 
 function order(){
 
 
+
 if(cart.length===0){
+
 
 alert("주문할 상품이 없습니다.");
 
 return;
 
+
 }
 
 
 
-alert(
-"SCHMEETTERLING STORE\n\n주문 완료\n총 금액 : "
-+total+
-"원"
+
+let user =
+localStorage.getItem("userName");
+
+
+
+if(!user){
+
+user="UNKNOWN";
+
+}
+
+
+
+
+let order = {
+
+
+user:user,
+
+time:new Date().toLocaleString(),
+
+items:cart,
+
+total:total
+
+
+};
+
+
+
+
+
+let history =
+
+JSON.parse(
+
+localStorage.getItem("orderHistory")
+
+)
+
+|| [];
+
+
+
+
+
+history.push(order);
+
+
+
+
+
+localStorage.setItem(
+
+"orderHistory",
+
+JSON.stringify(history)
+
 );
+
+
+
+
+
+alert(
+
+"SCHMEETTERLING STORE\n\n주문 완료\n총 금액 : "
+
++total.toLocaleString()
+
++"원"
+
+);
+
+
 
 
 
@@ -348,8 +642,111 @@ total=0;
 updateCart();
 
 
+showOrders();
+
 
 }
+
+
+
+
+
+function showOrders(){
+
+
+let box=document.getElementById("orderLog");
+
+
+
+let history =
+
+JSON.parse(
+
+localStorage.getItem("orderHistory")
+
+)
+
+|| [];
+
+
+
+
+if(history.length===0){
+
+
+box.innerHTML="주문 기록 없음";
+
+return;
+
+
+}
+
+
+
+box.innerHTML="";
+
+
+
+
+history.reverse().forEach(function(order){
+
+
+
+box.innerHTML +=
+
+`
+
+<div class="staffRecord">
+
+
+<p>
+👤 주문자 : ${order.user}
+</p>
+
+
+<p>
+🕒 ${order.time}
+</p>
+
+
+<p>
+📦 주문 내용
+<br>
+${order.items.map(
+item=>item.name
+).join("<br>")}
+</p>
+
+
+<p>
+💰 ${order.total.toLocaleString()}원
+</p>
+
+
+</div>
+
+<hr>
+
+`;
+
+
+
+});
+
+
+
+}
+
+
+
+
+window.onload=function(){
+
+
+showOrders();
+
+
+};
 
 
 
