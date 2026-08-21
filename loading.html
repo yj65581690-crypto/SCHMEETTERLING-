@@ -12,21 +12,16 @@
 </head>
 
 
-<body>
+<body class="loadingPage">
 
 
-<div class="mainBox">
+<div class="loadingBox">
 
 
-<h2>
-SCHMEETTERLING SYSTEM
-</h2>
+<h1 id="loadingText"></h1>
 
 
-<hr>
-
-
-<p>
+<p id="subText">
 ACCESSING DATABASE...
 </p>
 
@@ -45,7 +40,41 @@ PLEASE WAIT
 
 
 
+
 <script>
+
+
+let text = "ACCESS GRANTED";
+
+let index = 0;
+
+let speed = 120;
+
+
+let loadingText =
+document.getElementById("loadingText");
+
+
+
+function typing(){
+
+
+if(index < text.length){
+
+
+loadingText.innerHTML += text[index];
+
+
+index++;
+
+
+setTimeout(typing,speed);
+
+
+}
+
+
+else{
 
 
 setTimeout(function(){
@@ -54,7 +83,18 @@ setTimeout(function(){
 location.href="./main.html";
 
 
-},3000);
+},1500);
+
+
+}
+
+
+}
+
+
+
+typing();
+
 
 
 </script>
