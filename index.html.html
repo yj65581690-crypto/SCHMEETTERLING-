@@ -1,83 +1,170 @@
-function startLilinEvent(){
+<!DOCTYPE html>
+<html lang="ko">
 
-    alert("접근 권한이 없습니다.");
+<head>
 
-    document.body.innerHTML = `
-    <div id="lilinScreen">
-        <h1 id="glitch">SYSTEM ERROR</h1>
-    </div>
-    `;
+<meta charset="UTF-8">
+<title>SCHMEETTERLING LOGIN</title>
 
-    document.body.style.background = "black";
-    document.body.style.color = "red";
-    document.body.style.fontFamily = "monospace";
-    document.body.style.textAlign = "center";
-    document.body.style.paddingTop = "150px";
-    document.body.style.overflow = "hidden";
+<link rel="stylesheet" href="style.css">
 
-    let words = [
-        "ERROR",
-        "UNKNOWN ENTITY",
-        "ACCESS DENIED",
-        "DO NOT LOOK",
-        "SIGNAL LOST",
-        "FILE CORRUPTED",
-        "HELP",
-        "LILIN",
-        "██████",
-        "NO SIGNAL"
-    ];
+<style>
 
-    let count = 0;
+@keyframes flash{
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
+}
 
-    let timer = setInterval(function(){
+</style>
 
-        // 화면 흔들림
-        document.body.style.transform =
-        "translate(" +
-        (Math.random()*12-6) +
-        "px," +
-        (Math.random()*12-6) +
-        "px)";
+</head>
 
-        let p = document.createElement("p");
+<body>
 
-        p.innerHTML =
-        words[Math.floor(Math.random()*words.length)];
+<div class="loginCard">
 
-        p.style.position = "absolute";
-        p.style.left = Math.random()*90 + "%";
-        p.style.top = Math.random()*90 + "%";
-        p.style.color = "red";
-        p.style.fontSize = (16+Math.random()*24) + "px";
+<img src="logo.png">
 
-        document.body.appendChild(p);
+<h1>SCHMEETTERLING</h1>
 
-        count++;
+<p>INTERNAL INFORMATION SYSTEM</p>
 
-        if(count > 35){
+<hr>
 
-            clearInterval(timer);
+<input type="text" id="name" placeholder="이름">
 
-            document.body.innerHTML = `
-            <h1 style="
-            color:red;
-            font-size:90px;
-            margin-top:180px;
-            animation:flash .2s infinite;
-            ">
-            돌아가
-            </h1>
-            `;
+<input type="password" id="password" placeholder="비밀번호">
 
-            setTimeout(function(){
+<button onclick="login()">
+LOGIN
+</button>
 
-                location.href="index.html";
+</div>
 
-            },3000);
+<script>
 
-        }
+function login(){
 
-    },100);
+let name=document.getElementById("name").value;
+let password=document.getElementById("password").value;
+
+if(name==""||password==""){
+alert("이름과 비밀번호를 입력하세요.");
+return;
+}
+
+// 릴린 이스터에그
+if(
+name.trim().toLowerCase()=="릴린"||
+name.trim().toLowerCase()=="lilin"
+){
+startLilinEvent();
+return;
+}
+
+// 일반 로그인
+localStorage.setItem("userName",name);
+
+let rank="NONE";
+
+if(name=="미아"){
+rank="책임자";
+}
+
+localStorage.setItem("rank",rank);
+localStorage.setItem("userRank",rank);
+
+location.href="main.html";
 
 }
+
+
+
+function startLilinEvent(){
+
+alert("접근 권한이 없습니다.");
+
+document.body.innerHTML=`
+<div id="lilinScreen">
+<h1 id="glitch">SYSTEM ERROR</h1>
+</div>
+`;
+
+document.body.style.background="black";
+document.body.style.color="red";
+document.body.style.fontFamily="monospace";
+document.body.style.textAlign="center";
+document.body.style.paddingTop="150px";
+document.body.style.overflow="hidden";
+
+let words=[
+"ERROR",
+"UNKNOWN ENTITY",
+"ACCESS DENIED",
+"DO NOT LOOK",
+"SIGNAL LOST",
+"FILE CORRUPTED",
+"HELP",
+"LILIN",
+"██████",
+"NO SIGNAL"
+];
+
+let count=0;
+
+let timer=setInterval(function(){
+
+document.body.style.transform=
+"translate("+
+(Math.random()*12-6)+
+"px,"+
+(Math.random()*12-6)+
+"px)";
+
+let p=document.createElement("p");
+
+p.innerHTML=
+words[Math.floor(Math.random()*words.length)];
+
+p.style.position="absolute";
+p.style.left=Math.random()*90+"%";
+p.style.top=Math.random()*90+"%";
+p.style.color="red";
+p.style.fontSize=(16+Math.random()*24)+"px";
+
+document.body.appendChild(p);
+
+count++;
+
+if(count>35){
+
+clearInterval(timer);
+
+document.body.innerHTML=`
+<h1 style="
+color:red;
+font-size:90px;
+margin-top:180px;
+animation:flash .2s infinite;
+">
+돌아가
+</h1>
+`;
+
+setTimeout(function(){
+
+location.href="index.html";
+
+},3000);
+
+}
+
+},100);
+
+}
+
+</script>
+
+</body>
+</html>
