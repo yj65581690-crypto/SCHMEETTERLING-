@@ -1,6 +1,6 @@
-/* =========================
-SCHMEETTERLING RESEARCH TERMINAL
-========================= */
+/* =================================
+ SCHMEETTERLING TERMINAL SYSTEM
+================================= */
 
 
 *{
@@ -12,18 +12,11 @@ body{
 
     margin:0;
 
-    background:
-    radial-gradient(
-        circle at top,
-        #161616,
-        #030303 70%
-    );
+    background:#050505;
 
-    color:#ddd;
+    color:#eee;
 
-    font-family:
-    "Courier New",
-    monospace;
+    font-family:"Courier New", monospace;
 
     min-height:100vh;
 
@@ -31,80 +24,270 @@ body{
 
 
 
-/* 메인 패널 */
+/* CRT EFFECT */
 
-.mainBox{
+body::before{
 
-    width:90%;
+    content:"";
 
-    max-width:1000px;
+    position:fixed;
 
-    margin:40px auto;
+    inset:0;
 
+    pointer-events:none;
+
+    background:
+
+    repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+
+    z-index:9999;
+
+}
+
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    box-shadow:inset 0 0 100px black;
+
+}
+
+
+
+/* =================================
+ LOGIN CARD
+================================= */
+
+
+.loginCard{
+
+    width:380px;
+
+    margin:120px auto;
+
+    padding:40px;
 
     background:
 
     linear-gradient(
-        160deg,
-        rgba(20,20,20,.95),
-        rgba(5,5,5,.95)
+        145deg,
+        #111,
+        #050505
     );
 
 
-    border:
+    border:1px solid #555;
 
-    1px solid #555;
+
+    text-align:center;
+
+
+    box-shadow:
+
+    0 0 40px rgba(255,255,255,.15),
+
+    inset 0 0 30px rgba(255,255,255,.05);
+
+
+    animation:fade .8s;
+
+}
+
+
+
+.loginCard img{
+
+    width:130px;
+
+    filter:drop-shadow(0 0 20px white);
+
+}
+
+
+
+.loginCard h1{
+
+    letter-spacing:8px;
+
+    color:white;
+
+    text-shadow:0 0 15px white;
+
+}
+
+
+
+.loginCard button{
+
+    margin-top:20px;
+
+}
+
+
+
+
+
+/* =================================
+ MAIN LAYOUT
+================================= */
+
+
+.layout{
+
+    display:flex;
+
+    gap:20px;
+
+    width:95%;
+
+    max-width:1300px;
+
+    margin:40px auto;
+
+}
+
+
+
+.sideMenu{
+
+
+    width:230px;
+
+
+    padding:20px;
+
+
+    background:#080808;
+
+
+    border:1px solid #444;
+
+
+    height:max-content;
+
+
+    box-shadow:
+
+    0 0 20px rgba(255,255,255,.1);
+
+
+}
+
+
+
+
+
+.mainBox{
+
+
+    flex:1;
+
+
+    max-width:1000px;
+
+
+    margin:40px auto;
 
 
     padding:30px;
 
 
+    background:
+
+    linear-gradient(
+    145deg,
+    #0c0c0c,
+    #111
+    );
+
+
+    border:1px solid #444;
+
+
     box-shadow:
 
-    0 0 40px rgba(0,255,255,.08),
+    0 0 30px rgba(255,255,255,.08),
 
-    inset 0 0 50px rgba(255,255,255,.03);
+    inset 0 0 30px rgba(255,255,255,.03);
 
-
-    animation:
-
-    fade .8s ease;
-
-}
-
-
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
 
 }
 
 
 
 
-/* 로고 */
+
+.layout .mainBox{
+
+    margin:0;
+
+}
+
+
+
+/* =================================
+ USER INFO
+================================= */
+
+
+.userInfo{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    width:220px;
+
+    background:#080808;
+
+    border:1px solid #555;
+
+    padding:15px;
+
+}
+
+
+
+
+
+.recordBox{
+
+    background:#070707;
+
+    border:1px solid #333;
+
+    padding:15px;
+
+}
+
+
+
+/* =================================
+ LOGO
+================================= */
 
 
 .mainLogo{
 
-text-align:center;
+    text-align:center;
 
-margin:40px;
+    margin:40px;
 
 }
 
@@ -112,11 +295,9 @@ margin:40px;
 
 .mainLogo img{
 
-width:130px;
+    width:120px;
 
-filter:
-
-drop-shadow(0 0 20px cyan);
+    filter:drop-shadow(0 0 15px white);
 
 }
 
@@ -124,47 +305,26 @@ drop-shadow(0 0 20px cyan);
 
 .mainLogo h1{
 
+    letter-spacing:8px;
 
-letter-spacing:10px;
-
-color:white;
-
-
-text-shadow:
-
-0 0 10px cyan,
-
-0 0 30px cyan;
-
+    text-shadow:0 0 15px white;
 
 }
 
 
 
 
-/* 제목 */
+
+/* =================================
+ TEXT
+================================= */
 
 
 h2{
 
+    letter-spacing:3px;
 
-color:white;
-
-letter-spacing:4px;
-
-
-border-bottom:
-
-1px solid #444;
-
-
-padding-bottom:15px;
-
-
-text-shadow:
-
-0 0 15px white;
-
+    text-shadow:0 0 10px white;
 
 }
 
@@ -172,96 +332,72 @@ text-shadow:
 
 h3{
 
+    border-left:4px solid #aaa;
 
-color:#00ffff;
-
-
-border-left:
-
-4px solid #00ffff;
-
-
-padding-left:12px;
-
-
-text-shadow:
-
-0 0 10px cyan;
-
+    padding-left:10px;
 
 }
-
 
 
 
 hr{
 
+    border:0;
 
-border:
+    border-top:1px solid #333;
 
-0;
-
-
-border-top:
-
-1px solid #333;
-
-
-margin:30px 0;
-
+    margin:25px 0;
 
 }
 
 
 
-/* 버튼 */
+
+
+.online{
+
+    color:#00ff88;
+
+    text-shadow:0 0 10px #00ff88;
+
+}
+
+
+
+
+/* =================================
+ BUTTON
+================================= */
 
 
 button{
 
 
-width:100%;
+    width:100%;
 
 
-padding:15px;
+    padding:15px;
 
 
-margin:8px 0;
+    margin:8px 0;
 
 
-
-background:
-
-linear-gradient(
-
-90deg,
-
-#090909,
-
-#151515
-
-);
+    background:#0b0b0b;
 
 
-
-color:white;
-
+    color:white;
 
 
-border:
-
-1px solid #444;
+    border:1px solid #555;
 
 
-
-font-family:inherit;
-
-
-cursor:pointer;
+    cursor:pointer;
 
 
-transition:.3s;
+    font-family:inherit;
 
+
+    transition:.3s;
 
 
 }
@@ -271,23 +407,13 @@ transition:.3s;
 button:hover{
 
 
-transform:
-
-translateX(5px);
+    transform:translateX(5px);
 
 
-
-background:#222;
-
-
-border-color:white;
+    border-color:white;
 
 
-
-box-shadow:
-
-0 0 20px white;
-
+    box-shadow:0 0 20px white;
 
 
 }
@@ -295,426 +421,194 @@ box-shadow:
 
 
 
-/* 접속 패널 */
 
+/* =================================
+ DEPARTMENT COLOR
+================================= */
 
-.userInfo{
-
-
-position:fixed;
-
-
-top:20px;
-
-right:20px;
-
-
-
-width:230px;
-
-
-
-background:#050505;
-
-
-
-border:
-
-1px solid #00ffff;
-
-
-
-padding:15px;
-
-
-
-box-shadow:
-
-0 0 20px cyan;
-
-
-
-}
-
-
-
-.recordBox{
-
-
-background:
-
-rgba(0,0,0,.5);
-
-
-
-border:
-
-1px solid #333;
-
-
-padding:15px;
-
-
-
-}
-
-
-
-/* 상태 */
-
-
-.online{
-
-
-color:#00ff88;
-
-
-text-shadow:
-
-0 0 15px #00ff88;
-
-
-}
-
-
-
-
-
-/* =================
-부서 컬러
-================= */
-
-
-
-.chemical{
-
-
-border-color:#00ffff;
-
-}
 
 
 .chemical:hover{
 
+border-color:#00d9ff;
 
-box-shadow:
-
-0 0 25px cyan;
-
+box-shadow:0 0 25px #00d9ff;
 
 }
-
-
-
-.human{
-
-
-border-color:#ff55aa;
-
-
-}
-
 
 
 .human:hover{
 
+border-color:#ff3366;
 
-box-shadow:
-
-0 0 25px pink;
-
+box-shadow:0 0 25px #ff3366;
 
 }
-
-
-
-
-.backroom{
-
-
-border-color:#996633;
-
-
-}
-
 
 
 .backroom:hover{
 
+border-color:#9b7653;
 
-box-shadow:
-
-0 0 25px #996633;
-
+box-shadow:0 0 25px #9b7653;
 
 }
-
-
-
-
-.bio{
-
-
-border-color:#55ff55;
-
-
-}
-
 
 
 .bio:hover{
 
+border-color:#39ff88;
 
-box-shadow:
-
-0 0 25px lime;
-
+box-shadow:0 0 25px #39ff88;
 
 }
-
-
-
-
-
-.radiation{
-
-
-border-color:#ffff00;
-
-
-}
-
 
 
 .radiation:hover{
 
+border-color:#d7ff00;
 
-box-shadow:
-
-0 0 30px yellow;
-
+box-shadow:0 0 25px #d7ff00;
 
 }
-
-
-
-
-
-.unknown{
-
-
-border-color:#aa55ff;
-
-
-}
-
 
 
 .unknown:hover{
 
+border-color:#a855ff;
 
-box-shadow:
-
-0 0 30px purple;
-
+box-shadow:0 0 25px #a855ff;
 
 }
-
-
-
-
-
-.drug{
-
-
-border-color:red;
-
-
-}
-
 
 
 .drug:hover{
 
+border-color:#ff003c;
 
-box-shadow:
-
-0 0 30px red;
-
+box-shadow:0 0 25px #ff003c;
 
 }
-
-
-
-
-.shop{
-
-
-border-color:#ffaa00;
-
-
-}
-
 
 
 .shop:hover{
 
+border-color:#ffaa33;
 
-box-shadow:
-
-0 0 30px orange;
-
+box-shadow:0 0 25px #ffaa33;
 
 }
-
-
-
-.cafe{
-
-
-border-color:#c58b50;
-
-
-}
-
 
 
 .cafe:hover{
 
+border-color:#c08a5a;
 
-box-shadow:
-
-0 0 30px #c58b50;
-
+box-shadow:0 0 25px #c08a5a;
 
 }
 
 
 
-
-
-/* 대시보드 */
+/* =================================
+ DASHBOARD
+================================= */
 
 
 .dashboard{
 
-
 display:flex;
-
 
 gap:20px;
 
-
 }
-
 
 
 
 .panel{
 
-
 flex:1;
-
-
 
 background:#080808;
 
-
-
-border:
-
-1px solid #444;
-
-
+border:1px solid #444;
 
 padding:20px;
-
-
-
-box-shadow:
-
-inset 0 0 20px black;
-
 
 }
 
 
 
 
-
-/* 채팅 */
+/* CHAT */
 
 
 .chatBox{
 
+background:#050505;
 
-background:#020202;
-
-
-border:
-
-1px solid #00ffff;
-
-
+border:1px solid #444;
 
 padding:15px;
 
-
-
-box-shadow:
-
-0 0 15px rgba(0,255,255,.3);
-
-
 }
-
 
 
 
 #chatLog{
 
-
 height:250px;
 
+overflow:auto;
 
-overflow-y:auto;
-
-
-border:
-
-1px solid #333;
-
-
+border:1px solid #333;
 
 padding:10px;
 
-
 }
-
-
 
 
 
 input{
 
-
 width:80%;
-
 
 padding:12px;
 
-
-
 background:black;
-
 
 color:white;
 
+border:1px solid #555;
+
+}
 
 
-border:
 
-1px solid cyan;
+
+
+/* ANIMATION */
+
+
+@keyframes fade{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
 
 
 }
@@ -723,404 +617,51 @@ border:
 
 
 
-/* CRT 효과 */
-
-
-body::before{
-
-
-content:"";
-
-
-position:fixed;
-
-
-inset:0;
-
-
-pointer-events:none;
-
-
-
-background:
-
-repeating-linear-gradient(
-
-0deg,
-
-rgba(255,255,255,.03),
-
-rgba(255,255,255,.03) 1px,
-
-transparent 2px,
-
-transparent 4px
-
-);
-
-
-
-z-index:9999;
-
-
-}
-
-
-
-
-
-/* 모바일 */
+/* MOBILE */
 
 
 @media(max-width:700px){
 
 
+.layout{
+
+display:block;
+
+}
+
+
+.sideMenu{
+
+width:100%;
+
+margin-bottom:20px;
+
+}
+
+
 .userInfo{
 
-
 position:relative;
+
+top:auto;
+
+right:auto;
 
 width:auto;
 
 margin:10px;
 
-
 }
-
-
-
-.dashboard{
-
-
-display:block;
-
-
-}
-
 
 
 .mainBox{
-
 
 width:95%;
 
 padding:15px;
 
-
 }
 
-
-}
-/* =========================
-DEPARTMENT THEME SYSTEM
-========================= */
-
-
-/* 화학 */
-
-.chemicalTheme .mainBox{
-
-border-color:#00ffff;
-
-box-shadow:
-0 0 40px cyan,
-inset 0 0 30px rgba(0,255,255,.1);
-
-}
-
-
-.chemicalTheme h2,
-.chemicalTheme h3{
-
-color:#00ffff;
-
-text-shadow:
-0 0 15px cyan;
-
-}
-
-
-
-
-
-/* 인체개조 */
-
-.humanTheme .mainBox{
-
-border-color:#ff55aa;
-
-box-shadow:
-0 0 40px pink;
-
-}
-
-
-.humanTheme h2,
-.humanTheme h3{
-
-color:#ff55aa;
-
-}
-
-
-
-
-
-/* 백룸 */
-
-.backroomTheme .mainBox{
-
-border-color:#996633;
-
-box-shadow:
-0 0 40px #996633;
-
-}
-
-
-.backroomTheme h2,
-.backroomTheme h3{
-
-color:#bb8855;
-
-}
-
-
-
-
-
-/* 생물 */
-
-.bioTheme .mainBox{
-
-
-border-color:#55ff55;
-
-
-box-shadow:
-
-0 0 40px lime;
-
-
-}
-
-
-.bioTheme h2,
-.bioTheme h3{
-
-color:#55ff55;
-
-}
-
-
-
-
-
-/* 방사능 */
-
-
-.radiationTheme .mainBox{
-
-
-border-color:#ffff00;
-
-
-box-shadow:
-
-0 0 50px yellow;
-
-
-}
-
-
-.radiationTheme h2,
-.radiationTheme h3{
-
-
-color:#ffff00;
-
-
-}
-
-
-
-
-
-/* 미확인 */
-
-
-.unknownTheme .mainBox{
-
-
-border-color:#aa55ff;
-
-
-box-shadow:
-
-0 0 50px purple;
-
-
-}
-
-
-.unknownTheme h2,
-.unknownTheme h3{
-
-
-color:#aa55ff;
-
-
-}
-
-
-
-
-
-/* 마약 */
-
-
-.drugTheme .mainBox{
-
-
-border-color:red;
-
-
-box-shadow:
-
-0 0 50px red;
-
-
-}
-
-
-.drugTheme h2,
-.drugTheme h3{
-
-
-color:red;
-
-
-}
-/* =========================
-LOGIN CARD RESTORE
-========================= */
-
-
-.loginCard{
-
-    width:380px;
-
-    margin:120px auto;
-
-
-    background:
-
-    linear-gradient(
-        145deg,
-        #0b0b0b,
-        #151515
-    );
-
-
-    border:
-
-    1px solid #555;
-
-
-    padding:40px;
-
-
-    text-align:center;
-
-
-    box-shadow:
-
-    0 0 40px rgba(0,255,255,.2),
-
-    inset 0 0 30px rgba(255,255,255,.05);
-
-
-    animation:
-
-    fade .8s ease;
-
-}
-
-
-
-.loginCard h1{
-
-    color:white;
-
-    letter-spacing:8px;
-
-
-    text-shadow:
-
-    0 0 15px cyan;
-
-}
-
-
-
-.loginCard img{
-
-    width:120px;
-
-
-    filter:
-
-    drop-shadow(0 0 20px cyan);
-
-}
-
-
-
-.loginCard input{
-
-
-    width:100%;
-
-    margin:10px 0;
-
-    padding:12px;
-
-
-    background:black;
-
-
-    color:white;
-
-
-    border:
-
-    1px solid #555;
-
-
-    font-family:inherit;
-
-}
-
-
-
-.loginCard button{
-
-
-    margin-top:15px;
-
-    border-color:#00ffff;
-
-
-}
-
-
-
-.loginCard button:hover{
-
-
-    box-shadow:
-
-    0 0 25px cyan;
 
 
 }
