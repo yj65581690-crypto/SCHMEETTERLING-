@@ -1,149 +1,186 @@
-<!DOCTYPE html> 
-<html lang="ko"> 
- 
-<head> 
-    <meta charset="UTF-8"> 
-    <title>UNKNOWN ENTITY DEPARTMENT</title> 
-    <link rel="stylesheet" href="../style.css"> 
-</head> 
- 
-<body> 
- 
-    <!-- 왼쪽 메뉴 --> 
-    <div class="sidebar"> 
- 
-        <div class="logo"> 
-            SCHMEETTERLING 
-        </div> 
- 
-        <p style="text-align:center;color:#7ef7b7;"> 
-            🟢 ONLINE 
-        </p> 
- 
-        <hr> 
- 
-        <p> 
-            USER<br> 
-            <b>MIA</b> 
-        </p> 
- 
-        <p> 
-            ACCESS LEVEL<br> 
-            LEVEL 4 
-        </p> 
- 
-        <hr> 
- 
-        <button class="menuButton" onclick="location.href='../main.html'"> 
-            🏠 Dashboard 
-        </button> 
- 
-        <button class="menuButton"> 
-            👾 Entity Database 
-        </button> 
- 
-        <button class="menuButton"> 
-            👤 Researcher Database 
-        </button> 
- 
-        <button class="menuButton"> 
-            📄 Incident Logs 
-        </button> 
- 
-        <button class="menuButton"> 
-            🧪 Laboratory 
-        </button> 
- 
-        <button class="menuButton"> 
-            📦 Backroom 
-        </button> 
- 
-    </div> 
- 
- 
-    <!-- 오른쪽 내용 --> 
-    <div class="mainBox"> 
- 
-        <h2>UNKNOWN ENTITY DEPARTMENT</h2> 
- 
-        <p><b>부서 코드 :</b> UE-06</p> 
- 
-        <p><b>열람 권한 :</b> LEVEL 3 이상</p> 
- 
-        <hr> 
- 
- 
-        <h3>부서 안내</h3> 
- 
-        <p> 
-            미확인 개체 조사 및 관리 기록을 열람할 수 있습니다.<br> 
-            모든 자료는 내부 보안 규정에 따라 관리됩니다. 
-        </p> 
- 
- 
-        <hr> 
- 
- 
-        <h3>DATABASE</h3> 
- 
-        <button onclick="location.href='entities/entity_list.html'"> 
-            📁 개체 보고서 
-        </button> 
- 
-        <br><br> 
- 
-        <button onclick="location.href='researchers/staff.html'"> 
-            👥 연구원 명단 
-        </button> 
- 
- 
-        <hr>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<title>UNKNOWN ENTITY DEPARTMENT</title>
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
 
 
-        <h3>
-            DOCUMENT APPROVAL
-        </h3>
+<div class="sidebar">
+
+    <div class="logo">
+        SCHMEETTERLING
+    </div>
 
 
-        <div class="approvalBox">
+    <p style="text-align:center;color:#7ef7b7;">
+        🟢 ONLINE
+    </p>
 
 
-            <p>
-                문서 :
-                <b>UE-001 「릴린」 관찰 보고서</b>
-            </p>
+    <hr>
 
 
-            <p>
-                작성자 :
-                <b>미아</b>
-            </p>
+    <p>
+        USER<br>
+        <b>MIA</b>
+    </p>
 
 
-            <p>
-                상태 :
-                <span id="approvalStatus">
-                    검토 대기
-                </span>
-            </p>
+    <p>
+        ACCESS LEVEL<br>
+        LEVEL 4
+    </p>
 
 
-            <div id="approvalButton">
-
-            </div>
+    <hr>
 
 
-        </div>
+    <button class="menuButton" onclick="location.href='./main.html'">
+        🏠 Dashboard
+    </button>
+
+
+    <button class="menuButton">
+        👾 Entity Database
+    </button>
+
+
+    <button class="menuButton">
+        👤 Researcher Database
+    </button>
+
+
+    <button class="menuButton">
+        📄 Incident Logs
+    </button>
+
+
+    <button class="menuButton">
+        🧪 Laboratory
+    </button>
+
+
+    <button class="menuButton">
+        📦 Backroom
+    </button>
+
+
+</div>
 
 
 
-        <hr> 
- 
-        <p style="color:#ff7070;"> 
-            ⚠ WARNING : LIMITED ACCESS 
-        </p> 
- 
-    </div> 
+
+<div class="mainBox">
+
+
+<h2>UNKNOWN ENTITY DEPARTMENT</h2>
+
+
+<p>
+<b>부서 코드 :</b> UE-06
+</p>
+
+
+<p>
+<b>열람 권한 :</b> LEVEL 3 이상
+</p>
+
+
+<hr>
+
+
+
+<h3>부서 안내</h3>
+
+
+<p>
+미확인 개체 조사 및 관리 기록을 열람할 수 있습니다.<br>
+모든 자료는 내부 보안 규정에 따라 관리됩니다.
+</p>
+
+
+
+<hr>
+
+
+
+<h3>DATABASE</h3>
+
+
+<button onclick="location.href='./entity_list.html'">
+📁 개체 보고서
+</button>
+
+
+<br><br>
+
+
+<button onclick="location.href='./staff.html'">
+👥 연구원 명단
+</button>
+
+
+
+<hr>
+
+
+
+<h3>
+DOCUMENT APPROVAL
+</h3>
+
+
+
+<div class="approvalBox">
+
+
+<p>
+문서 :
+<b>UE-001 「릴린」 관찰 보고서</b>
+</p>
+
+
+<p>
+작성자 :
+<b>미아</b>
+</p>
+
+
+<p>
+상태 :
+<span id="approvalStatus">
+검토 대기
+</span>
+</p>
+
+
+
+<div id="approvalButton">
+
+</div>
+
+
+</div>
+
+
+
+<hr>
+
+
+<p style="color:#ff7070;">
+⚠ WARNING : LIMITED ACCESS
+</p>
+
+
+</div>
+
 
 
 
@@ -153,7 +190,6 @@
 let user = localStorage.getItem("userName");
 
 
-// 미아 로그인일 때만 결재 버튼 생성
 
 if(user === "미아"){
 
@@ -165,7 +201,6 @@ document.getElementById("approvalButton").innerHTML = `
 </button>
 
 `;
-
 
 }
 
@@ -196,6 +231,7 @@ document.getElementById("approvalButton").innerHTML = `
 </script>
 
 
-</body> 
- 
+
+</body>
+
 </html>
