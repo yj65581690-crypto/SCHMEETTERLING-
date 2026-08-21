@@ -83,8 +83,16 @@ location.href="main.html";
 
 function startLilinEvent(){
 
-alert("접근 권한이 없습니다.");
-
+document.body.innerHTML=`
+<h1 style="
+color:red;
+font-size:60px;
+margin-top:180px;
+font-family:monospace;
+">
+ACCESS DENIED
+</h1>
+`;
 document.body.innerHTML=`
 <div id="lilinScreen">
 <h1 id="glitch">SYSTEM ERROR</h1>
@@ -165,6 +173,86 @@ location.href="index.html";
 }
 
 </script>
+function startLilinEvent(){
 
+document.body.innerHTML="";
+
+document.body.style.background="black";
+document.body.style.overflow="hidden";
+document.body.style.cursor="none";
+
+let sounds=[
+"ERROR",
+"ACCESS DENIED",
+"UNKNOWN ENTITY",
+"SIGNAL LOST",
+"FILE CORRUPTED",
+"DO NOT LOOK",
+"LILIN",
+"HELP",
+"NO ESCAPE",
+"████████"
+];
+
+let shake=setInterval(function(){
+
+document.body.style.transform=
+"translate("+
+(Math.random()*20-10)+"px,"+
+(Math.random()*20-10)+"px)";
+
+},30);
+
+let count=0;
+
+let rain=setInterval(function(){
+
+let p=document.createElement("div");
+
+p.innerHTML=sounds[Math.floor(Math.random()*sounds.length)];
+
+p.style.position="absolute";
+p.style.left=Math.random()*100+"%";
+p.style.top=Math.random()*100+"%";
+p.style.color="red";
+p.style.fontFamily="monospace";
+p.style.fontSize=(15+Math.random()*30)+"px";
+p.style.opacity=Math.random();
+
+document.body.appendChild(p);
+
+count++;
+
+if(count>120){
+
+clearInterval(rain);
+
+document.body.innerHTML=`
+<div style="
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:red;
+font-size:120px;
+font-family:monospace;
+font-weight:bold;
+animation:flash .12s infinite;
+">
+돌아가
+</div>
+`;
+
+setTimeout(function(){
+
+location.href="index.html";
+
+},3000);
+
+}
+
+},45);
+
+}
 </body>
 </html>
