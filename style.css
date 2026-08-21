@@ -1042,3 +1042,62 @@ box-shadow:0 0 30px #3399ff !important;
     0 0 30px #ffaa33 !important;
 
 }
+/* 부서 페이지 색 유지 */
+
+
+/* 화학 */
+.chemicalPage .mainBox{
+    border-color:#ff3333;
+    box-shadow:
+    0 0 30px rgba(255,51,51,.4),
+    inset 0 0 30px rgba(255,51,51,.1);
+}
+
+
+/* 인체개조 */
+.humanPage .mainBox{
+    border-color:#ff66cc;
+    box-shadow:
+    0 0 30px rgba(255,102,204,.4),
+    inset 0 0 30px rgba(255,102,204,.1);
+}
+
+
+/* 백룸 */
+.backroomPage .mainBox{
+    border-color:white;
+    box-shadow:
+    0 0 30px rgba(255,255,255,.4);
+}
+
+
+/* 생물 */
+.bioPage .mainBox{
+    border-color:#00ff66;
+    box-shadow:
+    0 0 30px rgba(0,255,102,.4);
+}
+
+
+/* 방사능 */
+.radiationPage .mainBox{
+    border-color:#ffff00;
+    box-shadow:
+    0 0 30px rgba(255,255,0,.4);
+}
+
+
+/* 미확인 */
+.unknownPage .mainBox{
+    border-color:#ff8800;
+    box-shadow:
+    0 0 30px rgba(255,136,0,.4);
+}
+
+
+/* 마약 */
+.drugPage .mainBox{
+    border-color:#3399ff;
+    box-shadow:
+    0 0 30px rgba(51,153,255,.4);
+}
