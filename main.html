@@ -89,7 +89,18 @@ INTERNAL INFORMATION SYSTEM
 <h2>
 ACCESS GRANTED
 </h2>
+<div class="broadcastBox">
 
+<h3>
+📡 SCHMEETTERLING BROADCAST
+</h3>
+
+<p id="broadcastText">
+● SYSTEM ONLINE<br>
+● ALL FACILITY CONNECTED
+</p>
+
+</div>
 
 
 <p>
@@ -435,7 +446,7 @@ document.getElementById("chatLog").innerHTML = oldChat;
 
 }
 
-
+loadBroadcast();
 
 };
 
@@ -553,7 +564,32 @@ document.getElementById("time").innerHTML =
 },1000);
 
 
+function loadBroadcast(){
 
+
+let message = localStorage.getItem("broadcast");
+
+
+let box =
+document.getElementById("broadcastText");
+
+
+
+if(message){
+
+box.innerHTML = message;
+
+}
+
+else{
+
+box.innerHTML =
+"● SYSTEM ONLINE<br>● ALL FACILITY CONNECTED";
+
+}
+
+
+}
 </script>
 
 
