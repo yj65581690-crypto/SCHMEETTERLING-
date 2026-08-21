@@ -12,8 +12,11 @@
 </head>
 
 
-<body>
+<audio id="noctisMusic" loop>
 
+<source src="./sound/noctis.mp3" type="audio/mpeg">
+
+</audio>
 
 <div class="mainBox cafePage">
 
@@ -23,7 +26,11 @@
 ☕ NOCTIS CAFE
 </h2>
 
+<button onclick="playMusic()">
 
+🎵 NOCTIS BGM ON
+
+</button>
 <p>
 FACILITY CODE : CAFE-01
 </p>
@@ -723,6 +730,18 @@ alert(
 price.toLocaleString()+"원"
 );
 
+
+  }
+  function playMusic(){
+
+let music =
+document.getElementById("noctisMusic");
+
+
+music.volume = 0.3;
+
+
+music.play();
 
   }
 </script>
