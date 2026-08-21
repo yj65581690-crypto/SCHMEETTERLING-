@@ -792,3 +792,43 @@ background:#3b2418;
 box-shadow:0 0 15px #c98b5b;
 
 }
+.dashboard{
+
+display:flex;
+gap:20px;
+margin-bottom:30px;
+
+}
+
+
+.panel{
+
+flex:1;
+border:1px solid #555;
+padding:20px;
+background:#080808;
+
+}
+
+
+.facilityBtn{
+
+width:100%;
+margin:10px 0;
+padding:15px;
+
+background:#111;
+color:white;
+
+border:1px solid #777;
+
+cursor:pointer;
+
+}
+
+
+.facilityBtn:hover{
+
+background:#333;
+
+}
