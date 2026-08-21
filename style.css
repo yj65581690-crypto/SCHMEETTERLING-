@@ -759,3 +759,36 @@ text-shadow:
 color:#9fffc9;
 
 }
+/* 시설 버튼 */
+
+.shop{
+
+border-color:#d4a017;
+color:#ffe58a;
+
+}
+
+
+.shop:hover{
+
+background:#332800;
+box-shadow:0 0 15px #d4a017;
+
+}
+
+
+
+.cafe{
+
+border-color:#c98b5b;
+color:#ffd2a6;
+
+}
+
+
+.cafe:hover{
+
+background:#3b2418;
+box-shadow:0 0 15px #c98b5b;
+
+}
