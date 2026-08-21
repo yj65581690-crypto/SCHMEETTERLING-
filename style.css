@@ -1001,3 +1001,126 @@ color:red;
 
 
 }
+/* =========================
+LOGIN CARD RESTORE
+========================= */
+
+
+.loginCard{
+
+    width:380px;
+
+    margin:120px auto;
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #0b0b0b,
+        #151515
+    );
+
+
+    border:
+
+    1px solid #555;
+
+
+    padding:40px;
+
+
+    text-align:center;
+
+
+    box-shadow:
+
+    0 0 40px rgba(0,255,255,.2),
+
+    inset 0 0 30px rgba(255,255,255,.05);
+
+
+    animation:
+
+    fade .8s ease;
+
+}
+
+
+
+.loginCard h1{
+
+    color:white;
+
+    letter-spacing:8px;
+
+
+    text-shadow:
+
+    0 0 15px cyan;
+
+}
+
+
+
+.loginCard img{
+
+    width:120px;
+
+
+    filter:
+
+    drop-shadow(0 0 20px cyan);
+
+}
+
+
+
+.loginCard input{
+
+
+    width:100%;
+
+    margin:10px 0;
+
+    padding:12px;
+
+
+    background:black;
+
+
+    color:white;
+
+
+    border:
+
+    1px solid #555;
+
+
+    font-family:inherit;
+
+}
+
+
+
+.loginCard button{
+
+
+    margin-top:15px;
+
+    border-color:#00ffff;
+
+
+}
+
+
+
+.loginCard button:hover{
+
+
+    box-shadow:
+
+    0 0 25px cyan;
+
+
+}
