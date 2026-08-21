@@ -304,13 +304,23 @@ body::after{
 
 
 .mainLogo h1{
+.mainLogo h1{
 
-    letter-spacing:8px;
+    font-size:40px;
 
-    text-shadow:0 0 15px white;
+    letter-spacing:6px;
+
+    text-align:center;
+
+    word-break:break-word;
+
+    color:#ffffff;
+
+    text-shadow:
+        0 0 8px #00ff88,
+        0 0 20px #00ff88;
 
 }
-
 
 
 
