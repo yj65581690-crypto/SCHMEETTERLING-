@@ -906,3 +906,26 @@ h2{
     white-space:nowrap;
 
 }
+.loginTerminal{
+    width:420px;
+    overflow:hidden;
+}
+
+
+.loginTerminal h1{
+
+    font-size:28px !important;
+
+    letter-spacing:3px !important;
+
+    white-space:normal;
+
+    overflow-wrap:break-word;
+
+    color:white;
+
+    text-shadow:
+    0 0 8px #00ff88,
+    0 0 20px #00ff88;
+
+}
