@@ -119,7 +119,68 @@ CENTRAL TERMINAL
 
 
 
+<div class="dashboard">
 
+
+<div class="panel">
+
+<h3>
+🏢 FACILITY
+</h3>
+
+
+<button class="facilityBtn"
+onclick="location.href='./store.html'">
+
+🛒 SCHMEETTERLING STORE
+
+</button>
+
+
+<button class="facilityBtn"
+onclick="location.href='./noctis.html'">
+
+☕ NOCTIS CAFE
+
+</button>
+
+
+</div>
+
+
+
+
+<div class="panel">
+
+
+<h3>
+📡 SYSTEM LOG
+</h3>
+
+
+<p>
+● DATABASE ONLINE
+</p>
+
+
+<p>
+● SECURITY ACTIVE
+</p>
+
+
+<p>
+● ALL DEPARTMENT CONNECTED
+</p>
+
+
+<p id="time">
+</p>
+
+
+</div>
+
+
+</div>
 <h3>
 DEPARTMENT LIST
 </h3>
@@ -532,7 +593,15 @@ location.href="./index.html";
 
 }
 
+setInterval(function(){
 
+let now = new Date();
+
+document.getElementById("time").innerHTML =
+"TIME : "+now.toLocaleString();
+
+
+},1000);
 
 </script>
 
