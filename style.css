@@ -998,3 +998,37 @@ button.drug:hover{
     border-color:#3399ff;
     box-shadow:0 0 30px #3399ff;
 }
+.deptBtn.chemical:hover{
+border-color:red !important;
+box-shadow:0 0 30px red !important;
+}
+
+.deptBtn.human:hover{
+border-color:pink !important;
+box-shadow:0 0 30px pink !important;
+}
+
+.deptBtn.backroom:hover{
+border-color:white !important;
+box-shadow:0 0 30px white !important;
+}
+
+.deptBtn.bio:hover{
+border-color:#00ff00 !important;
+box-shadow:0 0 30px #00ff00 !important;
+}
+
+.deptBtn.radiation:hover{
+border-color:yellow !important;
+box-shadow:0 0 30px yellow !important;
+}
+
+.deptBtn.unknown:hover{
+border-color:orange !important;
+box-shadow:0 0 30px orange !important;
+}
+
+.deptBtn.drug:hover{
+border-color:#3399ff !important;
+box-shadow:0 0 30px #3399ff !important;
+}
