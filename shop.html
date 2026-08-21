@@ -539,26 +539,34 @@ total.toLocaleString();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function order(){
 
 
-
 if(cart.length===0){
-
 
 alert("주문할 상품이 없습니다.");
 
 return;
 
-
 }
 
 
 
-
-let user =
-localStorage.getItem("userName");
-
+let user = localStorage.getItem("userName");
 
 
 if(!user){
@@ -569,9 +577,7 @@ user="UNKNOWN";
 
 
 
-
 let order = {
-
 
 user:user,
 
@@ -581,24 +587,15 @@ items:cart,
 
 total:total
 
-
 };
 
 
 
-
-
 let history =
-
 JSON.parse(
-
 localStorage.getItem("orderHistory")
-
 )
-
 || [];
-
-
 
 
 
@@ -606,149 +603,22 @@ history.push(order);
 
 
 
-
-
 localStorage.setItem(
-
 "orderHistory",
-
 JSON.stringify(history)
-
 );
-
-
 
 
 
 alert(
-
 "SCHMEETTERLING STORE\n\n주문 완료\n총 금액 : "
-
 +total.toLocaleString()
-
 +"원"
-
-);
-  printReceipt(order);
-  function printReceipt(order){
-
-
-let receipt = `
-
-========================
-
- SCHMEETTERLING STORE
-
-        RECEIPT
-
-========================
-
-
-주문자 :
-${order.user}
-
-
-시간 :
-${order.time}
-
-
-
-------------------------
-
-
-${order.items.map(
-item =>
-item.name +
-"  " +
-item.price.toLocaleString()+"원"
-).join("\n")}
-
-
-
-------------------------
-
-
-TOTAL :
-
-${order.total.toLocaleString()}원
-
-
-
-========================
-
-SYSTEM : ONLINE
-
-SCHMEETTERLING
-
-========================
-
-`;
-
-
-
-let win =
-window.open(
-"",
-"receipt",
-"width=400,height=600"
 );
 
 
 
-win.document.write(`
-
-<html>
-
-<head>
-
-<title>RECEIPT</title>
-
-<style>
-
-body{
-
-font-family:monospace;
-
-background:black;
-
-color:white;
-
-padding:20px;
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<pre>
-
-${receipt}
-
-</pre>
-
-
-</body>
-
-</html>
-
-`);
-
-
-
-win.document.close();
-
-
-win.print();
-
-
-  }
-
-
+printReceipt(order);
 
 
 
@@ -759,7 +629,6 @@ total=0;
 
 updateCart();
 
-
 showOrders();
 
 
@@ -768,6 +637,53 @@ showOrders();
 
 
 
+
+function printReceipt(order){
+
+
+let receipt =
+
+"========================\n"+
+" SCHMEETTERLING STORE\n"+
+"        RECEIPT\n"+
+"========================\n\n"+
+
+"주문자 : "+
+order.user+
+
+"\n\n시간 : "+
+order.time+
+
+"\n\n------------------------\n\n"+
+
+
+order.items.map(
+item =>
+item.name+
+" "+
+item.price.toLocaleString()+
+"원"
+).join("\n")
+
+
++
+
+"\n\n------------------------\n\n"+
+
+"TOTAL : "+
+order.total.toLocaleString()+
+"원\n\n"+
+
+"========================\n"+
+"SYSTEM : ONLINE\n"+
+"========================";
+
+
+
+alert(receipt);
+
+
+}
 
 function showOrders(){
 
