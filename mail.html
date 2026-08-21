@@ -11,34 +11,25 @@
 
 </head>
 
-
 <body>
 
-
 <div class="mainBox">
-
 
 <h2>
 ✉ STAFF MAIL SYSTEM
 </h2>
 
-
 <p>
 MAIL TERMINAL : ONLINE
 </p>
 
-
 <hr>
-
-
 
 <h3>
 📥 INBOX
 </h3>
 
-
 <div class="recordBox">
-
 
 <button onclick="openMail(0)">
 
@@ -50,9 +41,7 @@ MAIL TERMINAL : ONLINE
 
 </button>
 
-
 <br><br>
-
 
 <button onclick="openMail(1)">
 
@@ -64,9 +53,7 @@ MAIL TERMINAL : ONLINE
 
 </button>
 
-
 <br><br>
-
 
 <button onclick="openMail(2)">
 
@@ -78,26 +65,21 @@ MAIL TERMINAL : ONLINE
 
 </button>
 
-
 </div>
 
-
-
 <hr>
-
-
 
 <div class="recordBox" id="mailView">
 
 메일을 선택하세요.
 
 </div>
- <hr>
+
+<hr>
 
 <h3>
 📤 SEND MAIL
 </h3>
-
 
 <h4>
 수신자
@@ -105,47 +87,33 @@ MAIL TERMINAL : ONLINE
 
 <select id="mailReceiver">
 
-<option>
-DIRECTOR
-</option>
+<option>DIRECTOR</option>
 
-<option>
-BIO DEPARTMENT
-</option>
+<option>BIO DEPARTMENT</option>
 
-<option>
-RADIATION DEPARTMENT
-</option>
+<option>RADIATION DEPARTMENT</option>
 
-<option>
-CHEMICAL DEPARTMENT
-</option>
+<option>CHEMICAL DEPARTMENT</option>
 
-<option>
-UNKNOWN DEPARTMENT
-</option>
+<option>UNKNOWN DEPARTMENT</option>
 
-<option>
-BACKROOM DEPARTMENT
-</option>
+<option>BACKROOM DEPARTMENT</option>
 
 </select>
 
+<br><br>
+
+<input
+id="mailTitle"
+placeholder="메일 제목">
 
 <br><br>
 
-
-<input id="mailTitle" placeholder="메일 제목">
-
-
-<br><br>
-
-
-<textarea id="mailText" placeholder="메일 내용"></textarea>
-
+<textarea
+id="mailText"
+placeholder="메일 내용"></textarea>
 
 <br><br>
-
 
 <button onclick="sendMail()">
 
@@ -153,44 +121,11 @@ BACKROOM DEPARTMENT
 
 </button>
 
-
 <div id="sendLoading">
 
 </div>
-
-<hr>
-
-<h3>
-📤 SEND MAIL
-</h3>
-
-
-<input id="mailTitle" placeholder="메일 제목">
-
-
-<br><br>
-
-
-<textarea id="mailText" placeholder="메일 내용"></textarea>
-
-
-<br><br>
-
-
-<button onclick="sendMail()">
-
-📨 전송
-
-</button>
-
-
-<div id="sendLoading">
-
-</div>
-
 
 <br>
-
 
 <button onclick="location.href='./main.html'">
 
@@ -198,18 +133,10 @@ BACKROOM DEPARTMENT
 
 </button>
 
-
-
 </div>
 
-
-
-
 <script>
-
-
-let mails=[
-
+ let mails=[
 
 {
 
@@ -221,7 +148,6 @@ text:"금일 14시 BIO-014 검체 이동 예정.\n관련 부서 협조 요청."
 
 },
 
-
 {
 
 from:"DIRECTOR",
@@ -231,7 +157,6 @@ title:"긴급 업무 지시",
 text:"화학부서 담당자는 즉시 사장실로 이동하세요.\n보안 등급 확인 필요."
 
 },
-
 
 {
 
@@ -243,188 +168,101 @@ text:"방사능 부서 장비 정기점검 예정.\n점검 시간 : 22:00"
 
 }
 
-
 ];
-
 
 
 
 function openMail(num){
 
-
 let mail=mails[num];
-
 
 document.getElementById("mailView").innerHTML=
 
-
 `
 
-<h3>
-${mail.from}
-</h3>
+<h3>${mail.from}</h3>
 
-
-<h4>
-${mail.title}
-</h4>
-
+<h4>${mail.title}</h4>
 
 <hr>
 
-
 <p>
+
 ${mail.text.replace(/\n/g,"<br>")}
+
 </p>
 
 `;
 
-
 }
-function sendMail(){
-
-
-let box=document.getElementById("sendLoading");
-
-
-box.innerHTML=
-"📡 TRANSMISSION START<br><br>";
-
-
-let steps=[
-
-"수신자 확인 중...",
-"보안 인증 중...",
-"암호화 처리 중...",
-"메일 서버 전송 중..."
-
-];
-
-
-let i=0;
-
-
-let timer=setInterval(function(){
-
-
-box.innerHTML +=
-"● "+steps[i]+"<br>";
-
-
-i++;
-
-
-if(i>=steps.length){
-
-
-clearInterval(timer);
-
-
-setTimeout(function(){
-
-
-box.innerHTML +=
-"<br>✔ TRANSMISSION COMPLETE";
-
-
-},500);
-
-
-}
-
-
-},800);
-
-
-           }
-
- function openMail(num){
-
-// 기존 내용
-
-}
-
-
-
-// 여기 아래에 붙이기
-
-function sendMail(){
-
+ function sendMail(){
 
 let receiver =
 document.getElementById("mailReceiver").value;
 
-
 let title =
-document.getElementById("mailTitle").value;
-
+document.getElementById("mailTitle").value.trim();
 
 let text =
-document.getElementById("mailText").value;
-
+document.getElementById("mailText").value.trim();
 
 let box =
 document.getElementById("sendLoading");
 
 
-box.innerHTML =
-"📡 TRANSMISSION START<br><br>";
+if(title=="" || text==""){
 
+box.innerHTML="<p style='color:#ff6666;'>⚠ 제목과 내용을 입력하세요.</p>";
+
+return;
+
+}
+
+
+box.innerHTML="📡 TRANSMISSION START<br><br>";
 
 let steps=[
 
 "수신자 : "+receiver+" 확인 중...",
 "보안 인증 중...",
 "메일 데이터 암호화 중...",
-"전송 서버 연결 중..."
+"전송 서버 연결 중...",
+"패킷 전송 중...",
+"수신 확인 중..."
 
 ];
 
-
 let i=0;
-
 
 let timer=setInterval(function(){
 
-
-box.innerHTML +=
-"● "+steps[i]+"<br>";
-
+box.innerHTML += "● "+steps[i]+"<br>";
 
 i++;
 
-
 if(i>=steps.length){
-
 
 clearInterval(timer);
 
-
 setTimeout(function(){
 
-
 box.innerHTML +=
-"<br>✔ MAIL SENT COMPLETE<br><br>"+
+"<br><span style='color:#7ef7b7;'>✔ MAIL SENT COMPLETE</span><br><br>"+
 "수신자 : "+receiver+
 "<br>제목 : "+title;
 
+document.getElementById("mailTitle").value="";
+document.getElementById("mailText").value="";
 
-},500);
-
-
-}
-
-
-},800);
-
+},700);
 
 }
 
+},600);
+
+}
 
 </script>
-</script>
-
-
 
 </body>
 
