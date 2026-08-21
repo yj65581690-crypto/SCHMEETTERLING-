@@ -338,7 +338,90 @@ box.innerHTML +=
 
            }
 
+ function openMail(num){
 
+// 기존 내용
+
+}
+
+
+
+// 여기 아래에 붙이기
+
+function sendMail(){
+
+
+let receiver =
+document.getElementById("mailReceiver").value;
+
+
+let title =
+document.getElementById("mailTitle").value;
+
+
+let text =
+document.getElementById("mailText").value;
+
+
+let box =
+document.getElementById("sendLoading");
+
+
+box.innerHTML =
+"📡 TRANSMISSION START<br><br>";
+
+
+let steps=[
+
+"수신자 : "+receiver+" 확인 중...",
+"보안 인증 중...",
+"메일 데이터 암호화 중...",
+"전송 서버 연결 중..."
+
+];
+
+
+let i=0;
+
+
+let timer=setInterval(function(){
+
+
+box.innerHTML +=
+"● "+steps[i]+"<br>";
+
+
+i++;
+
+
+if(i>=steps.length){
+
+
+clearInterval(timer);
+
+
+setTimeout(function(){
+
+
+box.innerHTML +=
+"<br>✔ MAIL SENT COMPLETE<br><br>"+
+"수신자 : "+receiver+
+"<br>제목 : "+title;
+
+
+},500);
+
+
+}
+
+
+},800);
+
+
+}
+
+
+</script>
 </script>
 
 
