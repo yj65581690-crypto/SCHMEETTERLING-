@@ -1,6 +1,7 @@
 body{
     margin:0;
-    background:#050505;
+    background:
+    radial-gradient(circle at top,#123525 0%,#050505 45%);
     color:white;
     font-family:Arial, sans-serif;
     display:flex;
@@ -15,15 +16,18 @@ body{
     width:250px;
     min-height:100vh;
 
-    background:#0d0d0d;
+    background:#080808;
 
-    border-right:2px solid #1f7d57;
+    border-right:2px solid #00ff99;
 
     padding:20px;
 
     box-sizing:border-box;
 
+    box-shadow:0 0 20px rgba(0,255,150,.2);
+
 }
+
 
 
 /* 로고 */
@@ -38,13 +42,17 @@ body{
 
     margin-bottom:30px;
 
-    text-shadow:0 0 12px #00ff99;
+    text-shadow:
+    0 0 5px #00ff99,
+    0 0 15px #00ff99;
+
+    font-weight:bold;
 
 }
 
 
 
-/* 메인 */
+/* 메인 박스 */
 
 .mainBox{
 
@@ -52,13 +60,20 @@ body{
 
     margin:50px auto;
 
-    background:#0b0b0b;
+    background:
+    linear-gradient(
+    145deg,
+    #0c0c0c,
+    #050505
+    );
 
-    border:1px solid #2b6a4d;
+    border:1px solid #00ff99;
 
     padding:40px;
 
-    box-shadow:0 0 20px rgba(0,255,150,.2);
+    box-shadow:
+    0 0 20px rgba(0,255,150,.25),
+    inset 0 0 30px rgba(0,255,150,.05);
 
 }
 
@@ -70,11 +85,11 @@ button{
 
     display:block;
 
-    background:#121212;
+    background:#080808;
 
     color:#9fffc9;
 
-    border:1px solid #3f8765;
+    border:1px solid #00aa66;
 
     padding:12px;
 
@@ -84,14 +99,24 @@ button{
 
     cursor:pointer;
 
+    font-size:15px;
+
+    transition:.2s;
+
 }
+
 
 
 button:hover{
 
-    background:#1f3f30;
+    background:#123b29;
 
-    box-shadow:0 0 15px #00ff99;
+    color:white;
+
+    border-color:#00ff99;
+
+    box-shadow:
+    0 0 10px #00ff99;
 
 }
 
@@ -105,16 +130,23 @@ h1{
 
     color:#7ef7b7;
 
-    text-shadow:0 0 12px #00ff99;
+    text-shadow:
+    0 0 10px #00ff99;
 
 }
+
 
 
 h2{
 
     color:#9fffc9;
 
+    border-left:4px solid #00ff99;
+
+    padding-left:10px;
+
 }
+
 
 
 h3{
@@ -125,17 +157,31 @@ h3{
 
 
 
+/* 구분선 */
+
 hr{
 
     border:none;
 
-    border-top:1px solid #2e5d49;
+    border-top:1px solid #1f7d57;
 
 }
 
 
 
-/* 상태 */
+/* 일반 글 */
+
+p{
+
+    color:#d8ffe8;
+
+    line-height:1.6;
+
+}
+
+
+
+/* 온라인 표시 */
 
 .online{
 
@@ -143,33 +189,89 @@ hr{
 
     font-weight:bold;
 
+    text-shadow:0 0 8px #00ff99;
+
 }
 
 
-/* 기록 */
+
+/* 기록 박스 */
 
 .recordBox{
 
-    border:1px solid #245c43;
+    border:1px solid #00aa66;
 
     padding:20px;
 
     margin:15px 0;
 
-    background:#111;
+    background:#090909;
+
+    box-shadow:
+    inset 0 0 15px rgba(0,255,150,.08);
 
 }
 
 
 
+/* 경고 박스 */
+
 .warningBox{
 
-    border:1px solid red;
+    border:1px solid #ff4040;
 
     padding:20px;
 
     color:#ff7777;
 
     background:rgba(80,0,0,0.2);
+
+}
+
+
+
+/* 승인 박스 */
+
+.approvalBox{
+
+    border:1px solid #26734d;
+
+    padding:20px;
+
+    background:#070707;
+
+}
+
+
+
+/* 모바일 대응 */
+
+@media(max-width:900px){
+
+    body{
+
+        display:block;
+
+    }
+
+
+    .sidebar{
+
+        width:100%;
+
+        min-height:auto;
+
+    }
+
+
+    .mainBox{
+
+        width:auto;
+
+        margin:20px;
+
+        padding:25px;
+
+    }
 
 }
