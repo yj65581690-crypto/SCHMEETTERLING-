@@ -2,58 +2,144 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <title>SCHMEETTERLING</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+
+<title>SCHMEETTERLING SECURITY TERMINAL</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
-<body>
-<h1>SCHMEETTERLING</h1>
 
-<p>Internal Information System</p>
+<body class="loginPage">
+
+
+<div class="loginTerminal">
+
+
+<h1>
+SCHMEETTERLING
+</h1>
+
+
+<p class="subtitle">
+INTERNAL SECURITY TERMINAL
+</p>
+
 
 <hr>
 
+
+
 <div id="startScreen">
 
-    <p>STATUS : ONLINE</p>
 
-    <p>CLEARANCE : GUEST</p>
+<p class="online">
+● SYSTEM ONLINE
+</p>
 
-    <p>TERMINAL READY</p>
 
-    <hr>
+<p>
+CLEARANCE : GUEST
+</p>
 
-    <button id="loginButton">
-        PRESS ENTER TO LOGIN
-    </button>
+
+<p>
+TERMINAL : READY
+</p>
+
+
+<p>
+CONNECTION : SECURE
+</p>
+
+
+
+<hr>
+
+
+
+<button id="loginButton">
+
+PRESS ENTER TO LOGIN
+
+</button>
+
+
 
 </div>
+
+
+
+
 
 <div id="loginScreen" style="display:none;">
 
-    <h2>LOGIN</h2>
 
-    <input
-        type="text"
-        id="username"
-        placeholder="이름">
+<h2>
+LOGIN AUTHENTICATION
+</h2>
 
-    <br><br>
 
-    <input
-        type="password"
-        id="password"
-        placeholder="비밀번호">
 
-    <br><br>
+<p>
+USER IDENTIFICATION
+</p>
 
-    <button id="enterButton">
-        LOGIN
-    </button>
+
+<input
+type="text"
+id="username"
+placeholder="이름 입력">
+
+
+
+<p>
+PASSWORD
+</p>
+
+
+<input
+type="password"
+id="password"
+placeholder="비밀번호">
+
+
+
+<br><br>
+
+
+<button id="enterButton">
+
+ACCESS
+
+</button>
+
+
 
 </div>
+
+
+
+
+
+<div class="terminalFooter">
+
+SCHMEETTERLING SECURITY SYSTEM<br>
+UNAUTHORIZED ACCESS WILL BE RECORDED
+
+</div>
+
+
+
+</div>
+
+
+
 <script src="script.js"></script>
+
+
 </body>
 
 </html>
