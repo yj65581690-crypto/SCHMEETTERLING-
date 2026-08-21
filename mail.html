@@ -92,7 +92,35 @@ MAIL TERMINAL : ONLINE
 메일을 선택하세요.
 
 </div>
+<hr>
 
+<h3>
+📤 SEND MAIL
+</h3>
+
+
+<input id="mailTitle" placeholder="메일 제목">
+
+
+<br><br>
+
+
+<textarea id="mailText" placeholder="메일 내용"></textarea>
+
+
+<br><br>
+
+
+<button onclick="sendMail()">
+
+📨 전송
+
+</button>
+
+
+<div id="sendLoading">
+
+</div>
 
 
 <br>
@@ -187,7 +215,62 @@ ${mail.text.replace(/\n/g,"<br>")}
 
 
 }
+function sendMail(){
 
+
+let box=document.getElementById("sendLoading");
+
+
+box.innerHTML=
+"📡 TRANSMISSION START<br><br>";
+
+
+let steps=[
+
+"수신자 확인 중...",
+"보안 인증 중...",
+"암호화 처리 중...",
+"메일 서버 전송 중..."
+
+];
+
+
+let i=0;
+
+
+let timer=setInterval(function(){
+
+
+box.innerHTML +=
+"● "+steps[i]+"<br>";
+
+
+i++;
+
+
+if(i>=steps.length){
+
+
+clearInterval(timer);
+
+
+setTimeout(function(){
+
+
+box.innerHTML +=
+"<br>✔ TRANSMISSION COMPLETE";
+
+
+},500);
+
+
+}
+
+
+},800);
+
+
+           }
 
 
 </script>
