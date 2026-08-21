@@ -7,7 +7,7 @@
 
 <title>RESEARCHER DATABASE</title>
 
-<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="./style.css">
 
 </head>
 
@@ -19,7 +19,7 @@
 
 
 <h2>
-RESEARCHER DATABASE
+👤 RESEARCHER DATABASE
 </h2>
 
 
@@ -39,12 +39,14 @@ STAFF SEARCH
 </h3>
 
 
+
 <input
 type="text"
 id="searchInput"
 placeholder="이름 / 직급 / 소속 검색"
 onkeyup="searchStaff()"
 >
+
 
 
 <hr>
@@ -56,11 +58,12 @@ STAFF LIST
 
 
 
+
 <div id="staffContainer">
 
 
 
-<div class="staffCard">
+<div class="recordBox staffCard">
 
 
 <h2>
@@ -83,8 +86,10 @@ MIA
 </p>
 
 
-<button onclick="location.href='mia.html'">
+<button onclick="location.href='./mia.html'">
+
 프로필 열람
+
 </button>
 
 
@@ -94,7 +99,7 @@ MIA
 
 
 
-<div class="staffCard">
+<div class="recordBox staffCard">
 
 
 <h2>
@@ -117,8 +122,10 @@ MIA
 </p>
 
 
-<button onclick="location.href='mangryang.html'">
+<button onclick="location.href='./mangryang.html'">
+
 프로필 열람
+
 </button>
 
 
@@ -130,12 +137,16 @@ MIA
 
 
 
+
 <hr>
 
 
 
-<button onclick="location.href='../unknown.html'">
+
+<button onclick="location.href='./unknown.html'">
+
 ← 미확인 개체 부서
+
 </button>
 
 
@@ -153,6 +164,7 @@ function searchStaff(){
 
 let input =
 document.getElementById("searchInput").value.toLowerCase();
+
 
 
 let cards =
