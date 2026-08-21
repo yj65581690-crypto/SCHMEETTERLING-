@@ -15,22 +15,35 @@
 <body>
 
 
-<div class="userInfo">
+<div class="userInfo recordBox">
 
+
+<h3>
+ACCESS TERMINAL
+</h3>
+
+
+<p>
 현재 접속자 :
-<span id="currentUser">확인중...</span>
+<b id="currentUser">
+확인중...
+</b>
+</p>
 
-<br>
 
+<p>
 LEVEL :
-<span id="currentLevel">확인중...</span>
+<b id="currentLevel">
+확인중...
+</b>
+</p>
 
-
-<br><br>
 
 
 <button onclick="logout()">
+
 🚪 LOGOUT
+
 </button>
 
 
@@ -39,22 +52,34 @@ LEVEL :
 
 
 
+
 <div class="mainLogo">
+
 
 <img src="./logo.png" alt="SCHMEETTERLING LOGO">
 
-<h1>SCHMEETTERLING</h1>
+
+
+<h1>
+SCHMEETTERLING
+</h1>
+
+
 
 <p>
 INTERNAL INFORMATION SYSTEM
 </p>
+
+
 
 </div>
 
 
 
 
+
 <hr>
+
 
 
 
@@ -62,7 +87,11 @@ INTERNAL INFORMATION SYSTEM
 <div class="mainBox">
 
 
-<h2>ACCESS GRANTED</h2>
+
+<h2>
+ACCESS GRANTED
+</h2>
+
 
 
 <p>
@@ -70,9 +99,12 @@ INTERNAL INFORMATION SYSTEM
 </p>
 
 
+
 <p>
-현재 접속 위치 : CENTRAL TERMINAL
+현재 접속 위치 :
+CENTRAL TERMINAL
 </p>
+
 
 
 
@@ -80,50 +112,76 @@ INTERNAL INFORMATION SYSTEM
 
 
 
-<h3>DEPARTMENT LIST</h3>
+
+
+<h3>
+DEPARTMENT LIST
+</h3>
+
 
 
 
 
 <button class="deptBtn" onclick="location.href='./chemical.html'">
+
 🧪 화학 부서
+
 </button>
+
 
 
 
 <button class="deptBtn" onclick="location.href='./human.html'">
+
 🧬 인체개조 부서
+
 </button>
+
 
 
 
 <button class="deptBtn" onclick="location.href='./backroom.html'">
+
 📦 백룸 부서
+
 </button>
+
 
 
 
 <button class="deptBtn" onclick="location.href='./bio.html'">
+
 🧫 생물 부서
+
 </button>
+
 
 
 
 <button class="deptBtn" onclick="location.href='./radiation.html'">
+
 ☢ 방사능 부서
+
 </button>
+
 
 
 
 <button class="deptBtn" onclick="location.href='./unknown.html'">
+
 👾 미확인 개체 부서
+
 </button>
+
 
 
 
 <button class="deptBtn" onclick="location.href='./drug.html'">
+
 ⚗ 마약 부서
+
 </button>
+
 
 
 
@@ -132,12 +190,20 @@ INTERNAL INFORMATION SYSTEM
 
 
 
-<p>
-SYSTEM STATUS : ONLINE
+
+
+<p class="online">
+
+● SYSTEM STATUS : ONLINE
+
 </p>
 
 
+
+
 </div>
+
+
 
 
 
@@ -154,8 +220,6 @@ let level = localStorage.getItem("userLevel");
 
 
 
-// 로그인 확인
-
 if(!user){
 
 location.href="./index.html";
@@ -169,6 +233,7 @@ return;
 document.getElementById("currentUser").textContent = user;
 
 
+
 if(level){
 
 document.getElementById("currentLevel").textContent = level;
@@ -177,24 +242,27 @@ document.getElementById("currentLevel").textContent = level;
 
 else{
 
-document.getElementById("currentLevel").textContent = "NONE";
+document.getElementById("currentLevel").textContent="NONE";
 
 }
 
 
+
 }
 
 
 
-// 로그아웃
 
 function logout(){
+
 
 localStorage.removeItem("userName");
 
 localStorage.removeItem("userLevel");
 
+
 location.href="./index.html";
+
 
 }
 
