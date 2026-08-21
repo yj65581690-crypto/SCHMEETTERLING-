@@ -962,3 +962,39 @@ button.drug:hover{
     border-color:#3399ff !important;
     box-shadow:0 0 30px #3399ff !important;
 }
+/* SCHMEETTERLING DEPARTMENT HOVER FINAL */
+
+.deptBtn.chemical:hover{
+    border-color:#ff3333;
+    box-shadow:0 0 30px #ff3333;
+}
+
+.deptBtn.human:hover{
+    border-color:#ff66cc;
+    box-shadow:0 0 30px #ff66cc;
+}
+
+.deptBtn.backroom:hover{
+    border-color:#ffffff;
+    box-shadow:0 0 30px #ffffff;
+}
+
+.deptBtn.bio:hover{
+    border-color:#00ff66;
+    box-shadow:0 0 30px #00ff66;
+}
+
+.deptBtn.radiation:hover{
+    border-color:#ffff00;
+    box-shadow:0 0 30px #ffff00;
+}
+
+.deptBtn.unknown:hover{
+    border-color:#ff8800;
+    box-shadow:0 0 30px #ff8800;
+}
+
+.deptBtn.drug:hover{
+    border-color:#3399ff;
+    box-shadow:0 0 30px #3399ff;
+}
