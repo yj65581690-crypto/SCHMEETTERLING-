@@ -2,72 +2,114 @@
 <html lang="ko">
 
 <head>
+
 <meta charset="UTF-8">
+
 <title>UNKNOWN ENTITY DEPARTMENT</title>
 
 <link rel="stylesheet" href="./style.css">
 
 </head>
 
-<body class="unknownTheme">
-<div class="sidebar">
 
-    <div class="logo">
-        SCHMEETTERLING
-    </div>
+<body>
 
 
-    <p style="text-align:center;color:#7ef7b7;">
-        🟢 ONLINE
-    </p>
+<div class="layout">
 
 
-    <hr>
+
+<!-- LEFT SIDE MENU -->
+
+<div class="sideMenu">
 
 
-    <p>
-        USER<br>
-        <b>MIA</b>
-    </p>
+<h3>
+SCHMEETTERLING
+</h3>
 
 
-    <p>
-        ACCESS LEVEL<br>
-        LEVEL 4
-    </p>
+<p style="color:#7ef7b7;">
+● SYSTEM ONLINE
+</p>
 
 
-    <hr>
+
+<hr>
 
 
-    <button class="menuButton" onclick="location.href='./main.html'">
-        🏠 Dashboard
-    </button>
+
+<p>
+USER
+<br>
+<b id="userName">
+확인중...
+</b>
+</p>
 
 
-    <button class="menuButton">
-        👾 Entity Database
-    </button>
+
+<p>
+LEVEL
+<br>
+<b id="userLevel">
+확인중...
+</b>
+</p>
 
 
-    <button class="menuButton">
-        👤 Researcher Database
-    </button>
+
+<hr>
 
 
-    <button class="menuButton">
-        📄 Incident Logs
-    </button>
 
 
-    <button class="menuButton">
-        🧪 Laboratory
-    </button>
+<button onclick="location.href='./main.html'">
+
+🏠 HOME
+
+</button>
 
 
-    <button class="menuButton">
-        📦 Backroom
-    </button>
+
+<button onclick="location.href='./radiation.html'">
+
+☢ 방사능 부서
+
+</button>
+
+
+
+<button onclick="location.href='./unknown.html'">
+
+👾 미확인 개체
+
+</button>
+
+
+
+<button onclick="location.href='./bio.html'">
+
+🧫 생물 부서
+
+</button>
+
+
+
+<button onclick="location.href='./chemical.html'">
+
+🧪 화학 부서
+
+</button>
+
+
+
+<button onclick="location.href='./backroom.html'">
+
+📦 백룸 부서
+
+</button>
+
 
 
 </div>
@@ -75,33 +117,61 @@
 
 
 
+
+<!-- MAIN REPORT -->
+
+
 <div class="mainBox">
 
 
-<h2>UNKNOWN ENTITY DEPARTMENT</h2>
+
+<h2>
+
+UNKNOWN ENTITY DEPARTMENT
+
+</h2>
+
+
 
 
 <p>
+
 <b>부서 코드 :</b> UE-06
+
 </p>
 
 
+
 <p>
+
 <b>열람 권한 :</b> LEVEL 3 이상
+
 </p>
+
+
 
 
 <hr>
 
 
 
-<h3>부서 안내</h3>
+
+<h3>
+부서 안내
+</h3>
+
 
 
 <p>
-미확인 개체 조사 및 관리 기록을 열람할 수 있습니다.<br>
+
+미확인 개체 조사 및 관리 기록을 열람할 수 있습니다.
+
+<br>
+
 모든 자료는 내부 보안 규정에 따라 관리됩니다.
+
 </p>
+
 
 
 
@@ -109,24 +179,36 @@
 
 
 
-<h3>DATABASE</h3>
+
+<h3>
+DATABASE
+</h3>
+
+
 
 
 <button onclick="location.href='./entity_list.html'">
+
 📁 개체 보고서
+
 </button>
 
 
-<br><br>
 
 
 <button onclick="location.href='./staff.html'">
+
 👥 연구원 명단
+
 </button>
+
+
 
 
 
 <hr>
+
+
 
 
 
@@ -136,26 +218,45 @@ DOCUMENT APPROVAL
 
 
 
-<div class="approvalBox">
+
+<div class="recordBox">
+
 
 
 <p>
+
 문서 :
-<b>UE-001 「릴린」 관찰 보고서</b>
+
+<b>
+UE-001 「릴린」 관찰 보고서
+</b>
+
 </p>
 
 
+
 <p>
+
 작성자 :
-<b>미아</b>
+
+<b>
+미아
+</b>
+
 </p>
 
 
+
 <p>
+
 상태 :
+
 <span id="approvalStatus">
+
 검토 대기
+
 </span>
+
 </p>
 
 
@@ -165,19 +266,40 @@ DOCUMENT APPROVAL
 </div>
 
 
+
 </div>
+
+
+
 
 
 
 <hr>
 
 
+
+
+
 <p style="color:#ff7070;">
+
 ⚠ WARNING : LIMITED ACCESS
+
 </p>
 
 
+
+
+
 </div>
+
+
+
+
+
+</div>
+
+
+
 
 
 
@@ -185,7 +307,22 @@ DOCUMENT APPROVAL
 <script>
 
 
+
 let user = localStorage.getItem("userName");
+
+let level = localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+user || "UNKNOWN";
+
+
+
+document.getElementById("userLevel").innerHTML =
+level || "NONE";
+
+
 
 
 
@@ -194,13 +331,21 @@ if(user === "미아"){
 
 document.getElementById("approvalButton").innerHTML = `
 
+
 <button onclick="requestApproval()">
+
 ✓ 보고서 결재 요청
+
 </button>
+
 
 `;
 
+
+
 }
+
+
 
 
 
@@ -208,22 +353,34 @@ function requestApproval(){
 
 
 document.getElementById("approvalStatus").innerHTML =
+
 "✔ 결재 요청 완료";
+
 
 
 document.getElementById("approvalButton").innerHTML = `
 
-<p>
-요청자 : 미아
-</p>
 
 <p>
-관리자 검토 대기 중
+
+요청자 : 미아
+
 </p>
+
+
+<p>
+
+관리자 검토 대기 중
+
+</p>
+
 
 `;
 
+
+
 }
+
 
 
 </script>
