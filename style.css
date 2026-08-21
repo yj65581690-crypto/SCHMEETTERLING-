@@ -432,90 +432,87 @@ button:hover{
 
 
 /* =================================
- DEPARTMENT COLOR
+   DEPARTMENT COLOR
 ================================= */
 
 
-
+/* 화학 - 빨강 */
 .chemical:hover{
 
-border-color:#00d9ff;
+    border-color:#ff3333;
 
-box-shadow:0 0 25px #00d9ff;
+    box-shadow:
+    0 0 25px #ff3333;
 
 }
 
 
+/* 인체개조 - 핑크 */
 .human:hover{
 
-border-color:#ff3366;
+    border-color:#ff66cc;
 
-box-shadow:0 0 25px #ff3366;
+    box-shadow:
+    0 0 25px #ff66cc;
 
 }
 
 
+/* 백룸 - 흰색 */
 .backroom:hover{
 
-border-color:#9b7653;
+    border-color:#ffffff;
 
-box-shadow:0 0 25px #9b7653;
+    box-shadow:
+    0 0 25px #ffffff;
 
 }
 
 
+/* 생물 - 초록 */
 .bio:hover{
 
-border-color:#39ff88;
+    border-color:#00ff66;
 
-box-shadow:0 0 25px #39ff88;
+    box-shadow:
+    0 0 25px #00ff66;
 
 }
 
 
+/* 방사능 - 노랑 */
 .radiation:hover{
 
-border-color:#d7ff00;
+    border-color:#ffff00;
 
-box-shadow:0 0 25px #d7ff00;
+    box-shadow:
+    0 0 25px #ffff00;
 
 }
 
 
+/* 미확인 개체 - 주황 */
 .unknown:hover{
 
-border-color:#a855ff;
+    border-color:#ff8800;
 
-box-shadow:0 0 25px #a855ff;
+    box-shadow:
+    0 0 25px #ff8800;
 
 }
 
 
+/* 마약 - 파랑 */
 .drug:hover{
 
-border-color:#ff003c;
+    border-color:#3399ff;
 
-box-shadow:0 0 25px #ff003c;
-
-}
-
-
-.shop:hover{
-
-border-color:#ffaa33;
-
-box-shadow:0 0 25px #ffaa33;
+    box-shadow:
+    0 0 25px #3399ff;
 
 }
 
 
-.cafe:hover{
-
-border-color:#c08a5a;
-
-box-shadow:0 0 25px #c08a5a;
-
-}
 
 
 
