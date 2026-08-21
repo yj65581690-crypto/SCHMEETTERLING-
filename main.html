@@ -56,6 +56,7 @@ LEVEL :
 
 
 
+
 <div class="mainLogo">
 
 
@@ -80,6 +81,7 @@ INTERNAL INFORMATION SYSTEM
 
 
 <hr>
+
 
 
 
@@ -116,9 +118,13 @@ CENTRAL TERMINAL
 
 
 
+
+
 <h3>
 DEPARTMENT LIST
 </h3>
+
+
 
 
 
@@ -141,7 +147,6 @@ CD-01
 
 
 
-
 <button class="deptBtn human"
 onclick="location.href='./human.html'">
 
@@ -159,8 +164,6 @@ HM-02
 
 
 
-
-
 <button class="deptBtn backroom"
 onclick="location.href='./backroom.html'">
 
@@ -173,7 +176,6 @@ BR-03
 </span>
 
 </button>
-
 
 
 
@@ -255,6 +257,61 @@ DR-07
 
 
 
+
+<hr>
+
+
+
+
+
+<h3>
+📡 INTERNAL COMMUNICATION
+</h3>
+
+
+
+<div class="chatBox">
+
+
+<h4>
+SCHMEETTERLING ANONYMOUS TERMINAL
+</h4>
+
+
+
+<div id="chatLog">
+
+
+<p>
+[ SYSTEM ]
+<br>
+익명 통신 채널 연결 완료.
+</p>
+
+
+</div>
+
+
+
+<input 
+id="chatInput"
+placeholder="익명 메시지 입력...">
+
+
+
+<button onclick="sendChat()">
+전송
+</button>
+
+
+
+</div>
+
+
+
+
+
+
 <hr>
 
 
@@ -271,6 +328,8 @@ DR-07
 
 
 </div>
+
+
 
 
 
@@ -319,7 +378,99 @@ document.getElementById("currentLevel").textContent="NONE";
 
 
 
+
+
+// 기존 채팅 불러오기
+
+let oldChat = localStorage.getItem("chatData");
+
+
+if(oldChat){
+
+document.getElementById("chatLog").innerHTML = oldChat;
+
 }
+
+
+
+}
+
+
+
+
+
+
+
+
+function sendChat(){
+
+
+let input =
+document.getElementById("chatInput");
+
+
+let log =
+document.getElementById("chatLog");
+
+
+
+if(input.value.trim()==""){
+
+return;
+
+}
+
+
+
+let anonymous =
+"Anonymous-" + Math.floor(Math.random()*999);
+
+
+
+let time =
+new Date().toLocaleTimeString();
+
+
+
+log.innerHTML += `
+
+<p>
+
+[${time}]
+
+<br>
+
+<b>${anonymous}</b>
+
+<br>
+
+${input.value}
+
+</p>
+
+`;
+
+
+
+input.value="";
+
+
+
+localStorage.setItem(
+"chatData",
+log.innerHTML
+);
+
+
+
+log.scrollTop = log.scrollHeight;
+
+
+}
+
+
+
+
 
 
 
@@ -341,6 +492,8 @@ location.href="./index.html";
 
 
 </script>
+
+
 
 
 
