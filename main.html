@@ -15,6 +15,7 @@
 <body>
 
 
+
 <div class="userInfo recordBox">
 
 
@@ -25,17 +26,17 @@ ACCESS TERMINAL
 
 <p>
 현재 접속자 :
-<b id="currentUser">
+<span id="currentUser">
 확인중...
-</b>
+</span>
 </p>
 
 
 <p>
 LEVEL :
-<b id="currentLevel">
+<span id="currentLevel">
 확인중...
-</b>
+</span>
 </p>
 
 
@@ -47,7 +48,9 @@ LEVEL :
 </button>
 
 
+
 </div>
+
 
 
 
@@ -59,17 +62,14 @@ LEVEL :
 <img src="./logo.png" alt="SCHMEETTERLING LOGO">
 
 
-
 <h1>
 SCHMEETTERLING
 </h1>
 
 
-
 <p>
 INTERNAL INFORMATION SYSTEM
 </p>
-
 
 
 </div>
@@ -78,7 +78,9 @@ INTERNAL INFORMATION SYSTEM
 
 
 
+
 <hr>
+
 
 
 
@@ -122,65 +124,132 @@ DEPARTMENT LIST
 
 
 
-<button class="deptBtn" onclick="location.href='./chemical.html'">
+<button class="deptBtn chemical"
+onclick="location.href='./chemical.html'">
 
 🧪 화학 부서
 
+<br>
+
+<span>
+CD-01
+</span>
+
 </button>
 
 
 
 
-<button class="deptBtn" onclick="location.href='./human.html'">
+
+
+<button class="deptBtn human"
+onclick="location.href='./human.html'">
 
 🧬 인체개조 부서
 
+<br>
+
+<span>
+HM-02
+</span>
+
 </button>
 
 
 
 
-<button class="deptBtn" onclick="location.href='./backroom.html'">
+
+
+
+<button class="deptBtn backroom"
+onclick="location.href='./backroom.html'">
 
 📦 백룸 부서
 
+<br>
+
+<span>
+BR-03
+</span>
+
 </button>
 
 
 
 
-<button class="deptBtn" onclick="location.href='./bio.html'">
+
+
+
+<button class="deptBtn bio"
+onclick="location.href='./bio.html'">
 
 🧫 생물 부서
 
+<br>
+
+<span>
+BIO-04
+</span>
+
 </button>
 
 
 
 
-<button class="deptBtn" onclick="location.href='./radiation.html'">
+
+
+
+<button class="deptBtn radiation"
+onclick="location.href='./radiation.html'">
 
 ☢ 방사능 부서
 
+<br>
+
+<span>
+RAD-03
+</span>
+
 </button>
 
 
 
 
-<button class="deptBtn" onclick="location.href='./unknown.html'">
+
+
+
+<button class="deptBtn unknown"
+onclick="location.href='./unknown.html'">
 
 👾 미확인 개체 부서
 
+<br>
+
+<span>
+UE-06
+</span>
+
 </button>
 
 
 
 
-<button class="deptBtn" onclick="location.href='./drug.html'">
+
+
+
+<button class="deptBtn drug"
+onclick="location.href='./drug.html'">
 
 ⚗ 마약 부서
 
+<br>
+
+<span>
+DR-07
+</span>
+
 </button>
+
 
 
 
@@ -208,10 +277,12 @@ DEPARTMENT LIST
 
 
 
+
 <script>
 
 
 window.onload = function(){
+
 
 
 let user = localStorage.getItem("userName");
@@ -253,6 +324,7 @@ document.getElementById("currentLevel").textContent="NONE";
 
 
 
+
 function logout(){
 
 
@@ -265,6 +337,7 @@ location.href="./index.html";
 
 
 }
+
 
 
 </script>
