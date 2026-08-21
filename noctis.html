@@ -336,81 +336,57 @@ TOTAL :
 </div>
 
 
-
-
-
-
-
-
 <script>
 
-
 let cart=[];
-
 let total=0;
-
 
 
 
 function addCart(name,price){
 
-
 cart.push({
-
 name:name,
-
 price:price
-
 });
 
-
-total+=price;
-
+total += price;
 
 updateCart();
 
-
 }
-
-
 
 
 
 
 function updateCart(){
 
-
 let box=document.getElementById("cart");
-
 
 box.innerHTML="";
 
 
-
 if(cart.length===0){
 
-
 box.innerHTML="주문한 메뉴 없음";
-
 
 }
 
 else{
 
 
-cart.forEach(function(item){
+cart.forEach(function(item,index){
 
 
-box.innerHTML+=`
+box.innerHTML +=
 
+`
 <p>
 ☕ ${item.name}
 <br>
 ${item.price.toLocaleString()}원
 </p>
-
 `;
-
 
 });
 
@@ -419,15 +395,11 @@ ${item.price.toLocaleString()}원
 
 
 
-document.getElementById("total").innerHTML=
-
+document.getElementById("total").innerHTML =
 total.toLocaleString();
 
 
-
 }
-
-
 
 
 
@@ -436,88 +408,64 @@ total.toLocaleString();
 function order(){
 
 
-
 if(cart.length===0){
-
 
 alert("주문할 메뉴가 없습니다.");
 
 return;
 
-
 }
 
 
 
-let user=
-
+let user =
 localStorage.getItem("userName")
-
 ||"UNKNOWN";
 
 
 
-
-let orderData={
-
+let data={
 
 user:user,
 
-
 time:new Date().toLocaleString(),
-
 
 items:cart,
 
-
 total:total
-
 
 };
 
 
 
-
-
-let history=
-
+let history =
 
 JSON.parse(
-
 localStorage.getItem("noctisOrders")
-
 )
-
 ||[];
 
 
 
 
-history.push(orderData);
+history.push(data);
 
 
 
 localStorage.setItem(
-
 "noctisOrders",
-
 JSON.stringify(history)
-
 );
 
 
 
 alert(
 
-"NOCTIS CAFE\n\n주문 완료\nTOTAL : "
-
+"☕ NOCTIS CAFE\n\n주문 완료\n\nTOTAL : "
 +total.toLocaleString()
-
 +"원"
 
 );
-
-
 
 
 
@@ -529,14 +477,15 @@ total=0;
 updateCart();
 
 
-
 }
 
 
 
-
-
 </script>
+
+
+
+
 
 
 
