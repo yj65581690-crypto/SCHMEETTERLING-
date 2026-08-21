@@ -42,57 +42,28 @@ STATUS :
 
 
 <h3>
-대표 인기 메뉴
+🛒 CART
 </h3>
 
 
+<div class="recordBox" id="cart">
 
-<button>
-🐸 개구리 파스타
-<br>
-4,000원
-</button>
+장바구니가 비어있습니다.
 
-<p>
-특제 허브소스와 통개구리 다리가 올라간 대표 메뉴.
-닭고기와 생선을 섞은 듯한 식감.
-</p>
+</div>
 
 
-
-<button>
-👁 눈알 절임
-<br>
-2,000원
-</button>
-
-
-<p>
-포도 같은 과즙이 터지는 인기 절임 요리.
-</p>
+<h3>
+TOTAL :
+<span id="total">
+0
+</span>
+원
+</h3>
 
 
-
-<button>
-😭 눈물 스낵
-<br>
-1,500원
-</button>
-
-
-
-<button>
-🖐 손가락 육포
-<br>
-3,500원
-</button>
-
-
-
-<button>
-🐸 통구이 개구리 다리
-<br>
-2,800원
+<button onclick="order()">
+✅ 주문하기
 </button>
 
 
@@ -103,34 +74,87 @@ STATUS :
 
 
 <h3>
+대표 인기 메뉴
+</h3>
+
+
+<button onclick="addCart('개구리 파스타',4000)">
+🐸 개구리 파스타
+<br>
+4,000원
+</button>
+
+
+<button onclick="addCart('눈알 절임',2000)">
+👁 눈알 절임
+<br>
+2,000원
+</button>
+
+
+
+<button onclick="addCart('눈물 스낵',1500)">
+😭 눈물 스낵
+<br>
+1,500원
+</button>
+
+
+
+<button onclick="addCart('손가락 육포',3500)">
+🖐 손가락 육포
+<br>
+3,500원
+</button>
+
+
+
+<button onclick="addCart('통구이 개구리 다리',2800)">
+🐸 통구이 개구리 다리
+<br>
+2,800원
+</button>
+
+
+
+
+<hr>
+
+
+
+<h3>
 식사류
 </h3>
 
 
+<button onclick="addCart('심장 스테이크',6500)">
+심장 스테이크 - 6,500원
+</button>
 
-<button>심장 스테이크 - 6,500원</button>
 
-<button>검은 뼈 갈비탕 - 5,500원</button>
+<button onclick="addCart('검은 뼈 갈비탕',5500)">
+검은 뼈 갈비탕 - 5,500원
+</button>
 
-<button>심해 해초라면 - 3,800원</button>
 
-<button>형광버섯 크림수프 - 3,000원</button>
+<button onclick="addCart('심해 해초라면',3800)">
+심해 해초라면 - 3,800원
+</button>
 
-<button>용암 카레 - 4,500원</button>
 
-<button>철분 덮밥 - 4,000원</button>
+<button onclick="addCart('형광버섯 크림수프',3000)">
+형광버섯 크림수프 - 3,000원
+</button>
 
-<button>피빛 토마토 리조또 - 5,000원</button>
 
-<button>까마귀 날개튀김 - 3,700원</button>
+<button onclick="addCart('용암 카레',4500)">
+용암 카레 - 4,500원
+</button>
 
-<button>독거미 크림우동 - 4,300원</button>
 
-<button>용의 비늘 볶음밥 - 6,000원</button>
-
-<button>백룸 버섯전골 - 5,800원</button>
-
-<button>달빛 오믈렛 - 3,900원</button>
+<button onclick="addCart('철분 덮밥',4000)">
+철분 덮밥 - 4,000원
+</button>
 
 
 
@@ -143,34 +167,24 @@ STATUS :
 </h3>
 
 
-<button>🧠 뇌젤리 - 1,200원</button>
+<button onclick="addCart('뇌젤리',1200)">
+🧠 뇌젤리 - 1,200원
+</button>
 
-<button>🦷 이빨 쿠키 - 800원</button>
 
-<button>🦴 뼈다귀 프레첼 - 1,500원</button>
+<button onclick="addCart('이빨 쿠키',800)">
+🦷 이빨 쿠키 - 800원
+</button>
 
-<button>⭐ 별사탕 벌레맛 - 900원</button>
 
-<button>👻 유령 솜사탕 - 1,000원</button>
+<button onclick="addCart('유령 솜사탕',1000)">
+👻 유령 솜사탕 - 1,000원
+</button>
 
-<button>화석 초콜릿 - 1,800원</button>
-
-<button>피망 사탕 - 700원</button>
-
-<button>미라 핫도그 - 2,000원</button>
-
-<button>문어눈 팝콘 - 1,300원</button>
-
-<button>독안개 마시멜로 - 1,100원</button>
-
-<button>검은 달걀빵 - 1,500원</button>
-
-<button>거미줄 와플 - 2,300원</button>
 
 
 
 <hr>
-
 
 
 
@@ -179,54 +193,23 @@ STATUS :
 </h3>
 
 
-
-<button>
+<button onclick="addCart('액체 달빛',1800)">
 액체 달빛 - 1,800원
 </button>
 
 
-<button>
+<button onclick="addCart('형광 우유',1500)">
 형광 우유 - 1,500원
 </button>
 
 
-<button>
+<button onclick="addCart('혈석 에이드',2200)">
 혈석 에이드 - 2,200원
 </button>
 
 
-<button>
-독버섯 라떼 - 2,300원
-</button>
-
-
-<button>
-얼음꽃 차 - 1,700원
-</button>
-
-
-<button>
-검은 레몬에이드 - 2,000원
-</button>
-
-
-<button>
-붉은 안개 탄산수 - 1,500원
-</button>
-
-
-<button>
+<button onclick="addCart('심연 커피',1800)">
 심연 커피 - 1,800원
-</button>
-
-
-<button>
-별가루 밀크셰이크 - 2,800원
-</button>
-
-
-<button>
-꿈 추출 주스 - 2,400원
 </button>
 
 
@@ -236,54 +219,24 @@ STATUS :
 
 
 
-
-<h3 class="warning">
+<h3>
 🔒 SECRET MENU
 </h3>
 
 
-
-<div class="recordBox">
-
-
-<p>
-404번 정식
-<br>
-8,000원
-</p>
+<button onclick="addCart('404번 정식',8000)">
+404번 정식 - 8,000원
+</button>
 
 
-<p>
-주문할 때마다 다른 음식이 제공됨.
-</p>
+<button onclick="addCart('백룸 도시락',5000)">
+백룸 도시락 - 5,000원
+</button>
 
 
-
-<p>
-사장 추천 세트
-<br>
-가격 미정
-</p>
-
-
-
-<p>
-백룸 도시락
-<br>
-5,000원
-</p>
-
-
-
-<p>
-최후의 한입
-<br>
-무료
-</p>
-
-
-
-</div>
+<button onclick="addCart('최후의 한입',0)">
+최후의 한입 - 무료
+</button>
 
 
 
@@ -293,14 +246,114 @@ STATUS :
 
 
 <button onclick="location.href='./main.html'">
-
 ← CENTRAL TERMINAL
-
 </button>
 
 
 
 </div>
+
+
+
+
+
+<script>
+
+
+let cart=[];
+
+let total=0;
+
+
+
+function addCart(name,price){
+
+
+cart.push(name);
+
+
+total += price;
+
+
+updateCart();
+
+
+}
+
+
+
+function updateCart(){
+
+
+let box=document.getElementById("cart");
+
+
+box.innerHTML="";
+
+
+cart.forEach(function(item){
+
+
+box.innerHTML +=
+
+"<p>📦 "+item+"</p>";
+
+
+});
+
+
+
+if(cart.length===0){
+
+box.innerHTML="장바구니가 비어있습니다.";
+
+}
+
+
+
+document.getElementById("total").innerHTML=total;
+
+
+
+}
+
+
+
+function order(){
+
+
+if(cart.length===0){
+
+alert("주문할 상품이 없습니다.");
+
+return;
+
+}
+
+
+
+alert(
+"SCHMEETTERLING STORE\n\n주문 완료\n총 금액 : "
++total+
+"원"
+);
+
+
+
+cart=[];
+
+total=0;
+
+
+updateCart();
+
+
+
+}
+
+
+
+</script>
 
 
 
