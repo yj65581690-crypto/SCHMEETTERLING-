@@ -13,65 +13,105 @@
 
 
 <body class="radiationPage">
-  <div class="sidebar">
 
 
-<div class="logo">
+<div class="layout">
+
+
+
+<!-- LEFT SIDE MENU -->
+
+<div class="sideMenu">
+
+
+<h3>
 SCHMEETTERLING
-</div>
+</h3>
 
 
-<p style="text-align:center;color:#7ef7b7;">
-🟢 ONLINE
+<p style="color:#7ef7b7;">
+● SYSTEM ONLINE
 </p>
+
 
 
 <hr>
 
 
+
 <p>
-USER<br>
-<b>MIA</b>
+USER
+<br>
+<b id="userName">
+확인중...
+</b>
 </p>
 
 
+
 <p>
-ACCESS LEVEL<br>
-LEVEL 4
+LEVEL
+<br>
+<b id="userLevel">
+확인중...
+</b>
 </p>
+
 
 
 <hr>
 
 
-<button class="menuButton" onclick="location.href='./main.html'">
-🏠 Dashboard
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 HOME
+
 </button>
 
 
-<button class="menuButton">
-☢ Radiation Database
+
+
+<button onclick="location.href='./radiation.html'">
+
+☢ 방사능 부서
+
 </button>
 
 
-<button class="menuButton">
-👤 Researcher Database
+
+<button onclick="location.href='./unknown.html'">
+
+👾 미확인 개체
+
 </button>
 
 
-<button class="menuButton">
-📄 Incident Logs
+
+<button onclick="location.href='./bio.html'">
+
+🧫 생물 부서
+
 </button>
 
 
-<button class="menuButton">
-🧪 Laboratory
+
+<button onclick="location.href='./chemical.html'">
+
+🧪 화학 부서
+
 </button>
 
 
-<button class="menuButton">
-📦 Backroom
+
+<button onclick="location.href='./backroom.html'">
+
+📦 백룸 부서
+
 </button>
+
 
 
 </div>
@@ -79,8 +119,12 @@ LEVEL 4
 
 
 
+
+
+<!-- MAIN -->
 
 <div class="mainBox">
+
 
 
 <h2>
@@ -88,22 +132,35 @@ RADIOACTIVE MATERIAL DEPARTMENT
 </h2>
 
 
+
+
 <p>
+
 <b>부서 코드 :</b> RAD-03
+
 </p>
+
 
 
 <p>
+
 <b>열람 권한 :</b> LEVEL 4 이상
+
 </p>
+
+
 
 
 <hr>
 
 
+
+
+
 <h3>
 부서 안내
 </h3>
+
 
 
 <p>
@@ -119,12 +176,17 @@ RADIOACTIVE MATERIAL DEPARTMENT
 </p>
 
 
+
+
 <hr>
+
+
 
 
 <h3>
 DATABASE
 </h3>
+
 
 
 
@@ -136,9 +198,6 @@ DATABASE
 
 
 
-<br><br>
-
-
 
 <button onclick="location.href='./radiation_staff.html'">
 
@@ -148,7 +207,11 @@ DATABASE
 
 
 
+
+
 <hr>
+
+
 
 
 <h3>
@@ -156,33 +219,59 @@ DOCUMENT STATUS
 </h3>
 
 
-<div class="approvalBox">
+
+
+<div class="recordBox">
+
 
 
 <p>
+
 관리 문서 :
+
+<b>
 RAD-03 DATABASE
+</b>
+
 </p>
 
 
+
 <p>
+
 상태 :
+
 <span class="online">
+
 ● ONLINE
+
 </span>
+
 </p>
+
 
 
 <p>
+
 최종 갱신 :
+
 2026.08.21
+
 </p>
+
 
 
 </div>
 
 
+
+
+
+
 <hr>
+
+
+
 
 
 <p style="color:#ffcc00;">
@@ -193,7 +282,45 @@ RADIOACTIVE HAZARD AREA
 </p>
 
 
+
+
+
 </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+let user =
+localStorage.getItem("userName");
+
+
+let level =
+localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+user || "UNKNOWN";
+
+
+
+document.getElementById("userLevel").innerHTML =
+level || "NONE";
+
+
+
+</script>
+
 
 
 </body>
