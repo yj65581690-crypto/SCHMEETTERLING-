@@ -5,6 +5,8 @@ const startScreen = document.getElementById("startScreen");
 const loginScreen = document.getElementById("loginScreen");
 
 
+
+
 // SCHMEETTERLING 직원 DB
 
 const users = {
@@ -32,13 +34,16 @@ const users = {
 
 
 
-// 로그인 화면 열기
+
+
+// 시작 화면 → 로그인 화면
 
 if(loginButton){
 
     loginButton.onclick = function(){
 
         startScreen.style.display = "none";
+
         loginScreen.style.display = "block";
 
     };
@@ -47,49 +52,70 @@ if(loginButton){
 
 
 
-// 로그인
+
+
+
+
+// 로그인 처리
 
 if(enterButton){
 
     enterButton.onclick = function(){
 
 
-        let name = document.getElementById("username").value.trim();
+        let name =
+        document.getElementById("username").value.trim();
 
-        let password = document.getElementById("password").value.trim();
+
+        let password =
+        document.getElementById("password").value.trim();
+
+
 
 
 
         if(users[name] && users[name].password === password){
 
 
-            localStorage.setItem("userName", name);
 
-            localStorage.setItem("userLevel", users[name].level);
-
-
-
-            alert(
-                name + "님, SCHMEETTERLING 접속 승인."
+            localStorage.setItem(
+                "userName",
+                name
             );
 
 
-            location.href = "main.html";
+            localStorage.setItem(
+                "userLevel",
+                users[name].level
+            );
+
+
+
+
+
+            location.href="./loading.html";
+
 
 
         }
+
 
 
         else{
 
+
             alert("접근 권한이 없습니다.");
 
+
         }
+
 
 
     };
 
 }
+
+
 
 
 
@@ -99,27 +125,37 @@ if(enterButton){
 window.addEventListener("load", function(){
 
 
-    let name = localStorage.getItem("userName");
 
-    let level = localStorage.getItem("userLevel");
+    let name =
+    localStorage.getItem("userName");
+
+
+    let level =
+    localStorage.getItem("userLevel");
 
 
 
-    // 이미 있으면 중복 생성 안 함
 
     if(document.querySelector(".userInfo")){
+
         return;
+
     }
+
 
 
 
     if(name){
 
 
-        let box = document.createElement("div");
+
+        let box =
+        document.createElement("div");
 
 
-        box.className = "userInfo";
+
+        box.className="userInfo";
+
 
 
         box.innerHTML = `
@@ -132,10 +168,15 @@ window.addEventListener("load", function(){
         LEVEL :
         <span>${level}</span>
 
+        <br><br>
+
+
         `;
 
 
+
         document.body.appendChild(box);
+
 
 
     }
