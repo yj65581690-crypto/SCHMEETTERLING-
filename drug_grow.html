@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 
 <title>
-DRUG CULTIVATION MANAGEMENT
+DRUG TRADE ARCHIVE
 </title>
 
 <link rel="stylesheet" href="./style.css">
@@ -15,9 +15,9 @@ DRUG CULTIVATION MANAGEMENT
 <style>
 
 
-.drugGrowPage{
+.tradePage{
 
-background:#04120a;
+background:#080404;
 
 color:white;
 
@@ -25,153 +25,101 @@ color:white;
 
 
 
-/* PLANT */
+.secret{
 
-.plantBox{
-
-border:1px solid #00ff88;
-
-background:#001a0d;
+border:2px solid #ff3333;
 
 padding:15px;
 
-margin:15px 0;
+background:#170707;
 
-box-shadow:0 0 15px rgba(0,255,136,.3);
+color:#ff5555;
+
+font-weight:bold;
+
+box-shadow:0 0 15px #ff0000;
 
 }
 
 
 
-.leaf{
+.document{
 
-font-size:45px;
+border:1px solid #aa2222;
+
+background:#100808;
+
+padding:20px;
+
+}
+
+
+
+.stamp{
+
+border:3px solid #ff3333;
+
+color:#ff3333;
+
+padding:10px;
 
 display:inline-block;
 
-animation:sway 3s infinite;
+transform:rotate(-10deg);
+
+font-weight:bold;
 
 }
 
 
 
-@keyframes sway{
+.navigator{
 
+text-align:center;
 
-0%{
+font-size:25px;
 
-transform:rotate(-8deg);
-
-}
-
-
-50%{
-
-transform:rotate(8deg);
-
-}
-
-
-100%{
-
-transform:rotate(-8deg);
-
-}
-
+margin:20px;
 
 }
 
 
 
+.navigator button{
 
-/* INVENTORY */
+font-size:25px;
 
-
-.inventory{
-
-border:1px solid #00aaff;
-
-background:#00101c;
-
-padding:15px;
-
-margin:15px 0;
+padding:10px 20px;
 
 }
 
 
 
-.inventory button{
+.warning{
 
-margin:5px;
+color:#ff4444;
 
-}
-
-
-
-
-
-/* GROWTH */
-
-
-.growth{
-
-height:20px;
-
-background:#111;
-
-border:1px solid #00ff88;
+font-weight:bold;
 
 }
 
-
-
-.growthBar{
-
-height:100%;
-
-background:#00ff88;
-
-width:0%;
-
-transition:1s;
-
-}
-
-
-
-/* LOG */
 
 
 .logBox{
 
-height:180px;
-
-overflow:auto;
-
 background:black;
 
 border:1px solid #555;
+
+height:150px;
+
+overflow:auto;
 
 padding:10px;
 
 font-size:13px;
 
 }
-
-
-
-/* ALERT */
-
-
-.warning{
-
-color:#ff5555;
-
-font-weight:bold;
-
-}
-
 
 
 </style>
@@ -181,7 +129,7 @@ font-weight:bold;
 
 
 
-<body class="drugGrowPage">
+<body class="tradePage">
 
 
 
@@ -203,7 +151,7 @@ SCHMEETTERLING
 
 
 
-<p style="color:#00ff88;">
+<p style="color:#ff3333;">
 
 ● SYSTEM ONLINE
 
@@ -212,6 +160,7 @@ SCHMEETTERLING
 
 
 <hr>
+
 
 
 
@@ -248,7 +197,6 @@ LEVEL
 
 
 <hr>
-
 
 
 
@@ -309,11 +257,6 @@ LEVEL
 
 
 </div>
-
-
-
-
-
 <!-- MAIN -->
 
 
@@ -323,631 +266,59 @@ LEVEL
 
 <h2>
 
-🌱 DR-07 CULTIVATION MANAGEMENT
+📄 DRUG TRADE ARCHIVE
 
 </h2>
 
 
 
-<p>
 
-<b>DATABASE :</b>
+<div class="secret">
 
-PLANT CULTIVATION & STORAGE
-
-</p>
-
-
-
-<p>
-
-<b>ACCESS :</b>
-
-LEVEL 4
-
-</p>
-
-
-
-<hr>
-
-
-
-
-<h3>
-
-GREENHOUSE STATUS
-
-</h3>
-
-
-
-<div class="plantBox">
-
-
-<p>
-
-구역 :
-
-<b>
-
-GREENHOUSE-A
-
-</b>
-
-</p>
-
-
-<p>
-
-환경 상태 :
-
-<span style="color:#00ff88">
-
-● STABLE
-
-</span>
-
-</p>
-
-
-<p>
-
-온도 :
-
-26°C
-
-</p>
-
-
-<p>
-
-습도 :
-
-78%
-
-</p>
-
-
-<p>
-
-안개 시스템 :
-
-ACTIVE
-
-</p>
-
-
-<p>
-
-자동 급수 :
-
-ONLINE
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-<hr>
-
-
-
-
-<h3>
-
-🌿 CULTIVATION DATA
-
-</h3>
-
-
-
-<div class="plantBox">
-
-
-<span class="leaf">
-
-🌱
-
-</span>
-
-
-<h3>
-
-NIGHT FLOWER-07
-
-</h3>
-
-
-<p>
-
-CODE :
-
-NF-07
-
-</p>
-
-
-<p>
-
-상태 :
-
-GROWING
-
-</p>
-
-
-<p>
-
-성장률
-
-</p>
-
-
-
-<div class="growth">
-
-<div class="growthBar" id="grow1">
-
-</div>
-
-</div>
-
-
-<p id="growText1">
-
-0%
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="plantBox">
-
-
-<span class="leaf">
-
-🍃
-
-</span>
-
-
-<h3>
-
-BLACK LEAF-X
-
-</h3>
-
-
-<p>
-
-CODE :
-
-BL-X
-
-</p>
-
-
-<p>
-
-상태 :
-
-GROWING
-
-</p>
-
-
-<p>
-
-성장률
-
-</p>
-
-
-
-<div class="growth">
-
-<div class="growthBar" id="grow2">
-
-</div>
-
-</div>
-
-
-<p id="growText2">
-
-0%
-
-</p>
-
-
-</div>
-<hr>
-
-
-<h3>
-
-📦 HARVEST INVENTORY
-
-</h3>
-
-
-
-<div class="inventory">
-
-
-
-<h3>
-
-🌿 NIGHT FLOWER-07
-
-</h3>
-
-
-<p>
-
-CODE :
-
-NF-07
-
-</p>
-
-
-<p>
-
-보관 수량 :
-
-<b id="stock1">
-
-24
-
-</b>
-
-개
-
-</p>
-
-
-
-<p>
-
-위치 :
-
-STORAGE-A
-
-</p>
-
-
-
-<p>
-
-상태 :
-
-<span id="state1">
-
-보관중
-
-</span>
-
-</p>
-
-
-
-<button onclick="shipItem('NIGHT FLOWER-07')">
-
-📦 발송
-
-</button>
-
-
-
-<button onclick="moveItem('NIGHT FLOWER-07')">
-
-🔄 이동
-
-</button>
-
-
-
-<button onclick="disposeItem('NIGHT FLOWER-07')">
-
-🗑 폐기
-
-</button>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="inventory">
-
-
-
-<h3>
-
-🍃 BLACK LEAF-X
-
-</h3>
-
-
-<p>
-
-CODE :
-
-BL-X
-
-</p>
-
-
-<p>
-
-보관 수량 :
-
-<b id="stock2">
-
-13
-
-</b>
-
-개
-
-</p>
-
-
-
-<p>
-
-위치 :
-
-STORAGE-B
-
-</p>
-
-
-
-<p>
-
-상태 :
-
-<span id="state2">
-
-분석 대기
-
-</span>
-
-</p>
-
-
-
-<button onclick="shipItem('BLACK LEAF-X')">
-
-📦 발송
-
-</button>
-
-
-
-<button onclick="moveItem('BLACK LEAF-X')">
-
-🔄 이동
-
-</button>
-
-
-
-<button onclick="disposeItem('BLACK LEAF-X')">
-
-🗑 폐기
-
-</button>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="inventory">
-
-
-
-<h3>
-
-🌱 UNKNOWN ROOT-03
-
-</h3>
-
-
-
-<p>
-
-CODE :
-
-UR-03
-
-</p>
-
-
-
-<p>
-
-보관 수량 :
-
-<b id="stock3">
-
-8
-
-</b>
-
-개
-
-</p>
-
-
-
-<p>
-
-위치 :
-
-STORAGE-C
-
-</p>
-
-
-
-<p>
-
-상태 :
-
-<span id="state3">
-
-검사중
-
-</span>
-
-</p>
-
-
-
-<button onclick="shipItem('UNKNOWN ROOT-03')">
-
-📦 발송
-
-</button>
-
-
-
-<button onclick="moveItem('UNKNOWN ROOT-03')">
-
-🔄 이동
-
-</button>
-
-
-
-<button onclick="disposeItem('UNKNOWN ROOT-03')">
-
-🗑 폐기
-
-</button>
-
-
-
-</div>
-
-
-
-
-
-
-<hr>
-
-
-
-
-<h3>
-
-📡 INVENTORY MONITOR
-
-</h3>
-
-
-
-<div class="inventory">
-
-
-
-<p>
-
-전체 재고 상태 :
-
-<b id="inventoryStatus">
-
-NORMAL
-
-</b>
-
-</p>
-
-
-
-<p>
-
-보관 시설 :
-
-STORAGE COMPLEX - 07
-
-</p>
-
-
-
-<p>
-
-보안 등급 :
-
-LEVEL A
-
-</p>
-
-
-
-<p>
-
-자동 관리 시스템 :
-
-ONLINE
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-<hr>
-
-
-
-
-<h3>
-
-📜 LIVE MANAGEMENT LOG
-
-</h3>
-
-
-
-<div class="logBox" id="logBox">
-
-
-SYSTEM STARTED
+⚠ CLASSIFIED DOCUMENT
 
 <br>
 
-> INVENTORY DATABASE CONNECTED
+ACCESS LEVEL : 5
+
+<br>
+
+ALL RECORDS ARE MONITORED
+
+</div>
+
+
+
+
+<hr>
+
+
+
+
+<div class="navigator">
+
+
+<button onclick="prevTrade()">
+
+&lt;
+
+</button>
+
+
+
+<b id="tradeID">
+
+TR-001
+
+</b>
+
+
+
+<button onclick="nextTrade()">
+
+&gt;
+
+</button>
 
 
 </div>
@@ -956,17 +327,296 @@ SYSTEM STARTED
 
 
 
+
+
+<div class="document">
+
+
+
+<h3>
+
+TRANSACTION INFORMATION
+
+</h3>
+
+
+
+
+<p>
+
+CLIENT :
+
+<br>
+
+<b id="client">
+
+VIP-042
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+CLIENT CLASS :
+
+<br>
+
+<b id="clientClass">
+
+HIGH LEVEL CUSTOMER
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+MATERIAL CODE :
+
+<br>
+
+<b id="material">
+
+UNKNOWN PLANT-X
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+QUALITY :
+
+<br>
+
+<b id="quality">
+
+94%
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+STATUS :
+
+<br>
+
+<b id="status">
+
+COMPLETED
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+SECURITY RANK :
+
+<br>
+
+<b id="rank">
+
+A
+
+</b>
+
+</p>
+
+
+
+
+
 <hr>
+
+
+
+
+<h3>
+
+SPECIAL NOTE
+
+</h3>
+
+
+
+<p id="note">
+
+추가 계약 요청 확인.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+<div class="stamp">
+
+APPROVED
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+LIVE DATABASE LOG
+
+</h3>
+
+
+
+<div class="logBox" id="log">
+
+
+SYSTEM CONNECTED...
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+DOCUMENT STATUS
+
+</h3>
+
+
+
+<div class="recordBox">
+
+
+
+<p>
+
+CURRENT PAGE :
+
+<b id="page">
+
+1
+
+</b>
+
+/
+
+<b>
+
+4
+
+</b>
+
+</p>
+
+
+
+<p>
+
+DATABASE :
+
+<b>
+
+DR-07 TRADE STORAGE
+
+</b>
+
+</p>
+
+
+
+<p>
+
+ENCRYPTION :
+
+<b>
+
+ACTIVE
+
+</b>
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
 
 
 <p class="warning">
 
 ⚠ WARNING :
 
-허가되지 않은 재고 이동은 자동 기록됩니다.
+RESTRICTED TRADE INFORMATION
 
 </p>
-<br>
+
+
+
+<p>
+
+Unauthorized access will be recorded.
+
+</p>
+
+
+
 
 
 <button onclick="location.href='./drug.html'">
@@ -977,33 +627,21 @@ SYSTEM STARTED
 
 
 
-<button onclick="location.href='./main.html'">
-
-← CENTRAL TERMINAL
-
-</button>
-
-
-
-</div>
-
 
 </div>
 
 
 
-
-
-
+</div>
 <script>
 
 
-// USER DATA
+let user =
+localStorage.getItem("userName");
 
 
-let user = localStorage.getItem("userName");
-
-let level = localStorage.getItem("userLevel");
+let level =
+localStorage.getItem("userLevel");
 
 
 
@@ -1021,130 +659,274 @@ level || "NONE";
 
 
 
+// TRADE DATABASE
 
 
-// ======================
-// GROWTH SYSTEM
-// ======================
+let tradeData = [
+
+
+{
+
+id:"TR-001",
+
+client:"VIP-042",
+
+clientClass:"HIGH LEVEL CUSTOMER",
+
+material:"UNKNOWN PLANT-X",
+
+quality:"94%",
+
+status:"COMPLETED",
+
+rank:"A",
+
+note:"추가 계약 요청 확인."
+
+
+},
 
 
 
-let growth1 = 0;
+{
 
-let growth2 = 0;
+id:"TR-002",
+
+client:"ORG-77",
+
+clientClass:"CORPORATION",
+
+material:"NIGHT FLOWER-07",
+
+quality:"88%",
+
+status:"DELIVERED",
+
+rank:"B",
+
+note:"장기 계약 진행 기록."
+
+
+},
 
 
 
-setInterval(()=>{
+{
+
+id:"TR-003",
+
+client:"UNKNOWN",
+
+clientClass:"SECRET VIP",
+
+material:"BLACK LEAF-X",
+
+quality:"97%",
+
+status:"APPROVED",
+
+rank:"S",
+
+note:"특수 관리 대상."
 
 
-if(growth1 < 100){
+},
 
-growth1 += Math.floor(Math.random()*5);
+
+
+{
+
+id:"TR-004",
+
+client:"VIP-901",
+
+clientClass:"EXTERNAL GROUP",
+
+material:"DR-SAMPLE-04",
+
+quality:"91%",
+
+status:"COMPLETED",
+
+rank:"A",
+
+note:"거래 데이터 보관 완료."
+
 
 }
 
 
-if(growth2 < 100){
+];
 
-growth2 += Math.floor(Math.random()*4);
+
+
+
+
+let index = 0;
+
+
+
+
+
+
+function updateTrade(){
+
+
+
+let data = tradeData[index];
+
+
+
+document.getElementById("tradeID").innerHTML =
+
+data.id;
+
+
+
+document.getElementById("client").innerHTML =
+
+data.client;
+
+
+
+document.getElementById("clientClass").innerHTML =
+
+data.clientClass;
+
+
+
+document.getElementById("material").innerHTML =
+
+data.material;
+
+
+
+document.getElementById("quality").innerHTML =
+
+data.quality;
+
+
+
+document.getElementById("status").innerHTML =
+
+data.status;
+
+
+
+document.getElementById("rank").innerHTML =
+
+data.rank;
+
+
+
+document.getElementById("note").innerHTML =
+
+data.note;
+
+
+
+document.getElementById("page").innerHTML =
+
+index+1;
+
+
+
+
+addLog(
+
+data.id+" DOCUMENT OPENED"
+
+);
+
+
 
 }
 
 
 
 
-document.getElementById("grow1").style.width =
-
-growth1+"%";
 
 
-
-document.getElementById("grow2").style.width =
-
-growth2+"%";
+function nextTrade(){
 
 
 
-
-document.getElementById("growText1").innerHTML =
-
-growth1+"%";
+if(index < tradeData.length-1){
 
 
-
-document.getElementById("growText2").innerHTML =
-
-growth2+"%";
+index++;
 
 
+updateTrade();
 
 
-},2000);
+}
+
+else{
+
+
+addLog("LAST DOCUMENT");
+
+
+}
 
 
 
+}
 
 
 
 
-// ======================
-// LOG SYSTEM
-// ======================
+
+
+function prevTrade(){
+
+
+
+if(index > 0){
+
+
+index--;
+
+
+updateTrade();
+
+
+}
+
+else{
+
+
+addLog("FIRST DOCUMENT");
+
+
+}
+
+
+
+}
+
+
+
+
 
 
 function addLog(text){
 
 
-let box = document.getElementById("logBox");
 
-
-let time = new Date()
-.toLocaleTimeString();
+let log = document.getElementById("log");
 
 
 
-box.innerHTML +=
-
-"<br>> ["+time+"] "+text;
+log.innerHTML +=
 
 
-
-box.scrollTop = box.scrollHeight;
-
-
-}
+"<br>> "+text;
 
 
 
-
-
-
-
-// ======================
-// SHIPPING
-// ======================
-
-
-
-function shipItem(name){
-
-
-addLog(
-
-"📦 "+name+
-" STORAGE → DEPARTMENT TRANSFER REQUEST"
-
-);
-
-
-
-alert(
-
-name+
-"\n\n발송 처리 완료\n\n목적지 : CHEMICAL DEPARTMENT"
-
-);
+log.scrollTop = log.scrollHeight;
 
 
 
@@ -1155,191 +937,40 @@ name+
 
 
 
-
-// ======================
-// MOVE
-// ======================
+// 실시간 보안 로그
 
 
-
-function moveItem(name){
+setInterval(function(){
 
 
 
-let location = [
+let systemLog=[
 
-"STORAGE-A",
 
-"STORAGE-B",
+"SECURITY CHECK",
 
-"STORAGE-C",
+"ENCRYPTION VERIFY",
 
-"GREENHOUSE-02"
+"DATABASE SYNC",
+
+"ACCESS MONITORING"
+
 
 ];
 
 
 
-let target =
-
-location[Math.floor(Math.random()*location.length)];
-
-
-
 addLog(
 
-"🔄 "+name+
-" 이동 완료 → "+
-target
+systemLog[Math.floor(Math.random()*systemLog.length)]
 
 );
-
-
-
-alert(
-
-name+
-"\n\n위치 변경 완료\n\n이동 위치 : "+
-target
-
-);
-
-
-
-}
-
-
-
-
-
-
-
-// ======================
-// DISPOSAL
-// ======================
-
-
-
-function disposeItem(name){
-
-
-
-let confirmDelete = confirm(
-
-name+
-"\n\n폐기 처리하시겠습니까?"
-
-);
-
-
-
-if(confirmDelete){
-
-
-
-addLog(
-
-"🗑 "+name+
-" 폐기 완료"
-
-);
-
-
-
-alert(
-
-"폐기 완료\n\n기록 저장됨"
-
-);
-
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-// ======================
-// LIVE STATUS
-// ======================
-
-
-
-setInterval(()=>{
-
-
-
-let status=[
-
-"NORMAL",
-
-"MONITORING",
-
-"CHECKING",
-
-"WARNING"
-
-];
-
-
-
-document.getElementById("inventoryStatus").innerHTML=
-
-status[Math.floor(Math.random()*status.length)];
 
 
 
 },5000);
 
 
-
-
-
-
-// ======================
-// RANDOM LOG
-// ======================
-
-
-
-setInterval(()=>{
-
-
-let logs=[
-
-
-"온실 환경 데이터 갱신",
-
-"자동 급수 시스템 확인",
-
-"식물 성장률 기록",
-
-"보관 시설 검사 완료",
-
-"보안 센서 정상"
-
-
-
-];
-
-
-
-addLog(
-
-logs[Math.floor(Math.random()*logs.length)]
-
-);
-
-
-
-},7000);
 
 
 
