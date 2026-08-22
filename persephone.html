@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>PERSEPHONE - STAFF ID</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+
+body{
+
+overflow:hidden;
+
+}
+
+
+
+/* 눈 효과 */
+
+.snow{
+
+position:fixed;
+
+top:-20px;
+
+color:white;
+
+font-size:20px;
+
+animation:snowFall linear infinite;
+
+z-index:10;
+
+pointer-events:none;
+
+}
+
+
+
+@keyframes snowFall{
+
+
+0%{
+
+transform:translateY(-20px) rotate(0deg);
+
+opacity:0;
+
+}
+
+
+20%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+/* 얼음 효과 */
+
+
+.iceBox{
+
+border:2px solid #8eeaff;
+
+box-shadow:
+
+0 0 20px #8eeaff;
+
+
+background:
+
+rgba(0,80,120,.15);
+
+
+}
+
+
+
+
+.cold{
+
+color:#8eeaff;
+
+font-weight:bold;
+
+}
+
+
+
+
+.frozen{
+
+animation:frozenPulse 3s infinite;
+
+}
+
+
+
+@keyframes frozenPulse{
+
+
+0%{
+
+opacity:1;
+
+}
+
+
+50%{
+
+opacity:.5;
+
+}
+
+
+100%{
+
+opacity:1;
+
+}
+
+
+}
+
+
+
+.warningIce{
+
+color:#00ccff;
+
+font-weight:bold;
+
+animation:iceWarning 1s infinite;
+
+}
+
+
+
+@keyframes iceWarning{
+
+
+50%{
+
+opacity:.3;
+
+}
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+
+<script>
+
+
+// 눈 생성
+
+
+for(let i=0;i<40;i++){
+
+
+let snow=document.createElement("div");
+
+
+snow.className="snow";
+
+
+snow.innerHTML="❄";
+
+
+snow.style.left=Math.random()*100+"%";
+
+
+snow.style.animationDuration=
+(5+Math.random()*8)+"s";
+
+
+snow.style.animationDelay=
+Math.random()*5+"s";
+
+
+document.body.appendChild(snow);
+
+
+}
+
+
+</script>
+
+
+
+
+
+
+
+<div class="mainBox iceBox">
+
+
+
+
+
+<h2 class="frozen">
+
+❄ STAFF IDENTIFICATION CARD
+
+</h2>
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+
+
+
+
+<h2>
+
+페르세포네
+
+</h2>
+
+
+
+
+
+<p>
+
+<b>FULL NAME</b> :
+
+Persephone
+
+</p>
+
+
+
+
+<p>
+
+<b>사번</b> :
+
+UE-A666
+
+</p>
+
+
+
+
+
+<p>
+
+<b>직급</b> :
+
+직원
+
+</p>
+
+
+
+
+<p>
+
+<b>DEPARTMENT</b> :
+
+Chemistry Department
+
+</p>
+
+
+
+
+<p>
+
+<b>STATUS</b> :
+
+<span class="cold">
+
+● ACTIVE
+
+</span>
+
+</p>
+
+
+
+
+
+<p>
+
+<b>SECURITY LEVEL</b> :
+
+LEVEL 4
+
+</p>
+
+
+
+
+<p>
+
+<b>SPECIES</b> :
+
+Snow Spirit / Devil
+
+</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+
+<div class="recordBox">
+
+
+
+
+
+<h2>
+
+STAFF DATABASE
+
+</h2>
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<h3>
+
+PERSONAL INFORMATION
+
+</h3>
+
+
+
+
+
+
+<p>
+
+<b>FULL NAME</b> :
+
+Persephone
+
+</p>
+
+
+
+
+<p>
+
+<b>HEIGHT</b> :
+
+175cm
+
+</p>
+
+
+
+
+<p>
+
+<b>SPECIES</b> :
+
+████████
+
+</p>
+
+
+
+
+<p>
+
+<b>AGE</b> :
+
+████
+
+</p>
+
+
+
+
+<p>
+
+<b>IQ</b> :
+
+187
+
+</p>
+
+
+
+
+<p>
+
+<b>FAMILY RELATIONS</b> :
+
+████████
+
+</p>
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<h3>
+
+RESEARCH RECORD
+
+</h3>
+
+
+
+
+<p>
+
+화학 부서 연구원.
+
+</p>
+
+
+
+
+<p>
+
+생화학 및 화합물 연구 분야에서
+
+높은 분석 능력을 보유하고 있다.
+
+</p>
+
+
+
+
+<p>
+
+감정적인 개입을 최소화하며
+
+자신의 연구 업무만 수행하는
+
+독립적인 성향을 보인다.
+
+</p>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<h3>
+
+BEHAVIOR ANALYSIS
+
+</h3>
+
+
+
+
+
+<p>
+
+극도로 내향적인 성향.
+
+</p>
+
+
+
+
+<p>
+
+타 직원과의 관계 형성을
+
+거의 하지 않는 것으로 확인됨.
+
+</p>
+
+
+
+
+<p>
+
+과거 관련 질문에 강한 거부 반응을 보이며,
+
+특정 인물에 대해 극도의 적대감을 보임.
+
+</p>
+
+
+
+
+<p class="warningIce">
+
+⚠ HALPHAS 와의 관계 :
+
+HOSTILE
+
+</p>
+
+
+
+
+
+<p>
+
+두 직원 사이의 충돌 가능성이
+
+높다고 판단됨.
+
+</p>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+PERSONAL RECORD
+
+</h3>
+
+
+
+
+
+<p>
+
+본래 설녀 계열 개체였던 것으로 추정.
+
+</p>
+
+
+
+
+<p>
+
+현재 악마적 특성이 확인되며,
+
+변질 원인은 조사 중.
+
+</p>
+
+
+
+
+<p>
+
+감정 변화는 적으나,
+
+특정 기억과 관련된 자극에
+
+강한 반응을 보임.
+
+</p>
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+SPECIAL OBSERVATION
+
+</h3>
+
+
+
+
+<p>
+
+- 낮은 사회성
+
+</p>
+
+
+
+<p>
+
+- 높은 연구 능력
+
+</p>
+
+
+
+<p>
+
+- 냉기 계열 변칙 능력 보유 추정
+
+</p>
+
+
+
+<p>
+
+- 과거 기록 접근 거부
+
+</p>
+
+
+
+<p>
+
+- 할파스 직원과 지속적인 적대 관계
+
+</p>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="iceBox recordBox">
+
+
+
+<h3>
+
+⚠ NOTANDUM
+
+</h3>
+
+
+
+
+<p class="warningIce">
+
+절대 "아이"와 관련된 질문을 하지 말 것.
+
+</p>
+
+
+
+
+<p>
+
+해당 직원은 과거 자신의 아이를 잃은
+
+기록이 존재한다.
+
+</p>
+
+
+
+
+<p>
+
+관련 언급 시 심각한 감정 변화 및
+
+통제 불가능한 행동 가능성이 있음.
+
+</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<h3>
+
+FINAL OBSERVATION
+
+</h3>
+
+
+
+
+<p>
+
+"눈은 녹지만,
+
+기억은 녹지 않는다."
+
+</p>
+
+
+
+
+
+
+<br>
+
+
+
+
+<button onclick="location.href='./chemical_staff.html'">
+
+← 화학부서 연구원 목록
+
+</button>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+
+</html>
