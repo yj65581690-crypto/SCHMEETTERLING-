@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+DRUG GREENHOUSE MANAGEMENT SYSTEM
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+
+body{
+
+background:#020b12;
+
+color:#d8f8ff;
+
+overflow-x:hidden;
+
+font-family:"Courier New",monospace;
+
+}
+
+
+
+/* =========================
+BLUE SCAN
+========================= */
+
+
+.scanLine{
+
+position:fixed;
+
+left:0;
+
+top:-100px;
+
+width:100%;
+
+height:80px;
+
+background:rgba(0,170,255,.18);
+
+box-shadow:0 0 30px #00aaff;
+
+animation:scan 5s linear infinite;
+
+z-index:50;
+
+pointer-events:none;
+
+}
+
+
+
+@keyframes scan{
+
+
+0%{
+
+top:-100px;
+
+}
+
+
+100%{
+
+top:110vh;
+
+}
+
+
+}
+
+
+
+
+
+
+/* =========================
+GLITCH
+========================= */
+
+
+.glitch{
+
+animation:glitch .15s infinite;
+
+}
+
+
+
+@keyframes glitch{
+
+
+0%{
+
+transform:translate(0);
+
+}
+
+
+25%{
+
+transform:translate(-5px,2px);
+
+}
+
+
+50%{
+
+transform:translate(5px,-3px);
+
+}
+
+
+75%{
+
+transform:translate(-3px,4px);
+
+}
+
+
+100%{
+
+transform:translate(0);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+FOG
+========================= */
+
+
+.fog{
+
+
+position:fixed;
+
+bottom:0;
+
+left:0;
+
+width:100%;
+
+height:200px;
+
+background:
+
+linear-gradient(
+
+transparent,
+
+rgba(180,240,255,.15)
+
+);
+
+
+animation:fogMove 8s infinite alternate;
+
+pointer-events:none;
+
+z-index:3;
+
+}
+
+
+
+@keyframes fogMove{
+
+
+from{
+
+transform:translateX(-50px);
+
+}
+
+
+to{
+
+transform:translateX(50px);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+WATER DROP
+========================= */
+
+
+.water{
+
+
+position:fixed;
+
+top:-30px;
+
+font-size:20px;
+
+color:#5edcff;
+
+animation:waterFall linear;
+
+z-index:4;
+
+}
+
+
+
+@keyframes waterFall{
+
+
+from{
+
+transform:translateY(-50px);
+
+}
+
+
+to{
+
+transform:translateY(110vh);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+PLANT BOX
+========================= */
+
+
+.greenhouse{
+
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+}
+
+
+
+.plant{
+
+
+height:230px;
+
+border:2px solid #008cff;
+
+background:#031823;
+
+padding:15px;
+
+position:relative;
+
+cursor:pointer;
+
+overflow:hidden;
+
+transition:.3s;
+
+
+}
+
+
+
+.plant:hover{
+
+
+box-shadow:
+
+0 0 25px #008cff;
+
+
+}
+
+
+
+
+
+.leaf{
+
+
+font-size:70px;
+
+text-align:center;
+
+animation:leafMove 3s infinite;
+
+
+}
+
+
+
+@keyframes leafMove{
+
+
+0%{
+
+transform:rotate(-5deg);
+
+}
+
+
+50%{
+
+transform:rotate(5deg);
+
+}
+
+
+100%{
+
+transform:rotate(-5deg);
+
+}
+
+
+}
+
+
+
+
+
+.bar{
+
+
+height:15px;
+
+border:1px solid #00aaff;
+
+margin-top:10px;
+
+}
+
+
+
+.progress{
+
+
+height:100%;
+
+background:#00aaff;
+
+transition:1s;
+
+}
+
+
+
+
+
+
+/* =========================
+MONITOR
+========================= */
+
+
+.monitor{
+
+
+border:2px solid #00aaff;
+
+background:#00131f;
+
+padding:15px;
+
+margin-top:15px;
+
+
+}
+
+
+
+
+.value{
+
+color:#62ddff;
+
+font-size:20px;
+
+}
+
+
+
+
+
+/* =========================
+CCTV
+========================= */
+
+
+.camera{
+
+
+border:2px solid #008cff;
+
+background:black;
+
+padding:20px;
+
+animation:cameraFlicker 3s infinite;
+
+
+}
+
+
+
+@keyframes cameraFlicker{
+
+
+0%,90%{
+
+opacity:1;
+
+}
+
+
+95%{
+
+opacity:.3;
+
+}
+
+
+100%{
+
+opacity:1;
+
+}
+
+
+}
+
+
+
+
+
+/* =========================
+WARNING
+========================= */
+
+
+.warning{
+
+
+color:red;
+
+font-weight:bold;
+
+animation:warning 1s infinite;
+
+
+}
+
+
+
+@keyframes warning{
+
+
+50%{
+
+opacity:.3;
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+PANIC
+========================= */
+
+
+#panic{
+
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.85);
+
+z-index:999;
+
+
+justify-content:center;
+
+align-items:center;
+
+
+font-size:50px;
+
+color:red;
+
+
+text-align:center;
+
+
+}
+
+
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="scanLine"></div>
+
+<div class="fog"></div>
+
+
+<div class="mainBox">
+
+
+
+<h1>
+
+🌱 DRUG DEPARTMENT
+
+</h1>
+
+
+<h2>
+
+GREENHOUSE MANAGEMENT SYSTEM
+
+</h2>
+
+
+
+<p>
+
+부서 코드 :
+
+<b>
+
+DR-07-G
+
+</b>
+
+</p>
+
+
+
+<p>
+
+열람 권한 :
+
+LEVEL 4
+
+</p>
+
+
+
+<hr>
+
+
+
+<h3>
+
+GREENHOUSE STATUS
+
+</h3>
+
+
+<div class="monitor">
+
+
+<p>
+
+온도 :
+
+<span id="temp" class="value">
+
+26.5
+
+</span>
+
+℃
+
+</p>
+
+
+
+<p>
+
+습도 :
+
+<span id="humidity" class="value">
+
+78
+
+</span>
+
+%
+
+</p>
+
+
+
+<p>
+
+조명 :
+
+<span id="light" class="value">
+
+90
+
+</span>
+
+%
+
+</p>
+
+
+
+<p>
+
+환경 상태 :
+
+<span id="env">
+
+STABLE
+
+</span>
+
+</p>
+
+
+</div>
+
+
+
+<hr>
+
+
+
+<h3>
+
+CCTV LIVE
+
+</h3>
+
+
+<div class="camera">
+
+
+CAM-01
+
+<br><br>
+
+
+● LIVE GREENHOUSE A
+
+
+<br><br>
+
+
+SIGNAL :
+
+<span id="signal">
+
+98%
+
+</span>
+
+
+</div>
+
+
+
+
+<hr>
+
+
+
+<h3>
+
+PLANT CULTIVATION AREA
+
+</h3>
+
+
+
+<div class="greenhouse">
+<!-- =========================
+PLANT AREA
+========================= -->
+
+
+<div class="plant" onclick="openPlant(0)">
+
+
+<div class="leaf">
+🌿
+</div>
+
+
+<h3>
+DR-001
+</h3>
+
+
+<p>
+TYPE :
+UNKNOWN HERB
+</p>
+
+
+<p>
+성장률 :
+
+<span id="grow0">
+72
+
+</span>
+
+%
+
+</p>
+
+
+<div class="bar">
+
+<div 
+class="progress"
+id="bar0"
+style="width:72%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="plant" onclick="openPlant(1)">
+
+
+<div class="leaf">
+🌱
+</div>
+
+
+<h3>
+DR-002
+</h3>
+
+
+<p>
+TYPE :
+BLUE FLOWER
+</p>
+
+
+<p>
+성장률 :
+
+<span id="grow1">
+
+54
+
+</span>
+
+%
+
+</p>
+
+
+<div class="bar">
+
+<div 
+class="progress"
+id="bar1"
+style="width:54%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="plant" onclick="openPlant(2)">
+
+
+<div class="leaf">
+🍃
+</div>
+
+
+<h3>
+DR-003
+</h3>
+
+
+<p>
+TYPE :
+NIGHT LEAF
+</p>
+
+
+<p>
+성장률 :
+
+<span id="grow2">
+
+88
+
+</span>
+
+%
+
+</p>
+
+
+<div class="bar">
+
+<div 
+class="progress"
+id="bar2"
+style="width:88%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="plant" onclick="openPlant(3)">
+
+
+<div class="leaf">
+🌺
+</div>
+
+
+<h3>
+DR-004
+</h3>
+
+
+<p>
+TYPE :
+RED SPECIMEN
+</p>
+
+
+<p>
+성장률 :
+
+<span id="grow3">
+
+43
+
+</span>
+
+%
+
+</p>
+
+
+<div class="bar">
+
+<div 
+class="progress"
+id="bar3"
+style="width:43%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="plant" onclick="openPlant(4)">
+
+
+<div class="leaf">
+🌿
+</div>
+
+
+<h3>
+DR-005
+</h3>
+
+
+<p>
+TYPE :
+MUTATION PLANT
+</p>
+
+
+<p>
+성장률 :
+
+<span id="grow4">
+
+61
+
+</span>
+
+%
+
+</p>
+
+
+<div class="bar">
+
+<div 
+class="progress"
+id="bar4"
+style="width:61%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="plant" onclick="openPlant(5)">
+
+
+<div class="leaf">
+🪴
+</div>
+
+
+<h3>
+DR-006
+</h3>
+
+
+<p>
+TYPE :
+CONTROLLED SAMPLE
+</p>
+
+
+<p>
+성장률 :
+
+<span id="grow5">
+
+35
+
+</span>
+
+%
+
+</p>
+
+
+<div class="bar">
+
+<div 
+class="progress"
+id="bar5"
+style="width:35%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="plant" onclick="openPlant(6)">
+
+
+<div class="leaf">
+🌵
+</div>
+
+
+<h3>
+DR-007
+</h3>
+
+
+<p>
+TYPE :
+TOXIC CACTUS
+</p>
+
+
+<p>
+성장률 :
+
+<span id="grow6">
+
+67
+
+</span>
+
+%
+
+</p>
+
+
+<div class="bar">
+
+<div 
+class="progress"
+id="bar6"
+style="width:67%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="plant" onclick="openPlant(7)">
+
+
+<div class="leaf">
+🌸
+</div>
+
+
+<h3>
+DR-008
+</h3>
+
+
+<p>
+TYPE :
+UNKNOWN FLOWER
+</p>
+
+
+<p>
+성장률 :
+
+<span id="grow7">
+
+91
+
+</span>
+
+%
+
+</p>
+
+
+<div class="bar">
+
+<div 
+class="progress"
+id="bar7"
+style="width:91%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+PLANT ANALYSIS
+
+</h3>
+
+
+
+<div class="monitor" id="plantData">
+
+
+식물을 선택하십시오.
+
+
+</div>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+CONTROL PANEL
+
+</h3>
+
+
+
+<div class="monitor">
+
+
+<button onclick="waterPlant()">
+
+💧 WATER
+
+</button>
+
+
+
+<button onclick="scanPlant()">
+
+🔵 BLUE SCAN
+
+</button>
+
+
+
+<button onclick="mutatePlant()">
+
+🧬 MUTATION TEST
+
+</button>
+
+
+
+<button onclick="isolatePlant()">
+
+🔒 ISOLATE
+
+</button>
+
+
+</div>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+CULTIVATION LOG
+
+</h3>
+
+
+
+<div class="monitor" id="log">
+
+
+SYSTEM STARTED...
+
+</div>
+<hr>
+
+
+<button onclick="location.href='./drug.html'">
+
+← 마약 부서
+
+</button>
+
+
+
+</div>
+
+
+
+
+<div id="panic">
+
+⚠ GREENHOUSE OVERLOAD
+
+<br><br>
+
+PLANT MUTATION FAILURE
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+
+// ===============================
+// PLANT DATA
+// ===============================
+
+
+let plants=[
+
+{
+
+id:"DR-001",
+
+type:"UNKNOWN HERB",
+
+growth:72,
+
+toxicity:"LEVEL 3",
+
+status:"STABLE"
+
+},
+
+
+{
+
+id:"DR-002",
+
+type:"BLUE FLOWER",
+
+growth:54,
+
+toxicity:"LEVEL 2",
+
+status:"STABLE"
+
+},
+
+
+{
+
+id:"DR-003",
+
+type:"NIGHT LEAF",
+
+growth:88,
+
+toxicity:"LEVEL 5",
+
+status:"WARNING"
+
+},
+
+
+{
+
+id:"DR-004",
+
+type:"RED SPECIMEN",
+
+growth:43,
+
+toxicity:"LEVEL 4",
+
+status:"STABLE"
+
+},
+
+
+{
+
+id:"DR-005",
+
+type:"MUTATION PLANT",
+
+growth:61,
+
+toxicity:"LEVEL 6",
+
+status:"UNSTABLE"
+
+},
+
+
+{
+
+id:"DR-006",
+
+type:"CONTROLLED SAMPLE",
+
+growth:35,
+
+toxicity:"LEVEL 1",
+
+status:"NORMAL"
+
+},
+
+
+{
+
+id:"DR-007",
+
+type:"TOXIC CACTUS",
+
+growth:67,
+
+toxicity:"LEVEL 5",
+
+status:"WARNING"
+
+},
+
+
+{
+
+id:"DR-008",
+
+type:"UNKNOWN FLOWER",
+
+growth:91,
+
+toxicity:"LEVEL 7",
+
+status:"CRITICAL"
+
+}
+
+];
+
+
+
+
+
+
+
+
+// ===============================
+// PLANT CLICK
+// ===============================
+
+
+let selected=0;
+
+
+function openPlant(num){
+
+
+selected=num;
+
+
+let p=plants[num];
+
+
+document.getElementById("plantData").innerHTML=`
+
+<h3>
+
+${p.id}
+
+</h3>
+
+
+<p>
+
+TYPE :
+
+${p.type}
+
+</p>
+
+
+<p>
+
+GROWTH :
+
+${p.growth}%
+
+</p>
+
+
+<p>
+
+TOXICITY :
+
+${p.toxicity}
+
+</p>
+
+
+<p>
+
+STATUS :
+
+${p.status}
+
+</p>
+
+
+<p>
+
+SCAN :
+
+READY
+
+</p>
+
+
+`;
+
+
+
+addLog(
+
+p.id+" DATA ACCESSED"
+
+);
+
+
+}
+
+
+
+
+
+
+
+// ===============================
+// GROWTH UPDATE
+// ===============================
+
+
+
+setInterval(function(){
+
+
+plants.forEach(function(p,i){
+
+
+let change=
+
+Math.floor(Math.random()*3)-1;
+
+
+p.growth+=change;
+
+
+
+if(p.growth<0)
+
+p.growth=0;
+
+
+if(p.growth>100)
+
+p.growth=100;
+
+
+
+document.getElementById(
+
+"grow"+i
+
+).innerHTML=p.growth;
+
+
+
+document.getElementById(
+
+"bar"+i
+
+).style.width=
+
+p.growth+"%";
+
+
+
+});
+
+
+
+},3000);
+
+
+
+
+
+
+
+
+
+// ===============================
+// WATER EFFECT
+// ===============================
+
+
+function createWater(){
+
+
+let drop=document.createElement("div");
+
+
+drop.className="water";
+
+
+drop.innerHTML="💧";
+
+
+drop.style.left=
+
+Math.random()*100+"vw";
+
+
+
+drop.style.animationDuration=
+
+(3+Math.random()*3)+"s";
+
+
+
+document.body.appendChild(drop);
+
+
+
+setTimeout(()=>{
+
+
+drop.remove();
+
+
+},6000);
+
+
+}
+
+
+
+setInterval(function(){
+
+
+createWater();
+
+
+},800);
+
+
+
+
+
+
+
+
+function waterPlant(){
+
+
+plants[selected].growth+=5;
+
+
+if(plants[selected].growth>100)
+
+plants[selected].growth=100;
+
+
+
+addLog(
+
+plants[selected].id+
+
+" WATER SUPPLY COMPLETE"
+
+);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ===============================
+// BLUE SCAN
+// ===============================
+
+
+
+function scanPlant(){
+
+
+let p=plants[selected];
+
+
+
+document.getElementById("plantData").innerHTML+=`
+
+<hr>
+
+BLUE SCAN
+
+<br><br>
+
+BIO SIGNAL :
+
+DETECTED
+
+<br>
+
+CELL ACTIVITY :
+
+${Math.floor(Math.random()*40+60)}%
+
+<br>
+
+GENETIC ERROR :
+
+${Math.random()<0.5?"NONE":"FOUND"}
+
+`;
+
+
+
+addLog(
+
+p.id+" BLUE SCAN COMPLETE"
+
+);
+
+
+
+}
+
+
+
+
+
+
+
+
+// ===============================
+// MUTATION
+// ===============================
+
+
+function mutatePlant(){
+
+
+let p=plants[selected];
+
+
+
+p.status="MUTATION";
+
+
+addLog(
+
+p.id+
+
+" MUTATION PROCESS START"
+
+);
+
+
+
+if(Math.random()<0.5){
+
+
+overload();
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+// ===============================
+// ISOLATE
+// ===============================
+
+
+
+function isolatePlant(){
+
+
+plants[selected].status="ISOLATED";
+
+
+addLog(
+
+plants[selected].id+
+
+" ISOLATION COMPLETE"
+
+);
+
+
+}
+
+
+
+
+
+
+
+
+// ===============================
+// LOG
+// ===============================
+
+
+
+function addLog(text){
+
+
+let log=document.getElementById("log");
+
+
+let time=new Date()
+
+.toLocaleTimeString();
+
+
+
+log.innerHTML+=
+
+`
+
+<br>
+
+[${time}]
+
+${text}
+
+`;
+
+
+
+}
+
+
+
+
+
+
+
+
+// ===============================
+// ENVIRONMENT LIVE
+// ===============================
+
+
+
+setInterval(function(){
+
+
+document.getElementById("temp").innerHTML=
+
+(24+Math.random()*5).toFixed(1);
+
+
+
+document.getElementById("humidity").innerHTML=
+
+Math.floor(60+Math.random()*40);
+
+
+
+document.getElementById("light").innerHTML=
+
+Math.floor(80+Math.random()*20);
+
+
+
+document.getElementById("signal").innerHTML=
+
+Math.floor(90+Math.random()*10)+"%";
+
+
+
+},2000);
+
+
+
+
+
+
+
+
+// ===============================
+// OVERLOAD EVENT
+// ===============================
+
+
+
+function overload(){
+
+
+let panic=document.getElementById("panic");
+
+
+panic.style.display="flex";
+
+
+document.body.classList.add("glitch");
+
+
+
+document.body.style.filter=
+
+"contrast(1.8)";
+
+
+
+addLog(
+
+"⚠ GREENHOUSE CONTAINMENT FAILURE"
+
+);
+
+
+
+setTimeout(function(){
+
+
+panic.style.display="none";
+
+
+document.body.classList.remove("glitch");
+
+
+document.body.style.filter="";
+
+
+},4000);
+
+
+
+}
+
+
+
+
+
+
+
+
+// ===============================
+// RANDOM FAILURE
+// ===============================
+
+
+
+setInterval(function(){
+
+
+if(Math.random()<0.12){
+
+
+overload();
+
+
+}
+
+
+
+},15000);
+
+
+
+
+
+
+
+// ===============================
+// CAMERA RANDOM ERROR
+// ===============================
+
+
+
+setInterval(function(){
+
+
+let cam=document.querySelector(".camera");
+
+
+
+if(Math.random()<0.2){
+
+
+cam.innerHTML=
+
+`
+
+CAM-01
+
+<br><br>
+
+<span class="warning">
+
+SIGNAL LOST
+
+<br>
+
+UNKNOWN MOVEMENT
+
+</span>
+
+`;
+
+
+
+setTimeout(function(){
+
+
+cam.innerHTML=
+
+`
+
+CAM-01
+
+<br><br>
+
+● LIVE GREENHOUSE A
+
+<br><br>
+
+SIGNAL :
+
+${Math.floor(90+Math.random()*10)}%
+
+`;
+
+
+
+},2000);
+
+
+
+}
+
+
+},8000);
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
