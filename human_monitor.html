@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+HUMAN MODIFICATION MONITORING SYSTEM
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+
+*{
+
+box-sizing:border-box;
+
+}
+
+
+
+body{
+
+margin:0;
+
+background:#050005;
+
+color:#fff;
+
+font-family:"Courier New",monospace;
+
+overflow:hidden;
+
+}
+
+
+
+/* CRT NOISE */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+
+background:
+
+repeating-linear-gradient(
+
+0deg,
+
+rgba(255,255,255,.04),
+
+rgba(255,255,255,.04) 1px,
+
+transparent 1px,
+
+transparent 4px
+
+);
+
+
+pointer-events:none;
+
+z-index:99;
+
+}
+
+
+
+
+.layout{
+
+display:flex;
+
+height:100vh;
+
+}
+
+
+
+
+
+/* LEFT MENU */
+
+
+.sideMenu{
+
+
+width:250px;
+
+
+background:#100010;
+
+
+border-right:2px solid #ff69b4;
+
+
+padding:20px;
+
+
+
+}
+
+
+
+.sideMenu h2,
+.sideMenu h3{
+
+
+color:#ff69b4;
+
+
+}
+
+
+
+
+.sideMenu button{
+
+
+width:100%;
+
+
+padding:10px;
+
+
+margin:5px 0;
+
+
+background:#180018;
+
+
+border:1px solid #ff69b4;
+
+
+color:white;
+
+
+cursor:pointer;
+
+
+font-family:inherit;
+
+
+}
+
+
+
+.sideMenu button:hover{
+
+
+background:#ff69b4;
+
+
+color:#000;
+
+
+}
+
+
+
+
+
+
+/* MAIN */
+
+
+.mainBox{
+
+
+flex:1;
+
+
+padding:25px;
+
+
+overflow:auto;
+
+
+}
+
+
+
+
+h2,h3{
+
+
+color:#ff69b4;
+
+
+}
+
+
+
+
+
+
+
+/* CAMERA SCREEN */
+
+
+.monitorScreen{
+
+
+height:420px;
+
+
+background:#000;
+
+
+border:3px solid #ff69b4;
+
+
+position:relative;
+
+
+overflow:hidden;
+
+
+box-shadow:
+
+0 0 25px #ff69b4;
+
+
+}
+
+
+
+
+
+.monitorScreen::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+inset:0;
+
+
+
+background:
+
+repeating-linear-gradient(
+
+0deg,
+
+transparent,
+
+transparent 3px,
+
+rgba(255,255,255,.08) 4px
+
+);
+
+
+
+animation:scan 1s linear infinite;
+
+
+}
+
+
+
+
+@keyframes scan{
+
+
+from{
+
+transform:translateY(-10px);
+
+}
+
+
+to{
+
+transform:translateY(10px);
+
+}
+
+
+}
+
+
+
+
+
+.cameraText{
+
+
+position:absolute;
+
+
+top:20px;
+
+
+left:20px;
+
+
+z-index:2;
+
+
+color:#ff69b4;
+
+
+font-size:22px;
+
+
+}
+
+
+
+
+.cameraInfo{
+
+
+position:absolute;
+
+
+bottom:20px;
+
+
+left:20px;
+
+
+z-index:2;
+
+
+}
+
+
+
+
+
+.noise{
+
+
+animation:noise .15s infinite;
+
+
+}
+
+
+
+@keyframes noise{
+
+
+0%{
+
+transform:translate(0);
+
+}
+
+
+25%{
+
+transform:translate(3px,-2px);
+
+}
+
+
+50%{
+
+transform:translate(-3px,2px);
+
+}
+
+
+75%{
+
+transform:translate(2px,1px);
+
+}
+
+
+100%{
+
+transform:translate(0);
+
+}
+
+
+}
+
+
+
+
+
+
+/* CAMERA LIST */
+
+
+.cameraList{
+
+
+display:grid;
+
+
+grid-template-columns:repeat(5,1fr);
+
+
+gap:10px;
+
+
+margin-top:20px;
+
+
+}
+
+
+
+
+
+.cameraBtn{
+
+
+background:#160016;
+
+
+color:white;
+
+
+border:1px solid #ff69b4;
+
+
+padding:12px;
+
+
+cursor:pointer;
+
+
+}
+
+
+
+.cameraBtn:hover{
+
+
+background:#ff69b4;
+
+
+color:black;
+
+
+}
+
+
+
+
+
+
+/* CONTROL */
+
+
+.controlBox{
+
+
+margin-top:20px;
+
+
+border:1px solid #ff69b4;
+
+
+padding:15px;
+
+
+background:#100010;
+
+
+}
+
+
+
+
+.controlBtn{
+
+
+background:#200020;
+
+
+color:white;
+
+
+border:1px solid #ff69b4;
+
+
+padding:10px;
+
+
+margin:5px;
+
+
+cursor:pointer;
+
+
+}
+
+
+.controlBtn:hover{
+
+
+background:#ff69b4;
+
+
+color:black;
+
+
+}
+
+
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="layout">
+
+
+<div class="sideMenu">
+
+
+<h3>
+
+SCHMEETTERLING
+
+</h3>
+
+
+<p style="color:#ff69b4">
+
+● SYSTEM ONLINE
+
+</p>
+
+
+
+<hr>
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 HOME
+
+</button>
+
+
+
+<button onclick="location.href='./human.html'">
+
+🧬 인체 개조 부서
+
+</button>
+
+
+
+<button onclick="location.href='./human_subject.html'">
+
+👤 실험체 기록
+
+</button>
+
+
+
+<button onclick="location.href='./human_parts.html'">
+
+🦴 신체부위 보유량
+
+</button>
+
+
+
+<button onclick="location.href='./human_log.html'">
+
+📄 개조 일지
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<div class="mainBox">
+
+
+<h2>
+
+🖥 HUMAN MODIFICATION MONITORING SYSTEM
+
+</h2>
+
+
+
+<p>
+
+LIVE BIOLOGICAL OBSERVATION TERMINAL
+
+</p>
+
+
+
+<hr>
+
+
+
+<div class="monitorScreen" id="screen">
+
+
+
+<div class="cameraText" id="cameraName">
+
+CAM-01
+
+</div>
+
+
+
+
+<div class="cameraInfo" id="cameraInfo">
+
+LAB A
+
+<br>
+
+● RECORDING
+
+</div>
+
+
+
+</div>
+<!-- CAMERA SELECT -->
+
+<h3>
+
+CAMERA CONTROL
+
+</h3>
+
+
+<div class="cameraList">
+
+
+<button class="cameraBtn" onclick="changeCamera('CAM-01','BIO LAB A')">
+
+📹 CAM-01
+<br>
+생체 연구실
+
+</button>
+
+
+
+<button class="cameraBtn" onclick="changeCamera('CAM-02','FREEZER ROOM A')">
+
+📹 CAM-02
+<br>
+냉동 보관실
+
+</button>
+
+
+
+
+<button class="cameraBtn" onclick="changeCamera('CAM-03','SURGERY ROOM')">
+
+📹 CAM-03
+<br>
+개조 수술실
+
+</button>
+
+
+
+
+<button class="cameraBtn" onclick="changeCamera('CAM-04','CONTAINMENT ROOM')">
+
+📹 CAM-04
+<br>
+격리실
+
+</button>
+
+
+
+
+<button class="cameraBtn" onclick="changeCamera('CAM-05','EXPERIMENT AREA')">
+
+📹 CAM-05
+<br>
+실험 구역
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+<!-- CONTROL PANEL -->
+
+
+<h3>
+
+SYSTEM CONTROL
+
+</h3>
+
+
+
+<div class="controlBox">
+
+
+<button class="controlBtn" onclick="recordToggle()">
+
+🔴 REC
+
+</button>
+
+
+
+<button class="controlBtn" onclick="zoomCamera()">
+
+🔍 ZOOM
+
+</button>
+
+
+
+<button class="controlBtn" onclick="lockCamera()">
+
+🔒 LOCK
+
+</button>
+
+
+
+<button class="controlBtn" onclick="emergency()">
+
+🚨 EMERGENCY
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+<!-- SUBJECT TRACKING -->
+
+
+<h3>
+
+SUBJECT TRACKING
+
+</h3>
+
+
+
+
+<div class="controlBox">
+
+
+<button class="controlBtn" onclick="selectSubject('HM-001')">
+
+HM-001
+
+</button>
+
+
+
+<button class="controlBtn" onclick="selectSubject('HM-014')">
+
+HM-014
+
+</button>
+
+
+
+<button class="controlBtn" onclick="selectSubject('HM-027')">
+
+HM-027
+
+</button>
+
+
+
+<button class="controlBtn" onclick="selectSubject('HM-099')">
+
+HM-099
+
+</button>
+
+
+
+
+<div id="subjectInfo">
+
+
+SUBJECT NOT SELECTED
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+LIVE SYSTEM DATA
+
+</h3>
+
+
+
+
+<div class="controlBox">
+
+
+<p>
+
+❤️ HEART RATE :
+
+<span id="heart">
+
+78
+
+</span>
+
+BPM
+
+</p>
+
+
+
+
+<p>
+
+🧬 CELL ACTIVITY :
+
+<span id="cell">
+
+92
+
+</span>
+
+%
+
+</p>
+
+
+
+
+<p>
+
+❄ FREEZER TEMP :
+
+<span id="temp">
+
+-82.4
+
+</span>
+
+°C
+
+</p>
+
+
+
+
+<p>
+
+⚡ POWER :
+
+<span id="power">
+
+98
+
+</span>
+
+%
+
+</p>
+
+
+
+
+<p>
+
+SECURITY :
+
+<span id="security">
+
+ACTIVE
+
+</span>
+
+</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+let currentCamera="CAM-01";
+
+
+let recording=false;
+
+
+let zoom=false;
+
+
+
+function changeCamera(cam,room){
+
+
+
+currentCamera=cam;
+
+
+
+document.getElementById("cameraName").innerHTML=
+
+cam;
+
+
+
+document.getElementById("cameraInfo").innerHTML=
+
+room+
+
+"<br><br>● SIGNAL CONNECTED";
+
+
+
+addNoise();
+
+
+
+}
+
+
+
+
+
+
+
+function recordToggle(){
+
+
+
+recording=!recording;
+
+
+
+let info=document.getElementById("cameraInfo");
+
+
+
+if(recording){
+
+
+info.innerHTML+=
+
+"<br>🔴 RECORDING";
+
+
+}
+
+
+
+else{
+
+
+info.innerHTML+=
+
+"<br>REC STOPPED";
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+function zoomCamera(){
+
+
+
+let screen=document.getElementById("screen");
+
+
+
+zoom=!zoom;
+
+
+
+if(zoom){
+
+
+
+screen.style.transform="scale(1.08)";
+
+
+}
+
+
+
+else{
+
+
+
+screen.style.transform="scale(1)";
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+function lockCamera(){
+
+
+
+document.getElementById("cameraInfo").innerHTML=
+
+
+"🔒 CAMERA LOCKED<br>LEVEL 5 REQUIRED";
+
+
+
+}
+
+
+
+
+
+
+
+
+function emergency(){
+
+
+
+document.getElementById("cameraInfo").innerHTML=
+
+
+"🚨 EMERGENCY SIGNAL SENT<br>SECURITY TEAM NOTIFIED";
+
+
+
+document.body.classList.add("noise");
+
+
+
+setTimeout(function(){
+
+
+
+document.body.classList.remove("noise");
+
+
+
+},1000);
+
+
+
+}
+
+
+
+
+
+
+
+function selectSubject(id){
+
+
+
+let data={
+
+
+
+"HM-001":"STABLE",
+
+"HM-014":"OBSERVATION",
+
+"HM-027":"UNSTABLE",
+
+"HM-099":"RESTRICTED"
+
+
+
+};
+
+
+
+document.getElementById("subjectInfo").innerHTML=
+
+
+
+`
+
+<br>
+
+SUBJECT :
+
+<b>${id}</b>
+
+<br><br>
+
+STATUS :
+
+${data[id]}
+
+<br><br>
+
+TRACKING ACTIVE
+
+`;
+
+
+
+}
+// =============================
+// LIVE BIO DATA SYSTEM
+// =============================
+
+
+setInterval(function(){
+
+
+
+let heart=
+
+Math.floor(
+
+70+
+
+Math.random()*35
+
+);
+
+
+
+let cell=
+
+Math.floor(
+
+80+
+
+Math.random()*20
+
+);
+
+
+
+let temp=
+
+(
+
+-82+
+
+Math.random()*2
+
+).toFixed(1);
+
+
+
+let power=
+
+Math.floor(
+
+95+
+
+Math.random()*5
+
+);
+
+
+
+
+document.getElementById("heart").innerHTML=
+
+heart;
+
+
+
+document.getElementById("cell").innerHTML=
+
+cell;
+
+
+
+document.getElementById("temp").innerHTML=
+
+temp;
+
+
+
+document.getElementById("power").innerHTML=
+
+power;
+
+
+
+},2000);
+
+
+
+
+
+
+
+// =============================
+// RANDOM CCTV NOISE
+// =============================
+
+
+
+function addNoise(){
+
+
+
+let screen=document.getElementById("screen");
+
+
+
+screen.classList.add("noise");
+
+
+
+setTimeout(function(){
+
+
+
+screen.classList.remove("noise");
+
+
+
+},300);
+
+
+
+}
+
+
+
+
+setInterval(function(){
+
+
+
+if(Math.random()<0.35){
+
+
+
+addNoise();
+
+
+
+}
+
+
+
+},5000);
+
+
+
+
+
+
+
+
+// =============================
+// WARNING SYSTEM
+// =============================
+
+
+
+const warnings=[
+
+
+"⚠ HEART RATE ABNORMAL",
+
+"⚠ UNKNOWN CELL SIGNAL",
+
+"⚠ SUBJECT MOVEMENT DETECTED",
+
+"⚠ CONTAINMENT CHECK REQUIRED",
+
+"⚠ CAMERA SIGNAL UNSTABLE"
+
+];
+
+
+
+
+
+
+setInterval(function(){
+
+
+
+if(Math.random()<0.25){
+
+
+
+let msg=
+
+
+warnings[
+
+Math.floor(
+
+Math.random()*warnings.length
+
+)
+
+];
+
+
+
+
+let box=document.createElement("div");
+
+
+
+box.innerHTML=msg;
+
+
+
+box.style.position="fixed";
+
+box.style.right="30px";
+
+box.style.bottom="30px";
+
+box.style.padding="15px";
+
+box.style.background="#300";
+
+box.style.border="2px solid #ff69b4";
+
+box.style.color="#ff69b4";
+
+box.style.zIndex="999";
+
+box.style.fontWeight="bold";
+
+
+
+document.body.appendChild(box);
+
+
+
+
+setTimeout(function(){
+
+
+
+box.remove();
+
+
+
+},3000);
+
+
+
+}
+
+
+
+},8000);
+
+
+
+
+
+
+
+
+// =============================
+// SECURITY STATUS RANDOM
+// =============================
+
+
+
+setInterval(function(){
+
+
+
+let status=[
+
+
+"ACTIVE",
+
+"MONITORING",
+
+"LOCKDOWN READY",
+
+"WARNING"
+
+
+
+];
+
+
+
+document.getElementById("security").innerHTML=
+
+
+status[
+
+Math.floor(
+
+Math.random()*status.length
+
+)
+
+];
+
+
+
+},7000);
+
+
+
+
+
+
+
+
+// =============================
+// LIVE LOG
+// =============================
+
+
+
+let monitorLogs=[];
+
+
+
+function createMonitorLog(text){
+
+
+
+let time=new Date();
+
+
+
+let t=
+
+time.getHours()+":"+
+
+String(time.getMinutes()).padStart(2,"0")+":"+
+
+String(time.getSeconds()).padStart(2,"0");
+
+
+
+monitorLogs.unshift(
+
+"["+t+"] "+text
+
+);
+
+
+
+if(monitorLogs.length>5){
+
+monitorLogs.pop();
+
+}
+
+
+
+}
+
+
+
+
+
+
+setInterval(function(){
+
+
+
+let logs=[
+
+
+"Camera signal verified",
+
+"Subject scan completed",
+
+"Biological data updated",
+
+"Freezer system checked",
+
+"Security scan finished"
+
+];
+
+
+
+if(Math.random()<0.5){
+
+
+
+createMonitorLog(
+
+logs[
+
+Math.floor(Math.random()*logs.length)
+
+]
+
+);
+
+
+
+}
+
+
+
+},5000);
+
+
+
+
+
+
+
+
+
+// =============================
+// START
+// =============================
+
+
+createMonitorLog(
+
+"HUMAN MONITOR SYSTEM ONLINE"
+
+);
+
+
+
+createMonitorLog(
+
+"CCTV NETWORK CONNECTED"
+
+);
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
