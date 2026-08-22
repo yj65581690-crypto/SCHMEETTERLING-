@@ -6,24 +6,21 @@
 <meta charset="UTF-8">
 
 <title>
-CHEMICAL MEDICINE MANAGEMENT
+CHEMICAL MEDICINE SYSTEM
 </title>
 
 <link rel="stylesheet" href="./style.css">
-
 
 <style>
 
 
 .shelf{
 
-border:3px solid black;
+display:grid;
 
-padding:20px;
+grid-template-columns:repeat(2,1fr);
 
-margin:20px 0;
-
-background:#ddd;
+gap:20px;
 
 }
 
@@ -31,33 +28,43 @@ background:#ddd;
 
 .bottle{
 
-border:2px solid black;
+border:3px solid black;
 
-padding:15px;
+padding:20px;
 
-margin:10px;
+background:#e8e8e8;
 
-background:#eee;
-
-}
-
-
-
-.bar{
-
-height:15px;
-
-border:2px solid black;
+text-align:center;
 
 }
 
 
 
-.fill{
+.bottleIcon{
+
+font-size:60px;
+
+}
+
+
+
+.amountBar{
+
+height:20px;
+
+border:2px solid black;
+
+margin:15px 0;
+
+}
+
+
+
+.amount{
 
 height:100%;
 
-background:#444;
+background:#555;
 
 transition:.5s;
 
@@ -67,9 +74,9 @@ transition:.5s;
 
 button{
 
-padding:8px 15px;
+padding:8px;
 
-margin:5px;
+margin:4px;
 
 font-family:inherit;
 
@@ -88,13 +95,26 @@ font-weight:bold;
 }
 
 
-.low{
+.warn{
 
-color:#b88600;
+color:#a00000;
 
 font-weight:bold;
 
 }
+
+
+
+.controlBox{
+
+border:2px solid black;
+
+padding:15px;
+
+margin:20px 0;
+
+}
+
 
 
 </style>
@@ -191,27 +211,27 @@ NONE
 </h2>
 
 
+
 <p>
 
 시설 :
 
 <b>
 
-RESEARCH CHEMICAL STORAGE
+RESEARCH REAGENT ROOM
 
 </b>
 
 </p>
 
 
-
 <p>
 
-관리 상태 :
+상태 :
 
-<span class="good">
+<span id="system" class="good">
 
-● ONLINE
+● NORMAL
 
 </span>
 
@@ -226,9 +246,10 @@ RESEARCH CHEMICAL STORAGE
 
 <h3>
 
-RESEARCH REAGENT SHELF
+🧪 REAGENT SHELF
 
 </h3>
+
 
 
 
@@ -236,12 +257,20 @@ RESEARCH REAGENT SHELF
 
 
 
+
+
 <div class="bottle">
+
+<div class="bottleIcon">
+
+🧂
+
+</div>
 
 
 <h3>
 
-MED-001
+NaCl
 
 </h3>
 
@@ -250,48 +279,59 @@ MED-001
 
 염화나트륨
 
-<br>
-
-<b>
-
-NaCl
-
-</b>
-
 </p>
-
 
 
 <p>
 
 재고 :
 
-<b id="nacl">
+<b id="naclText">
 
-120g
+500g
 
 </b>
 
 </p>
 
 
+<div class="amountBar">
 
-<div class="bar">
+<div class="amount" id="naclBar">
 
-<div class="fill" id="naclBar"></div>
+</div>
 
 </div>
 
 
+<p>
 
-<button onclick="useItem('nacl')">
+순도 :
 
-사용
+<b id="naclPure">
+
+99%
+
+</b>
+
+</p>
+
+
+<button onclick="useChem('nacl',10)">
+
+-10g 사용
 
 </button>
 
 
-<button onclick="orderItem('nacl')">
+<button onclick="addChem('nacl',100)">
+
++100g 보충
+
+</button>
+
+
+<button onclick="orderChem('nacl')">
 
 주문
 
@@ -308,10 +348,102 @@ NaCl
 
 <div class="bottle">
 
+<div class="bottleIcon">
+
+🔵
+
+</div>
+
 
 <h3>
 
-MED-002
+CuSO₄
+
+</h3>
+
+
+<p>
+
+황산구리
+
+</p>
+
+
+<p>
+
+재고 :
+
+<b id="cusoText">
+
+250g
+
+</b>
+
+</p>
+
+
+<div class="amountBar">
+
+<div class="amount" id="cusoBar">
+
+</div>
+
+</div>
+
+
+<p>
+
+순도 :
+
+<b id="cusoPure">
+
+97%
+
+</b>
+
+</p>
+
+
+<button onclick="useChem('cuso',10)">
+
+-10g 사용
+
+</button>
+
+
+<button onclick="addChem('cuso',100)">
+
++100g 보충
+
+</button>
+
+
+<button onclick="orderChem('cuso')">
+
+주문
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div class="bottle">
+
+<div class="bottleIcon">
+
+⚪
+
+</div>
+
+
+<h3>
+
+CaCO₃
 
 </h3>
 
@@ -320,14 +452,6 @@ MED-002
 
 탄산칼슘
 
-<br>
-
-<b>
-
-CaCO₃
-
-</b>
-
 </p>
 
 
@@ -335,30 +459,52 @@ CaCO₃
 
 재고 :
 
-<b id="calcium">
+<b id="calText">
 
-90g
+300g
 
 </b>
 
 </p>
 
 
-<div class="bar">
+<div class="amountBar">
 
-<div class="fill" id="calciumBar"></div>
+<div class="amount" id="calBar">
+
+</div>
 
 </div>
 
 
-<button onclick="useItem('calcium')">
+<p>
 
-사용
+순도 :
+
+<b id="calPure">
+
+98%
+
+</b>
+
+</p>
+
+
+<button onclick="useChem('cal',10)">
+
+-10g 사용
 
 </button>
 
 
-<button onclick="orderItem('calcium')">
+<button onclick="addChem('cal',100)">
+
++100g 보충
+
+</button>
+
+
+<button onclick="orderChem('cal')">
 
 주문
 
@@ -375,25 +521,23 @@ CaCO₃
 
 <div class="bottle">
 
+<div class="bottleIcon">
+
+🟡
+
+</div>
+
 
 <h3>
 
-MED-003
+Fe
 
 </h3>
 
 
 <p>
 
-포도당
-
-<br>
-
-<b>
-
-C₆H₁₂O₆
-
-</b>
+철 분말
 
 </p>
 
@@ -402,96 +546,52 @@ C₆H₁₂O₆
 
 재고 :
 
-<b id="glucose">
+<b id="feText">
 
-75g
+200g
 
 </b>
 
 </p>
 
 
-<div class="bar">
+<div class="amountBar">
 
-<div class="fill" id="glucoseBar"></div>
-
-</div>
-
-
-<button onclick="useItem('glucose')">
-
-사용
-
-</button>
-
-
-<button onclick="orderItem('glucose')">
-
-주문
-
-</button>
-
+<div class="amount" id="feBar">
 
 </div>
 
-
-
-
-
-
-<div class="bottle">
-
-
-<h3>
-
-MED-004
-
-</h3>
+</div>
 
 
 <p>
 
-에탄올
+순도 :
 
-<br>
+<b id="fePure">
 
-<b>
-
-C₂H₅OH
+95%
 
 </b>
 
 </p>
 
 
-<p>
+<button onclick="useChem('fe',10)">
 
-재고 :
-
-<b id="ethanol">
-
-60ml
-
-</b>
-
-</p>
-
-
-<div class="bar">
-
-<div class="fill" id="ethanolBar"></div>
-
-</div>
-
-
-<button onclick="useItem('ethanol')">
-
-사용
+-10g 사용
 
 </button>
 
 
-<button onclick="orderItem('ethanol')">
+<button onclick="addChem('fe',100)">
+
++100g 보충
+
+</button>
+
+
+<button onclick="orderChem('fe')">
 
 주문
 
@@ -514,9 +614,88 @@ C₂H₅OH
 
 
 
+
+<div class="controlBox">
+
+
 <h3>
 
-LIVE INVENTORY LOG
+🌡 STORAGE CONTROL
+
+</h3>
+
+
+<p>
+
+온도 :
+
+<b id="temp">
+
+20°C
+
+</b>
+
+</p>
+
+
+<button onclick="changeTemp(-1)">
+
+온도 -
+
+</button>
+
+
+<button onclick="changeTemp(1)">
+
+온도 +
+
+</button>
+
+
+
+
+<p>
+
+습도 :
+
+<b id="humidity">
+
+40%
+
+</b>
+
+</p>
+
+
+<button onclick="changeHumidity(-5)">
+
+습도 -
+
+</button>
+
+
+<button onclick="changeHumidity(5)">
+
+습도 +
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+📋 LIVE LOG
 
 </h3>
 
@@ -528,12 +707,13 @@ LIVE INVENTORY LOG
 
 [SYSTEM]
 
-Reagent shelf connected.
+Chemical medicine system loaded.
 
 </p>
 
 
 </div>
+
 
 
 
@@ -552,58 +732,141 @@ Reagent shelf connected.
 <script>
 
 
-
-document.getElementById("userName").innerHTML=
-
-localStorage.getItem("userName")||"UNKNOWN";
+let chemicals={
 
 
-
-document.getElementById("userLevel").innerHTML=
-
-localStorage.getItem("userLevel")||"NONE";
-
-
+nacl:{
+amount:500,
+pure:99
+},
 
 
+cuso:{
+amount:250,
+pure:97
+},
 
-let stock={
 
-nacl:120,
+cal:{
+amount:300,
+pure:98
+},
 
-calcium:90,
 
-glucose:75,
+fe:{
+amount:200,
+pure:95
+}
 
-ethanol:60
 
 };
 
 
 
+let temp=20;
 
-
-function useItem(item){
-
-
-stock[item]-=5;
-
-
-if(stock[item]<0)
-
-stock[item]=0;
+let humidity=40;
 
 
 
-update(item);
 
 
 
-addLog(
+function useChem(id,value){
 
-item+" used (-5)"
 
-);
+chemicals[id].amount-=value;
+
+
+if(chemicals[id].amount<0)
+
+chemicals[id].amount=0;
+
+
+
+chemicals[id].pure-=1;
+
+
+update(id);
+
+
+addLog(id+" 사용 처리 -"+value+"g");
+
+
+}
+
+
+
+
+
+function addChem(id,value){
+
+
+chemicals[id].amount+=value;
+
+
+update(id);
+
+
+addLog(id+" 재고 보충 +"+value+"g");
+
+
+}
+
+
+
+
+
+
+function orderChem(id){
+
+
+chemicals[id].amount+=500;
+
+
+update(id);
+
+
+addLog(id+" 주문 완료 +500g");
+
+
+}
+
+
+
+
+
+
+
+function update(id){
+
+
+
+let data=chemicals[id];
+
+
+document.getElementById(id+"Text").innerHTML=
+
+data.amount+"g";
+
+
+document.getElementById(id+"Pure").innerHTML=
+
+data.pure+"%";
+
+
+
+document.getElementById(id+"Bar").style.width=
+
+Math.min(data.amount/5,100)+"%";
+
+
+
+if(data.amount<50){
+
+addLog(id+" LOW STOCK WARNING");
+
+}
 
 
 
@@ -615,23 +878,18 @@ item+" used (-5)"
 
 
 
-function orderItem(item){
+function changeTemp(v){
 
 
-stock[item]+=50;
+temp+=v;
 
 
+document.getElementById("temp").innerHTML=
 
-update(item);
+temp+"°C";
 
 
-
-addLog(
-
-item+" order completed (+50)"
-
-);
-
+addLog("Temperature changed "+temp+"°C");
 
 
 }
@@ -640,32 +898,35 @@ item+" order completed (+50)"
 
 
 
-function update(item){
+
+function changeHumidity(v){
+
+
+humidity+=v;
+
+
+if(humidity<0)
+
+humidity=0;
 
 
 
-document.getElementById(item).innerHTML=
+document.getElementById("humidity").innerHTML=
 
-stock[item]+
-
-(item=="ethanol"?"ml":"g");
+humidity+"%";
 
 
-
-document.getElementById(item+"Bar").style.width=
-
-Math.min(stock[item],100)+"%";
-
+addLog("Humidity changed "+humidity+"%");
 
 
 }
+
 
 
 
 
 
 function addLog(text){
-
 
 
 document.getElementById("log").innerHTML+=
@@ -683,8 +944,8 @@ ${text}
 `;
 
 
-
 }
+
 
 
 
@@ -693,39 +954,16 @@ ${text}
 setInterval(()=>{
 
 
-let items=
-
-Object.keys(stock);
+let ids=Object.keys(chemicals);
 
 
-
-let item=
-
-items[Math.floor(Math.random()*items.length)];
+let id=ids[Math.floor(Math.random()*ids.length)];
 
 
-
-stock[item]-=1;
-
+chemicals[id].pure-=0.1;
 
 
-if(stock[item]<0)
-
-stock[item]=0;
-
-
-
-update(item);
-
-
-
-addLog(
-
-"Automatic inventory check : "
-
-+item
-
-);
+update(id);
 
 
 
@@ -734,8 +972,30 @@ addLog(
 
 
 
-</script>
 
+
+document.getElementById("userName").innerHTML=
+
+localStorage.getItem("userName")||"UNKNOWN";
+
+
+document.getElementById("userLevel").innerHTML=
+
+localStorage.getItem("userLevel")||"NONE";
+
+
+
+naclBar.style.width="100%";
+
+cusoBar.style.width="50%";
+
+calBar.style.width="60%";
+
+feBar.style.width="40%";
+
+
+
+</script>
 
 
 </body>
