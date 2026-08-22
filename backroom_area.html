@@ -15,7 +15,7 @@
 
 .mapBox{
 
-height:450px;
+height:500px;
 
 border:1px solid #555;
 
@@ -32,6 +32,7 @@ margin:20px 0;
 
 
 
+/* 일반 구역 */
 
 .node{
 
@@ -52,20 +53,7 @@ box-shadow:0 0 15px #7ef7b7;
 
 
 
-
-.nodeText{
-
-position:absolute;
-
-margin-top:25px;
-
-white-space:nowrap;
-
-}
-
-
-
-
+/* 위험 구역 */
 
 .errorNode{
 
@@ -76,7 +64,6 @@ box-shadow:0 0 15px #ff7070;
 animation:blink 1s infinite;
 
 }
-
 
 
 
@@ -94,10 +81,25 @@ opacity:0.3;
 
 
 
+.nodeText{
+
+position:absolute;
+
+margin-top:25px;
+
+white-space:nowrap;
+
+font-size:13px;
+
+}
+
+
+
+
+
 
 
 /* 지도 연결선 */
-
 
 .mapLine{
 
@@ -105,7 +107,7 @@ position:absolute;
 
 height:0;
 
-border-top:2px dashed #555;
+border-top:2px dashed #777;
 
 transform-origin:left center;
 
@@ -114,11 +116,13 @@ animation:lineBlink 2s infinite;
 }
 
 
+
+
 @keyframes lineBlink{
 
 50%{
 
-opacity:0.4;
+opacity:0.3;
 
 }
 
@@ -129,9 +133,7 @@ opacity:0.4;
 
 
 
-
-/* 탐사팀 위치 */
-
+/* 이동 탐사점 */
 
 .explorer{
 
@@ -145,11 +147,11 @@ border-radius:50%;
 
 background:#00ffff;
 
-box-shadow:0 0 15px #00ffff;
+box-shadow:0 0 20px #00ffff;
 
-animation:moveExplorer 8s infinite linear;
+z-index:10;
 
-z-index:5;
+animation:moveExplorer 10s infinite linear;
 
 }
 
@@ -170,7 +172,7 @@ top:40%;
 
 
 
-25%{
+20%{
 
 left:50%;
 
@@ -180,7 +182,7 @@ top:25%;
 
 
 
-50%{
+40%{
 
 left:70%;
 
@@ -190,7 +192,17 @@ top:55%;
 
 
 
-75%{
+60%{
+
+left:35%;
+
+top:70%;
+
+}
+
+
+
+80%{
 
 left:80%;
 
@@ -209,9 +221,7 @@ top:40%;
 }
 
 
-
 }
-
 
 
 
@@ -225,7 +235,6 @@ color:#7ef7b7;
 animation:scan 2s infinite;
 
 }
-
 
 
 
@@ -288,6 +297,7 @@ LEVEL
 
 
 <hr>
+
 
 
 <button onclick="location.href='./main.html'">
@@ -353,9 +363,12 @@ STAFF ONLY
 
 
 
+
 <h3>
 LIVE EXPLORATION MAP
 </h3>
+
+
 
 
 
@@ -363,42 +376,7 @@ LIVE EXPLORATION MAP
 
 
 
-<!-- 연결선 -->
-
-<div class="mapLine"
-style="
-width:170px;
-left:28%;
-top:40%;
-transform:rotate(-25deg);
-">
-</div>
-
-
-<div class="mapLine"
-style="
-width:160px;
-left:52%;
-top:30%;
-transform:rotate(35deg);
-">
-</div>
-
-
-<div class="mapLine"
-style="
-width:130px;
-left:67%;
-top:45%;
-transform:rotate(-45deg);
-">
-</div>
-
-
-
-
-
-<!-- 탐사팀 이동 -->
+<!-- 탐사 이동점 -->
 
 <div class="explorer">
 </div>
@@ -407,6 +385,81 @@ transform:rotate(-45deg);
 
 
 
+<!-- 연결선 -->
+
+
+<div class="mapLine"
+style="
+width:170px;
+left:25%;
+top:40%;
+transform:rotate(-25deg);
+">
+</div>
+
+
+
+<div class="mapLine"
+style="
+width:160px;
+left:50%;
+top:30%;
+transform:rotate(40deg);
+">
+</div>
+
+
+
+<div class="mapLine"
+style="
+width:150px;
+left:65%;
+top:50%;
+transform:rotate(-35deg);
+">
+</div>
+
+
+
+<div class="mapLine"
+style="
+width:150px;
+left:35%;
+top:65%;
+transform:rotate(-55deg);
+">
+</div>
+
+
+
+<div class="mapLine"
+style="
+width:150px;
+left:55%;
+top:70%;
+transform:rotate(-25deg);
+">
+</div>
+
+
+
+<div class="mapLine"
+style="
+width:130px;
+left:75%;
+top:35%;
+transform:rotate(50deg);
+">
+</div>
+
+
+
+
+
+
+
+
+<!-- LEVEL 0 -->
 
 <div class="node"
 style="left:25%;top:40%;">
@@ -416,11 +469,17 @@ style="left:25%;top:40%;">
 <p class="nodeText"
 style="left:25%;top:40%;">
 LEVEL 0
+<br>
+YELLOW HALLWAY
 </p>
 
 
 
 
+
+
+
+<!-- LEVEL 1 -->
 
 <div class="node"
 style="left:50%;top:25%;">
@@ -430,12 +489,17 @@ style="left:50%;top:25%;">
 <p class="nodeText"
 style="left:50%;top:25%;">
 LEVEL 1
+<br>
+HABITATION ZONE
 </p>
 
 
 
 
 
+
+
+<!-- LEVEL 2 -->
 
 <div class="node"
 style="left:70%;top:55%;">
@@ -445,12 +509,77 @@ style="left:70%;top:55%;">
 <p class="nodeText"
 style="left:70%;top:55%;">
 LEVEL 2
+<br>
+PIPE AREA
 </p>
 
 
 
 
 
+
+
+<!-- LEVEL 3 -->
+
+<div class="node"
+style="left:35%;top:70%;">
+</div>
+
+
+<p class="nodeText"
+style="left:35%;top:70%;">
+LEVEL 3
+<br>
+OFFICE REMAINS
+</p>
+
+
+
+
+
+
+
+<!-- LEVEL 4 -->
+
+<div class="node"
+style="left:15%;top:20%;">
+</div>
+
+
+<p class="nodeText"
+style="left:15%;top:20%;">
+LEVEL 4
+<br>
+POOL ZONE
+</p>
+
+
+
+
+
+
+
+<!-- LEVEL 5 -->
+
+<div class="node"
+style="left:55%;top:75%;">
+</div>
+
+
+<p class="nodeText"
+style="left:55%;top:75%;">
+LEVEL 5
+<br>
+HOTEL AREA
+</p>
+
+
+
+
+
+
+
+<!-- UNKNOWN -->
 
 <div class="node errorNode"
 style="left:80%;top:20%;">
@@ -460,11 +589,36 @@ style="left:80%;top:20%;">
 <p class="nodeText"
 style="left:80%;top:20%;color:#ff7070;">
 UNKNOWN AREA
+<br>
+DATA LOST
 </p>
 
 
 
+
+
+
+
+<!-- SEALED -->
+
+<div class="node errorNode"
+style="left:90%;top:65%;">
 </div>
+
+
+<p class="nodeText"
+style="left:90%;top:65%;color:#ff7070;">
+SEALED ZONE
+<br>
+ACCESS DENIED
+</p>
+
+
+
+
+
+</div>
+
 
 
 
@@ -475,17 +629,16 @@ UNKNOWN AREA
 <div class="recordBox">
 
 
-
 <h3>
 CURRENT SCAN STATUS
 </h3>
 
 
+
 <p class="scan">
-
 ● SCANNING...
-
 </p>
+
 
 
 <p>
@@ -499,6 +652,8 @@ LEVEL 0
 </p>
 
 
+
+
 <p>
 지도 안정도 :
 <br>
@@ -510,6 +665,7 @@ NORMAL
 </p>
 
 
+
 </div>
 
 
@@ -517,8 +673,8 @@ NORMAL
 
 
 
-<hr>
 
+<hr>
 
 
 
@@ -531,7 +687,6 @@ DISCOVERED AREA DATABASE
 
 
 <div class="recordBox">
-
 
 <h2>
 📍 LEVEL 0
@@ -551,9 +706,9 @@ DISCOVERED AREA DATABASE
 <p>
 특징 :
 <br>
-노란색 복도 구조
+노란 복도 구조
 <br>
-반복적인 공간 변화 확인
+반복 공간 변화 확인
 </p>
 
 
@@ -567,10 +722,7 @@ DISCOVERED AREA DATABASE
 
 
 
-
-
 <div class="recordBox">
-
 
 <h2>
 📍 LEVEL 1
@@ -592,7 +744,38 @@ DISCOVERED AREA DATABASE
 <br>
 습한 환경
 <br>
-비정상적인 음성 기록 발견
+비정상 음성 기록 발견
+</p>
+
+
+</div>
+<hr>
+
+
+
+<div class="recordBox">
+
+<h2>
+📍 LEVEL 2
+</h2>
+
+
+<p>
+상태 : 확인 완료
+</p>
+
+
+<p>
+위험도 : B
+</p>
+
+
+<p>
+특징 :
+<br>
+대형 배관 구조
+<br>
+정체불명 이동 소리 감지
 </p>
 
 
@@ -604,6 +787,125 @@ DISCOVERED AREA DATABASE
 
 
 <hr>
+
+
+
+
+
+<div class="recordBox">
+
+<h2>
+📍 LEVEL 3
+</h2>
+
+
+<p>
+상태 : 부분 조사
+</p>
+
+
+<p>
+위험도 : A
+</p>
+
+
+<p>
+특징 :
+<br>
+폐쇄된 사무 공간
+<br>
+이전 탐사자의 기록 발견
+</p>
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+<h2>
+📍 LEVEL 4
+</h2>
+
+
+<p>
+상태 : 확인 완료
+</p>
+
+
+<p>
+위험도 : B
+</p>
+
+
+<p>
+특징 :
+<br>
+수위 변화 발생
+<br>
+비정상적인 반사 현상 확인
+</p>
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+<h2>
+📍 LEVEL 5
+</h2>
+
+
+<p>
+상태 : 제한 탐사
+</p>
+
+
+<p>
+위험도 : A
+</p>
+
+
+<p>
+특징 :
+<br>
+호텔 형태 구조
+<br>
+출입구 위치 지속 변경
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
 
 
 
@@ -652,9 +954,56 @@ A
 
 
 
+
+<div class="recordBox">
+
+
+<h2>
+🔒 SEALED ZONE
+</h2>
+
+
+<p>
+상태 :
+<span style="color:#ff7070;">
+영구 봉인
+</span>
+</p>
+
+
+<p>
+위험도 :
+UNKNOWN
+</p>
+
+
+<p>
+특징 :
+<br>
+접근 기록 존재하지 않음
+<br>
+내부 데이터 자동 삭제
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
 <p style="color:#ff7070;">
 
 ⚠ WARNING :
+<br>
 MAP DATA MAY CHANGE WITHOUT NOTICE
 
 </p>
@@ -667,6 +1016,7 @@ MAP DATA MAY CHANGE WITHOUT NOTICE
 
 
 </div>
+
 
 
 
@@ -690,6 +1040,7 @@ document.getElementById("userName").innerHTML =
 user || "UNKNOWN";
 
 
+
 document.getElementById("userLevel").innerHTML =
 level || "NONE";
 
@@ -697,7 +1048,8 @@ level || "NONE";
 
 
 
-let locations=[
+
+let locations = [
 
 "LEVEL 0",
 
@@ -705,9 +1057,20 @@ let locations=[
 
 "LEVEL 2",
 
-"UNKNOWN AREA"
+"LEVEL 3",
+
+"LEVEL 4",
+
+"LEVEL 5",
+
+"UNKNOWN AREA",
+
+"SEALED ZONE"
 
 ];
+
+
+
 
 
 
@@ -725,7 +1088,11 @@ locations[random];
 
 
 
-if(locations[random]=="UNKNOWN AREA"){
+
+if(
+locations[random]=="UNKNOWN AREA" ||
+locations[random]=="SEALED ZONE"
+){
 
 
 document.getElementById("mapStatus").innerHTML =
@@ -747,7 +1114,10 @@ document.getElementById("mapStatus").innerHTML =
 
 
 
+
+
 </script>
+
 
 
 
