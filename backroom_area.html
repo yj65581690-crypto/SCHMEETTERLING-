@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>BACKROOM AREA MAPPING SYSTEM</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+
+.mapBox{
+
+height:450px;
+
+border:1px solid #555;
+
+position:relative;
+
+overflow:hidden;
+
+background:#050505;
+
+margin:20px 0;
+
+}
+
+
+
+
+
+.node{
+
+position:absolute;
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+background:#7ef7b7;
+
+box-shadow:0 0 15px #7ef7b7;
+
+}
+
+
+
+
+
+.nodeText{
+
+position:absolute;
+
+margin-top:25px;
+
+white-space:nowrap;
+
+}
+
+
+
+
+
+.errorNode{
+
+background:#ff7070;
+
+box-shadow:0 0 15px #ff7070;
+
+animation:blink 1s infinite;
+
+}
+
+
+
+
+
+@keyframes blink{
+
+50%{
+
+opacity:0.3;
+
+}
+
+}
+
+
+
+
+
+
+/* 지도 연결선 */
+
+
+.mapLine{
+
+position:absolute;
+
+height:2px;
+
+background:#555;
+
+transform-origin:left center;
+
+}
+
+
+
+
+
+
+
+/* 탐사팀 위치 */
+
+
+.explorer{
+
+position:absolute;
+
+width:12px;
+
+height:12px;
+
+border-radius:50%;
+
+background:#00ffff;
+
+box-shadow:0 0 15px #00ffff;
+
+animation:moveExplorer 8s infinite linear;
+
+z-index:5;
+
+}
+
+
+
+
+
+@keyframes moveExplorer{
+
+
+0%{
+
+left:25%;
+
+top:40%;
+
+}
+
+
+
+25%{
+
+left:50%;
+
+top:25%;
+
+}
+
+
+
+50%{
+
+left:70%;
+
+top:55%;
+
+}
+
+
+
+75%{
+
+left:80%;
+
+top:20%;
+
+}
+
+
+
+100%{
+
+left:25%;
+
+top:40%;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+.scan{
+
+color:#7ef7b7;
+
+animation:scan 2s infinite;
+
+}
+
+
+
+
+
+@keyframes scan{
+
+50%{
+
+opacity:0.4;
+
+}
+
+}
+
+
+
+</style>
+
+
+</head>
+<body class="backroomPage">
+
+
+<div class="layout">
+
+
+
+<div class="sideMenu">
+
+
+<h3>
+SCHMEETTERLING
+</h3>
+
+
+<p style="color:#7ef7b7;">
+● SYSTEM ONLINE
+</p>
+
+
+<hr>
+
+
+<p>
+USER
+<br>
+<b id="userName">
+확인중...
+</b>
+</p>
+
+
+<p>
+LEVEL
+<br>
+<b id="userLevel">
+확인중...
+</b>
+</p>
+
+
+<hr>
+
+
+<button onclick="location.href='./main.html'">
+🏠 HOME
+</button>
+
+
+<button onclick="location.href='./radiation.html'">
+☢ 방사능 부서
+</button>
+
+
+<button onclick="location.href='./unknown.html'">
+👾 미확인 개체
+</button>
+
+
+<button onclick="location.href='./bio.html'">
+🧫 생물 부서
+</button>
+
+
+<button onclick="location.href='./chemical.html'">
+🧪 화학 부서
+</button>
+
+
+<button onclick="location.href='./backroom.html'">
+📦 백룸 부서
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="mainBox">
+
+
+
+<h2>
+🗺 BACKROOM AREA MAPPING SYSTEM
+</h2>
+
+
+<p>
+<b>CODE :</b>
+BR-AREA
+</p>
+
+
+<p>
+<b>ACCESS LEVEL :</b>
+STAFF ONLY
+</p>
+
+
+<hr>
+
+
+
+<h3>
+LIVE EXPLORATION MAP
+</h3>
+
+
+
+<div class="mapBox">
+
+
+
+<!-- 연결선 -->
+
+<div class="mapLine"
+style="
+width:170px;
+left:28%;
+top:40%;
+transform:rotate(-25deg);
+">
+</div>
+
+
+<div class="mapLine"
+style="
+width:160px;
+left:52%;
+top:30%;
+transform:rotate(35deg);
+">
+</div>
+
+
+<div class="mapLine"
+style="
+width:130px;
+left:67%;
+top:45%;
+transform:rotate(-45deg);
+">
+</div>
+
+
+
+
+
+<!-- 탐사팀 이동 -->
+
+<div class="explorer">
+</div>
+
+
+
+
+
+
+<div class="node"
+style="left:25%;top:40%;">
+</div>
+
+
+<p class="nodeText"
+style="left:25%;top:40%;">
+LEVEL 0
+</p>
+
+
+
+
+
+<div class="node"
+style="left:50%;top:25%;">
+</div>
+
+
+<p class="nodeText"
+style="left:50%;top:25%;">
+LEVEL 1
+</p>
+
+
+
+
+
+
+<div class="node"
+style="left:70%;top:55%;">
+</div>
+
+
+<p class="nodeText"
+style="left:70%;top:55%;">
+LEVEL 2
+</p>
+
+
+
+
+
+
+<div class="node errorNode"
+style="left:80%;top:20%;">
+</div>
+
+
+<p class="nodeText"
+style="left:80%;top:20%;color:#ff7070;">
+UNKNOWN AREA
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="recordBox">
+
+
+
+<h3>
+CURRENT SCAN STATUS
+</h3>
+
+
+<p class="scan">
+
+● SCANNING...
+
+</p>
+
+
+<p>
+현재 탐색 위치 :
+<br>
+
+<span id="location">
+LEVEL 0
+</span>
+
+</p>
+
+
+<p>
+지도 안정도 :
+<br>
+
+<span id="mapStatus">
+NORMAL
+</span>
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+DISCOVERED AREA DATABASE
+</h3>
+
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+📍 LEVEL 0
+</h2>
+
+
+<p>
+상태 : 확인 완료
+</p>
+
+
+<p>
+위험도 : C
+</p>
+
+
+<p>
+특징 :
+<br>
+노란색 복도 구조
+<br>
+반복적인 공간 변화 확인
+</p>
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+📍 LEVEL 1
+</h2>
+
+
+<p>
+상태 : 부분 확인
+</p>
+
+
+<p>
+위험도 : B
+</p>
+
+
+<p>
+특징 :
+<br>
+습한 환경
+<br>
+비정상적인 음성 기록 발견
+</p>
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+❓ UNKNOWN AREA
+</h2>
+
+
+<p>
+상태 :
+<span style="color:#ff7070;">
+접근 불가
+</span>
+</p>
+
+
+<p>
+위험도 :
+A
+</p>
+
+
+<p>
+특징 :
+<br>
+좌표 변동 발생
+<br>
+지도 데이터 손실
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+<p style="color:#ff7070;">
+
+⚠ WARNING :
+MAP DATA MAY CHANGE WITHOUT NOTICE
+
+</p>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+let user =
+localStorage.getItem("userName");
+
+
+let level =
+localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+user || "UNKNOWN";
+
+
+document.getElementById("userLevel").innerHTML =
+level || "NONE";
+
+
+
+
+
+let locations=[
+
+"LEVEL 0",
+
+"LEVEL 1",
+
+"LEVEL 2",
+
+"UNKNOWN AREA"
+
+];
+
+
+
+setInterval(()=>{
+
+
+let random =
+Math.floor(Math.random()*locations.length);
+
+
+
+document.getElementById("location").innerHTML =
+locations[random];
+
+
+
+
+if(locations[random]=="UNKNOWN AREA"){
+
+
+document.getElementById("mapStatus").innerHTML =
+"DATA ERROR";
+
+
+}else{
+
+
+document.getElementById("mapStatus").innerHTML =
+"NORMAL";
+
+
+}
+
+
+
+},5000);
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
