@@ -14,6 +14,7 @@
 
 <body class="chemicalPage">
 
+
 <div class="layout">
 
 
@@ -38,26 +39,36 @@ SCHMEETTERLING
 
 
 <p>
+
 USER
+
 <br>
+
 <b id="userName">
 확인중...
 </b>
+
 </p>
 
 
 
+
 <p>
+
 LEVEL
+
 <br>
+
 <b id="userLevel">
 확인중...
 </b>
+
 </p>
 
 
 
 <hr>
+
 
 
 
@@ -118,6 +129,7 @@ LEVEL
 
 <!-- MAIN -->
 
+
 <div class="mainBox">
 
 
@@ -130,10 +142,11 @@ CHEMICAL DEPARTMENT
 
 
 
-
 <p>
 
-<b>부서 코드 :</b> CH-04
+<b>부서 코드 :</b>
+
+CH-04
 
 </p>
 
@@ -141,10 +154,11 @@ CHEMICAL DEPARTMENT
 
 <p>
 
-<b>열람 권한 :</b> LEVEL 3 이상
+<b>열람 권한 :</b>
+
+LEVEL 3 이상
 
 </p>
-
 
 
 
@@ -161,17 +175,34 @@ CHEMICAL DEPARTMENT
 
 
 
+
 <p>
 
-화학 물질의 연구 및 관리,
-약품 개발과 위험 물질 보관을 담당합니다.
+SCHMEETTERLING 내 모든 화학 분야의
+연구 및 개발을 담당하는 부서입니다.
 
 <br><br>
 
-모든 실험은 내부 안전 규정에 따라
-엄격하게 통제됩니다.
+
+물리화학 • 분석화학 • 유기화학
+
+<br>
+
+무기화학 • 고분자화학 • 생화학
+
+
+<br><br>
+
+
+다양한 화학 분야를 종합적으로 연구하며,
+
+그중에서도 생화학 분야를 중심으로
+
+위험 물질 분석 및 신규 화합물 개발을 진행합니다.
+
 
 </p>
+
 
 
 
@@ -183,9 +214,62 @@ CHEMICAL DEPARTMENT
 
 <h3>
 
+연구 목표
+
+</h3>
+
+
+
+<div class="recordBox">
+
+
+<p>
+
+<b>
+
+UNKNOWN MATERIAL DEVELOPMENT
+
+</b>
+
+</p>
+
+
+<p>
+
+현재 존재하지 않는 새로운 물질의 개발과
+
+화학적 특성을 이용한 다양한 실험을 목표로 합니다.
+
+</p>
+
+
+<p>
+
+기존 화학 이론으로 설명할 수 없는
+
+미확인 화합물 또한 연구 대상으로 지정됩니다.
+
+</p>
+
+
+
+</div>
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
 DATABASE
 
 </h3>
+
 
 
 
@@ -251,6 +335,8 @@ LAB STATUS
 
 
 
+
+
 <p>
 
 실험 코드 :
@@ -265,17 +351,67 @@ CHM-018 「PROJECT NARCISSUS」
 
 
 
+
 <p>
 
 담당 책임자 :
 
 <b>
 
-셀레스트
+할파스
 
 </b>
 
 </p>
+
+
+
+
+<p>
+
+주 연구 분야 :
+
+<b>
+
+BIO-CHEMISTRY
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+연구 분야 :
+
+<br>
+
+물리화학
+
+<br>
+
+분석화학
+
+<br>
+
+유기화학
+
+<br>
+
+무기화학
+
+<br>
+
+고분자화학
+
+<br>
+
+생화학
+
+</p>
+
 
 
 
@@ -293,13 +429,14 @@ CHM-018 「PROJECT NARCISSUS」
 
 
 
+
 <p>
 
-위험도 :
+위험 등급 :
 
 <b>
 
-B
+LEVEL B ~ A
 
 </b>
 
@@ -307,9 +444,11 @@ B
 
 
 
+
 <div id="labInfo">
 
 </div>
+
 
 
 
@@ -326,24 +465,70 @@ B
 
 
 
+<h3>
+
+DIRECTOR MESSAGE
+
+</h3>
+
+
+
+<div class="recordBox">
+
+
+<p>
+
+"화학은 존재하지 않는 것을 만들어내는 학문이다.
+
+<br><br>
+
+우리는 아직 발견되지 않은 가능성을 연구한다."
+
+</p>
+
+
+<p>
+
+- CHEMICAL DEPARTMENT DIRECTOR
+
+<br>
+
+HALPAS
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
 <p style="color:#ff4d4d;">
 
-⚠ WARNING : HAZARDOUS MATERIALS STORED
+⚠ WARNING :
+
+HAZARDOUS MATERIALS STORED
 
 </p>
 
 
 
 
-
 </div>
 
 
 
-
-
 </div>
-
 
 
 
@@ -357,45 +542,75 @@ let user = localStorage.getItem("userName");
 let level = localStorage.getItem("userLevel");
 
 
+
 document.getElementById("userName").innerHTML =
+
 user || "UNKNOWN";
 
 
+
 document.getElementById("userLevel").innerHTML =
+
 level || "NONE";
+
+
+
 
 
 document.getElementById("labInfo").innerHTML = `
 
+
 <p>
 
 실험실 :
+
 LAB-A
 
 </p>
 
+
 <p>
 
 온도 :
+
 37°C
 
 </p>
 
+
+
 <p>
 
 압력 :
+
 NORMAL
 
 </p>
 
+
+
 <p>
 
-안전 등급 :
+생체 안전 등급 :
+
 LEVEL B
 
 </p>
 
+
+<p>
+
+화학 보안 상태 :
+
+STABLE
+
+</p>
+
+
+
 `;
+
+
 
 
 </script>
