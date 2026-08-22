@@ -1,489 +1,238 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-
-<meta charset="UTF-8">
-
-<title>BACKROOM DEPARTMENT</title>
-
-<link rel="stylesheet" href="./style.css">
-
-</head>
-
-
-<body class="backroomPage">
-
-
-<div class="layout">
-
-
-
-<div class="sideMenu">
-
-
-<h3>
-SCHMEETTERLING
-</h3>
-
-
-<p style="color:#7ef7b7;">
-● SYSTEM ONLINE
-</p>
-
-
-<hr>
-
-
-<p>
-USER
-<br>
-<b id="userName">
-확인중...
-</b>
-</p>
-
-
-<p>
-LEVEL
-<br>
-<b id="userLevel">
-확인중...
-</b>
-</p>
-
-
-<hr>
-
-
-
-<button onclick="location.href='./main.html'">
-
-🏠 HOME
-
-</button>
-
-
-
-<button onclick="location.href='./radiation.html'">
-
-☢ 방사능 부서
-
-</button>
-
-
-
-<button onclick="location.href='./unknown.html'">
-
-👾 미확인 개체
-
-</button>
-
-
-
-<button onclick="location.href='./bio.html'">
-
-🧫 생물 부서
-
-</button>
-
-
-
-<button onclick="location.href='./chemical.html'">
-
-🧪 화학 부서
-
-</button>
-
-
-
-<button onclick="location.href='./backroom.html'">
-
-📦 백룸 부서
-
-</button>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="mainBox">
-
-
-
-<h1>
-SCHMEETTERLING
-</h1>
-
-
-
 <h2>
 📦 BACKROOM DEPARTMENT
 </h2>
-
-
 
 <p>
 <b>부서 코드 :</b> BR-03
 </p>
 
-
-
 <p>
 <b>열람 권한 :</b> STAFF 이상
 </p>
 
-
-
-
 <hr>
 
-
-
-
 <h3>
-UNKNOWN SPACE INVESTIGATION DATABASE
+DIVISION OVERVIEW
 </h3>
-
-
 
 <div class="recordBox">
 
-
 <p>
-구역 탐사 및 공간 이상 현상 기록
+현실과 분리된 변칙 공간 <b>「BACKROOM」</b>을
+탐사·조사·기록하는 특수 부서입니다.
 </p>
 
-
 <p>
-본 부서는 백룸 구역 탐사,
-공간 왜곡 현상 및 미확인 환경 데이터를 관리합니다.
+탐사 인원은 전용 워프 장치를 이용하여
+무작위 구역으로 이동하며,
+탐사 종료 후 24시간 이내 귀환이 가능합니다.
 </p>
 
-
 <p>
-현실과 다른 구조를 가진 공간을 조사하며,
-발견된 위험 개체 및 변칙 현상을 기록합니다.
+본 부서는 위험 개체 회수,
+환경 기록,
+신규 구역 발견을 최우선 목표로 합니다.
 </p>
 
-
-<p>
-모든 탐사 기록은 보안 규정에 따라
-제한적으로 저장됩니다.
+<p style="color:#ff7070;">
+※ 백룸 내부에서 발생하는 모든 사고는
+탐사자의 책임으로 기록됩니다.
 </p>
-
 
 </div>
 
-
-
-
-
 <hr>
-
-
-
-
 
 <h3>
 DATABASE
 </h3>
 
-
-
 <div class="recordBox">
-
-
-
-<div class="staffCard">
-
 
 <h2>
 📦 위험 개체 수거 및 보관
 </h2>
 
-
 <p>
 <b>CODE :</b> BR-ENTITY
 </p>
 
-
 <p>
-백룸 내부 발견 위험 개체의
-수거 및 보관 기록을 확인합니다.
+백룸 내부에서 발견된 위험 개체<br>
+수거 / 운송 / 보관 기록
 </p>
 
-
-<button onclick="location.href='./backroom_entity.html'">
+<button class="deptBtn backroom"
+onclick="location.href='./backroom_entity.html'">
 
 보고서 열람
 
 </button>
 
-
 </div>
 
+<hr>
 
-
-<br>
-
-
-
-<div class="staffCard">
-
+<div class="recordBox">
 
 <h2>
 📄 백룸 탐사 일지
 </h2>
 
-
 <p>
 <b>CODE :</b> BR-LOG
 </p>
 
-
 <p>
-백룸 탐사 기록 및
-직원 생존 보고서를 확인합니다.
+탐사대 생존 기록<br>
+환경 조사 보고서<br>
+교신 로그
 </p>
 
-
-<button onclick="location.href='./backroom_log.html'">
+<button class="deptBtn backroom"
+onclick="location.href='./backroom_log.html'">
 
 탐사 기록 열람
 
 </button>
 
-
 </div>
 
+<hr>
 
-
-<br>
-
-
-
-<div class="staffCard">
-
+<div class="recordBox">
 
 <h2>
 🗺 신규 구역 탐색
 </h2>
 
-
 <p>
 <b>CODE :</b> BR-AREA
 </p>
 
-
 <p>
-새롭게 발견된 백룸 구역과
-환경 데이터를 확인합니다.
+신규 레벨 발견<br>
+환경 분석<br>
+출입 가능 여부
 </p>
 
-
-<button onclick="location.href='./backroom_area.html'">
+<button class="deptBtn backroom"
+onclick="location.href='./backroom_area.html'">
 
 구역 기록 열람
 
 </button>
 
-
 </div>
 
+<hr>
 
-
-<br>
-
-
-
-<div class="staffCard">
-
+<div class="recordBox">
 
 <h2>
 👥 연구원 명단
 </h2>
 
-
 <p>
 <b>CODE :</b> BR-STAFF
 </p>
 
-
 <p>
-백룸 부서 소속 직원 정보를 확인합니다.
+백룸 부서 연구원<br>
+프로필 데이터베이스
 </p>
 
-
-<button onclick="location.href='./backroom_staff.html'">
+<button class="deptBtn backroom"
+onclick="location.href='./backroom_staff.html'">
 
 직원 정보 열람
 
 </button>
 
-
 </div>
-
-
-
-</div>
-<hr>
-
-
-<h3>
-WARP SYSTEM
-</h3>
-
-
-
-<div class="recordBox">
-
-
-<p>
-백룸 탐사는 전용 워프 장치를 통해 진행됩니다.
-</p>
-
-
-<p>
-워프 이후 도착 위치는 랜덤으로 결정됩니다.
-</p>
-
-
-<p>
-탐사자는 워프 이후 24시간 이내
-귀환이 가능합니다.
-</p>
-
-
-<p>
-워프 후 발생하는 사망 및 신체 손실은
-탐사자의 책임으로 분류됩니다.
-</p>
-
-
-</div>
-
-
-
 
 <hr>
-
-
-
-
-
-<div class="warningBox">
-
+    <div class="warningBox">
 
 <h3>
 ⚠ BACKROOMS DIVISION NOTICE
 </h3>
 
-
-
 <p>
-백룸 내부에서 발생하는 모든 손실은
-탐사자의 책임으로 분류된다.
+백룸 탐사는 자발적 참여로 간주됩니다.
 </p>
 
-
+<p>
+탐사 중 발생하는 사망, 실종, 신체 손실 및
+정신 이상 현상은 탐사자의 책임으로 분류됩니다.
+</p>
 
 <p>
 귀환하지 못한 직원의 구조 요청은
-우선순위에 따라 처리된다.
+상황과 우선순위에 따라 결정됩니다.
 </p>
-
-
 
 <p>
-"들어가는 것은 자유지만,
-돌아오는 것은 보장되지 않는다."
+백룸 내부에서 발견된 미확인 개체는
+반드시 회수하거나 위치를 보고해야 합니다.
 </p>
-
-
-
-</div>
-
-
-
-
 
 <hr>
 
+<p>
+<b>PRIMARY OBJECTIVES</b>
+</p>
 
+<p>
+● 위험 개체 수거 및 보관
+</p>
 
+<p>
+● 백룸 내부 환경 기록
+</p>
 
+<p>
+● 신규 구역 탐색 및 지도 작성
+</p>
 
-<h3>
-SYSTEM STATUS
-</h3>
+<p>
+● 공간 이상 현상 조사
+</p>
 
+<hr>
 
+<p style="color:#ff7070; text-align:center; font-weight:bold;">
 
-<p class="online">
-
-● ONLINE
+"들어가는 것은 자유다.<br>
+살아 돌아오는 것은 실력이다."
 
 </p>
 
+</div>
 
+<hr>
 
-
-
-<button onclick="location.href='./main.html'">
-
-← CENTRAL TERMINAL
-
-</button>
-
-
-
-
+<p class="online">
+● SYSTEM STATUS : ONLINE
+</p>
 
 </div>
 
-
 </div>
-
-
-
-
-
-
 
 <script>
 
-
-let user =
-localStorage.getItem("userName");
-
-
-let level =
-localStorage.getItem("userLevel");
-
-
+let user = localStorage.getItem("userName");
+let level = localStorage.getItem("userLevel");
 
 document.getElementById("userName").innerHTML =
 user || "UNKNOWN";
 
-
-
 document.getElementById("userLevel").innerHTML =
 level || "NONE";
 
-
-
 </script>
-
-
-
-
 
 </body>
 
