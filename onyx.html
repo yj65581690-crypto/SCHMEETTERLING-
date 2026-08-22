@@ -9,18 +9,206 @@
 
 <link rel="stylesheet" href="./style.css">
 
+
+<style>
+
+.glitch{
+
+animation:glitchText 1.8s infinite;
+
+}
+
+
+
+@keyframes glitchText{
+
+
+0%{
+
+text-shadow:
+2px 0 #ff0000,
+-2px 0 #00ffff;
+
+}
+
+
+
+25%{
+
+text-shadow:
+-3px 0 #ff0000,
+3px 0 #00ffff;
+
+}
+
+
+
+50%{
+
+text-shadow:none;
+
+}
+
+
+
+75%{
+
+text-shadow:
+3px 0 #00ffff,
+-3px 0 #ff0000;
+
+}
+
+
+
+100%{
+
+text-shadow:none;
+
+}
+
+
+}
+
+
+
+
+
+.glitchBox{
+
+animation:glitchBox 4s infinite;
+
+}
+
+
+
+
+
+@keyframes glitchBox{
+
+
+0%{
+
+transform:translate(0);
+
+}
+
+
+
+5%{
+
+transform:translate(-3px,1px);
+
+}
+
+
+
+10%{
+
+transform:translate(2px,-2px);
+
+}
+
+
+
+15%{
+
+transform:translate(0);
+
+}
+
+
+
+100%{
+
+transform:translate(0);
+
+}
+
+
+}
+
+
+
+
+
+
+.glitchImage{
+
+animation:imageGlitch 3s infinite;
+
+}
+
+
+
+
+@keyframes imageGlitch{
+
+
+0%{
+
+filter:none;
+
+}
+
+
+
+30%{
+
+filter:hue-rotate(50deg);
+
+}
+
+
+
+35%{
+
+filter:none;
+
+}
+
+
+
+70%{
+
+filter:hue-rotate(-50deg);
+
+}
+
+
+
+100%{
+
+filter:none;
+
+}
+
+
+}
+
+
+
+
+
+</style>
+
+
 </head>
 
 
+
 <body>
+
 
 
 <div class="mainBox">
 
 
 
-<h2>
+<h2 class="glitch">
+
 STAFF IDENTIFICATION CARD
+
 </h2>
 
 
@@ -29,15 +217,21 @@ STAFF IDENTIFICATION CARD
 
 
 
-<div class="recordBox">
+
+<div class="recordBox glitchBox">
+
+
 
 
 
 <div class="photo">
 
-<img src="onyx.jpg" width="200">
+
+<img src="onyx.jpg" width="200" class="glitchImage">
+
 
 </div>
+
 
 
 
@@ -47,9 +241,12 @@ STAFF IDENTIFICATION CARD
 
 
 
-<h2>
+<h2 class="glitch">
+
 오닉스
+
 </h2>
+
 
 
 
@@ -58,9 +255,11 @@ STAFF IDENTIFICATION CARD
 </p>
 
 
+
 <p>
 <b>직급</b> : 책임자
 </p>
+
 
 
 <p>
@@ -68,32 +267,42 @@ STAFF IDENTIFICATION CARD
 </p>
 
 
+
 <p>
 <b>보안 등급</b> : LEVEL 6
 </p>
 
 
+
 <p>
-<b>담당 업무</b> : BACKROOM 탐사 승인 및 구역 관리
+<b>담당 업무</b> :
+<br>
+BACKROOM 탐사 승인 및 변칙 구역 관리
 </p>
 
 
 
+
 <p>
+
 <b>상태</b> :
 
 <span class="online">
+
 ● ONLINE
+
 </span>
 
 </p>
 
 
 
+
 </div>
 
 
 </div>
+
 
 
 
@@ -106,11 +315,16 @@ STAFF IDENTIFICATION CARD
 
 
 
+
+
 <div class="recordBox">
 
 
+
 <h2>
+
 STAFF DATABASE
+
 </h2>
 
 
@@ -121,45 +335,76 @@ STAFF DATABASE
 
 
 <h3>
+
 PERSONAL INFORMATION
+
 </h3>
 
 
 
+
+
 <p>
+
 <b>FULL NAME</b> : ONYX
+
 </p>
 
 
+
 <p>
+
 <b>DEPARTMENT</b> : BACKROOM DEPARTMENT
+
 </p>
 
 
+
+
 <p>
+
 <b>HEIGHT</b> : 218cm
+
 </p>
 
 
+
+
 <p>
+
 <b>SPECIES</b> : INK
+
 </p>
 
 
+
+
 <p>
+
 <b>AGE</b> : UNCERTAINTY
+
 </p>
 
 
+
+
 <p>
+
 <b>IQ</b> : 128
+
 </p>
+
+
 
 
 <p>
+
 <b>FAMILY RELATIONS</b> :
-기록 없음
+
+UNKNOWN
+
 </p>
+
 
 
 
@@ -169,32 +414,37 @@ PERSONAL INFORMATION
 
 
 
-
 <h3>
+
 PERSONAL RECORD
+
 </h3>
+
 
 
 
 <p>
 
-타 직원 및 외부 존재를 발견할 경우
+자신 이외의 존재를 발견할 경우
 장난을 먼저 시도하는 성향을 보인다.
 
 </p>
 
 
+
 <p>
 
-행동 방식에 따라 시비로 오해받는 경우가 있으나,
-직원들과의 관계는 대체로 원만하다.
+행동 방식이 시비로 오해되는 경우가 있으나,
+대부분의 직원들과 원만한 관계를 유지하고 있다.
 
 </p>
 
 
+
 <p>
 
-회사 내 불화 발생 기록은 거의 존재하지 않는다.
+백룸 부서 내 불화 발생 기록은
+거의 존재하지 않는다.
 
 </p>
 
@@ -207,25 +457,27 @@ PERSONAL RECORD
 
 
 
-
 <h3>
+
 PHYSICAL CHARACTERISTICS
+
 </h3>
 
 
 
 <p>
 
-백룸 투입 시 평소의 장난스러운 모습은 사라진다.
+백룸 투입 이전에는 장난스러운 태도를 보이나,
+탐사 시작 후 태도가 완전히 변화한다.
 
 </p>
 
 
+
 <p>
 
-탐사 중에는 항상 주변을 경계하며,
-특히 LEVEL 6 및 LEVEL 7 구역에서는
-극도로 진중한 태도를 유지한다.
+LEVEL 6 및 LEVEL 7 구역에서는
+항상 진중한 모습을 유지한다.
 
 </p>
 
@@ -238,44 +490,49 @@ PHYSICAL CHARACTERISTICS
 
 
 
-
 <h3>
+
 BODY ANALYSIS
+
 </h3>
 
 
 
 <p>
+
 <b>촉수</b>
+
 </p>
+
 
 
 <p>
 
-척추를 따라 세로 방향의 개방부가 존재한다.
+척추를 따라 세로 방향으로 갈라진
+검은 개방부가 존재한다.
 
 </p>
+
 
 
 <p>
 
-내부는 완전히 검은 공간으로 확인되며,
-일반적인 생물학적 구조물은 발견되지 않았다.
+내부에서는 생물학적 기관이 확인되지 않으며,
+다수의 촉수 구조가 존재한다.
 
 </p>
-
-
 <p>
 
-내부에는 다수의 촉수가 존재하며,
-외부로 자유롭게 방출 가능하다.
+촉수는 제한 없이 외부로 방출 가능하나,
+과도한 사용 시 신체 손상 가능성이 확인됨.
 
 </p>
+
 
 
 <p style="color:#ff7070;">
 
-⚠ 촉수 과다 사용 시 신체 손상 위험
+⚠ 촉수 과다 사용으로 인한 신체 붕괴 위험
 
 </p>
 
@@ -285,8 +542,11 @@ BODY ANALYSIS
 
 
 <p>
+
 <b>입</b>
+
 </p>
+
 
 
 <p>
@@ -296,12 +556,14 @@ BODY ANALYSIS
 </p>
 
 
+
 <p>
 
 섭취 활동은 불필요하며,
 체내 기관을 통한 영양 합성이 이루어진다.
 
 </p>
+
 
 
 <p>
@@ -316,17 +578,19 @@ BODY ANALYSIS
 
 
 <p>
+
 <b>눈</b>
+
 </p>
+
 
 
 <p>
 
-시각 기관은 정상적으로 기능하며,
-일반적인 생물보다 빠르게 이상 개체를 발견하는 경우가 있다.
+시각 기능은 정상이며,
+일반 생물보다 빠르게 위험 요소를 발견하는 경우가 있다.
 
 </p>
-
 
 
 
@@ -338,25 +602,28 @@ BODY ANALYSIS
 
 
 
-
 <h3>
+
 BEHAVIOR ANALYSIS
+
 </h3>
+
 
 
 
 <p>
 
-책임자 직위가 공석이었던 당시
-본인은 책임자가 되는 것을 원하지 않는 모습을 보였다.
+책임자 자리가 공석이었던 당시,
+본인이 책임자가 되는 것을 원하지 않는 모습을 보였다.
 
 </p>
+
 
 
 <p>
 
 그러나 최종적으로 직위를 거부하지 않았으며,
-현재 백룸 부서 책임자로 활동 중이다.
+현재 백룸 부서 5대 책임자로 활동 중이다.
 
 </p>
 
@@ -370,13 +637,63 @@ BEHAVIOR ANALYSIS
 
 
 
-
-<div class="warningBox">
-
-
-
 <h3>
-NOTANDUM
+
+SPECIAL OBSERVATION
+
+</h3>
+
+
+
+
+<p>
+
+- 개인용 수첩 및 펜 항상 소지
+
+</p>
+
+
+
+<p>
+
+- 직원들과의 의사소통은 기록 방식으로 진행
+
+</p>
+
+
+
+<p>
+
+- LEVEL 6 이상 탐사 시 극도로 신중한 행동 확인
+
+</p>
+
+
+
+<p>
+
+- 장난스러운 평소 모습과 탐사 시 모습의 차이가 큼
+
+</p>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="warningBox glitchBox">
+
+
+
+<h3 class="glitch">
+
+⚠ NOTANDUM
+
 </h3>
 
 
@@ -388,17 +705,20 @@ NOTANDUM
 </p>
 
 
+
 <p>
 
-이전 책임자들과 관련된 기록 언급은
+이전 책임자 및 과거 기록에 대한 언급은
 오닉스 앞에서 자제할 것을 권장한다.
 
 </p>
 
 
+
 <p style="color:#ff7070;">
 
-⚠ LEVEL 7 단독 방치 금지
+
+⚠ LEVEL 7 단독 배치 금지
 
 <br>
 
@@ -406,15 +726,75 @@ NOTANDUM
 
 <br>
 
-⚠ 환각 증상 발생 시 즉시 대화 유지
+⚠ 이상 행동 발생 시 즉시 대화 유지
+
+<br>
+
+⚠ 환각 증상 확인 시 움직임 제한 필요
+
+
+</p>
+
+
+
+
+<p>
+
+그의 능력은 백룸 탐사 인원 보호를 위해 사용되지만,
+동시에 높은 위험성을 가진다.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<div class="recordBox glitchBox">
+
+
+
+<h3 class="glitch">
+
+SYSTEM NOTE
+
+</h3>
+
+
+
+<p>
+
+ENTITY TYPE : INK
 
 </p>
 
 
 <p>
 
-그의 능력은 직원 보호를 위해 존재하지만,
-동시에 위험 요소가 될 수 있음을 명심할 것.
+CURRENT STATUS :
+<br>
+
+AUTHORIZED STAFF
+
+</p>
+
+
+
+<p style="color:#ff7070;">
+
+DATA STABILITY : 87%
 
 </p>
 
@@ -422,9 +802,6 @@ NOTANDUM
 
 </div>
 
-
-
-</div>
 
 
 
@@ -444,7 +821,10 @@ NOTANDUM
 
 
 
+
+
 </div>
+
 
 
 
