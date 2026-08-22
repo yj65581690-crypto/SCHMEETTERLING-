@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+CHEMICAL STAFF DATABASE
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body class="chemicalPage">
+
+
+<div class="mainBox">
+
+
+<h2>
+🧪 CHEMICAL STAFF DATABASE
+</h2>
+
+
+<hr>
+
+
+<p>
+SCHMEETTERLING 화학 부서 연구원 정보
+</p>
+
+
+<hr>
+
+
+<h3>
+STAFF SEARCH
+</h3>
+
+
+
+<input
+type="text"
+id="searchInput"
+placeholder="이름 / 직급 / 사번 검색"
+onkeyup="searchStaff()"
+>
+
+
+
+<hr>
+
+
+
+<h3>
+STAFF LIST
+</h3>
+
+
+
+
+<div id="staffContainer">
+
+
+
+<!-- 할파스 -->
+
+<div class="recordBox staffCard">
+
+
+<h2>
+할파스
+</h2>
+
+
+<p>
+<b>사번</b> :
+UE - A444
+</p>
+
+
+<p>
+<b>직급</b> :
+책임자
+</p>
+
+
+<p>
+<b>소속</b> :
+화학 부서
+</p>
+
+
+<p>
+<b>담당</b> :
+화학 부서 총괄 관리
+</p>
+
+
+<button onclick="location.href='./halpas.html'">
+
+프로필 열람
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 페르세포네 -->
+
+
+<div class="recordBox staffCard">
+
+
+<h2>
+페르세포네
+</h2>
+
+
+<p>
+<b>사번</b> :
+UE - A666
+</p>
+
+
+<p>
+<b>직급</b> :
+직원
+</p>
+
+
+<p>
+<b>소속</b> :
+화학 부서
+</p>
+
+
+<p>
+<b>담당</b> :
+화학 연구 및 실험 지원
+
+</p>
+
+
+<button onclick="location.href='./persephone.html'">
+
+프로필 열람
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 세실리아 -->
+
+
+<div class="recordBox staffCard">
+
+
+<h2>
+세실리아
+</h2>
+
+
+<p>
+<b>사번</b> :
+UE - A899
+</p>
+
+
+<p>
+<b>직급</b> :
+직원
+</p>
+
+
+<p>
+<b>소속</b> :
+화학 부서
+</p>
+
+
+<p>
+<b>담당</b> :
+화학 연구 및 물질 분석
+
+</p>
+
+
+<button onclick="location.href='./cecilia.html'">
+
+프로필 열람
+
+</button>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+DEPARTMENT INFORMATION
+</h3>
+
+
+<div class="recordBox">
+
+
+<p>
+
+<b>연구 분야</b>
+
+</p>
+
+
+<p>
+
+생화학
+
+<br>
+
+물리화학
+
+<br>
+
+분석화학
+
+<br>
+
+유기화학
+
+<br>
+
+무기화학
+
+<br>
+
+고분자화학
+
+</p>
+
+
+
+<hr>
+
+
+
+<p>
+
+<b>주 연구 분야</b>
+
+</p>
+
+
+<p>
+
+생화학 분야를 중심으로
+
+다양한 화학 분야 연구 진행.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+<button onclick="location.href='./chemical.html'">
+
+← 화학 부서
+
+</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+function searchStaff(){
+
+
+let input =
+document.getElementById("searchInput")
+.value
+.toLowerCase();
+
+
+
+let cards =
+document.getElementsByClassName("staffCard");
+
+
+
+for(let i=0;i<cards.length;i++){
+
+
+let text =
+cards[i].innerText.toLowerCase();
+
+
+
+if(text.includes(input)){
+
+
+cards[i].style.display="block";
+
+
+}
+
+else{
+
+
+cards[i].style.display="none";
+
+
+}
+
+
+}
+
+
+}
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
