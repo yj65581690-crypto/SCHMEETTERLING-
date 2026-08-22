@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+DRUG DISTRIBUTION SYSTEM
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+
+.distributionPage{
+
+background:#050b14;
+
+color:white;
+
+}
+
+
+
+.secretBox{
+
+border:2px solid #00aaff;
+
+background:#00101c;
+
+padding:15px;
+
+color:#00aaff;
+
+font-weight:bold;
+
+}
+
+
+
+.document{
+
+border:1px solid #0077aa;
+
+background:#050f18;
+
+padding:20px;
+
+}
+
+
+
+.navigator{
+
+text-align:center;
+
+font-size:25px;
+
+margin:20px;
+
+}
+
+
+
+.navigator button{
+
+font-size:25px;
+
+padding:10px 20px;
+
+}
+
+
+
+/* TRACKING MAP */
+
+
+.mapBox{
+
+height:250px;
+
+background:#02070c;
+
+border:1px solid #00aaff;
+
+position:relative;
+
+overflow:hidden;
+
+margin-top:15px;
+
+}
+
+
+
+.route{
+
+position:absolute;
+
+top:50%;
+
+left:10%;
+
+width:80%;
+
+border-top:3px dashed #00aaff;
+
+}
+
+
+
+.vehicle{
+
+position:absolute;
+
+top:42%;
+
+left:10%;
+
+font-size:30px;
+
+color:#00ffff;
+
+animation:moveVehicle 8s infinite linear;
+
+}
+
+
+
+@keyframes moveVehicle{
+
+
+0%{
+
+left:10%;
+
+}
+
+
+50%{
+
+left:80%;
+
+}
+
+
+100%{
+
+left:10%;
+
+}
+
+
+}
+
+
+
+.point{
+
+position:absolute;
+
+top:60%;
+
+}
+
+
+
+.start{
+
+left:5%;
+
+}
+
+
+
+.destination{
+
+right:5%;
+
+}
+
+
+
+.logBox{
+
+height:150px;
+
+background:black;
+
+border:1px solid #555;
+
+overflow:auto;
+
+padding:10px;
+
+font-size:13px;
+
+}
+
+
+
+.warning{
+
+color:#ff4444;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body class="distributionPage">
+
+
+
+<div class="layout">
+
+
+
+<div class="sideMenu">
+
+
+<h3>
+
+SCHMEETTERLING
+
+</h3>
+
+
+<p style="color:#00aaff;">
+
+● SYSTEM ONLINE
+
+</p>
+
+
+<hr>
+
+
+
+<p>
+
+USER
+
+<br>
+
+<b id="userName">
+
+확인중...
+
+</b>
+
+</p>
+
+
+
+<p>
+
+LEVEL
+
+<br>
+
+<b id="userLevel">
+
+확인중...
+
+</b>
+
+</p>
+
+
+
+<hr>
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 HOME
+
+</button>
+
+
+<button onclick="location.href='./radiation.html'">
+
+☢ 방사능 부서
+
+</button>
+
+
+<button onclick="location.href='./unknown.html'">
+
+👾 미확인 개체
+
+</button>
+
+
+<button onclick="location.href='./bio.html'">
+
+🧫 생물 부서
+
+</button>
+
+
+<button onclick="location.href='./chemical.html'">
+
+🧪 화학 부서
+
+</button>
+
+
+<button onclick="location.href='./backroom.html'">
+
+📦 백룸 부서
+
+</button>
+
+
+<button onclick="location.href='./drug.html'">
+
+⚗ 마약 부서
+
+</button>
+
+
+</div>
+<!-- MAIN -->
+
+<div class="mainBox">
+
+
+
+<h2>
+
+📦 DR-07 DISTRIBUTION SYSTEM
+
+</h2>
+
+
+
+
+<div class="secretBox">
+
+⚠ CLASSIFIED DISTRIBUTION RECORD
+
+<br>
+
+ACCESS LEVEL : 5
+
+<br>
+
+LIVE TRACKING ENABLED
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+<div class="navigator">
+
+
+<button onclick="prevDistribution()">
+
+&lt;
+
+</button>
+
+
+
+<b id="distID">
+
+DIST-001
+
+</b>
+
+
+
+<button onclick="nextDistribution()">
+
+&gt;
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="document">
+
+
+
+<h3>
+
+📦 DELIVERY INFORMATION
+
+</h3>
+
+
+
+<p>
+
+SHIPMENT CODE :
+
+<br>
+
+<b id="shipment">
+
+DR-SHIP-001
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+ORIGIN :
+
+<br>
+
+<b id="origin">
+
+DRUG LAB-07
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+DESTINATION :
+
+<br>
+
+<b id="destination">
+
+BLACK MARKET ZONE
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+MATERIAL :
+
+<br>
+
+<b id="material">
+
+UNKNOWN PLANT-X
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+HANDLER :
+
+<br>
+
+<b id="handler">
+
+DISTRIBUTION TEAM A
+
+</b>
+
+</p>
+
+
+
+
+
+<p>
+
+STATUS :
+
+<br>
+
+<b id="deliveryStatus">
+
+TRANSPORTING
+
+</b>
+
+</p>
+
+
+
+
+
+<p>
+
+SECURITY LEVEL :
+
+<br>
+
+<b id="security">
+
+A
+
+</b>
+
+</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+📍 LIVE LOCATION TRACKING
+
+</h3>
+
+
+
+
+<div class="mapBox">
+
+
+
+<div class="route">
+
+</div>
+
+
+
+<div class="vehicle">
+
+●
+
+</div>
+
+
+
+<div class="point start">
+
+START
+
+<br>
+
+DRUG LAB
+
+</div>
+
+
+
+<div class="point destination">
+
+DESTINATION
+
+<br>
+
+ZONE
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+LIVE SECURITY LOG
+
+</h3>
+
+
+
+<div class="logBox" id="log">
+
+
+SYSTEM CONNECTED...
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+TRANSPORT STATUS
+
+</h3>
+
+
+
+<div class="recordBox">
+
+
+
+<p>
+
+CURRENT ROUTE :
+
+<b id="route">
+
+CHECKPOINT A
+
+</b>
+
+</p>
+
+
+
+<p>
+
+CHECK RESULT :
+
+<b id="check">
+
+PASS
+
+</b>
+
+</p>
+
+
+
+<p>
+
+TRACKING :
+
+<b>
+
+ACTIVE
+
+</b>
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+<p class="warning">
+
+⚠ WARNING :
+
+UNAUTHORIZED DISTRIBUTION ACCESS DETECTED
+
+</p>
+
+
+
+
+
+
+<button onclick="location.href='./drug.html'">
+
+← DRUG DEPARTMENT
+
+</button>
+
+
+
+
+</div>
+
+
+
+</div>
+<script>
+
+
+let user =
+localStorage.getItem("userName");
+
+
+let level =
+localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+user || "UNKNOWN";
+
+
+document.getElementById("userLevel").innerHTML =
+level || "NONE";
+
+
+
+
+
+
+
+// DISTRIBUTION DATABASE
+
+
+let distributionData=[
+
+
+
+{
+
+id:"DIST-001",
+
+shipment:"DR-SHIP-001",
+
+origin:"DRUG LAB-07",
+
+destination:"BLACK MARKET ZONE",
+
+material:"UNKNOWN PLANT-X",
+
+handler:"DISTRIBUTION TEAM A",
+
+status:"TRANSPORTING",
+
+security:"A"
+
+},
+
+
+
+
+{
+
+id:"DIST-002",
+
+shipment:"DR-SHIP-002",
+
+origin:"GREENHOUSE-02",
+
+destination:"PRIVATE FACILITY",
+
+material:"NIGHT FLOWER-07",
+
+handler:"DISTRIBUTION TEAM B",
+
+status:"CHECKPOINT",
+
+security:"B"
+
+},
+
+
+
+
+{
+
+id:"DIST-003",
+
+shipment:"DR-SHIP-003",
+
+origin:"STORAGE ROOM",
+
+destination:"UNKNOWN AREA",
+
+material:"BLACK LEAF-X",
+
+handler:"SPECIAL DELIVERY",
+
+status:"DELIVERING",
+
+security:"S"
+
+},
+
+
+
+
+{
+
+id:"DIST-004",
+
+shipment:"DR-SHIP-004",
+
+origin:"DRUG LAB-07",
+
+destination:"VIP STORAGE",
+
+material:"DR-SAMPLE-04",
+
+handler:"VIP TRANSPORT TEAM",
+
+status:"COMPLETED",
+
+security:"A"
+
+}
+
+
+];
+
+
+
+
+
+let index=0;
+
+
+
+
+
+
+
+function updateDistribution(){
+
+
+
+let data =
+distributionData[index];
+
+
+
+document.getElementById("distID").innerHTML =
+data.id;
+
+
+
+document.getElementById("shipment").innerHTML =
+data.shipment;
+
+
+
+document.getElementById("origin").innerHTML =
+data.origin;
+
+
+
+document.getElementById("destination").innerHTML =
+data.destination;
+
+
+
+document.getElementById("material").innerHTML =
+data.material;
+
+
+
+document.getElementById("handler").innerHTML =
+data.handler;
+
+
+
+document.getElementById("deliveryStatus").innerHTML =
+data.status;
+
+
+
+document.getElementById("security").innerHTML =
+data.security;
+
+
+
+addLog(
+data.id+" OPENED"
+);
+
+
+
+}
+
+
+
+
+
+
+function nextDistribution(){
+
+
+
+if(index < distributionData.length-1){
+
+
+index++;
+
+
+updateDistribution();
+
+
+}
+
+else{
+
+
+addLog("LAST RECORD");
+
+
+}
+
+
+}
+
+
+
+
+
+
+function prevDistribution(){
+
+
+
+if(index > 0){
+
+
+index--;
+
+
+updateDistribution();
+
+
+}
+
+else{
+
+
+addLog("FIRST RECORD");
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+function addLog(text){
+
+
+
+let box =
+document.getElementById("log");
+
+
+
+box.innerHTML +=
+
+
+"<br>> "
+
++new Date().toLocaleTimeString()
+
++" "
+
++text;
+
+
+
+box.scrollTop =
+box.scrollHeight;
+
+
+
+}
+
+
+
+
+
+
+
+
+// REAL TIME STATUS
+
+
+
+setInterval(()=>{
+
+
+
+let status=[
+
+
+"TRANSPORTING",
+
+"CHECKPOINT",
+
+"SECURITY CHECK",
+
+"DELIVERING",
+
+"STANDBY"
+
+
+];
+
+
+
+document.getElementById("deliveryStatus").innerHTML =
+
+status[Math.floor(Math.random()*status.length)];
+
+
+
+
+
+let routes=[
+
+
+"CHECKPOINT A",
+
+"CHECKPOINT B",
+
+"MAIN ROUTE",
+
+"FINAL ROUTE"
+
+
+];
+
+
+
+document.getElementById("route").innerHTML =
+
+routes[Math.floor(Math.random()*routes.length)];
+
+
+
+
+
+let checks=[
+
+
+"PASS",
+
+"SCANNING",
+
+"VERIFIED",
+
+"WARNING"
+
+
+];
+
+
+
+document.getElementById("check").innerHTML =
+
+checks[Math.floor(Math.random()*checks.length)];
+
+
+
+
+},4000);
+
+
+
+
+
+
+
+
+// SECURITY LOG
+
+
+
+setInterval(()=>{
+
+
+let logs=[
+
+
+"GPS SIGNAL UPDATED",
+
+"ROUTE VERIFIED",
+
+"SECURITY SENSOR ACTIVE",
+
+"TRANSPORT DATA SAVED",
+
+"CHECKPOINT PASSED"
+
+
+];
+
+
+
+addLog(
+
+logs[Math.floor(Math.random()*logs.length)]
+
+);
+
+
+
+},5000);
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
