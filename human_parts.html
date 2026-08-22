@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+HUMAN PART INVENTORY SYSTEM
+</title>
+
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+
+*{
+
+box-sizing:border-box;
+
+}
+
+
+
+body{
+
+margin:0;
+
+background:#050005;
+
+color:white;
+
+font-family:"Courier New", monospace;
+
+overflow-x:hidden;
+
+}
+
+
+
+
+/* SCAN LINE */
+
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+
+background:
+
+repeating-linear-gradient(
+
+0deg,
+
+rgba(255,105,180,.05),
+
+rgba(255,105,180,.05) 1px,
+
+transparent 1px,
+
+transparent 4px
+
+);
+
+
+pointer-events:none;
+
+z-index:99;
+
+
+}
+
+
+
+
+
+.layout{
+
+display:flex;
+
+min-height:100vh;
+
+}
+
+
+
+
+/* MENU */
+
+
+.sideMenu{
+
+
+width:250px;
+
+
+padding:20px;
+
+
+background:#100010;
+
+
+border-right:2px solid #ff69b4;
+
+
+
+}
+
+
+
+.sideMenu h3{
+
+color:#ff69b4;
+
+
+}
+
+
+
+.sideMenu button{
+
+
+width:100%;
+
+
+margin:5px 0;
+
+
+padding:10px;
+
+
+background:#180018;
+
+
+color:white;
+
+
+border:1px solid #ff69b4;
+
+
+cursor:pointer;
+
+
+font-family:inherit;
+
+
+}
+
+
+
+.sideMenu button:hover{
+
+
+background:#ff69b4;
+
+
+color:black;
+
+
+}
+
+
+
+
+
+/* MAIN */
+
+
+.mainBox{
+
+
+flex:1;
+
+
+padding:40px;
+
+
+}
+
+
+
+
+h2,h3{
+
+
+color:#ff69b4;
+
+
+}
+
+
+
+
+.recordBox{
+
+
+border:1px solid #ff69b4;
+
+
+background:#120012;
+
+
+padding:20px;
+
+
+margin:15px 0;
+
+
+}
+
+
+
+
+
+
+/* INVENTORY */
+
+
+.inventoryBox{
+
+
+display:grid;
+
+
+grid-template-columns:repeat(3,1fr);
+
+
+gap:15px;
+
+
+
+}
+
+
+
+
+.partCard{
+
+
+border:1px solid #ff69b4;
+
+
+background:#0c000c;
+
+
+padding:20px;
+
+
+transition:.3s;
+
+
+}
+
+
+
+
+.partCard:hover{
+
+
+transform:scale(1.03);
+
+
+box-shadow:0 0 15px #ff69b4;
+
+
+}
+
+
+
+
+.partName{
+
+
+font-size:20px;
+
+
+color:#ff9bd2;
+
+
+}
+
+
+
+.quantity{
+
+
+font-size:30px;
+
+
+margin:15px 0;
+
+
+}
+
+
+
+
+
+button{
+
+
+font-family:inherit;
+
+
+}
+
+
+
+.actionBtn{
+
+
+background:#200020;
+
+
+color:white;
+
+
+border:1px solid #ff69b4;
+
+
+padding:8px;
+
+
+cursor:pointer;
+
+
+margin:3px;
+
+
+}
+
+
+
+.actionBtn:hover{
+
+
+background:#ff69b4;
+
+
+color:black;
+
+
+}
+
+
+
+
+
+
+
+/* MONITOR */
+
+
+.monitor{
+
+
+position:fixed;
+
+
+right:20px;
+
+
+bottom:20px;
+
+
+width:280px;
+
+
+background:#080008;
+
+
+border:2px solid #ff69b4;
+
+
+padding:20px;
+
+
+box-shadow:0 0 20px #ff69b4;
+
+
+}
+
+
+
+.monitor h3{
+
+
+margin-top:0;
+
+
+}
+
+
+
+.normal{
+
+
+color:#00ff99;
+
+
+}
+
+
+
+.warning{
+
+
+color:#ff69b4;
+
+
+animation:blink 1s infinite;
+
+
+}
+
+
+
+
+@keyframes blink{
+
+
+50%{
+
+opacity:.3;
+
+}
+
+
+}
+
+
+
+
+
+
+.temperature{
+
+
+font-size:25px;
+
+
+color:#9ee7ff;
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+
+<body>
+
+
+
+
+<div class="layout">
+
+
+
+<div class="sideMenu">
+
+
+
+<h3>
+
+SCHMEETTERLING
+
+</h3>
+
+
+
+<p style="color:#ff69b4">
+
+● SYSTEM ONLINE
+
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 HOME
+
+</button>
+
+
+
+<button onclick="location.href='./human.html'">
+
+🧬 인체 개조 부서
+
+</button>
+
+
+
+<button onclick="location.href='./human_subject.html'">
+
+👤 실험체 기록
+
+</button>
+
+
+
+<button onclick="location.href='./human_log.html'">
+
+📄 개조 일지
+
+</button>
+
+
+
+<button onclick="location.href='./human_monitor.html'">
+
+🖥 부서 모니터
+
+</button>
+
+
+
+<button onclick="location.href='./human_staff.html'">
+
+👨‍🔬 직원 명단
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="mainBox">
+
+
+
+<h2>
+
+🧬 HUMAN PART INVENTORY SYSTEM
+
+</h2>
+
+
+
+
+<p>
+
+<b>
+
+신체부위 보유량 관리 시스템
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+권한 :
+
+RESEARCHER 이상
+
+</p>
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+BIOLOGICAL STORAGE DATABASE
+
+</h3>
+
+
+
+
+
+<div class="recordBox">
+
+
+<p>
+
+본 시스템은 인체 개조 연구에 사용되는
+
+생체 조직 및 인공 신체 부품을 관리합니다.
+
+</p>
+
+
+<p>
+
+모든 기록은 실시간으로 저장되며,
+
+폐기 승인 전까지 보존 상태로 유지됩니다.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+PART INVENTORY
+
+</h3>
+
+
+
+<div class="inventoryBox" id="inventory">
+
+
+</div>
+<!-- LIVE MONITOR -->
+
+<div class="monitor">
+
+
+<h3>
+
+❄ LIVE STORAGE MONITOR
+
+</h3>
+
+
+
+<p>
+
+FREEZER ROOM A
+
+</p>
+
+
+
+<hr>
+
+
+
+<p>
+
+온도 :
+
+<span class="temperature" id="temperature">
+
+-82.0°C
+
+</span>
+
+</p>
+
+
+
+<p>
+
+습도 :
+
+<span id="humidity">
+
+32%
+
+</span>
+
+</p>
+
+
+
+<p>
+
+냉각 시스템 :
+
+<span class="normal" id="cooling">
+
+● NORMAL
+
+</span>
+
+</p>
+
+
+
+<p>
+
+생체 보존 :
+
+<span class="normal" id="preserve">
+
+● ACTIVE
+
+</span>
+
+</p>
+
+
+
+<div id="monitorWarning">
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+
+const parts=[
+
+
+{
+
+name:"🫀 인공 심장",
+
+count:12,
+
+status:"보관 중"
+
+},
+
+
+
+{
+
+name:"🫁 폐 조직",
+
+count:8,
+
+status:"냉동 보관"
+
+},
+
+
+
+{
+
+name:"🧠 뇌 조직",
+
+count:4,
+
+status:"RESTRICTED"
+
+},
+
+
+
+{
+
+name:"👁 인공 안구",
+
+count:21,
+
+status:"연구용"
+
+},
+
+
+
+{
+
+name:"🦴 강화 골격",
+
+count:15,
+
+status:"보관 중"
+
+},
+
+
+
+{
+
+name:"🩸 혈액 샘플",
+
+count:45,
+
+status:"냉동 보관"
+
+},
+
+
+
+{
+
+name:"🧬 줄기세포",
+
+count:30,
+
+status:"ACTIVE"
+
+},
+
+
+
+{
+
+name:"🧫 변이 세포",
+
+count:7,
+
+status:"WARNING"
+
+},
+
+
+
+{
+
+name:"🖐 신경 조직",
+
+count:10,
+
+status:"관찰 중"
+
+},
+
+
+
+{
+
+name:"🦾 인공 팔",
+
+count:6,
+
+status:"보관 중"
+
+},
+
+
+
+{
+
+name:"🦿 인공 다리",
+
+count:9,
+
+status:"보관 중"
+
+},
+
+
+
+{
+
+name:"피부 조직",
+
+count:20,
+
+status:"냉동 보관"
+
+},
+
+
+
+{
+
+name:"근육 조직",
+
+count:14,
+
+status:"연구용"
+
+},
+
+
+
+{
+
+name:"골수",
+
+count:11,
+
+status:"RESTRICTED"
+
+},
+
+
+
+{
+
+name:"척수",
+
+count:3,
+
+status:"DANGEROUS"
+
+},
+
+
+
+{
+
+name:"유전자 샘플",
+
+count:38,
+
+status:"ACTIVE"
+
+}
+
+
+
+];
+
+
+
+
+
+
+
+function renderInventory(){
+
+
+
+let box=document.getElementById("inventory");
+
+
+
+box.innerHTML="";
+
+
+
+
+
+parts.forEach((part,index)=>{
+
+
+
+box.innerHTML+=`
+
+
+
+<div class="partCard">
+
+
+
+<div class="partName">
+
+${part.name}
+
+</div>
+
+
+
+
+<p>
+
+상태 :
+
+<b>
+
+${part.status}
+
+</b>
+
+</p>
+
+
+
+
+<div class="quantity">
+
+${part.count}
+
+</div>
+
+
+
+<p>
+
+개
+
+</p>
+
+
+
+
+
+<button class="actionBtn"
+
+onclick="addPart(${index})">
+
+＋ 추가
+
+</button>
+
+
+
+<button class="actionBtn"
+
+onclick="usePart(${index})">
+
+－ 사용
+
+</button>
+
+
+
+<br>
+
+
+
+<button class="actionBtn"
+
+onclick="holdDispose(${index})">
+
+폐기 보류
+
+</button>
+
+
+
+<button class="actionBtn"
+
+onclick="disposePart(${index})">
+
+폐기 승인
+
+</button>
+
+
+
+</div>
+
+
+
+`;
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+
+
+function addPart(index){
+
+
+
+parts[index].count++;
+
+
+renderInventory();
+
+
+
+}
+
+
+
+
+
+function usePart(index){
+
+
+
+if(parts[index].count>0){
+
+
+parts[index].count--;
+
+
+}
+
+
+renderInventory();
+
+
+
+}
+
+
+
+
+
+
+
+function holdDispose(index){
+
+
+
+parts[index].status="PENDING DISPOSAL";
+
+
+
+renderInventory();
+
+
+
+}
+
+
+
+
+
+
+function disposePart(index){
+
+
+
+if(parts[index].count>0){
+
+
+parts[index].count--;
+
+
+}
+
+
+
+parts[index].status="DISPOSED";
+
+
+renderInventory();
+
+
+
+}
+
+
+
+
+
+
+
+
+renderInventory();
+
+
+
+
+
+// =================================
+// FREEZER REAL TIME SYSTEM
+// =================================
+
+
+
+let temp=-82;
+
+
+
+setInterval(function(){
+
+
+
+temp += (Math.random()*0.8-0.4);
+
+
+
+document.getElementById("temperature").innerHTML=
+
+
+temp.toFixed(1)+"°C";
+
+
+
+
+
+document.getElementById("humidity").innerHTML=
+
+
+Math.floor(28+Math.random()*8)+"%";
+
+
+
+
+
+},3000);
+
+
+
+
+
+
+
+// COOLING STATUS
+
+
+
+setInterval(function(){
+
+
+
+let cooling=document.getElementById("cooling");
+
+
+
+if(Math.random()<0.15){
+
+
+
+cooling.innerHTML="⚠ WARNING";
+
+
+cooling.className="warning";
+
+
+
+document.getElementById("monitorWarning").innerHTML=
+
+
+"<p class='warning'>⚠ 냉각 시스템 점검 필요</p>";
+
+
+
+}
+
+
+
+
+else{
+
+
+
+cooling.innerHTML="● NORMAL";
+
+
+cooling.className="normal";
+
+
+document.getElementById("monitorWarning").innerHTML="";
+
+
+}
+
+
+
+},7000);
+// =============================
+// BIOLOGICAL STORAGE EVENT
+// =============================
+
+
+setInterval(function(){
+
+
+let events=[
+
+"⚠ 생체 샘플 움직임 감지",
+
+"⚠ 냉동 보관 캡슐 재검사 필요",
+
+"⚠ UNKNOWN TISSUE SIGNAL",
+
+"✓ 보관실 정상 순환 완료",
+
+"✓ 생체 데이터 백업 완료"
+
+];
+
+
+
+if(Math.random()<0.35){
+
+
+
+let event=
+
+events[
+
+Math.floor(Math.random()*events.length)
+
+];
+
+
+
+addLog(event);
+
+
+
+}
+
+
+
+},12000);
+
+
+
+
+
+
+
+
+// =============================
+// STORAGE TANK ANIMATION
+// =============================
+
+
+
+let tankState=true;
+
+
+
+setInterval(function(){
+
+
+
+let cards=document.querySelectorAll(".partCard");
+
+
+
+cards.forEach(function(card){
+
+
+
+if(Math.random()<0.1){
+
+
+
+card.style.boxShadow=
+
+"0 0 25px #ff69b4";
+
+
+
+setTimeout(function(){
+
+
+
+card.style.boxShadow="";
+
+
+
+},500);
+
+
+
+}
+
+
+
+});
+
+
+
+},3000);
+
+
+
+
+
+
+
+
+// =============================
+// FREEZER FAILURE SYSTEM
+// =============================
+
+
+
+setInterval(function(){
+
+
+
+let tempValue=parseFloat(
+
+document.getElementById("temperature").innerHTML
+
+);
+
+
+
+if(tempValue>-75){
+
+
+
+document.getElementById("cooling").innerHTML=
+
+"⚠ COOLING FAILURE";
+
+
+
+document.getElementById("cooling").className=
+
+"warning";
+
+
+
+
+addLog(
+
+"⚠ FREEZER ROOM A temperature abnormal"
+
+);
+
+
+
+}
+
+
+
+},5000);
+
+
+
+
+
+
+
+
+// =============================
+// RANDOM SCREEN GLITCH
+// =============================
+
+
+
+setInterval(function(){
+
+
+
+if(Math.random()<0.15){
+
+
+
+document.body.style.filter=
+
+"brightness(1.4)";
+
+
+
+setTimeout(function(){
+
+
+
+document.body.style.filter=
+
+"brightness(1)";
+
+
+
+},150);
+
+
+
+}
+
+
+
+},8000);
+
+
+
+
+
+
+
+
+// =============================
+// LIVE CLOCK
+// =============================
+
+
+
+setInterval(function(){
+
+
+
+let now=new Date();
+
+
+
+let clock=
+
+now.getHours()+":"+
+
+String(now.getMinutes()).padStart(2,"0")+":"+
+
+String(now.getSeconds()).padStart(2,"0");
+
+
+
+
+addLog(
+
+"SYSTEM TIME SYNC : "+clock
+
+);
+
+
+
+},30000);
+
+
+
+
+
+
+
+
+// =============================
+// INITIAL LOG
+// =============================
+
+
+
+addLog(
+
+"HUMAN PART INVENTORY SYSTEM ONLINE"
+
+);
+
+
+addLog(
+
+"FREEZER ROOM A CONNECTED"
+
+);
+
+
+addLog(
+
+"BIOLOGICAL STORAGE DATABASE READY"
+
+);
+
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
