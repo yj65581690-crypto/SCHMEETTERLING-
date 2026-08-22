@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+HALPHAS - STAFF ID
+</title>
+
+
+<link rel="stylesheet" href="./style.css">
+
+
+
+<style>
+
+
+/* =========================
+   HALPHAS SPECIAL THEME
+========================= */
+
+
+
+body{
+
+background:
+
+radial-gradient(
+circle at 80% 20%,
+rgba(130,0,0,.35),
+transparent 35%
+),
+
+#050505;
+
+color:white;
+
+}
+
+
+
+
+.mainBox{
+
+position:relative;
+
+}
+
+
+
+
+/* ACCESS WARNING */
+
+
+.accessWarning{
+
+color:#ff3333;
+
+font-size:14px;
+
+letter-spacing:2px;
+
+animation:blink 1s infinite;
+
+}
+
+
+
+
+@keyframes blink{
+
+
+0%,50%{
+
+opacity:1;
+
+}
+
+
+51%,100%{
+
+opacity:.3;
+
+}
+
+
+}
+
+
+
+
+
+
+/* BLOOD DRIP */
+
+
+.blood{
+
+position:fixed;
+
+top:0;
+
+right:100px;
+
+width:12px;
+
+height:100px;
+
+background:#700000;
+
+border-radius:0 0 15px 15px;
+
+box-shadow:
+
+0 0 20px red;
+
+
+animation:bloodDrop 4s infinite;
+
+
+}
+
+
+
+@keyframes bloodDrop{
+
+
+0%{
+
+height:40px;
+
+opacity:.5;
+
+}
+
+
+50%{
+
+height:180px;
+
+opacity:1;
+
+}
+
+
+100%{
+
+height:40px;
+
+opacity:.5;
+
+}
+
+
+}
+
+
+
+
+
+/* SECOND BLOOD */
+
+
+.blood2{
+
+position:fixed;
+
+top:0;
+
+right:150px;
+
+width:6px;
+
+height:70px;
+
+background:#400000;
+
+animation:bloodDrop2 3s infinite;
+
+}
+
+
+
+@keyframes bloodDrop2{
+
+
+0%{
+
+height:20px;
+
+}
+
+
+50%{
+
+height:120px;
+
+}
+
+
+100%{
+
+height:20px;
+
+}
+
+
+}
+
+
+
+
+
+
+/* WARNING LIGHT */
+
+
+.dangerLight{
+
+position:fixed;
+
+top:35px;
+
+left:35px;
+
+width:16px;
+
+height:16px;
+
+background:red;
+
+border-radius:50%;
+
+
+box-shadow:
+
+0 0 25px red;
+
+
+animation:danger 1s infinite;
+
+
+}
+
+
+
+@keyframes danger{
+
+
+50%{
+
+opacity:.2;
+
+}
+
+
+}
+
+
+
+
+
+
+/* HALPHAS CARD */
+
+
+.halphasBox{
+
+
+border:
+
+2px solid #800000;
+
+
+background:
+
+linear-gradient(
+
+120deg,
+
+#111,
+
+#250000
+
+);
+
+
+box-shadow:
+
+
+0 0 30px rgba(150,0,0,.5);
+
+
+}
+
+
+
+
+/* NAME GLITCH */
+
+
+.halphasTitle{
+
+
+color:#ffdddd;
+
+
+animation:
+
+glitchText 2s infinite;
+
+
+}
+
+
+
+@keyframes glitchText{
+
+
+0%{
+
+transform:translate(0);
+
+}
+
+
+10%{
+
+transform:translate(-3px,1px);
+
+}
+
+
+20%{
+
+transform:translate(2px,-2px);
+
+}
+
+
+100%{
+
+transform:translate(0);
+
+}
+
+
+
+}
+
+
+
+
+/* ONLINE COLOR */
+
+
+.online{
+
+
+color:#ff3333;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* WARNING BOX */
+
+
+.warningBox{
+
+
+border:
+
+2px solid #900;
+
+
+background:
+
+rgba(80,0,0,.25);
+
+
+padding:20px;
+
+
+box-shadow:
+
+0 0 20px rgba(255,0,0,.3);
+
+
+}
+
+
+
+
+
+/* RED TEXT */
+
+
+.redText{
+
+color:#ff3333;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+</style>
+
+
+</head>
+
+
+
+
+
+<body>
+
+
+
+
+<div class="blood"></div>
+
+<div class="blood2"></div>
+
+
+<div class="dangerLight"></div>
+
+
+
+
+
+<div class="mainBox">
+
+
+
+
+
+<p class="accessWarning">
+
+⚠ ACCESSING RESTRICTED PERSONNEL FILE...
+
+</p>
+
+
+
+
+
+<h2>
+
+STAFF IDENTIFICATION CARD
+
+</h2>
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox halphasBox">
+
+
+
+
+
+
+<div class="photo">
+
+
+<img src="halpas.jpg" width="200">
+
+
+</div>
+
+
+
+
+
+
+<div class="idInfo">
+
+
+
+
+
+
+<h2 class="halphasTitle">
+
+할파스
+
+</h2>
+
+
+
+
+
+<p>
+
+<b>FULL NAME</b> :
+
+Halphas
+
+</p>
+
+
+
+
+<p>
+
+<b>사번</b> :
+
+UE-A444
+
+</p>
+
+
+
+
+
+<p>
+
+<b>직급</b> :
+
+책임자
+
+</p>
+
+
+
+
+
+<p>
+
+<b>DEPARTMENT</b> :
+
+Chemistry Department
+
+</p>
+
+
+
+
+
+<p>
+
+<b>STATUS</b> :
+
+<span class="online">
+
+● ACTIVE
+
+</span>
+
+</p>
+
+
+
+
+
+<p>
+
+<b>SECURITY LEVEL</b> :
+
+LEVEL 4
+
+</p>
+
+
+
+
+
+<p>
+
+<b>SPECIES</b> :
+
+Devil
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+
+
+<h2>
+
+STAFF DATABASE
+
+</h2>
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+PERSONAL INFORMATION
+
+</h3>
+
+
+
+
+<p>
+
+<b>FULL NAME</b> :
+
+Halphas
+
+</p>
+
+
+
+<p>
+
+<b>HEIGHT</b> :
+
+190cm
+
+</p>
+
+
+
+<p>
+
+<b>SPECIES</b> :
+
+Devil
+
+</p>
+
+
+
+<p>
+
+<b>AGE</b> :
+
+25
+
+</p>
+
+
+
+<p>
+
+<b>IQ</b> :
+
+190
+
+</p>
+
+
+
+<p>
+
+<b>FAMILY RELATIONS</b> :
+
+████████
+
+</p>
+<hr>
+
+
+
+<h3>
+
+RESEARCH RECORD
+
+</h3>
+
+
+
+
+<p>
+
+화학 부서 책임자.
+
+</p>
+
+
+
+
+<p>
+
+생화학 분야를 중심으로
+
+물리화학, 분석화학, 유기화학,
+
+무기화학, 고분자화학 등
+
+다양한 화학 분야 연구를 담당한다.
+
+</p>
+
+
+
+
+<p>
+
+현재 존재하지 않는 새로운 물질 개발 및
+
+변칙 화합물 연구 프로젝트의
+
+총 책임자로 지정되어 있다.
+
+</p>
+
+
+
+
+<p>
+
+높은 연구 성과와 실적으로 인해
+
+SCHMEETTERLING 최고 관리자에게
+
+높은 신뢰를 받고 있다.
+
+</p>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+BEHAVIOR ANALYSIS
+
+</h3>
+
+
+
+
+<p>
+
+타 직원과의 관계는 매우 불안정하다.
+
+</p>
+
+
+
+
+<p>
+
+감정 표현이 적으며,
+
+타인의 감정보다 결과와 목적을
+
+우선시하는 성향을 보인다.
+
+</p>
+
+
+
+
+<p>
+
+자신이 목표로 지정한 연구나 업무에
+
+강한 집착을 보이며,
+
+완료될 때까지 포기하지 않는 것으로 확인됨.
+
+</p>
+
+
+
+
+<p>
+
+문제 발생 시 책임을 타인에게
+
+전가하는 행동 패턴이 관찰됨.
+
+</p>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+PERSONAL RECORD
+
+</h3>
+
+
+
+
+<p>
+
+흡연 습관이 확인되었으며,
+
+항상 담배를 소지하는 것으로 확인됨.
+
+</p>
+
+
+
+
+<p>
+
+개인 소지품 검사 과정에서
+
+미확인 주사기가 발견됨.
+
+용도 확인 불가.
+
+</p>
+
+
+
+
+<p>
+
+마약 부서와의 접촉 기록이
+
+지속적으로 확인되고 있음.
+
+정확한 목적은 확인되지 않음.
+
+</p>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+SPECIAL OBSERVATION
+
+</h3>
+
+
+
+
+<p>
+
+- 높은 연구 실적 보유
+
+</p>
+
+
+
+
+<p>
+
+- 신규 화합물 개발 능력 우수
+
+</p>
+
+
+
+
+<p>
+
+- 위험 물질 접근 권한 보유
+
+</p>
+
+
+
+
+<p>
+
+- 강한 소유욕 성향 확인
+
+</p>
+
+
+
+
+<p>
+
+- 과거 기록 열람 요청에 극도로 민감한 반응
+
+</p>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<div class="warningBox">
+
+
+
+
+
+<h3>
+
+⚠ NOTANDUM
+
+</h3>
+
+
+
+
+
+<p class="redText">
+
+기억과 관련된 질문을 금지한다.
+
+</p>
+
+
+
+
+
+<p>
+
+해당 직원은 과거 기억을 잊은 것이 아니라,
+
+현재까지 모든 내용을 선명하게 기억하고
+
+있는 것으로 추정된다.
+
+</p>
+
+
+
+
+
+<p>
+
+무단으로 기억 관련 기록을 조사하거나
+
+과거 데이터를 열람하려 할 경우
+
+심각한 인명 피해 가능성이 존재한다.
+
+</p>
+
+
+
+
+
+<br>
+
+
+
+
+
+<p class="redText">
+
+"MIA" 관련 언급 금지.
+
+</p>
+
+
+
+
+
+<p>
+
+해당 인물과의 관계는
+
+극도의 적대 상태로 분류되어 있다.
+
+</p>
+
+
+
+
+<p>
+
+불필요한 접촉 및 직접적인 언급을
+
+피할 것을 권장한다.
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<h3>
+
+FINAL SECURITY NOTE
+
+</h3>
+
+
+
+
+
+<div class="recordBox">
+
+
+
+<p>
+
+관리 대상 :
+
+<b class="redText">
+
+HIGH VALUE PERSONNEL
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+위험도 :
+
+<b class="redText">
+
+HIGH
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+권장 조치 :
+
+지속적인 관찰.
+
+</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<button onclick="location.href='./chemical_staff.html'">
+
+← 화학부서 연구원 목록
+
+</button>
+
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+
+</html>
