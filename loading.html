@@ -11,94 +11,117 @@
 
 </head>
 
-
 <body class="loadingPage">
-
 
 <div class="loadingBox">
 
-
 <h1 id="loadingText"></h1>
-
 
 <p id="subText">
 ACCESSING DATABASE...
 </p>
 
-
 <p class="online">
 ● CONNECTING
 </p>
-
 
 <p>
 PLEASE WAIT
 </p>
 
-
 </div>
-
-
-
 
 <script>
 
+let page = localStorage.getItem("nextPage");
 
 let text = "ACCESS GRANTED";
+let sub = "ACCESSING DATABASE...";
+
+if(page){
+
+if(page.includes("backroom")){
+
+text = "BACKROOM DATABASE";
+sub = "VERIFYING WARP SYSTEM...";
+
+}
+
+else if(page.includes("radiation")){
+
+text = "RADIATION DATABASE";
+sub = "CHECKING RADIATION LEVEL...";
+
+}
+
+else if(page.includes("unknown")){
+
+text = "ENTITY DATABASE";
+sub = "VERIFYING ENTITY FILES...";
+
+}
+
+else if(page.includes("bio")){
+
+text = "BIO DATABASE";
+sub = "ACCESSING BIOLOGICAL RECORDS...";
+
+}
+
+else if(page.includes("chemical")){
+
+text = "CHEMICAL DATABASE";
+sub = "LOADING CHEMICAL RECORDS...";
+
+}
+
+}
+
+document.getElementById("subText").innerHTML = sub;
 
 let index = 0;
-
-let speed = 120;
-
+let speed = 80;
 
 let loadingText =
 document.getElementById("loadingText");
 
-
-
 function typing(){
-
 
 if(index < text.length){
 
-
 loadingText.innerHTML += text[index];
-
 
 index++;
 
-
 setTimeout(typing,speed);
 
-
 }
-
 
 else{
 
-
 setTimeout(function(){
 
+if(page){
 
-location.href="./main.html";
-
-
-},1500);
-
+location.href = page;
 
 }
 
+else{
+
+location.href = "./main.html";
 
 }
 
+},1000);
 
+}
+
+}
 
 typing();
 
-
-
 </script>
-
 
 </body>
 
