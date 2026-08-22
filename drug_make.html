@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+DRUG SYNTHESIS SYSTEM
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+
+.drugMakePage{
+
+background:#050d18;
+
+color:white;
+
+}
+
+
+
+
+
+.sampleBox{
+
+border:1px solid #00aaff;
+
+padding:15px;
+
+margin:10px;
+
+background:#001522;
+
+cursor:grab;
+
+}
+
+
+
+.machine{
+
+border:2px dashed #00aaff;
+
+height:220px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+font-size:20px;
+
+background:#00101c;
+
+}
+
+
+
+.machine.active{
+
+box-shadow:0 0 30px #00aaff;
+
+}
+
+
+
+
+
+.package{
+
+border:1px solid #00ffaa;
+
+padding:20px;
+
+background:#001a15;
+
+}
+
+
+
+.logBox{
+
+height:150px;
+
+overflow:hidden;
+
+background:black;
+
+border:1px solid #555;
+
+padding:10px;
+
+font-size:13px;
+
+}
+
+
+
+.progress{
+
+height:20px;
+
+background:#111;
+
+border:1px solid #00aaff;
+
+}
+
+
+
+.bar{
+
+height:100%;
+
+width:0%;
+
+background:#00aaff;
+
+transition:1s;
+
+}
+
+
+
+button{
+
+margin:5px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body class="drugMakePage">
+
+
+
+<div class="layout">
+
+
+
+<!-- SIDEBAR -->
+
+
+<div class="sideMenu">
+
+
+<h3>
+SCHMEETTERLING
+</h3>
+
+
+<p style="color:#00aaff;">
+● SYSTEM ONLINE
+</p>
+
+
+<hr>
+
+
+<p>
+USER
+<br>
+<b id="userName">
+확인중...
+</b>
+</p>
+
+
+<p>
+LEVEL
+<br>
+<b id="userLevel">
+확인중...
+</b>
+</p>
+
+
+
+<hr>
+
+
+
+<button onclick="location.href='./main.html'">
+🏠 HOME
+</button>
+
+
+
+<button onclick="location.href='./radiation.html'">
+☢ 방사능 부서
+</button>
+
+
+
+<button onclick="location.href='./unknown.html'">
+👾 미확인 개체
+</button>
+
+
+
+<button onclick="location.href='./bio.html'">
+🧫 생물 부서
+</button>
+
+
+
+<button onclick="location.href='./chemical.html'">
+🧪 화학 부서
+</button>
+
+
+
+<button onclick="location.href='./backroom.html'">
+📦 백룸 부서
+</button>
+
+
+
+<button onclick="location.href='./drug.html'">
+⚗ 마약 부서
+</button>
+
+
+
+</div>
+
+
+
+
+
+<!-- MAIN -->
+
+
+<div class="mainBox">
+
+
+
+<h2>
+⚗ DR-07 SYNTHESIS SYSTEM
+</h2>
+
+
+
+<p>
+<b>PROJECT :</b>
+UNKNOWN COMPOUND DEVELOPMENT
+</p>
+
+
+
+<p>
+<b>ACCESS :</b>
+LEVEL 4
+</p>
+
+
+
+<hr>
+
+
+
+<h3>
+🌱 SAMPLE STORAGE
+</h3>
+
+
+
+<div class="recordBox">
+
+
+<div class="sampleBox"
+draggable="true">
+
+🌱 UNKNOWN PLANT-01
+
+</div>
+
+
+
+<div class="sampleBox"
+draggable="true">
+
+🌿 NIGHT FLOWER-07
+
+</div>
+
+
+
+<div class="sampleBox"
+draggable="true">
+
+🍃 BLACK LEAF-X
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+⚗ SYNTHESIS MACHINE
+</h3>
+
+
+
+
+<div class="machine"
+id="machine">
+
+
+DRAG SAMPLE HERE
+
+
+</div>
+
+
+
+
+<br>
+
+
+
+<div class="progress">
+
+<div class="bar" id="bar">
+
+</div>
+
+</div>
+
+
+
+<p id="status">
+
+대기 중
+
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+📦 PACKAGE SYSTEM
+</h3>
+
+
+
+<div class="package"
+id="package">
+
+
+포장 대기
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+LIVE LOG
+</h3>
+
+
+
+<div class="logBox"
+id="log">
+
+
+SYSTEM READY
+
+</div>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+RESULT DATA
+</h3>
+
+
+
+<div class="recordBox">
+
+
+<p>
+CODE :
+<span id="code">
+NONE
+</span>
+</p>
+
+
+<p>
+QUALITY :
+<span id="quality">
+-
+</span>
+</p>
+
+
+<p>
+STABILITY :
+<span id="stable">
+-
+</span>
+</p>
+
+
+<p>
+STATUS :
+<span id="result">
+WAITING
+</span>
+</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+document.getElementById("userName").innerHTML =
+localStorage.getItem("userName") || "UNKNOWN";
+
+
+document.getElementById("userLevel").innerHTML =
+localStorage.getItem("userLevel") || "NONE";
+
+
+
+
+
+let machine =
+document.getElementById("machine");
+
+
+let currentSample="";
+
+
+
+document.querySelectorAll(".sampleBox")
+.forEach(sample=>{
+
+
+sample.addEventListener("dragstart",e=>{
+
+
+currentSample=e.target.innerHTML;
+
+
+});
+
+
+
+});
+
+
+
+
+machine.addEventListener("dragover",e=>{
+
+e.preventDefault();
+
+});
+
+
+
+
+machine.addEventListener("drop",()=>{
+
+
+machine.classList.add("active");
+
+
+machine.innerHTML=
+
+`
+ANALYZING...
+
+<br>
+
+${currentSample}
+
+`;
+
+
+
+log("SAMPLE INSERTED");
+
+
+startProcess();
+
+
+});
+
+
+
+
+
+
+
+function startProcess(){
+
+
+let bar=
+document.getElementById("bar");
+
+
+let status=
+document.getElementById("status");
+
+
+
+let value=0;
+
+
+
+let timer=setInterval(()=>{
+
+
+value+=10;
+
+
+bar.style.width=value+"%";
+
+
+
+status.innerHTML=
+
+"PROCESSING "
++value+"%";
+
+
+
+log("PROCESS DATA "+value+"%");
+
+
+
+if(value>=100){
+
+
+clearInterval(timer);
+
+
+complete();
+
+
+}
+
+
+
+},500);
+
+
+
+}
+
+
+
+
+
+
+function complete(){
+
+
+
+let code=
+"DR-X-"+
+Math.floor(Math.random()*999);
+
+
+
+let quality=
+Math.floor(Math.random()*40+60);
+
+
+
+let stability=
+Math.floor(Math.random()*50+40);
+
+
+
+
+
+document.getElementById("code").innerHTML=code;
+
+
+document.getElementById("quality").innerHTML=
+quality+"%";
+
+
+document.getElementById("stable").innerHTML=
+stability+"%";
+
+
+
+document.getElementById("result").innerHTML=
+"COMPLETE";
+
+
+
+
+document.getElementById("package").innerHTML=
+
+`
+📦 PACKAGE READY
+
+<br><br>
+
+CODE :
+${code}
+
+<br><br>
+
+<button onclick="seal()">
+SEAL PACKAGE
+</button>
+
+`;
+
+
+
+log("SYNTHESIS COMPLETE");
+
+
+}
+
+
+
+
+
+function seal(){
+
+
+document.getElementById("package").innerHTML=
+
+`
+🔒 SEALED
+
+<br>
+
+STORAGE TRANSFER COMPLETE
+
+`;
+
+
+
+log("PACKAGE SEALED");
+
+
+}
+
+
+
+
+
+
+
+function log(text){
+
+
+let box=document.getElementById("log");
+
+
+box.innerHTML +=
+
+"<br>"+
+
+"> "+text;
+
+
+
+box.scrollTop=box.scrollHeight;
+
+
+}
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
