@@ -1185,3 +1185,16 @@ opacity:1;
     background:#050505;
     color:white;
 }
+.entityImage{
+    width:300px;
+    max-width:100%;
+    border:1px solid #555;
+}
+
+.imageError{
+    border:1px solid #ff7070;
+    padding:20px;
+    color:#ff7070;
+    text-align:center;
+    margin:10px 0;
+}
