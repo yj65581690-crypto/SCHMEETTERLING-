@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+HUMAN MODIFICATION STAFF DATABASE
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="mainBox">
+
+
+
+<h2>
+🧬 HUMAN MODIFICATION STAFF DATABASE
+</h2>
+
+
+
+<hr>
+
+
+
+<p>
+SCHMEETTERLING 인체 개조 부서 연구원 정보
+</p>
+
+
+
+<hr>
+
+
+
+
+<h3>
+STAFF SEARCH
+</h3>
+
+
+
+<input
+type="text"
+id="searchInput"
+placeholder="이름 / 직급 / 사번 검색"
+onkeyup="searchStaff()"
+>
+
+
+
+<hr>
+
+
+
+
+<h3>
+STAFF LIST
+</h3>
+
+
+
+
+
+<div id="staffContainer">
+
+
+
+
+
+<!-- 시월 -->
+
+
+<div class="recordBox staffCard">
+
+
+<h2>
+시월
+</h2>
+
+
+
+<p>
+<b>사번</b> : UE-S498
+</p>
+
+
+
+<p>
+<b>직급</b> : 책임자
+</p>
+
+
+
+<p>
+<b>소속</b> : 인체 개조 부서
+</p>
+
+
+
+<p>
+<b>담당</b> :
+
+HUMAN MODIFICATION PROJECT
+
+</p>
+
+
+
+<button onclick="location.href='./siwol.html'">
+
+프로필 열람
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- 피피 -->
+
+
+<div class="recordBox staffCard">
+
+
+<h2>
+피피
+</h2>
+
+
+
+<p>
+<b>사번</b> : UE-S111
+</p>
+
+
+
+<p>
+<b>직급</b> : 직원
+</p>
+
+
+
+<p>
+<b>소속</b> : 인체 개조 부서
+</p>
+
+
+
+<p>
+<b>담당</b> :
+
+BIOLOGICAL SUPPORT
+
+</p>
+
+
+
+<button onclick="location.href='./pipi.html'">
+
+프로필 열람
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<button onclick="location.href='./human.html'">
+
+← 인체 개조 부서
+
+</button>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+function searchStaff(){
+
+
+let input =
+
+document.getElementById("searchInput")
+.value
+.toLowerCase();
+
+
+
+let cards =
+
+document.getElementsByClassName("staffCard");
+
+
+
+
+for(let i=0;i<cards.length;i++){
+
+
+
+let text =
+
+cards[i].innerText
+.toLowerCase();
+
+
+
+
+if(text.includes(input)){
+
+
+cards[i].style.display="block";
+
+
+}
+
+else{
+
+
+cards[i].style.display="none";
+
+
+}
+
+
+
+}
+
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
