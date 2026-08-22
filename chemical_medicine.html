@@ -6,15 +6,16 @@
 <meta charset="UTF-8">
 
 <title>
-CHEMICAL MEDICINE SYSTEM
+CHEMICAL MEDICINE MANAGEMENT
 </title>
 
 <link rel="stylesheet" href="./style.css">
 
+
 <style>
 
 
-.shelf{
+.medicineShelf{
 
 display:grid;
 
@@ -32,9 +33,9 @@ border:3px solid black;
 
 padding:20px;
 
-background:#e8e8e8;
+background:#e8e1d0;
 
-text-align:center;
+position:relative;
 
 }
 
@@ -42,45 +43,29 @@ text-align:center;
 
 .bottleIcon{
 
-font-size:60px;
+font-size:55px;
+
+text-align:center;
 
 }
 
 
 
-.amountBar{
+.bottle h3{
 
-height:20px;
+text-align:center;
 
-border:2px solid black;
+border-bottom:2px solid black;
 
-margin:15px 0;
-
-}
-
-
-
-.amount{
-
-height:100%;
-
-background:#555;
-
-transition:.5s;
+padding-bottom:10px;
 
 }
 
 
 
-button{
+.status{
 
-padding:8px;
-
-margin:4px;
-
-font-family:inherit;
-
-cursor:pointer;
+font-weight:bold;
 
 }
 
@@ -90,16 +75,59 @@ cursor:pointer;
 
 color:green;
 
-font-weight:bold;
+}
+
+
+
+.warning{
+
+color:#a00000;
 
 }
 
 
-.warn{
 
-color:#a00000;
+.low{
 
-font-weight:bold;
+color:#b88600;
+
+}
+
+
+
+.amountBox{
+
+height:20px;
+
+border:2px solid black;
+
+margin:10px 0;
+
+}
+
+
+
+.amountFill{
+
+height:100%;
+
+background:#444;
+
+transition:.5s;
+
+}
+
+
+
+button{
+
+font-family:inherit;
+
+cursor:pointer;
+
+padding:8px 12px;
+
+margin:4px;
 
 }
 
@@ -109,11 +137,38 @@ font-weight:bold;
 
 border:2px solid black;
 
-padding:15px;
+padding:20px;
 
-margin:20px 0;
+margin-top:20px;
 
 }
+
+
+
+select,input{
+
+font-family:inherit;
+
+padding:5px;
+
+}
+
+
+
+.logBox{
+
+border:2px solid black;
+
+padding:10px;
+
+height:200px;
+
+overflow:auto;
+
+background:#ddd;
+
+}
+
 
 
 
@@ -123,12 +178,15 @@ margin:20px 0;
 </head>
 
 
-
 <body class="chemicalPage">
+
 
 
 <div class="layout">
 
+
+
+<!-- SIDE MENU -->
 
 
 <div class="sideMenu">
@@ -151,6 +209,7 @@ SCHMEETTERLING
 <hr>
 
 
+
 <p>
 
 USER
@@ -164,6 +223,7 @@ UNKNOWN
 </b>
 
 </p>
+
 
 
 <p>
@@ -181,7 +241,9 @@ NONE
 </p>
 
 
+
 <hr>
+
 
 
 <button onclick="location.href='./chemical.html'">
@@ -191,6 +253,7 @@ NONE
 </button>
 
 
+
 </div>
 
 
@@ -198,6 +261,7 @@ NONE
 
 
 
+<!-- MAIN -->
 
 
 <div class="mainBox">
@@ -218,20 +282,21 @@ NONE
 
 <b>
 
-RESEARCH REAGENT ROOM
+RESEARCH CHEMICAL LAB
 
 </b>
 
 </p>
 
 
+
 <p>
 
-상태 :
+시스템 :
 
-<span id="system" class="good">
+<span id="systemStatus" class="good">
 
-● NORMAL
+● ONLINE
 
 </span>
 
@@ -252,14 +317,17 @@ RESEARCH REAGENT ROOM
 
 
 
-
-<div class="shelf">
-
+<div class="medicineShelf">
 
 
+
+
+
+<!-- NaCl -->
 
 
 <div class="bottle">
+
 
 <div class="bottleIcon">
 
@@ -270,23 +338,31 @@ RESEARCH REAGENT ROOM
 
 <h3>
 
+MED-001
+
+<br>
+
 NaCl
 
 </h3>
 
 
+
 <p>
+
+물질명 :
 
 염화나트륨
 
 </p>
 
 
+
 <p>
 
-재고 :
+현재량 :
 
-<b id="naclText">
+<b id="naclAmount">
 
 500g
 
@@ -295,20 +371,22 @@ NaCl
 </p>
 
 
-<div class="amountBar">
 
-<div class="amount" id="naclBar">
+<div class="amountBox">
+
+<div class="amountFill" id="naclBar">
 
 </div>
 
 </div>
+
 
 
 <p>
 
 순도 :
 
-<b id="naclPure">
+<b id="naclPurity">
 
 99%
 
@@ -317,25 +395,41 @@ NaCl
 </p>
 
 
-<button onclick="useChem('nacl',10)">
+
+<p>
+
+상태 :
+
+<span id="naclStatus" class="good">
+
+NORMAL
+
+</span>
+
+</p>
+
+
+
+<button onclick="useChemical('nacl',10)">
 
 -10g 사용
 
 </button>
 
 
-<button onclick="addChem('nacl',100)">
+<button onclick="restock('nacl',100)">
 
 +100g 보충
 
 </button>
 
 
-<button onclick="orderChem('nacl')">
+<button onclick="orderChemical('nacl')">
 
 주문
 
 </button>
+
 
 
 </div>
@@ -346,7 +440,11 @@ NaCl
 
 
 
+<!-- CuSO4 -->
+
+
 <div class="bottle">
+
 
 <div class="bottleIcon">
 
@@ -357,23 +455,31 @@ NaCl
 
 <h3>
 
+MED-002
+
+<br>
+
 CuSO₄
 
 </h3>
 
 
+
 <p>
+
+물질명 :
 
 황산구리
 
 </p>
 
 
+
 <p>
 
-재고 :
+현재량 :
 
-<b id="cusoText">
+<b id="cusoAmount">
 
 250g
 
@@ -382,20 +488,22 @@ CuSO₄
 </p>
 
 
-<div class="amountBar">
 
-<div class="amount" id="cusoBar">
+<div class="amountBox">
+
+<div class="amountFill" id="cusoBar">
 
 </div>
 
 </div>
+
 
 
 <p>
 
 순도 :
 
-<b id="cusoPure">
+<b id="cusoPurity">
 
 97%
 
@@ -404,25 +512,41 @@ CuSO₄
 </p>
 
 
-<button onclick="useChem('cuso',10)">
+
+<p>
+
+상태 :
+
+<span id="cusoStatus" class="good">
+
+NORMAL
+
+</span>
+
+</p>
+
+
+
+<button onclick="useChemical('cuso',10)">
 
 -10g 사용
 
 </button>
 
 
-<button onclick="addChem('cuso',100)">
+<button onclick="restock('cuso',100)">
 
 +100g 보충
 
 </button>
 
 
-<button onclick="orderChem('cuso')">
+<button onclick="orderChemical('cuso')">
 
 주문
 
 </button>
+
 
 
 </div>
@@ -432,7 +556,12 @@ CuSO₄
 
 
 
+
+<!-- CaCO3 -->
+
+
 <div class="bottle">
+
 
 <div class="bottleIcon">
 
@@ -443,23 +572,31 @@ CuSO₄
 
 <h3>
 
+MED-003
+
+<br>
+
 CaCO₃
 
 </h3>
 
 
+
 <p>
+
+물질명 :
 
 탄산칼슘
 
 </p>
 
 
+
 <p>
 
-재고 :
+현재량 :
 
-<b id="calText">
+<b id="calAmount">
 
 300g
 
@@ -468,20 +605,22 @@ CaCO₃
 </p>
 
 
-<div class="amountBar">
 
-<div class="amount" id="calBar">
+<div class="amountBox">
+
+<div class="amountFill" id="calBar">
 
 </div>
 
 </div>
+
 
 
 <p>
 
 순도 :
 
-<b id="calPure">
+<b id="calPurity">
 
 98%
 
@@ -490,25 +629,41 @@ CaCO₃
 </p>
 
 
-<button onclick="useChem('cal',10)">
+
+<p>
+
+상태 :
+
+<span id="calStatus" class="good">
+
+NORMAL
+
+</span>
+
+</p>
+
+
+
+<button onclick="useChemical('cal',10)">
 
 -10g 사용
 
 </button>
 
 
-<button onclick="addChem('cal',100)">
+<button onclick="restock('cal',100)">
 
 +100g 보충
 
 </button>
 
 
-<button onclick="orderChem('cal')">
+<button onclick="orderChemical('cal')">
 
 주문
 
 </button>
+
 
 
 </div>
@@ -518,8 +673,11 @@ CaCO₃
 
 
 
+<!-- Fe -->
+
 
 <div class="bottle">
+
 
 <div class="bottleIcon">
 
@@ -530,23 +688,31 @@ CaCO₃
 
 <h3>
 
+MED-004
+
+<br>
+
 Fe
 
 </h3>
 
 
+
 <p>
+
+물질명 :
 
 철 분말
 
 </p>
 
 
+
 <p>
 
-재고 :
+현재량 :
 
-<b id="feText">
+<b id="feAmount">
 
 200g
 
@@ -555,20 +721,22 @@ Fe
 </p>
 
 
-<div class="amountBar">
 
-<div class="amount" id="feBar">
+<div class="amountBox">
+
+<div class="amountFill" id="feBar">
 
 </div>
 
 </div>
+
 
 
 <p>
 
 순도 :
 
-<b id="fePure">
+<b id="fePurity">
 
 95%
 
@@ -577,42 +745,49 @@ Fe
 </p>
 
 
-<button onclick="useChem('fe',10)">
+
+<p>
+
+상태 :
+
+<span id="feStatus" class="good">
+
+NORMAL
+
+</span>
+
+</p>
+
+
+
+<button onclick="useChemical('fe',10)">
 
 -10g 사용
 
 </button>
 
 
-<button onclick="addChem('fe',100)">
+<button onclick="restock('fe',100)">
 
 +100g 보충
 
 </button>
 
 
-<button onclick="orderChem('fe')">
+<button onclick="orderChemical('fe')">
 
 주문
 
 </button>
 
 
-</div>
-
-
-
 
 </div>
 
 
 
-
-
-
+</div>
 <hr>
-
-
 
 
 <div class="controlBox">
@@ -620,16 +795,17 @@ Fe
 
 <h3>
 
-🌡 STORAGE CONTROL
+🌡 STORAGE ENVIRONMENT CONTROL
 
 </h3>
+
 
 
 <p>
 
 온도 :
 
-<b id="temp">
+<b id="temperature">
 
 20°C
 
@@ -638,14 +814,14 @@ Fe
 </p>
 
 
-<button onclick="changeTemp(-1)">
+<button onclick="changeTemperature(-1)">
 
 온도 -
 
 </button>
 
 
-<button onclick="changeTemp(1)">
+<button onclick="changeTemperature(1)">
 
 온도 +
 
@@ -667,11 +843,13 @@ Fe
 </p>
 
 
+
 <button onclick="changeHumidity(-5)">
 
 습도 -
 
 </button>
+
 
 
 <button onclick="changeHumidity(5)">
@@ -682,7 +860,25 @@ Fe
 
 
 
+
+<p>
+
+시설 안정도 :
+
+<b id="stability">
+
+100%
+
+</b>
+
+</p>
+
+
+
 </div>
+
+
+
 
 
 
@@ -693,21 +889,171 @@ Fe
 
 
 
+<div class="controlBox">
+
+
 <h3>
 
-📋 LIVE LOG
+⚗️ CHEMICAL MIXING CHAMBER
 
 </h3>
 
 
-<div class="recordBox" id="log">
+
+<p>
+
+첫 번째 물질
+
+</p>
+
+
+<select id="mixA">
+
+
+<option value="nacl">
+
+NaCl - 염화나트륨
+
+</option>
+
+
+<option value="cuso">
+
+CuSO₄ - 황산구리
+
+</option>
+
+
+<option value="cal">
+
+CaCO₃ - 탄산칼슘
+
+</option>
+
+
+<option value="fe">
+
+Fe - 철 분말
+
+</option>
+
+
+
+</select>
+
+
+
+
+
+<p>
+
+두 번째 물질
+
+</p>
+
+
+
+<select id="mixB">
+
+
+<option value="cuso">
+
+CuSO₄ - 황산구리
+
+</option>
+
+
+<option value="nacl">
+
+NaCl - 염화나트륨
+
+</option>
+
+
+<option value="cal">
+
+CaCO₃ - 탄산칼슘
+
+</option>
+
+
+<option value="fe">
+
+Fe - 철 분말
+
+</option>
+
+
+</select>
+
+
+
+
+
+<p>
+
+혼합량
+
+</p>
+
+
+
+<input id="mixAmount" value="10">
+
+g
+
+
+
+<br><br>
+
+
+<button onclick="mixChemical()">
+
+⚗️ MIX
+
+</button>
+
+
+
+
+<div id="mixResult">
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+📋 LIVE RESEARCH LOG
+
+</h3>
+
+
+
+<div class="logBox" id="log">
 
 
 <p>
 
 [SYSTEM]
 
-Chemical medicine system loaded.
+Chemical medicine system initialized.
 
 </p>
 
@@ -717,8 +1063,9 @@ Chemical medicine system loaded.
 
 
 
-</div>
 
+
+</div>
 
 
 </div>
@@ -736,26 +1083,46 @@ let chemicals={
 
 
 nacl:{
+
+name:"NaCl",
+
 amount:500,
-pure:99
+
+purity:99
+
 },
 
 
 cuso:{
+
+name:"CuSO4",
+
 amount:250,
-pure:97
+
+purity:97
+
 },
 
 
 cal:{
+
+name:"CaCO3",
+
 amount:300,
-pure:98
+
+purity:98
+
 },
 
 
 fe:{
+
+name:"Fe",
+
 amount:200,
-pure:95
+
+purity:95
+
 }
 
 
@@ -763,34 +1130,62 @@ pure:95
 
 
 
-let temp=20;
+
+let temperature=20;
+
 
 let humidity=40;
 
 
+let stability=100;
 
 
 
 
-function useChem(id,value){
+
+
+
+function useChemical(id,value){
+
+
+
+if(chemicals[id].amount < value){
+
+
+addLog(
+
+chemicals[id].name+" 사용 실패 : 재고 부족"
+
+);
+
+
+return;
+
+}
+
+
 
 
 chemicals[id].amount-=value;
 
 
-if(chemicals[id].amount<0)
 
-chemicals[id].amount=0;
-
+chemicals[id].purity-=0.2;
 
 
-chemicals[id].pure-=1;
+
+updateChemical(id);
 
 
-update(id);
 
+addLog(
 
-addLog(id+" 사용 처리 -"+value+"g");
+chemicals[id].name+
+
+" 사용 처리 (-"+value+"g)"
+
+);
+
 
 
 }
@@ -799,16 +1194,26 @@ addLog(id+" 사용 처리 -"+value+"g");
 
 
 
-function addChem(id,value){
+function restock(id,value){
+
 
 
 chemicals[id].amount+=value;
 
 
-update(id);
+
+updateChemical(id);
 
 
-addLog(id+" 재고 보충 +"+value+"g");
+
+addLog(
+
+chemicals[id].name+
+
+" 보충 완료 (+"+value+"g)"
+
+);
+
 
 
 }
@@ -817,17 +1222,25 @@ addLog(id+" 재고 보충 +"+value+"g");
 
 
 
+function orderChemical(id){
 
-function orderChem(id){
 
 
 chemicals[id].amount+=500;
 
 
-update(id);
+updateChemical(id);
 
 
-addLog(id+" 주문 완료 +500g");
+
+addLog(
+
+chemicals[id].name+
+
+" 주문 완료 (+500g)"
+
+);
+
 
 
 }
@@ -838,71 +1251,144 @@ addLog(id+" 주문 완료 +500g");
 
 
 
-function update(id){
+function updateChemical(id){
+
+
+let c=chemicals[id];
 
 
 
-let data=chemicals[id];
+document.getElementById(id+"Amount").innerHTML=
+
+c.amount+"g";
 
 
-document.getElementById(id+"Text").innerHTML=
 
-data.amount+"g";
+document.getElementById(id+"Purity").innerHTML=
 
-
-document.getElementById(id+"Pure").innerHTML=
-
-data.pure+"%";
+c.purity.toFixed(1)+"%";
 
 
 
 document.getElementById(id+"Bar").style.width=
 
-Math.min(data.amount/5,100)+"%";
-
-
-
-if(data.amount<50){
-
-addLog(id+" LOW STOCK WARNING");
-
-}
-
-
-
-}
+Math.min(c.amount/5,100)+"%";
 
 
 
 
 
+let status=document.getElementById(id+"Status");
 
 
-function changeTemp(v){
+
+if(c.amount<50){
 
 
-temp+=v;
+status.innerHTML="LOW STOCK";
 
-
-document.getElementById("temp").innerHTML=
-
-temp+"°C";
-
-
-addLog("Temperature changed "+temp+"°C");
+status.className="low";
 
 
 }
 
 
+else if(c.purity<80){
+
+
+status.innerHTML="UNSTABLE";
+
+status.className="warning";
+
+
+}
+
+
+else{
+
+
+status.innerHTML="NORMAL";
+
+status.className="good";
+
+
+}
 
 
 
 
-function changeHumidity(v){
+}
 
 
-humidity+=v;
+
+
+
+
+
+
+function changeTemperature(value){
+
+
+
+temperature+=value;
+
+
+
+document.getElementById("temperature").innerHTML=
+
+temperature+"°C";
+
+
+
+if(temperature>30 || temperature<10){
+
+
+stability-=2;
+
+
+addLog(
+
+"⚠ Temperature abnormal"
+
+);
+
+
+}
+
+
+else{
+
+
+addLog(
+
+"Temperature adjusted : "
+
++temperature+"°C"
+
+);
+
+
+}
+
+
+
+updateStability();
+
+
+
+}
+
+
+
+
+
+
+function changeHumidity(value){
+
+
+
+humidity+=value;
+
 
 
 if(humidity<0)
@@ -916,7 +1402,38 @@ document.getElementById("humidity").innerHTML=
 humidity+"%";
 
 
-addLog("Humidity changed "+humidity+"%");
+
+addLog(
+
+"Humidity adjusted : "
+
++humidity+"%"
+
+);
+
+
+
+}
+
+
+
+
+
+
+
+function updateStability(){
+
+
+
+if(stability<0)
+
+stability=0;
+
+
+
+document.getElementById("stability").innerHTML=
+
+stability+"%";
 
 
 }
@@ -929,9 +1446,12 @@ addLog("Humidity changed "+humidity+"%");
 function addLog(text){
 
 
-document.getElementById("log").innerHTML+=
 
-`
+let box=document.getElementById("log");
+
+
+
+box.innerHTML+=`
 
 <p>
 
@@ -944,6 +1464,259 @@ ${text}
 `;
 
 
+
+box.scrollTop=box.scrollHeight;
+
+
+}
+// ============================
+// CHEMICAL MIXING SYSTEM
+// ============================
+
+
+function mixChemical(){
+
+
+let first =
+document.getElementById("mixA").value;
+
+
+let second =
+document.getElementById("mixB").value;
+
+
+let amount =
+Number(document.getElementById("mixAmount").value);
+
+
+
+
+if(first===second){
+
+
+addLog(
+"⚠ MIX FAILED : SAME MATERIAL"
+);
+
+
+document.getElementById("mixResult").innerHTML=
+
+`
+
+<p class="warning">
+
+혼합 실패 : 동일 물질 선택됨
+
+</p>
+
+`;
+
+
+return;
+
+}
+
+
+
+
+
+if(
+chemicals[first].amount < amount ||
+chemicals[second].amount < amount
+){
+
+
+addLog(
+"⚠ MIX FAILED : INSUFFICIENT STOCK"
+);
+
+
+return;
+
+}
+
+
+
+
+// 재료 차감
+
+
+chemicals[first].amount-=amount;
+
+chemicals[second].amount-=amount;
+
+
+
+updateChemical(first);
+
+updateChemical(second);
+
+
+
+
+
+
+let result;
+
+
+let resultStability;
+
+
+
+if(
+
+(first==="nacl" && second==="cuso")
+
+||
+
+(first==="cuso" && second==="nacl")
+
+){
+
+
+result="NaCu-SALT UNKNOWN";
+
+resultStability=85;
+
+
+}
+
+
+
+else if(
+
+(first==="cuso" && second==="fe")
+
+||
+
+(first==="fe" && second==="cuso")
+
+){
+
+
+result="CuFe-METAL COMPLEX";
+
+resultStability=72;
+
+
+}
+
+
+
+else if(
+
+(first==="cal" && second==="cuso")
+
+||
+
+(first==="cuso" && second==="cal")
+
+){
+
+
+result="CALCIUM COPPER COMPOUND";
+
+resultStability=78;
+
+
+}
+
+
+
+else{
+
+
+result="UNKNOWN CHEMICAL COMPOUND";
+
+resultStability=
+Math.floor(Math.random()*40)+50;
+
+
+}
+
+
+
+
+
+document.getElementById("mixResult").innerHTML=
+
+`
+
+<hr>
+
+
+<h3>
+
+RESULT GENERATED
+
+</h3>
+
+
+<p>
+
+CODE :
+
+<b>
+
+${result}
+
+</b>
+
+</p>
+
+
+<p>
+
+생성량 :
+
+${amount*2}g
+
+</p>
+
+
+<p>
+
+안정도 :
+
+${resultStability}%
+
+</p>
+
+
+
+`;
+
+
+addLog(
+
+"NEW COMPOUND CREATED : "
+
++result
+
+);
+
+
+
+
+if(resultStability<80){
+
+
+addLog(
+
+"⚠ WARNING : UNSTABLE COMPOUND"
+
+);
+
+
+stability-=5;
+
+updateStability();
+
+
+}
+
+
+
 }
 
 
@@ -951,19 +1724,109 @@ ${text}
 
 
 
-setInterval(()=>{
 
 
-let ids=Object.keys(chemicals);
+
+// ============================
+// RANDOM LAB EVENT
+// ============================
 
 
-let id=ids[Math.floor(Math.random()*ids.length)];
+setInterval(function(){
 
 
-chemicals[id].pure-=0.1;
+
+let eventChance=Math.random();
 
 
-update(id);
+
+if(eventChance<0.25){
+
+
+
+let events=[
+
+
+"Ambient temperature fluctuation detected.",
+
+
+"Chemical shelf inspection required.",
+
+
+"Minor pressure change detected.",
+
+
+"Unknown vibration detected.",
+
+
+"Storage sensor recalibrated."
+
+];
+
+
+
+let random=
+
+events[Math.floor(Math.random()*events.length)];
+
+
+
+addLog(
+
+"⚠ "+random
+
+);
+
+
+
+}
+
+
+
+
+
+},8000);
+
+
+
+
+
+
+
+
+// ============================
+// AUTOMATIC CHEMICAL CHANGE
+// ============================
+
+
+setInterval(function(){
+
+
+
+let list=
+
+Object.keys(chemicals);
+
+
+
+let target=
+
+list[Math.floor(Math.random()*list.length)];
+
+
+
+
+chemicals[target].purity-=0.1;
+
+
+
+if(chemicals[target].purity<0)
+
+chemicals[target].purity=0;
+
+
+
+updateChemical(target);
 
 
 
@@ -974,30 +1837,53 @@ update(id);
 
 
 
+
+
+
+// ============================
+// USER DATA
+// ============================
+
+
 document.getElementById("userName").innerHTML=
 
-localStorage.getItem("userName")||"UNKNOWN";
+localStorage.getItem("userName")
+||
+"UNKNOWN";
+
 
 
 document.getElementById("userLevel").innerHTML=
 
-localStorage.getItem("userLevel")||"NONE";
+localStorage.getItem("userLevel")
+||
+"NONE";
 
 
 
-naclBar.style.width="100%";
 
-cusoBar.style.width="50%";
 
-calBar.style.width="60%";
 
-feBar.style.width="40%";
+// ============================
+// INITIAL BAR
+// ============================
+
+
+updateChemical("nacl");
+
+updateChemical("cuso");
+
+updateChemical("cal");
+
+updateChemical("fe");
 
 
 
 </script>
 
 
+
 </body>
+
 
 </html>
