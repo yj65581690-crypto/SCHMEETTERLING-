@@ -11,23 +11,33 @@
 
 </head>
 
+
 <body class="unknownPage">
 
+
 <div class="layout">
+
+
 
 <!-- LEFT SIDE MENU -->
 
 <div class="sideMenu">
 
+
 <h3>
 SCHMEETTERLING
 </h3>
+
 
 <p style="color:#7ef7b7;">
 ● SYSTEM ONLINE
 </p>
 
+
+
 <hr>
+
+
 
 <p>
 USER
@@ -37,6 +47,8 @@ USER
 </b>
 </p>
 
+
+
 <p>
 LEVEL
 <br>
@@ -45,326 +57,421 @@ LEVEL
 </b>
 </p>
 
+
+
 <hr>
 
+
+
+
+
 <button onclick="location.href='./main.html'">
+
 🏠 HOME
+
 </button>
+
+
+
 
 <button onclick="location.href='./radiation.html'">
+
 ☢ 방사능 부서
+
 </button>
+
+
+
 
 <button onclick="location.href='./unknown.html'">
+
 👾 미확인 개체
+
 </button>
+
+
+
 
 <button onclick="location.href='./bio.html'">
+
 🧫 생물 부서
+
 </button>
+
+
+
 
 <button onclick="location.href='./chemical.html'">
+
 🧪 화학 부서
+
 </button>
 
+
+
+
 <button onclick="location.href='./backroom.html'">
+
 📦 백룸 부서
+
 </button>
+
+
 
 </div>
 
-<!-- MAIN -->
+
+
+
+
+<!-- MAIN REPORT -->
+
 
 <div class="mainBox">
 
+
+
 <h2>
-📦 BACKROOM DEPARTMENT
+
+BACKROOM DEPARTMENT
+
 </h2>
 
-<p>
-<b>부서 코드 :</b> BR-03
-</p>
+
+
 
 <p>
-<b>열람 권한 :</b> STAFF 이상
+
+<b>부서 코드 :</b> BR-03
+
 </p>
+
+
+
+<p>
+
+<b>열람 권한 :</b> STAFF 이상
+
+</p>
+
+
+
 
 <hr>
+
+
+
 
 <h3>
-DIVISION OVERVIEW
+부서 안내
 </h3>
 
-<div class="recordBox">
+
 
 <p>
-현실과 분리된 변칙 공간 <b>「BACKROOM」</b>을
-탐사·조사·기록하는 특수 부서입니다.
+
+현실과 분리된 변칙 공간
+<b>「BACKROOM」</b>
+관련 자료를 관리하는 특수 부서입니다.
+
+<br><br>
+
+탐사 기록,
+위험 개체,
+신규 구역,
+환경 분석 데이터를 보관합니다.
+
 </p>
 
-<p>
-탐사 인원은 전용 워프 장치를 이용하여
-무작위 구역으로 이동합니다.
-</p>
 
-<p>
-탐사 종료 후 24시간 이내 귀환이 가능하며,
-본 부서는 위험 개체 회수,
-환경 기록,
-신규 구역 발견을 수행합니다.
-</p>
 
 <p style="color:#ff7070;">
-※ 백룸 내부에서 발생하는 모든 사고는
-탐사자의 책임으로 기록됩니다.
+
+⚠ 백룸 내부 기록은 보안 등급에 따라
+접근이 제한됩니다.
+
 </p>
 
-</div>
+
+
 
 <hr>
+
+
+
 
 <h3>
 DATABASE
 </h3>
-<div class="recordBox">
+<button onclick="location.href='./backroom_entity.html'">
 
-<h2>
 📦 위험 개체 수거 및 보관
-</h2>
-
-<p>
-<b>CODE :</b> BR-ENTITY
-</p>
-
-<p>
-백룸 내부에서 발견된 위험 개체<br>
-수거 / 운송 / 보관 기록
-</p>
-
-<button class="deptBtn backroom"
-onclick="openDB('./backroom_entity.html')">
-
-보고서 열람
 
 </button>
 
-</div>
 
-<hr>
 
-<div class="recordBox">
+<button onclick="location.href='./backroom_log.html'">
 
-<h2>
 📄 백룸 탐사 일지
-</h2>
-
-<p>
-<b>CODE :</b> BR-LOG
-</p>
-
-<p>
-탐사대 생존 기록<br>
-환경 조사 보고서<br>
-교신 로그
-</p>
-
-<button class="deptBtn backroom"
-onclick="openDB('./backroom_log.html')">
-
-탐사 기록 열람
 
 </button>
 
-</div>
 
-<hr>
 
-<div class="recordBox">
+<button onclick="location.href='./backroom_area.html'">
 
-<h2>
 🗺 신규 구역 탐색
-</h2>
-
-<p>
-<b>CODE :</b> BR-AREA
-</p>
-
-<p>
-신규 레벨 발견<br>
-환경 분석<br>
-출입 가능 여부
-</p>
-
-<button class="deptBtn backroom"
-onclick="openDB('./backroom_area.html')">
-
-구역 기록 열람
 
 </button>
 
-</div>
+
+
+<button onclick="location.href='./backroom_staff.html'">
+
+👥 연구원 명단
+
+</button>
+
+
+
 
 <hr>
+
+
+
+
+
+<h3>
+DOCUMENT APPROVAL
+</h3>
+
+
+
+
 
 <div class="recordBox">
 
-<h2>
-👥 연구원 명단
-</h2>
+
 
 <p>
-<b>CODE :</b> BR-STAFF
+
+문서 :
+
+<b>
+BR-ENTITY 위험 개체 수거 기록
+</b>
+
 </p>
+
+
 
 <p>
-백룸 부서 연구원<br>
-프로필 데이터베이스
+
+작성자 :
+
+<b>
+BACKROOM TEAM
+
+</b>
+
 </p>
 
-<button class="deptBtn backroom"
-onclick="openDB('./backroom_staff.html')">
 
-직원 정보 열람
 
-</button>
+<p>
+
+상태 :
+
+<span id="approvalStatus">
+
+검토 대기
+
+</span>
+
+</p>
+
+
+
+<div id="approvalButton">
 
 </div>
 
-<hr>
-<div class="warningBox">
 
-<h2>
-⚠️ WARNING : BACKROOM ACCESS RESTRICTION
-</h2>
-
-<p>
-<b>LEVEL :</b> STAFF ONLY
-</p>
-
-<p>
-백룸 내부 기록은 위험 등급에 따라<br>
-열람 권한이 제한됩니다.<br><br>
-
-허가되지 않은 접근 및 정보 유출 시<br>
-보안 규정에 따라 처리됩니다.
-</p>
-
-<hr>
-
-<p>
-<b>주의 사항</b><br>
-- 단독 탐사 금지<br>
-- 변칙 개체 접촉 금지<br>
-- 발견 기록 임의 수정 금지<br>
-- 출입 승인 없는 구역 접근 금지
-</p>
 
 </div>
-
-<hr>
-    <div class="recordBox">
-
-<h2>
-📁 BACKROOM DATABASE STATUS
-</h2>
-
-<p>
-<b>CODE :</b> BR-SYSTEM
-</p>
-
-<p>
-본 데이터베이스는 SCHMEETTERLING
-내부 관리 시스템에 의해 운영됩니다.
-</p>
-
-<p>
-백룸 관련 모든 자료는 자동 저장되며,
-일부 기록은 관리자 승인 이후 열람 가능합니다.
-</p>
-
 <hr>
 
-<p>
-<b>DATABASE STATUS :</b>
-ACTIVE
-</p>
+
+
+
+
+<h3>
+EXPLORATION STATUS
+</h3>
+
+
+
+
+<div class="recordBox">
+
+
 
 <p>
-<b>SECURITY LEVEL :</b>
-STAFF ONLY
+
+<b>
+현재 상태 :
+</b>
+
+탐사 기록 수집 중
+
 </p>
 
+
+
 <p>
-<b>LAST UPDATE :</b>
+
+<b>
+마지막 갱신 :
+</b>
+
 UNKNOWN
+
 </p>
 
+
+
+<p>
+
+<b>
+위험 등급 :
+</b>
+
+변동
+
+</p>
+
+
+
 </div>
+
+
+
 
 
 <hr>
 
 
-<div class="footerBox">
 
-<p>
-SCHMEETTERLING INTERNAL INFORMATION SYSTEM
+
+
+<p style="color:#ff7070;">
+
+⚠ WARNING : BACKROOM ACCESS RESTRICTION
+
 </p>
 
+
+
+
 <p>
-BACKROOM DEPARTMENT / BR-03
+
+허가되지 않은 사용자의 접근은
+기록되며 보안 규정에 따라 처리됩니다.
+
 </p>
-
 </div>
 
 
 </div>
 
-</div>
+
+
+
 
 
 <script>
 
-function openDB(page){
 
-location.href = page;
+let user = localStorage.getItem("userName");
+
+let level = localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+user || "UNKNOWN";
+
+
+
+document.getElementById("userLevel").innerHTML =
+level || "NONE";
+
+
+
+
+
+if(user === "미아"){
+
+
+document.getElementById("approvalButton").innerHTML = `
+
+
+<button onclick="requestApproval()">
+
+✓ 보고서 결재 요청
+
+</button>
+
+
+`;
+
+
 
 }
 
 
-let user =
-localStorage.getItem("userName");
-
-let level =
-localStorage.getItem("userLevel");
 
 
-if(user){
+function requestApproval(){
 
-document.getElementById("userName").innerHTML=user;
+
+document.getElementById("approvalStatus").innerHTML =
+
+"✔ 결재 요청 완료";
+
+
+
+document.getElementById("approvalButton").innerHTML = `
+
+
+<p>
+
+요청자 : 미아
+
+</p>
+
+
+<p>
+
+관리자 검토 대기 중
+
+</p>
+
+
+`;
+
+
 
 }
 
-else{
-
-document.getElementById("userName").innerHTML="UNKNOWN";
-
-}
 
 
-if(level){
-
-document.getElementById("userLevel").innerHTML=level;
-
-}
-
-else{
-
-document.getElementById("userLevel").innerHTML="GUEST";
-
-}
 
 </script>
+
+
+
 
 
 </body>
