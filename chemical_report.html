@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+CHEMICAL SURVEILLANCE REPORT
+</title>
+
+
+<style>
+
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+
+background:#111;
+
+font-family:"Courier New", monospace;
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+
+
+/* CRT SCAN */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+repeating-linear-gradient(
+0deg,
+rgba(255,255,255,0.04),
+rgba(255,255,255,0.04) 1px,
+transparent 1px,
+transparent 4px
+);
+
+pointer-events:none;
+
+z-index:99;
+
+}
+
+
+
+/* DOCUMENT */
+
+
+.document{
+
+width:850px;
+
+height:1100px;
+
+background:#e7ddc3;
+
+padding:60px;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:
+
+0 0 50px black;
+
+
+}
+
+
+
+/* PAPER TEXTURE */
+
+
+.document::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+
+background-image:
+
+radial-gradient(
+rgba(0,0,0,.15) 1px,
+transparent 1px
+);
+
+
+background-size:9px 9px;
+
+opacity:.18;
+
+pointer-events:none;
+
+
+}
+
+
+
+/* TOP SECRET */
+
+
+.internal{
+
+
+position:absolute;
+
+right:40px;
+
+top:25px;
+
+
+color:#8b0000;
+
+font-size:14px;
+
+
+animation:blink 2s infinite;
+
+
+}
+
+
+
+@keyframes blink{
+
+
+0%,50%{
+
+opacity:1;
+
+}
+
+
+51%,100%{
+
+opacity:.25;
+
+}
+
+
+}
+
+
+
+
+.header{
+
+
+border-bottom:3px solid #111;
+
+padding-bottom:20px;
+
+margin-bottom:30px;
+
+
+}
+
+
+
+.header h1{
+
+
+font-size:28px;
+
+letter-spacing:3px;
+
+margin:0;
+
+
+}
+
+
+
+.subtitle{
+
+margin-top:10px;
+
+color:#555;
+
+font-size:14px;
+
+
+}
+
+
+
+
+.section{
+
+
+border-top:2px solid #222;
+
+padding:18px 0;
+
+
+}
+
+
+
+
+.label{
+
+font-weight:bold;
+
+font-size:14px;
+
+letter-spacing:1px;
+
+}
+
+
+
+.value{
+
+
+font-size:18px;
+
+line-height:1.7;
+
+margin-top:10px;
+
+
+}
+
+
+
+.redact{
+
+
+background:black;
+
+color:black;
+
+padding:0 12px;
+
+
+}
+
+
+
+
+/* HANDWRITING */
+
+
+.handwrite{
+
+
+font-family:cursive;
+
+font-size:24px;
+
+color:#a00000;
+
+margin-top:20px;
+
+transform:rotate(-5deg);
+
+
+}
+
+
+
+
+/* STAMP */
+
+
+.stamp{
+
+
+position:absolute;
+
+right:70px;
+
+bottom:200px;
+
+
+border:5px solid #a00000;
+
+color:#a00000;
+
+padding:18px;
+
+
+font-weight:bold;
+
+font-size:22px;
+
+
+transform:rotate(-15deg);
+
+
+opacity:.8;
+
+
+}
+
+
+
+
+/* PAGE BUTTON */
+
+
+.navigation{
+
+
+position:absolute;
+
+bottom:50px;
+
+left:0;
+
+right:0;
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:40px;
+
+
+font-size:22px;
+
+
+}
+
+
+
+.navigation button{
+
+
+background:none;
+
+border:2px solid black;
+
+padding:10px 25px;
+
+font-family:inherit;
+
+font-size:22px;
+
+cursor:pointer;
+
+
+}
+
+
+.navigation button:hover{
+
+
+background:black;
+
+color:white;
+
+
+}
+
+
+
+
+
+/* DEPARTMENT */
+
+
+.department{
+
+
+position:absolute;
+
+bottom:15px;
+
+left:40px;
+
+
+color:black;
+
+text-decoration:none;
+
+font-size:18px;
+
+
+}
+
+
+
+/* LOADING */
+
+
+.loading{
+
+
+display:none;
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.8);
+
+color:white;
+
+z-index:20;
+
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+
+font-size:25px;
+
+
+}
+
+
+
+.progressBox{
+
+
+width:320px;
+
+height:25px;
+
+border:2px solid white;
+
+margin-top:20px;
+
+
+}
+
+
+
+.progress{
+
+
+height:100%;
+
+width:0%;
+
+background:white;
+
+
+}
+
+
+
+
+/* ERROR */
+
+
+.error{
+
+
+display:none;
+
+position:absolute;
+
+inset:0;
+
+
+background:black;
+
+color:red;
+
+z-index:30;
+
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+
+font-size:40px;
+
+
+}
+
+.glitch{
+
+
+animation:glitch .15s infinite;
+
+
+}
+
+
+
+@keyframes glitch{
+
+
+0%{
+
+transform:translate(0);
+
+}
+
+
+25%{
+
+transform:translate(3px,-2px);
+
+}
+
+
+50%{
+
+transform:translate(-3px,2px);
+
+}
+
+
+75%{
+
+transform:translate(2px,1px);
+
+}
+
+
+100%{
+
+transform:translate(0);
+
+}
+
+
+}
+
+
+
+.damaged{
+
+
+filter:
+
+contrast(1.15)
+
+brightness(.85);
+
+
+}
+
+
+
+
+.warning{
+
+
+color:#900;
+
+font-weight:bold;
+
+
+}
+
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<div class="document" id="paper">
+
+
+
+<div class="internal">
+
+FOR INTERNAL USE ONLY
+
+</div>
+
+
+
+
+<div class="loading" id="loading">
+
+
+<div>
+
+ACCESS VERIFYING...
+
+</div>
+
+
+<div class="progressBox">
+
+
+<div class="progress" id="progress">
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="error" id="error">
+
+
+DOCUMENT ERROR
+
+<br>
+
+RECOVERING...
+
+</div>
+
+
+
+
+<div class="header">
+
+
+<h1>
+
+CHEMICAL SURVEILLANCE REPORT
+
+</h1>
+
+
+<div class="subtitle">
+
+SCHMEETTERLING GOVERNMENT ARCHIVE SYSTEM
+
+</div>
+
+
+</div>
+
+
+
+<div id="content">
+
+
+</div>
+
+
+
+
+<div class="stamp">
+
+
+SCHMEETTERLING
+
+<br>
+
+AUTHORIZED
+
+
+</div>
+
+
+
+
+<div class="navigation">
+
+
+<button onclick="changePage(-1)">
+
+&lt;
+
+</button>
+
+
+<span id="page">
+
+1 / 8
+
+</span>
+
+
+<button onclick="changePage(1)">
+
+&gt;
+
+</button>
+
+
+</div>
+
+
+
+
+<a class="department" href="../../departments/chemical.html">
+
+← 화학부서
+
+</a>
+
+
+
+
+</div>
+
+
+
+<script>
+
+
+let currentPage=1;
+
+
+
+const reports=[
+
+
+{
+
+
+id:"CH-SR-001",
+
+project:"NARCISSUS",
+
+subject:"████████",
+
+experiment:"신규 화합물 안정성 확인.",
+
+researcher:"셀레스트",
+
+status:"SUCCESS",
+
+note:"Needs more testing."
+
+},
+
+
+
+{
+
+
+id:"CH-SR-002",
+
+project:"NARCISSUS",
+
+subject:"████████",
+
+experiment:"1차 생체 반응 기록.",
+
+researcher:"셀레스트",
+
+status:"OBSERVATION",
+
+note:"Reaction was stronger than expected."
+
+},
+
+
+
+{
+
+
+id:"CH-SR-003",
+
+project:"NARCISSUS",
+
+subject:"████████",
+
+experiment:"조직 변화 분석.",
+
+researcher:"CELL-07",
+
+status:"UNSTABLE",
+
+note:"Do NOT reopen."
+
+},
+
+
+
+{
+
+
+id:"CH-SR-004",
+
+project:"NARCISSUS",
+
+subject:"████████",
+
+experiment:"추가 투여 실험.",
+
+researcher:"██████",
+
+status:"WARNING",
+
+note:"Subject still alive."
+
+},
+
+
+
+{
+
+
+id:"CH-SR-005",
+
+project:"NARCISSUS",
+
+subject:"████████",
+
+experiment:"변이 진행 속도 측정.",
+
+researcher:"CHEMICAL TEAM",
+
+status:"CRITICAL",
+
+note:"Stop the experiment."
+
+},
+
+
+
+{
+
+
+id:"CH-SR-006",
+
+project:"NARCISSUS",
+
+subject:"████████",
+
+experiment:"격리 환경 테스트.",
+
+researcher:"██████",
+
+status:"FAILED",
+
+note:"Containment is unstable."
+
+},
+
+
+
+{
+
+
+id:"CH-SR-007",
+
+project:"NARCISSUS",
+
+subject:"████████",
+
+experiment:"최종 반응 확인.",
+
+researcher:"UNKNOWN",
+
+status:"RESTRICTED",
+
+note:"Nobody enters the room."
+
+},
+
+
+
+{
+
+
+id:"CH-SR-008",
+
+project:"NARCISSUS",
+
+subject:"████████",
+
+experiment:"최종 보고서 기록.",
+
+researcher:"████████",
+
+status:"ACCESS DENIED",
+
+note:"Subject was never terminated."
+
+}
+
+
+];
+
+function renderPage(){
+
+
+
+let data=reports[currentPage-1];
+
+
+
+let damageClass="";
+
+
+
+if(currentPage>=4){
+
+damageClass="damaged";
+
+}
+
+
+
+if(currentPage>=6){
+
+damageClass+=" glitch";
+
+}
+
+
+
+document.getElementById("paper").className=
+
+"document "+damageClass;
+
+
+
+
+let condition="";
+
+
+
+switch(currentPage){
+
+
+case 1:
+
+condition="DOCUMENT CONDITION : CLEAN";
+
+break;
+
+
+case 2:
+
+condition="DOCUMENT CONDITION : SLIGHTLY USED";
+
+break;
+
+
+case 3:
+
+condition="DOCUMENT CONDITION : HANDWRITTEN NOTES FOUND";
+
+break;
+
+
+case 4:
+
+condition="DOCUMENT CONDITION : DAMAGED";
+
+break;
+
+
+case 5:
+
+condition="DOCUMENT CONDITION : CONTAMINATED";
+
+break;
+
+
+case 6:
+
+condition="DOCUMENT CONDITION : HEAVILY CORRUPTED";
+
+break;
+
+
+case 7:
+
+condition="DOCUMENT CONDITION : CRITICAL";
+
+break;
+
+
+case 8:
+
+condition="DOCUMENT CONDITION : DESTROYED";
+
+break;
+
+
+}
+
+
+
+document.getElementById("content").innerHTML=`
+
+<div class="section">
+
+
+<div class="label">
+
+REPORT ID
+
+</div>
+
+
+<div class="value">
+
+${data.id}
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="section">
+
+
+<div class="label">
+
+PROJECT
+
+</div>
+
+
+<div class="value">
+
+${data.project}
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="section">
+
+
+<div class="label">
+
+SUBJECT
+
+</div>
+
+
+<div class="value">
+
+${data.subject}
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="section">
+
+
+<div class="label">
+
+EXPERIMENT
+
+</div>
+
+
+<div class="value">
+
+${data.experiment}
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="section">
+
+
+<div class="label">
+
+RESEARCHER
+
+</div>
+
+
+<div class="value">
+
+${data.researcher}
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="section">
+
+
+<div class="label">
+
+STATUS
+
+</div>
+
+
+<div class="value warning">
+
+${data.status}
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="section">
+
+
+<div class="label">
+
+RESEARCH NOTES
+
+</div>
+
+
+<div class="value">
+
+${getReportText()}
+
+</div>
+
+
+
+<div class="handwrite">
+
+${data.note}
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="section">
+
+
+<div class="label">
+
+DOCUMENT CONDITION
+
+</div>
+
+
+<div class="value warning">
+
+${condition}
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="section">
+
+
+<div class="label">
+
+PAGE RECORD
+
+</div>
+
+
+<div class="value">
+
+EXP-${String(currentPage).padStart(3,"0")}
+
+<br><br>
+
+SCHMEETTERLING ARCHIVE SYSTEM
+
+</div>
+
+
+</div>
+
+
+
+`;
+
+
+
+
+if(currentPage===8){
+
+
+
+document.getElementById("content").innerHTML+=`
+
+
+<div class="section">
+
+
+<div class="label warning">
+
+FINAL NOTICE
+
+</div>
+
+
+
+<div class="value">
+
+
+PROJECT NARCISSUS
+
+<br><br>
+
+
+STATUS :
+
+██████████
+
+
+<br><br>
+
+
+ACCESS DENIED
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="handwrite">
+
+
+Subject was never terminated.
+
+
+</div>
+
+
+
+`;
+
+
+
+}
+
+
+
+
+
+document.getElementById("page").innerHTML=
+
+"&lt; "+currentPage+" / 8 &gt;";
+
+
+
+}
+
+
+
+
+
+function getReportText(){
+
+
+if(currentPage<=2){
+
+
+return `
+
+정상적인 화학 반응 확인.
+
+추가 분석 예정.
+
+`;
+
+
+}
+
+
+
+if(currentPage<=5){
+
+
+return `
+
+예상치 못한 분자 구조 변화 발생.
+
+피실험체 상태 재분류.
+
+<br><br>
+
+SECURITY LEVEL 4
+
+`;
+
+
+
+}
+
+
+
+return `
+
+
+FINAL OBSERVATION
+
+
+<br><br>
+
+
+CONTAINMENT FAILURE
+
+
+<br><br>
+
+
+SUBJECT REMAINS ACTIVE.
+
+
+<br><br>
+
+
+ACCESS LEVEL 5 REQUIRED.
+
+
+`;
+
+
+
+}
+
+
+
+
+
+function changePage(direction){
+
+
+
+let next=currentPage+direction;
+
+
+
+if(next<1 || next>8){
+
+return;
+
+}
+
+
+
+
+showLoading(function(){
+
+
+
+currentPage=next;
+
+
+
+if(Math.random()<0.2){
+
+
+showError(function(){
+
+
+renderPage();
+
+
+});
+
+
+}
+
+else{
+
+
+renderPage();
+
+
+}
+
+
+
+});
+
+
+
+}
+
+
+
+
+function showLoading(callback){
+
+
+
+let loading=document.getElementById("loading");
+
+
+let progress=document.getElementById("progress");
+
+
+
+loading.style.display="flex";
+
+
+progress.style.width="0%";
+
+
+
+let width=0;
+
+
+
+let timer=setInterval(function(){
+
+
+width+=20;
+
+
+progress.style.width=
+
+width+"%";
+
+
+
+if(width>=100){
+
+
+clearInterval(timer);
+
+
+setTimeout(function(){
+
+
+loading.style.display="none";
+
+
+callback();
+
+
+
+},200);
+
+
+}
+
+
+},80);
+
+
+
+}
+function showError(callback){
+
+
+let error=document.getElementById("error");
+
+
+
+error.style.display="flex";
+
+
+
+setTimeout(function(){
+
+
+error.style.display="none";
+
+
+callback();
+
+
+
+},500);
+
+
+
+}
+
+
+
+
+
+// 페이지별 랜덤 오류 강화
+
+
+function randomDocumentError(){
+
+
+if(currentPage>=6 && Math.random()<0.35){
+
+
+showError(function(){
+
+
+renderPage();
+
+
+});
+
+
+}
+
+
+}
+
+
+
+
+
+// 시작 화면
+
+
+renderPage();
+
+
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
