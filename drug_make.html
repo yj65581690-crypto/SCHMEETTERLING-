@@ -18,11 +18,9 @@ DRUG SYNTHESIS SYSTEM
 .drugMakePage{
 
 background:#050d18;
-
 color:white;
 
 }
-
 
 
 
@@ -37,9 +35,30 @@ margin:10px;
 
 background:#001522;
 
-cursor:grab;
+cursor:pointer;
+
+transition:.3s;
 
 }
+
+
+
+.sampleBox:hover{
+
+box-shadow:0 0 15px #00aaff;
+
+}
+
+
+
+.sampleBox.selected{
+
+background:#00334d;
+
+box-shadow:0 0 25px #00aaff;
+
+}
+
 
 
 
@@ -61,47 +80,37 @@ font-size:20px;
 
 background:#00101c;
 
+cursor:pointer;
+
+transition:.5s;
+
 }
 
 
 
 .machine.active{
 
-box-shadow:0 0 30px #00aaff;
+box-shadow:
+
+0 0 40px #00aaff;
+
+animation:pulse 1s infinite;
 
 }
 
 
 
+@keyframes pulse{
 
+50%{
 
-.package{
+filter:brightness(1.5);
 
-border:1px solid #00ffaa;
-
-padding:20px;
-
-background:#001a15;
+}
 
 }
 
 
-
-.logBox{
-
-height:150px;
-
-overflow:hidden;
-
-background:black;
-
-border:1px solid #555;
-
-padding:10px;
-
-font-size:13px;
-
-}
 
 
 
@@ -131,27 +140,48 @@ transition:1s;
 
 
 
+
+
+.package{
+
+border:1px solid #00ffaa;
+
+padding:20px;
+
+background:#001a15;
+
+}
+
+
+
+
+.logBox{
+
+height:150px;
+
+overflow:hidden;
+
+background:black;
+
+border:1px solid #555;
+
+padding:10px;
+
+font-size:13px;
+
+}
+
+
+
+
+
 button{
 
 margin:5px;
 
 }
 
-.sampleBox{
 
-touch-action:none;
-
-user-select:none;
-
-}
-
-
-
-.machine{
-
-touch-action:none;
-
-}
 
 </style>
 
@@ -168,40 +198,61 @@ touch-action:none;
 
 
 
-<!-- SIDEBAR -->
+<!-- SIDE MENU -->
 
 
 <div class="sideMenu">
 
 
 <h3>
+
 SCHMEETTERLING
+
 </h3>
 
 
+
 <p style="color:#00aaff;">
+
 ● SYSTEM ONLINE
+
 </p>
+
 
 
 <hr>
 
 
+
+
 <p>
+
 USER
+
 <br>
+
 <b id="userName">
+
 확인중...
+
 </b>
+
 </p>
 
 
+
 <p>
+
 LEVEL
+
 <br>
+
 <b id="userLevel">
+
 확인중...
+
 </b>
+
 </p>
 
 
@@ -211,43 +262,57 @@ LEVEL
 
 
 <button onclick="location.href='./main.html'">
+
 🏠 HOME
+
 </button>
 
 
 
 <button onclick="location.href='./radiation.html'">
+
 ☢ 방사능 부서
+
 </button>
 
 
 
 <button onclick="location.href='./unknown.html'">
+
 👾 미확인 개체
+
 </button>
 
 
 
 <button onclick="location.href='./bio.html'">
+
 🧫 생물 부서
+
 </button>
 
 
 
 <button onclick="location.href='./chemical.html'">
+
 🧪 화학 부서
+
 </button>
 
 
 
 <button onclick="location.href='./backroom.html'">
+
 📦 백룸 부서
+
 </button>
 
 
 
 <button onclick="location.href='./drug.html'">
+
 ⚗ 마약 부서
+
 </button>
 
 
@@ -264,23 +329,30 @@ LEVEL
 <div class="mainBox">
 
 
-
 <h2>
+
 ⚗ DR-07 SYNTHESIS SYSTEM
+
 </h2>
 
 
 
 <p>
+
 <b>PROJECT :</b>
+
 UNKNOWN COMPOUND DEVELOPMENT
+
 </p>
 
 
 
 <p>
+
 <b>ACCESS :</b>
+
 LEVEL 4
+
 </p>
 
 
@@ -290,7 +362,9 @@ LEVEL 4
 
 
 <h3>
+
 🌱 SAMPLE STORAGE
+
 </h3>
 
 
@@ -298,8 +372,8 @@ LEVEL 4
 <div class="recordBox">
 
 
-<div class="sampleBox"
-draggable="true">
+
+<div class="sampleBox" onclick="selectSample(this)">
 
 🌱 UNKNOWN PLANT-01
 
@@ -307,8 +381,7 @@ draggable="true">
 
 
 
-<div class="sampleBox"
-draggable="true">
+<div class="sampleBox" onclick="selectSample(this)">
 
 🌿 NIGHT FLOWER-07
 
@@ -316,8 +389,7 @@ draggable="true">
 
 
 
-<div class="sampleBox"
-draggable="true">
+<div class="sampleBox" onclick="selectSample(this)">
 
 🍃 BLACK LEAF-X
 
@@ -325,8 +397,15 @@ draggable="true">
 
 
 
+<div class="sampleBox" onclick="selectSample(this)">
+
+🌺 RED BLOOM-09
+
 </div>
 
+
+
+</div>
 
 
 
@@ -334,23 +413,19 @@ draggable="true">
 
 
 
-
 <h3>
+
 ⚗ SYNTHESIS MACHINE
+
 </h3>
 
 
 
+<div class="machine" id="machine" onclick="startProcess()">
 
-<div class="machine"
-id="machine">
-
-
-DRAG SAMPLE HERE
-
+CLICK TO SYNTHESIS
 
 </div>
-
 
 
 
@@ -370,26 +445,21 @@ DRAG SAMPLE HERE
 
 <p id="status">
 
-대기 중
+재료 선택 대기 중
 
 </p>
-
-
-
-
 <hr>
 
 
-
-
 <h3>
+
 📦 PACKAGE SYSTEM
+
 </h3>
 
 
 
-<div class="package"
-id="package">
+<div class="package" id="package">
 
 
 포장 대기
@@ -407,18 +477,22 @@ id="package">
 
 
 <h3>
+
 LIVE LOG
+
 </h3>
 
 
 
-<div class="logBox"
-id="log">
+
+<div class="logBox" id="log">
 
 
 SYSTEM READY
 
+
 </div>
+
 
 
 
@@ -429,7 +503,93 @@ SYSTEM READY
 
 
 <h3>
+
 RESULT DATA
+
+</h3>
+
+
+
+
+<div class="recordBox">
+
+
+
+<p>
+
+CODE :
+
+<span id="code">
+
+NONE
+
+</span>
+
+</p>
+
+
+
+
+<p>
+
+QUALITY :
+
+<span id="quality">
+
+-
+
+</span>
+
+</p>
+
+
+
+
+<p>
+
+STABILITY :
+
+<span id="stable">
+
+-
+
+</span>
+
+</p>
+
+
+
+
+<p>
+
+STATUS :
+
+<span id="result">
+
+WAITING
+
+</span>
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+PROCESS INFORMATION
+
 </h3>
 
 
@@ -437,36 +597,52 @@ RESULT DATA
 <div class="recordBox">
 
 
+
 <p>
-CODE :
-<span id="code">
+
+SELECTED SAMPLE :
+
+<b id="selected">
+
 NONE
-</span>
+
+</b>
+
 </p>
+
 
 
 <p>
-QUALITY :
-<span id="quality">
--
-</span>
+
+MACHINE STATUS :
+
+<b id="machineStatus">
+
+IDLE
+
+</b>
+
 </p>
+
 
 
 <p>
-STABILITY :
-<span id="stable">
--
-</span>
+
+SECURITY :
+
+<b>
+
+LOCKED
+
+</b>
+
 </p>
 
 
-<p>
-STATUS :
-<span id="result">
-WAITING
-</span>
-</p>
+
+</div>
+
+
 
 
 
@@ -477,7 +653,7 @@ WAITING
 </div>
 
 
-</div>
+
 
 
 
@@ -488,126 +664,138 @@ WAITING
 
 
 
-let touchSample = null;
+// USER DATA
+
+
+let user = localStorage.getItem("userName");
+
+let level = localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+
+user || "UNKNOWN";
+
+
+
+document.getElementById("userLevel").innerHTML =
+
+level || "NONE";
+
+
+
+
+
+// SAMPLE SELECT
+
+
+
+let currentSample = "";
+
+let processing = false;
+
+
+
+
+function selectSample(element){
+
+
+
+if(processing)
+
+return;
 
 
 
 document.querySelectorAll(".sampleBox")
-.forEach(sample=>{
+.forEach(e=>{
 
 
-// PC 드래그
-
-sample.addEventListener("dragstart",e=>{
-
-currentSample=e.target.innerHTML;
-
-});
-
-
-
-
-// 모바일 터치 시작
-
-sample.addEventListener("touchstart",e=>{
-
-
-touchSample = sample.innerHTML;
-
-
-sample.style.opacity="0.5";
+e.classList.remove("selected");
 
 
 });
 
 
 
-
-// 모바일 터치 이동
-
-sample.addEventListener("touchmove",e=>{
-
-
-e.preventDefault();
-
-
-});
+element.classList.add("selected");
 
 
 
-
-// 모바일 터치 끝
-
-sample.addEventListener("touchend",e=>{
-
-
-sample.style.opacity="1";
+currentSample = element.innerHTML;
 
 
 
-let touch = e.changedTouches[0];
+document.getElementById("selected").innerHTML =
+
+currentSample;
 
 
-let target =
-document.elementFromPoint(
-touch.clientX,
-touch.clientY
+
+document.getElementById("status").innerHTML =
+
+"재료 선택 완료";
+
+
+
+log(
+"SAMPLE SELECT : "+currentSample
 );
 
-
-
-if(target &&
-target.id==="machine"){
-
-
-
-currentSample=touchSample;
-
-
-
-insertSample();
 
 
 }
 
 
 
-});
-
-
-
-});
 
 
 
 
 
 
-// PC용 드롭
-
-machine.addEventListener("dragover",e=>{
-
-e.preventDefault();
-
-});
+// START MACHINE
 
 
 
-machine.addEventListener("drop",()=>{
-
-
-insertSample();
-
-
-});
+function startProcess(){
 
 
 
+if(processing)
+
+return;
 
 
 
+if(currentSample===""){
 
-function insertSample(){
+
+
+log("ERROR : NO SAMPLE");
+
+
+document.getElementById("status").innerHTML =
+
+"⚠ 재료가 없습니다";
+
+
+return;
+
+
+}
+
+
+
+processing=true;
+
+
+
+let machine=
+
+document.getElementById("machine");
+
 
 
 machine.classList.add("active");
@@ -617,7 +805,8 @@ machine.classList.add("active");
 machine.innerHTML=
 
 `
-⚗ ANALYZING...
+
+⚗ SYNTHESIS RUNNING
 
 <br><br>
 
@@ -627,108 +816,69 @@ ${currentSample}
 
 
 
-log("SAMPLE INSERTED");
+document.getElementById("machineStatus").innerHTML=
 
-
-startProcess();
-
-
-
-}
+"PROCESSING";
 
 
 
-});
+log("SYSTEM START");
 
 
-
-
-machine.addEventListener("dragover",e=>{
-
-e.preventDefault();
-
-});
-
-
-
-
-machine.addEventListener("drop",()=>{
-
-
-machine.classList.add("active");
-
-
-machine.innerHTML=
-
-`
-ANALYZING...
-
-<br>
-
-${currentSample}
-
-`;
-
-
-
-log("SAMPLE INSERTED");
-
-
-startProcess();
-
-
-});
-
-
-
-
-
-
-
-function startProcess(){
-
-
-let bar=
-document.getElementById("bar");
-
-
-let status=
-document.getElementById("status");
 
 
 
 let value=0;
 
 
+let bar=
 
-let timer=setInterval(()=>{
+document.getElementById("bar");
+
+
+
+let timer=setInterval(function(){
+
 
 
 value+=10;
 
 
-bar.style.width=value+"%";
+
+bar.style.width=
+
+value+"%";
 
 
 
-status.innerHTML=
+document.getElementById("status").innerHTML=
 
 "PROCESSING "
+
 +value+"%";
 
 
 
-log("PROCESS DATA "+value+"%");
+log(
+
+"ANALYZING DATA "
+
++value+"%"
+
+);
 
 
 
 if(value>=100){
 
 
+
 clearInterval(timer);
 
 
-complete();
+
+finish();
+
 
 
 }
@@ -746,67 +896,120 @@ complete();
 
 
 
-function complete(){
+
+
+function finish(){
 
 
 
-let code=
+processing=false;
+
+
+
+let code =
+
 "DR-X-"+
-Math.floor(Math.random()*999);
 
-
-
-let quality=
-Math.floor(Math.random()*40+60);
-
-
-
-let stability=
-Math.floor(Math.random()*50+40);
+Math.floor(Math.random()*900+100);
 
 
 
 
+let quality =
 
-document.getElementById("code").innerHTML=code;
+Math.floor(Math.random()*35+65);
+
+
+
+let stability =
+
+Math.floor(Math.random()*45+50);
+
+
+
+
+
+document.getElementById("code").innerHTML=
+
+code;
+
 
 
 document.getElementById("quality").innerHTML=
+
 quality+"%";
 
 
+
 document.getElementById("stable").innerHTML=
+
 stability+"%";
 
 
 
 document.getElementById("result").innerHTML=
+
 "COMPLETE";
 
 
 
+document.getElementById("machineStatus").innerHTML=
+
+"READY";
+
+
+
+
+document.getElementById("machine").innerHTML=
+
+`
+
+✔ SYNTHESIS COMPLETE
+
+<br><br>
+
+${code}
+
+`;
+
+
+
+
 
 document.getElementById("package").innerHTML=
 
 `
+
 📦 PACKAGE READY
 
 <br><br>
 
+
 CODE :
+
 ${code}
+
 
 <br><br>
 
-<button onclick="seal()">
-SEAL PACKAGE
+
+<button onclick="sealPackage()">
+
+PACKAGE SEAL
+
 </button>
+
 
 `;
 
 
 
-log("SYNTHESIS COMPLETE");
+log(
+
+"PROCESS COMPLETE : "+code
+
+);
+
 
 
 }
@@ -815,27 +1018,35 @@ log("SYNTHESIS COMPLETE");
 
 
 
-function seal(){
+
+
+function sealPackage(){
+
 
 
 document.getElementById("package").innerHTML=
 
 `
-🔒 SEALED
 
-<br>
+🔒 SEALED PACKAGE
 
-STORAGE TRANSFER COMPLETE
+<br><br>
+
+TRANSFER COMPLETE
 
 `;
 
 
 
-log("PACKAGE SEALED");
+log(
+
+"PACKAGE SEALED"
+
+);
+
 
 
 }
-
 
 
 
@@ -845,18 +1056,23 @@ log("PACKAGE SEALED");
 function log(text){
 
 
-let box=document.getElementById("log");
+
+let box=
+
+document.getElementById("log");
+
 
 
 box.innerHTML +=
 
-"<br>"+
-
-"> "+text;
+"<br>> "+text;
 
 
 
-box.scrollTop=box.scrollHeight;
+box.scrollTop=
+
+box.scrollHeight;
+
 
 
 }
@@ -866,9 +1082,6 @@ box.scrollTop=box.scrollHeight;
 
 
 </script>
-
-
-
 </body>
 
 </html>
