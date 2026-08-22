@@ -37,6 +37,8 @@ color:#ff5555;
 
 font-weight:bold;
 
+box-shadow:0 0 15px #ff0000;
+
 }
 
 
@@ -87,6 +89,8 @@ margin:20px;
 
 font-size:25px;
 
+padding:10px 20px;
+
 }
 
 
@@ -95,8 +99,27 @@ font-size:25px;
 
 color:#ff4444;
 
+font-weight:bold;
+
 }
 
+
+
+.logBox{
+
+background:black;
+
+border:1px solid #555;
+
+height:150px;
+
+overflow:auto;
+
+padding:10px;
+
+font-size:13px;
+
+}
 
 
 </style>
@@ -114,7 +137,7 @@ color:#ff4444;
 
 
 
-<!-- SIDEBAR -->
+<!-- SIDE MENU -->
 
 
 <div class="sideMenu">
@@ -137,6 +160,7 @@ SCHMEETTERLING
 
 
 <hr>
+
 
 
 
@@ -183,11 +207,13 @@ LEVEL
 </button>
 
 
+
 <button onclick="location.href='./radiation.html'">
 
 ☢ 방사능 부서
 
 </button>
+
 
 
 <button onclick="location.href='./unknown.html'">
@@ -197,11 +223,13 @@ LEVEL
 </button>
 
 
+
 <button onclick="location.href='./bio.html'">
 
 🧫 생물 부서
 
 </button>
+
 
 
 <button onclick="location.href='./chemical.html'">
@@ -211,11 +239,13 @@ LEVEL
 </button>
 
 
+
 <button onclick="location.href='./backroom.html'">
 
 📦 백룸 부서
 
 </button>
+
 
 
 <button onclick="location.href='./drug.html'">
@@ -227,12 +257,6 @@ LEVEL
 
 
 </div>
-
-
-
-
-
-
 <!-- MAIN -->
 
 
@@ -248,6 +272,7 @@ LEVEL
 
 
 
+
 <div class="secret">
 
 ⚠ CLASSIFIED DOCUMENT
@@ -258,13 +283,15 @@ ACCESS LEVEL : 5
 
 <br>
 
-UNAUTHORIZED ACCESS WILL BE LOGGED
+ALL RECORDS ARE MONITORED
 
 </div>
 
 
 
+
 <hr>
+
 
 
 
@@ -294,8 +321,8 @@ TR-001
 </button>
 
 
-
 </div>
+
 
 
 
@@ -314,9 +341,12 @@ TRANSACTION INFORMATION
 
 
 
+
 <p>
 
 CLIENT :
+
+<br>
 
 <b id="client">
 
@@ -328,11 +358,14 @@ VIP-042
 
 
 
+
 <p>
 
 CLIENT CLASS :
 
-<b id="class">
+<br>
+
+<b id="clientClass">
 
 HIGH LEVEL CUSTOMER
 
@@ -342,9 +375,12 @@ HIGH LEVEL CUSTOMER
 
 
 
+
 <p>
 
 MATERIAL CODE :
+
+<br>
 
 <b id="material">
 
@@ -356,9 +392,12 @@ UNKNOWN PLANT-X
 
 
 
+
 <p>
 
 QUALITY :
+
+<br>
 
 <b id="quality">
 
@@ -370,9 +409,12 @@ QUALITY :
 
 
 
+
 <p>
 
 STATUS :
+
+<br>
 
 <b id="status">
 
@@ -384,9 +426,12 @@ COMPLETED
 
 
 
+
 <p>
 
 SECURITY RANK :
+
+<br>
 
 <b id="rank">
 
@@ -398,7 +443,10 @@ A
 
 
 
+
+
 <hr>
+
 
 
 
@@ -418,7 +466,6 @@ SPECIAL NOTE
 
 
 
-
 </div>
 
 
@@ -432,12 +479,12 @@ SPECIAL NOTE
 
 
 
+
 <div class="stamp">
 
 APPROVED
 
 </div>
-
 
 
 
@@ -458,12 +505,90 @@ LIVE DATABASE LOG
 
 
 
-<div class="recordBox" id="log">
+<div class="logBox" id="log">
 
 
 SYSTEM CONNECTED...
 
+
 </div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+DOCUMENT STATUS
+
+</h3>
+
+
+
+<div class="recordBox">
+
+
+
+<p>
+
+CURRENT PAGE :
+
+<b id="page">
+
+1
+
+</b>
+
+/
+
+<b>
+
+4
+
+</b>
+
+</p>
+
+
+
+<p>
+
+DATABASE :
+
+<b>
+
+DR-07 TRADE STORAGE
+
+</b>
+
+</p>
+
+
+
+<p>
+
+ENCRYPTION :
+
+<b>
+
+ACTIVE
+
+</b>
+
+</p>
+
+
+
+</div>
+
+
 
 
 
@@ -478,9 +603,18 @@ SYSTEM CONNECTED...
 
 ⚠ WARNING :
 
-TRADE DATA IS RESTRICTED
+RESTRICTED TRADE INFORMATION
 
 </p>
+
+
+
+<p>
+
+Unauthorized access will be recorded.
+
+</p>
+
 
 
 
@@ -499,19 +633,12 @@ TRADE DATA IS RESTRICTED
 
 
 </div>
-
-
-
-
-
-
-
-
 <script>
 
 
 let user =
 localStorage.getItem("userName");
+
 
 let level =
 localStorage.getItem("userLevel");
@@ -519,19 +646,23 @@ localStorage.getItem("userLevel");
 
 
 document.getElementById("userName").innerHTML =
+
 user || "UNKNOWN";
 
 
+
 document.getElementById("userLevel").innerHTML =
+
 level || "NONE";
 
 
 
 
 
+// TRADE DATABASE
 
 
-let tradeData=[
+let tradeData = [
 
 
 {
@@ -540,7 +671,7 @@ id:"TR-001",
 
 client:"VIP-042",
 
-class:"HIGH LEVEL CUSTOMER",
+clientClass:"HIGH LEVEL CUSTOMER",
 
 material:"UNKNOWN PLANT-X",
 
@@ -552,6 +683,7 @@ rank:"A",
 
 note:"추가 계약 요청 확인."
 
+
 },
 
 
@@ -562,7 +694,7 @@ id:"TR-002",
 
 client:"ORG-77",
 
-class:"CORPORATION",
+clientClass:"CORPORATION",
 
 material:"NIGHT FLOWER-07",
 
@@ -572,7 +704,8 @@ status:"DELIVERED",
 
 rank:"B",
 
-note:"거래 종료. 후속 요청 대기."
+note:"장기 계약 진행 기록."
+
 
 },
 
@@ -584,17 +717,18 @@ id:"TR-003",
 
 client:"UNKNOWN",
 
-class:"SECRET VIP",
+clientClass:"SECRET VIP",
 
 material:"BLACK LEAF-X",
 
 quality:"97%",
 
-status:"WARNING",
+status:"APPROVED",
 
 rank:"S",
 
-note:"비정상적인 접근 기록 발견."
+note:"특수 관리 대상."
+
 
 },
 
@@ -606,17 +740,18 @@ id:"TR-004",
 
 client:"VIP-901",
 
-class:"EXTERNAL GROUP",
+clientClass:"EXTERNAL GROUP",
 
 material:"DR-SAMPLE-04",
 
 quality:"91%",
 
-status:"APPROVED",
+status:"COMPLETED",
 
 rank:"A",
 
-note:"장기 계약 대상."
+note:"거래 데이터 보관 완료."
+
 
 }
 
@@ -625,7 +760,11 @@ note:"장기 계약 대상."
 
 
 
-let index=0;
+
+
+let index = 0;
+
+
 
 
 
@@ -633,33 +772,77 @@ let index=0;
 function updateTrade(){
 
 
-let t=tradeData[index];
 
-
-tradeID.innerHTML=t.id;
-
-client.innerHTML=t.client;
-
-class.innerHTML=t.class;
-
-material.innerHTML=t.material;
-
-quality.innerHTML=t.quality;
-
-status.innerHTML=t.status;
-
-rank.innerHTML=t.rank;
-
-note.innerHTML=t.note;
+let data = tradeData[index];
 
 
 
-log.innerHTML+=
+document.getElementById("tradeID").innerHTML =
 
-"<br>> "+t.id+" DOCUMENT OPENED";
+data.id;
+
+
+
+document.getElementById("client").innerHTML =
+
+data.client;
+
+
+
+document.getElementById("clientClass").innerHTML =
+
+data.clientClass;
+
+
+
+document.getElementById("material").innerHTML =
+
+data.material;
+
+
+
+document.getElementById("quality").innerHTML =
+
+data.quality;
+
+
+
+document.getElementById("status").innerHTML =
+
+data.status;
+
+
+
+document.getElementById("rank").innerHTML =
+
+data.rank;
+
+
+
+document.getElementById("note").innerHTML =
+
+data.note;
+
+
+
+document.getElementById("page").innerHTML =
+
+index+1;
+
+
+
+
+addLog(
+
+data.id+" DOCUMENT OPENED"
+
+);
+
 
 
 }
+
+
 
 
 
@@ -667,16 +850,31 @@ log.innerHTML+=
 function nextTrade(){
 
 
-if(index<tradeData.length-1){
+
+if(index < tradeData.length-1){
+
 
 index++;
 
+
 updateTrade();
 
+
 }
+
+else{
+
+
+addLog("LAST DOCUMENT");
 
 
 }
+
+
+
+}
+
+
 
 
 
@@ -684,51 +882,99 @@ updateTrade();
 function prevTrade(){
 
 
-if(index>0){
+
+if(index > 0){
+
 
 index--;
 
+
 updateTrade();
 
-}
-
 
 }
 
+else{
+
+
+addLog("FIRST DOCUMENT");
+
+
+}
+
+
+
+}
 
 
 
 
 
-setInterval(()=>{
+
+function addLog(text){
 
 
-let logs=[
 
-"SECURITY CHECK",
+let log = document.getElementById("log");
 
-"DOCUMENT SYNC",
-
-"DATABASE BACKUP",
-
-"ACCESS MONITORING"
-
-];
 
 
 log.innerHTML +=
 
-"<br>> "+
 
-logs[Math.floor(Math.random()*logs.length)];
+"<br>> "+text;
+
+
+
+log.scrollTop = log.scrollHeight;
+
+
+
+}
+
+
+
+
+
+
+// 실시간 보안 로그
+
+
+setInterval(function(){
+
+
+
+let systemLog=[
+
+
+"SECURITY CHECK",
+
+"ENCRYPTION VERIFY",
+
+"DATABASE SYNC",
+
+"ACCESS MONITORING"
+
+
+];
+
+
+
+addLog(
+
+systemLog[Math.floor(Math.random()*systemLog.length)]
+
+);
+
 
 
 },5000);
 
 
 
-</script>
 
+
+</script>
 
 
 
