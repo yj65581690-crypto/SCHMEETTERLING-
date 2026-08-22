@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+CHEMICAL STORAGE DATABASE
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+
+.storageCard{
+
+border:2px solid black;
+
+padding:20px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.bar{
+
+width:100%;
+
+height:18px;
+
+border:2px solid black;
+
+margin:10px 0;
+
+}
+
+
+
+.fill{
+
+height:100%;
+
+background:#8b0000;
+
+transition:1s;
+
+}
+
+
+
+.warning{
+
+color:#990000;
+
+font-weight:bold;
+
+}
+
+
+
+.normal{
+
+color:green;
+
+font-weight:bold;
+
+}
+
+
+
+.alert{
+
+animation:alert .2s infinite;
+
+}
+
+
+
+@keyframes alert{
+
+50%{
+
+transform:translateX(3px);
+
+}
+
+}
+
+
+
+button{
+
+font-family:inherit;
+
+padding:8px 15px;
+
+cursor:pointer;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body class="chemicalPage">
+
+
+
+<div class="layout">
+
+
+
+
+
+<div class="sideMenu">
+
+
+<h3>
+
+SCHMEETTERLING
+
+</h3>
+
+
+<p style="color:#ff4d4d">
+
+● SYSTEM ONLINE
+
+</p>
+
+
+<hr>
+
+
+
+<p>
+
+USER
+
+<br>
+
+<b id="userName">
+
+UNKNOWN
+
+</b>
+
+</p>
+
+
+
+<p>
+
+LEVEL
+
+<br>
+
+<b id="userLevel">
+
+NONE
+
+</b>
+
+</p>
+
+
+
+<hr>
+
+
+
+<button onclick="location.href='./chemical.html'">
+
+← 화학부서
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="mainBox" id="storage">
+
+
+
+<h2>
+
+🧴 CHEMICAL STORAGE DATABASE
+
+</h2>
+
+
+
+<p>
+
+시설 :
+
+<b>
+
+CHEMICAL STORAGE A
+
+</b>
+
+</p>
+
+
+
+<p>
+
+관리 상태 :
+
+<b class="normal" id="system">
+
+● SECURED
+
+</b>
+
+</p>
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+MATERIAL INVENTORY
+
+</h3>
+
+
+
+
+
+<div class="storageCard">
+
+
+<h3>
+
+CHEM-001
+
+</h3>
+
+
+<p>
+
+물질명 :
+
+<b>
+
+염산
+
+</b>
+
+</p>
+
+
+<p>
+
+Hydrochloric Acid
+
+</p>
+
+
+
+<p>
+
+보유량
+
+</p>
+
+
+<div class="bar">
+
+<div class="fill" id="acidBar">
+
+</div>
+
+</div>
+
+
+
+<p id="acid">
+
+82L
+
+</p>
+
+
+
+<p>
+
+안정도 :
+
+<b id="acidStable">
+
+98%
+
+</b>
+
+</p>
+
+
+
+<p>
+
+온도 :
+
+<b id="acidTemp">
+
+18°C
+
+</b>
+
+</p>
+
+
+
+<p>
+
+상태 :
+
+<span class="normal">
+
+SEALED
+
+</span>
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="storageCard">
+
+
+<h3>
+
+CHEM-002
+
+</h3>
+
+
+<p>
+
+물질명 :
+
+<b>
+
+황산
+
+</b>
+
+</p>
+
+
+<p>
+
+Sulfuric Acid
+
+</p>
+
+
+<div class="bar">
+
+<div class="fill" id="sulfurBar">
+
+</div>
+
+</div>
+
+
+
+<p id="sulfur">
+
+54L
+
+</p>
+
+
+
+<p>
+
+안정도 :
+
+<b id="sulfurStable">
+
+94%
+
+</b>
+
+</p>
+
+
+
+<p>
+
+온도 :
+
+<b id="sulfurTemp">
+
+21°C
+
+</b>
+
+</p>
+
+
+<p>
+
+상태 :
+
+<span class="warning">
+
+HIGH CONTROL
+
+</span>
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="storageCard">
+
+
+<h3>
+
+CHEM-003
+
+</h3>
+
+
+<p>
+
+물질명 :
+
+<b>
+
+수은
+
+</b>
+
+</p>
+
+
+<p>
+
+Mercury
+
+</p>
+
+
+
+<div class="bar">
+
+<div class="fill" id="mercuryBar">
+
+</div>
+
+</div>
+
+
+
+<p id="mercury">
+
+37L
+
+</p>
+
+
+
+<p>
+
+안정도 :
+
+<b id="mercuryStable">
+
+91%
+
+</b>
+
+</p>
+
+
+
+<p>
+
+온도 :
+
+<b id="mercuryTemp">
+
+19°C
+
+</b>
+
+</p>
+
+
+<p>
+
+상태 :
+
+<span class="warning">
+
+MONITORING
+
+</span>
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+STORAGE LOG
+
+</h3>
+
+
+
+<div class="recordBox" id="log">
+
+
+<p>
+
+[SYSTEM]
+
+Storage monitoring started.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+
+document.getElementById("userName").innerHTML=
+
+localStorage.getItem("userName") || "UNKNOWN";
+
+
+
+document.getElementById("userLevel").innerHTML=
+
+localStorage.getItem("userLevel") || "NONE";
+
+
+
+
+
+let acid=82;
+
+let sulfur=54;
+
+let mercury=37;
+
+
+
+let acidStable=98;
+
+let sulfurStable=94;
+
+let mercuryStable=91;
+
+
+
+
+
+
+
+function updateStorage(){
+
+
+
+acid+=Math.floor(Math.random()*3)-1;
+
+sulfur+=Math.floor(Math.random()*3)-1;
+
+mercury+=Math.floor(Math.random()*2)-1;
+
+
+
+acidStable-=Math.random()<0.2?1:0;
+
+sulfurStable-=Math.random()<0.2?1:0;
+
+mercuryStable-=Math.random()<0.2?1:0;
+
+
+
+
+
+acid=Math.max(0,acid);
+
+sulfur=Math.max(0,sulfur);
+
+mercury=Math.max(0,mercury);
+
+
+
+
+
+document.getElementById("acid").innerHTML=
+
+acid+"L";
+
+
+
+document.getElementById("sulfur").innerHTML=
+
+sulfur+"L";
+
+
+
+document.getElementById("mercury").innerHTML=
+
+mercury+"L";
+
+
+
+
+
+document.getElementById("acidStable").innerHTML=
+
+acidStable+"%";
+
+
+
+document.getElementById("sulfurStable").innerHTML=
+
+sulfurStable+"%";
+
+
+
+document.getElementById("mercuryStable").innerHTML=
+
+mercuryStable+"%";
+
+
+
+
+
+
+
+document.getElementById("acidBar").style.width=
+
+acid+"%";
+
+
+
+document.getElementById("sulfurBar").style.width=
+
+sulfur+"%";
+
+
+
+document.getElementById("mercuryBar").style.width=
+
+mercury+"%";
+
+
+
+
+
+checkWarning();
+
+
+
+}
+
+
+
+
+
+
+
+
+function checkWarning(){
+
+
+
+if(
+
+acidStable<90 ||
+
+sulfurStable<90 ||
+
+mercuryStable<90
+
+){
+
+
+
+document.getElementById("system").innerHTML=
+
+"⚠ STORAGE WARNING";
+
+
+
+document.getElementById("system").className=
+
+"warning";
+
+
+
+document.getElementById("storage").classList.add("alert");
+
+
+
+addLog(
+
+"Abnormal material stability detected."
+
+);
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+function addLog(text){
+
+
+
+let box=document.getElementById("log");
+
+
+box.innerHTML +=
+
+`
+
+<p>
+
+[${new Date().toLocaleTimeString()}]
+
+${text}
+
+</p>
+
+`;
+
+
+
+if(box.children.length>8){
+
+box.removeChild(box.children[0]);
+
+}
+
+
+}
+
+
+
+
+
+setInterval(()=>{
+
+
+updateStorage();
+
+
+
+if(Math.random()<0.3){
+
+
+addLog(
+
+"Automatic inspection completed."
+
+);
+
+
+}
+
+
+
+},3000);
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
