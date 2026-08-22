@@ -5,25 +5,175 @@
 
 <meta charset="UTF-8">
 
-<title>DRUG DEPARTMENT</title>
+<title>
+DRUG DEPARTMENT
+</title>
 
 <link rel="stylesheet" href="./style.css">
 
 </head>
 
 
+
 <body class="drugPage">
+
+
+
+<div class="layout">
+
+
+
+
+
+<!-- LEFT SIDE MENU -->
+
+<div class="sideMenu">
+
+
+
+<h3>
+
+SCHMEETTERLING
+
+</h3>
+
+
+
+<p style="color:#00aaff;">
+
+● SYSTEM ONLINE
+
+</p>
+
+
+
+
+<hr>
+
+
+
+
+
+<p>
+
+USER
+
+<br>
+
+<b id="userName">
+
+확인중...
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+LEVEL
+
+<br>
+
+<b id="userLevel">
+
+확인중...
+
+</b>
+
+</p>
+
+
+
+
+<hr>
+
+
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 HOME
+
+</button>
+
+
+
+
+<button onclick="location.href='./radiation.html'">
+
+☢ 방사능 부서
+
+</button>
+
+
+
+
+<button onclick="location.href='./unknown.html'">
+
+👾 미확인 개체
+
+</button>
+
+
+
+
+<button onclick="location.href='./bio.html'">
+
+🧫 생물 부서
+
+</button>
+
+
+
+
+<button onclick="location.href='./chemical.html'">
+
+🧪 화학 부서
+
+</button>
+
+
+
+
+<button onclick="location.href='./backroom.html'">
+
+📦 백룸 부서
+
+</button>
+
+
+
+
+<button onclick="location.href='./drug.html'">
+
+⚗ 마약 부서
+
+</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- MAIN -->
+
 
 
 <div class="mainBox">
 
 
-
-<h1>
-
-SCHMEETTERLING
-
-</h1>
 
 
 
@@ -36,9 +186,12 @@ SCHMEETTERLING
 
 
 
+
 <p>
 
-<b>부서 코드 :</b>
+<b>
+부서 코드 :
+</b>
 
 DR-07
 
@@ -46,9 +199,13 @@ DR-07
 
 
 
+
+
 <p>
 
-<b>열람 권한 :</b>
+<b>
+열람 권한 :
+</b>
 
 LEVEL 4 이상
 
@@ -56,7 +213,12 @@ LEVEL 4 이상
 
 
 
+
+
 <hr>
+
+
+
 
 
 
@@ -70,34 +232,47 @@ LEVEL 4 이상
 
 
 
+
+
 <div class="recordBox">
 
 
+
 <p>
 
-SCHMEETTERLING 내부 위험 약물 및
+SCHMEETTERLING 내부
 
-특수 물질 관리를 담당하는 부서입니다.
+위험 약물 및 특수 물질 관리를 담당하는 부서입니다.
 
 </p>
 
 
+
+
 <p>
 
-본 부서는 약물 재배,
+본 부서는
 
-제작,
+<br>
 
-보관,
+마약 식물 재배,
 
-유통 데이터를 관리합니다.
+<br>
+
+특수 화합물 제작,
+
+<br>
+
+약물 보관 및 유통 데이터를 관리합니다.
 
 </p>
 
 
+
+
 <p>
 
-모든 기록은 보안 등급에 따라
+모든 기록은 보안 규정에 의해
 
 제한적으로 열람됩니다.
 
@@ -111,7 +286,10 @@ SCHMEETTERLING 내부 위험 약물 및
 
 
 
+
+
 <hr>
+
 
 
 
@@ -126,11 +304,15 @@ DATABASE
 
 
 
+
+
 <button onclick="location.href='./drug_grow.html'">
 
 🌱 마약 재배 기록
 
 </button>
+
+
 
 
 
@@ -144,11 +326,15 @@ DATABASE
 
 
 
+
+
 <button onclick="location.href='./drug_make.html'">
 
 ⚗ 마약 제작 기록
 
 </button>
+
+
 
 
 
@@ -162,11 +348,15 @@ DATABASE
 
 
 
+
+
 <button onclick="location.href='./drug_greenhouse.html'">
 
-🌿 온실 관리 시스템
+🌿 온실
 
 </button>
+
+
 
 
 
@@ -182,10 +372,6 @@ DATABASE
 
 
 <hr>
-
-
-
-
 <h3>
 
 FACILITY STATUS
@@ -195,7 +381,9 @@ FACILITY STATUS
 
 
 
+
 <div class="recordBox">
+
 
 
 <p>
@@ -219,21 +407,22 @@ DRUG LAB - 07
 
 <br>
 
-특수 화합물
+🌱 식물 기반 물질
 
 <br>
 
-생체 영향 물질
+⚗ 특수 화합물
 
 <br>
 
-식물 기반 물질
+🧬 생체 영향 물질
 
 <br>
 
-변칙 약물 분석
+📦 위험 물질 관리
 
 </p>
+
 
 
 
@@ -242,13 +431,14 @@ DRUG LAB - 07
 
 현재 상태 :
 
-<span class="online">
+<span id="drugStatus" class="online">
 
 ● ONLINE
 
 </span>
 
 </p>
+
 
 
 
@@ -267,6 +457,22 @@ LEVEL A
 
 
 
+
+
+<p>
+
+보안 상태 :
+
+<b id="security">
+
+STABLE
+
+</b>
+
+</p>
+
+
+
 </div>
 
 
@@ -274,7 +480,99 @@ LEVEL A
 
 
 
+
 <hr>
+
+
+
+
+
+
+<h3>
+
+RESEARCH LOG
+
+</h3>
+
+
+
+
+
+<div class="recordBox">
+
+
+
+<p>
+
+최근 기록 :
+
+<b>
+
+DR-07 PROJECT DATA
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+담당 :
+
+<b>
+
+DRUG DEPARTMENT
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+마지막 업데이트 :
+
+<span id="updateTime">
+
+확인중...
+
+</span>
+
+</p>
+
+
+
+
+<p>
+
+현재 연구 상태 :
+
+<span id="researchState">
+
+분석 진행 중
+
+</span>
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<hr>
+
+
 
 
 
@@ -287,18 +585,21 @@ DIRECTOR MESSAGE
 
 
 
+
+
 <div class="recordBox">
+
 
 
 <p>
 
-
-"모든 물질은 하나의 가능성을 가진다.
+"모든 물질에는 가능성이 존재한다.
 
 <br><br>
 
-중요한 것은 그것을 발견하는 것이다."
+중요한 것은 그것을 어떻게 이해하고
 
+관리하는가이다."
 
 </p>
 
@@ -306,7 +607,9 @@ DIRECTOR MESSAGE
 
 <p>
 
-- DRUG DEPARTMENT DIRECTOR
+-
+
+DRUG DEPARTMENT DIRECTOR
 
 </p>
 
@@ -318,7 +621,10 @@ DIRECTOR MESSAGE
 
 
 
+
 <hr>
+
+
 
 
 
@@ -334,17 +640,178 @@ RESTRICTED MATERIAL STORAGE
 
 
 
+<p>
 
-<button onclick="location.href='./main.html'">
+허가되지 않은 접근은 기록되며
 
-← CENTRAL TERMINAL
+보안 규정에 따라 처리됩니다.
 
-</button>
+</p>
+
+
+
 
 
 
 
 </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+let user = localStorage.getItem("userName");
+
+let level = localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+
+user || "UNKNOWN";
+
+
+
+document.getElementById("userLevel").innerHTML =
+
+level || "NONE";
+
+
+
+
+
+
+
+// 실시간 상태 변화
+
+
+
+setInterval(function(){
+
+
+
+let status = [
+
+
+"● ONLINE",
+
+"● MONITORING",
+
+"● ANALYZING",
+
+"● SECURITY CHECK"
+
+
+];
+
+
+
+document.getElementById("drugStatus").innerHTML =
+
+
+status[Math.floor(Math.random()*status.length)];
+
+
+
+
+let security = [
+
+
+"STABLE",
+
+"CHECKING",
+
+"LOCKED",
+
+"WARNING"
+
+
+];
+
+
+
+document.getElementById("security").innerHTML =
+
+
+security[Math.floor(Math.random()*security.length)];
+
+
+
+
+
+
+let research = [
+
+
+"분석 진행 중",
+
+"샘플 확인 중",
+
+"데이터 기록 중",
+
+"실험 준비 중"
+
+
+];
+
+
+
+document.getElementById("researchState").innerHTML =
+
+
+research[Math.floor(Math.random()*research.length)];
+
+
+
+
+
+},4000);
+
+
+
+
+
+
+
+// 시간 표시
+
+
+setInterval(function(){
+
+
+
+let date = new Date();
+
+
+
+document.getElementById("updateTime").innerHTML =
+
+
+date.toLocaleTimeString();
+
+
+
+},1000);
+
+
+
+
+</script>
+
+
 
 
 
