@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+DRUG TRADE ARCHIVE
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+
+.tradePage{
+
+background:#080404;
+
+color:white;
+
+}
+
+
+
+.secret{
+
+border:2px solid #ff3333;
+
+padding:15px;
+
+background:#170707;
+
+color:#ff5555;
+
+font-weight:bold;
+
+}
+
+
+
+.document{
+
+border:1px solid #aa2222;
+
+background:#100808;
+
+padding:20px;
+
+}
+
+
+
+.stamp{
+
+border:3px solid #ff3333;
+
+color:#ff3333;
+
+padding:10px;
+
+display:inline-block;
+
+transform:rotate(-10deg);
+
+font-weight:bold;
+
+}
+
+
+
+.navigator{
+
+text-align:center;
+
+font-size:25px;
+
+margin:20px;
+
+}
+
+
+
+.navigator button{
+
+font-size:25px;
+
+}
+
+
+
+.warning{
+
+color:#ff4444;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body class="tradePage">
+
+
+
+<div class="layout">
+
+
+
+<!-- SIDEBAR -->
+
+
+<div class="sideMenu">
+
+
+<h3>
+
+SCHMEETTERLING
+
+</h3>
+
+
+
+<p style="color:#ff3333;">
+
+● SYSTEM ONLINE
+
+</p>
+
+
+
+<hr>
+
+
+
+<p>
+
+USER
+
+<br>
+
+<b id="userName">
+
+확인중...
+
+</b>
+
+</p>
+
+
+
+<p>
+
+LEVEL
+
+<br>
+
+<b id="userLevel">
+
+확인중...
+
+</b>
+
+</p>
+
+
+
+<hr>
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 HOME
+
+</button>
+
+
+<button onclick="location.href='./radiation.html'">
+
+☢ 방사능 부서
+
+</button>
+
+
+<button onclick="location.href='./unknown.html'">
+
+👾 미확인 개체
+
+</button>
+
+
+<button onclick="location.href='./bio.html'">
+
+🧫 생물 부서
+
+</button>
+
+
+<button onclick="location.href='./chemical.html'">
+
+🧪 화학 부서
+
+</button>
+
+
+<button onclick="location.href='./backroom.html'">
+
+📦 백룸 부서
+
+</button>
+
+
+<button onclick="location.href='./drug.html'">
+
+⚗ 마약 부서
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- MAIN -->
+
+
+<div class="mainBox">
+
+
+
+<h2>
+
+📄 DRUG TRADE ARCHIVE
+
+</h2>
+
+
+
+<div class="secret">
+
+⚠ CLASSIFIED DOCUMENT
+
+<br>
+
+ACCESS LEVEL : 5
+
+<br>
+
+UNAUTHORIZED ACCESS WILL BE LOGGED
+
+</div>
+
+
+
+<hr>
+
+
+
+<div class="navigator">
+
+
+<button onclick="prevTrade()">
+
+&lt;
+
+</button>
+
+
+
+<b id="tradeID">
+
+TR-001
+
+</b>
+
+
+
+<button onclick="nextTrade()">
+
+&gt;
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="document">
+
+
+
+<h3>
+
+TRANSACTION INFORMATION
+
+</h3>
+
+
+
+<p>
+
+CLIENT :
+
+<b id="client">
+
+VIP-042
+
+</b>
+
+</p>
+
+
+
+<p>
+
+CLIENT CLASS :
+
+<b id="class">
+
+HIGH LEVEL CUSTOMER
+
+</b>
+
+</p>
+
+
+
+<p>
+
+MATERIAL CODE :
+
+<b id="material">
+
+UNKNOWN PLANT-X
+
+</b>
+
+</p>
+
+
+
+<p>
+
+QUALITY :
+
+<b id="quality">
+
+94%
+
+</b>
+
+</p>
+
+
+
+<p>
+
+STATUS :
+
+<b id="status">
+
+COMPLETED
+
+</b>
+
+</p>
+
+
+
+<p>
+
+SECURITY RANK :
+
+<b id="rank">
+
+A
+
+</b>
+
+</p>
+
+
+
+<hr>
+
+
+
+<h3>
+
+SPECIAL NOTE
+
+</h3>
+
+
+
+<p id="note">
+
+추가 계약 요청 확인.
+
+</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<br>
+
+
+
+
+<div class="stamp">
+
+APPROVED
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+LIVE DATABASE LOG
+
+</h3>
+
+
+
+<div class="recordBox" id="log">
+
+
+SYSTEM CONNECTED...
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+<p class="warning">
+
+⚠ WARNING :
+
+TRADE DATA IS RESTRICTED
+
+</p>
+
+
+
+
+<button onclick="location.href='./drug.html'">
+
+← DRUG DEPARTMENT
+
+</button>
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+let user =
+localStorage.getItem("userName");
+
+let level =
+localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+user || "UNKNOWN";
+
+
+document.getElementById("userLevel").innerHTML =
+level || "NONE";
+
+
+
+
+
+
+
+let tradeData=[
+
+
+{
+
+id:"TR-001",
+
+client:"VIP-042",
+
+class:"HIGH LEVEL CUSTOMER",
+
+material:"UNKNOWN PLANT-X",
+
+quality:"94%",
+
+status:"COMPLETED",
+
+rank:"A",
+
+note:"추가 계약 요청 확인."
+
+},
+
+
+
+{
+
+id:"TR-002",
+
+client:"ORG-77",
+
+class:"CORPORATION",
+
+material:"NIGHT FLOWER-07",
+
+quality:"88%",
+
+status:"DELIVERED",
+
+rank:"B",
+
+note:"거래 종료. 후속 요청 대기."
+
+},
+
+
+
+{
+
+id:"TR-003",
+
+client:"UNKNOWN",
+
+class:"SECRET VIP",
+
+material:"BLACK LEAF-X",
+
+quality:"97%",
+
+status:"WARNING",
+
+rank:"S",
+
+note:"비정상적인 접근 기록 발견."
+
+},
+
+
+
+{
+
+id:"TR-004",
+
+client:"VIP-901",
+
+class:"EXTERNAL GROUP",
+
+material:"DR-SAMPLE-04",
+
+quality:"91%",
+
+status:"APPROVED",
+
+rank:"A",
+
+note:"장기 계약 대상."
+
+}
+
+
+];
+
+
+
+let index=0;
+
+
+
+
+function updateTrade(){
+
+
+let t=tradeData[index];
+
+
+tradeID.innerHTML=t.id;
+
+client.innerHTML=t.client;
+
+class.innerHTML=t.class;
+
+material.innerHTML=t.material;
+
+quality.innerHTML=t.quality;
+
+status.innerHTML=t.status;
+
+rank.innerHTML=t.rank;
+
+note.innerHTML=t.note;
+
+
+
+log.innerHTML+=
+
+"<br>> "+t.id+" DOCUMENT OPENED";
+
+
+}
+
+
+
+
+function nextTrade(){
+
+
+if(index<tradeData.length-1){
+
+index++;
+
+updateTrade();
+
+}
+
+
+}
+
+
+
+
+function prevTrade(){
+
+
+if(index>0){
+
+index--;
+
+updateTrade();
+
+}
+
+
+}
+
+
+
+
+
+
+setInterval(()=>{
+
+
+let logs=[
+
+"SECURITY CHECK",
+
+"DOCUMENT SYNC",
+
+"DATABASE BACKUP",
+
+"ACCESS MONITORING"
+
+];
+
+
+log.innerHTML +=
+
+"<br>> "+
+
+logs[Math.floor(Math.random()*logs.length)];
+
+
+},5000);
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
