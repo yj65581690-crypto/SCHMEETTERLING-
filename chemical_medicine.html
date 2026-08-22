@@ -13,6 +13,13 @@ CHEMICAL MEDICINE MANAGEMENT
 
 
 <style>
+body{
+
+background:#050505;
+
+color:white;
+
+}
 
 
 .medicineShelf{
@@ -29,13 +36,130 @@ gap:20px;
 
 .bottle{
 
-border:3px solid black;
+border:2px solid #555;
 
 padding:20px;
 
-background:#e8e1d0;
+background:#111;
+
+color:white;
 
 position:relative;
+
+box-shadow:
+0 0 15px rgba(0,255,255,0.15);
+
+}
+
+
+
+.bottle h3{
+
+color:#00ffff;
+
+border-bottom:1px solid #555;
+
+padding-bottom:10px;
+
+}
+
+
+
+.bottle p{
+
+color:#ddd;
+
+}
+
+
+
+.amountBox{
+
+height:20px;
+
+border:1px solid #777;
+
+background:#050505;
+
+}
+
+
+
+.amountFill{
+
+height:100%;
+
+background:#00aa66;
+
+transition:.5s;
+
+}
+
+
+
+.controlBox{
+
+border:2px solid #444;
+
+padding:20px;
+
+margin-top:20px;
+
+background:#0b0b0b;
+
+color:white;
+
+}
+
+
+
+.logBox{
+
+border:2px solid #444;
+
+padding:10px;
+
+height:200px;
+
+overflow:auto;
+
+background:#050505;
+
+color:#00ff99;
+
+}
+
+
+
+button{
+
+background:#111;
+
+color:white;
+
+border:1px solid #666;
+
+}
+
+
+
+button:hover{
+
+background:#333;
+
+border-color:#00ffff;
+
+}
+
+
+
+select,input{
+
+background:#111;
+
+color:white;
+
+border:1px solid #777;
 
 }
 
@@ -170,7 +294,150 @@ background:#ddd;
 }
 
 
+/* CHEMICAL LIQUID EFFECT */
 
+
+.bottleIcon{
+
+position:relative;
+
+}
+
+
+
+.bottleIcon::after{
+
+content:"";
+
+position:absolute;
+
+width:45px;
+
+height:10px;
+
+background:rgba(0,255,255,0.5);
+
+border-radius:50%;
+
+left:50%;
+
+transform:translateX(-50%);
+
+animation:bubble 2s infinite;
+
+}
+
+
+
+@keyframes bubble{
+
+
+0%{
+
+top:65px;
+
+opacity:0.3;
+
+}
+
+
+50%{
+
+top:45px;
+
+opacity:1;
+
+}
+
+
+100%{
+
+top:65px;
+
+opacity:0.3;
+
+}
+
+
+}
+
+
+
+
+
+
+/* 연구실 상태등 */
+
+
+#systemStatus{
+
+animation:
+
+blinkStatus 1.5s infinite;
+
+}
+
+
+
+@keyframes blinkStatus{
+
+
+0%{
+
+opacity:1;
+
+}
+
+
+50%{
+
+opacity:.3;
+
+}
+
+
+100%{
+
+opacity:1;
+
+}
+
+
+}
+.temperatureWarning{
+
+color:#ff3333;
+
+font-weight:bold;
+
+animation:dangerBlink 0.8s infinite;
+
+}
+
+
+@keyframes dangerBlink{
+
+0%{
+
+opacity:1;
+
+}
+
+
+50%{
+
+opacity:0.3;
+
+}
+
+
+100%{
+
+opacity:1;
+
+}
+
+}
 
 </style>
 
@@ -814,6 +1081,14 @@ NORMAL
 </p>
 
 
+<p id="tempAlert">
+
+● TEMPERATURE NORMAL
+
+</p>
+
+
+
 <button onclick="changeTemperature(-1)">
 
 온도 -
@@ -1329,34 +1604,94 @@ status.className="good";
 function changeTemperature(value){
 
 
-
-temperature+=value;
-
+temperature += value;
 
 
-document.getElementById("temperature").innerHTML=
-
+document.getElementById("temperature").innerHTML =
 temperature+"°C";
 
 
 
-if(temperature>30 || temperature<10){
+let alertBox =
+document.getElementById("tempAlert");
 
 
-stability-=2;
+
+if(temperature >= 50){
+
+
+alertBox.innerHTML =
+"⚠ CRITICAL : CHEMICAL REACTION UNSTABLE";
+
+
+alertBox.className =
+"temperatureWarning";
+
+
+stability -= 5;
 
 
 addLog(
-
-"⚠ Temperature abnormal"
-
+"🔥 CRITICAL TEMPERATURE WARNING"
 );
+
+
+
+}
+
+
+else if(temperature >= 40){
+
+
+alertBox.innerHTML =
+"⚠ WARNING : STORAGE TEMPERATURE HIGH";
+
+
+alertBox.className =
+"temperatureWarning";
+
+
+stability -= 2;
+
+
+addLog(
+"⚠ HIGH TEMPERATURE DETECTED"
+);
+
+
+
+}
+
+
+else if(temperature >= 30){
+
+
+alertBox.innerHTML =
+"△ CAUTION : TEMPERATURE RISING";
+
+
+alertBox.className =
+"temperatureWarning";
+
+
+addLog(
+"△ Temperature rising"
+);
+
 
 
 }
 
 
 else{
+
+
+alertBox.innerHTML =
+"● TEMPERATURE NORMAL";
+
+
+alertBox.className="";
+
 
 
 addLog(
@@ -1373,7 +1708,6 @@ addLog(
 
 
 updateStability();
-
 
 
 }
