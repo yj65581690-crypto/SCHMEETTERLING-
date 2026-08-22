@@ -1,3 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>BACKROOM DEPARTMENT</title>
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body class="unknownPage">
+
+<div class="layout">
+
+<!-- LEFT SIDE MENU -->
+
+<div class="sideMenu">
+
+<h3>
+SCHMEETTERLING
+</h3>
+
+<p style="color:#7ef7b7;">
+● SYSTEM ONLINE
+</p>
+
+<hr>
+
+<p>
+USER
+<br>
+<b id="userName">
+확인중...
+</b>
+</p>
+
+<p>
+LEVEL
+<br>
+<b id="userLevel">
+확인중...
+</b>
+</p>
+
+<hr>
+
+<button onclick="location.href='./main.html'">
+🏠 HOME
+</button>
+
+<button onclick="location.href='./radiation.html'">
+☢ 방사능 부서
+</button>
+
+<button onclick="location.href='./unknown.html'">
+👾 미확인 개체
+</button>
+
+<button onclick="location.href='./bio.html'">
+🧫 생물 부서
+</button>
+
+<button onclick="location.href='./chemical.html'">
+🧪 화학 부서
+</button>
+
+<button onclick="location.href='./backroom.html'">
+📦 백룸 부서
+</button>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="mainBox">
+
 <h2>
 📦 BACKROOM DEPARTMENT
 </h2>
@@ -25,14 +104,14 @@ DIVISION OVERVIEW
 
 <p>
 탐사 인원은 전용 워프 장치를 이용하여
-무작위 구역으로 이동하며,
-탐사 종료 후 24시간 이내 귀환이 가능합니다.
+무작위 구역으로 이동합니다.
 </p>
 
 <p>
+탐사 종료 후 24시간 이내 귀환이 가능하며,
 본 부서는 위험 개체 회수,
 환경 기록,
-신규 구역 발견을 최우선 목표로 합니다.
+신규 구역 발견을 수행합니다.
 </p>
 
 <p style="color:#ff7070;">
@@ -47,7 +126,6 @@ DIVISION OVERVIEW
 <h3>
 DATABASE
 </h3>
-
 <div class="recordBox">
 
 <h2>
@@ -64,7 +142,7 @@ DATABASE
 </p>
 
 <button class="deptBtn backroom"
-onclick="location.href='./backroom_entity.html'">
+onclick="openDB('./backroom_entity.html')">
 
 보고서 열람
 
@@ -91,7 +169,7 @@ onclick="location.href='./backroom_entity.html'">
 </p>
 
 <button class="deptBtn backroom"
-onclick="location.href='./backroom_log.html'">
+onclick="openDB('./backroom_log.html')">
 
 탐사 기록 열람
 
@@ -118,7 +196,7 @@ onclick="location.href='./backroom_log.html'">
 </p>
 
 <button class="deptBtn backroom"
-onclick="location.href='./backroom_area.html'">
+onclick="openDB('./backroom_area.html')">
 
 구역 기록 열람
 
@@ -144,7 +222,7 @@ onclick="location.href='./backroom_area.html'">
 </p>
 
 <button class="deptBtn backroom"
-onclick="location.href='./backroom_staff.html'">
+onclick="openDB('./backroom_staff.html')">
 
 직원 정보 열람
 
@@ -153,86 +231,141 @@ onclick="location.href='./backroom_staff.html'">
 </div>
 
 <hr>
-    <div class="warningBox">
+<div class="warningBox">
 
-<h3>
-⚠ BACKROOMS DIVISION NOTICE
-</h3>
+<h2>
+⚠️ WARNING : BACKROOM ACCESS RESTRICTION
+</h2>
 
 <p>
-백룸 탐사는 자발적 참여로 간주됩니다.
+<b>LEVEL :</b> STAFF ONLY
 </p>
 
 <p>
-탐사 중 발생하는 사망, 실종, 신체 손실 및
-정신 이상 현상은 탐사자의 책임으로 분류됩니다.
-</p>
+백룸 내부 기록은 위험 등급에 따라<br>
+열람 권한이 제한됩니다.<br><br>
 
-<p>
-귀환하지 못한 직원의 구조 요청은
-상황과 우선순위에 따라 결정됩니다.
-</p>
-
-<p>
-백룸 내부에서 발견된 미확인 개체는
-반드시 회수하거나 위치를 보고해야 합니다.
+허가되지 않은 접근 및 정보 유출 시<br>
+보안 규정에 따라 처리됩니다.
 </p>
 
 <hr>
 
 <p>
-<b>PRIMARY OBJECTIVES</b>
-</p>
-
-<p>
-● 위험 개체 수거 및 보관
-</p>
-
-<p>
-● 백룸 내부 환경 기록
-</p>
-
-<p>
-● 신규 구역 탐색 및 지도 작성
-</p>
-
-<p>
-● 공간 이상 현상 조사
-</p>
-
-<hr>
-
-<p style="color:#ff7070; text-align:center; font-weight:bold;">
-
-"들어가는 것은 자유다.<br>
-살아 돌아오는 것은 실력이다."
-
+<b>주의 사항</b><br>
+- 단독 탐사 금지<br>
+- 변칙 개체 접촉 금지<br>
+- 발견 기록 임의 수정 금지<br>
+- 출입 승인 없는 구역 접근 금지
 </p>
 
 </div>
 
 <hr>
+    <div class="recordBox">
 
-<p class="online">
-● SYSTEM STATUS : ONLINE
+<h2>
+📁 BACKROOM DATABASE STATUS
+</h2>
+
+<p>
+<b>CODE :</b> BR-SYSTEM
+</p>
+
+<p>
+본 데이터베이스는 SCHMEETTERLING
+내부 관리 시스템에 의해 운영됩니다.
+</p>
+
+<p>
+백룸 관련 모든 자료는 자동 저장되며,
+일부 기록은 관리자 승인 이후 열람 가능합니다.
+</p>
+
+<hr>
+
+<p>
+<b>DATABASE STATUS :</b>
+ACTIVE
+</p>
+
+<p>
+<b>SECURITY LEVEL :</b>
+STAFF ONLY
+</p>
+
+<p>
+<b>LAST UPDATE :</b>
+UNKNOWN
 </p>
 
 </div>
 
+
+<hr>
+
+
+<div class="footerBox">
+
+<p>
+SCHMEETTERLING INTERNAL INFORMATION SYSTEM
+</p>
+
+<p>
+BACKROOM DEPARTMENT / BR-03
+</p>
+
 </div>
+
+
+</div>
+
+</div>
+
 
 <script>
 
-let user = localStorage.getItem("userName");
-let level = localStorage.getItem("userLevel");
+function openDB(page){
 
-document.getElementById("userName").innerHTML =
-user || "UNKNOWN";
+location.href = page;
 
-document.getElementById("userLevel").innerHTML =
-level || "NONE";
+}
+
+
+let user =
+localStorage.getItem("userName");
+
+let level =
+localStorage.getItem("userLevel");
+
+
+if(user){
+
+document.getElementById("userName").innerHTML=user;
+
+}
+
+else{
+
+document.getElementById("userName").innerHTML="UNKNOWN";
+
+}
+
+
+if(level){
+
+document.getElementById("userLevel").innerHTML=level;
+
+}
+
+else{
+
+document.getElementById("userLevel").innerHTML="GUEST";
+
+}
 
 </script>
+
 
 </body>
 
