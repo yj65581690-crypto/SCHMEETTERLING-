@@ -18,6 +18,7 @@
 <div class="layout">
 
 
+
 <!-- SIDE MENU -->
 
 <div class="sideMenu">
@@ -36,21 +37,27 @@ SCHMEETTERLING
 <hr>
 
 
+
 <p>
 USER
 <br>
+
 <b id="userName">
 확인중...
 </b>
+
 </p>
+
 
 
 <p>
 LEVEL
 <br>
+
 <b id="userLevel">
 확인중...
 </b>
+
 </p>
 
 
@@ -88,7 +95,10 @@ LEVEL
 </button>
 
 
+
 </div>
+
+
 
 
 
@@ -100,23 +110,27 @@ LEVEL
 
 
 <h2>
-BACKROOM EXPLORATION LOG
+📄 BACKROOM EXPLORATION LOG
 </h2>
 
 
 
 <p>
-<b>DOCUMENT CODE :</b> BR-LOG
+<b>DOCUMENT CODE :</b>
+BR-LOG
 </p>
 
 
+
 <p>
-<b>ACCESS LEVEL :</b> STAFF ONLY
+<b>ACCESS LEVEL :</b>
+STAFF ONLY
 </p>
 
 
 
 <hr>
+
 
 
 
@@ -129,141 +143,83 @@ EXPLORATION DATABASE
 <div class="recordBox">
 
 
+<p>
+백룸 내부 탐사 활동으로 생성된
+<br>
+모든 기록을 보관합니다.
+</p>
+
+
+<p>
+탐사자의 이동 경로,
+<br>
+교신 기록,
+<br>
+환경 분석 자료가 포함됩니다.
+</p>
+
+
+<p style="color:#ff7070;">
+⚠ 일부 기록은 데이터 손상으로 인해
+열람이 제한될 수 있습니다.
+</p>
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+REPORT LIST
+</h3>
+
+
+
+
+
+<div class="recordBox">
+
+
 <h2>
 📄 LOG-001
 </h2>
 
 
-<div class="reportBox">
-
-
 <p>
-<b>DOCUMENT TYPE</b>
-<br>
-BACKROOM EXPLORATION REPORT
+LEVEL 0 최초 탐사 기록
 </p>
 
 
-
 <p>
-<b>SECURITY LEVEL</b>
-<br>
-STAFF ONLY
-</p>
-
-
-
-<p>
-<b>STATUS</b>
-<br>
+상태 :
 <span style="color:#7ef7b7;">
-RETURN SUCCESSFUL
+귀환 완료
 </span>
 </p>
 
 
-</div>
+<button onclick="location.href='./backroom_log_001.html'">
 
+보고서 열람
 
-
-<hr>
-
-
-
-<h3>
-EXPLORATION INFORMATION
-</h3>
-
-
-
-<div class="reportBox">
-
-
-<p>
-<b>탐사 팀 :</b>
-BRAVO-03
-</p>
-
-
-<p>
-<b>탐사자 :</b>
-STAFF-04 / STAFF-07
-</p>
-
-
-<p>
-<b>탐사 위치 :</b>
-<br>
-LEVEL 0
-<br>
-YELLOW HALLWAY
-</p>
-
-
-<p>
-<b>탐사 시간 :</b>
-<br>
-02:14:33 ~ 05:02:11
-</p>
-
-
-<p>
-<b>위험도 :</b>
-B
-</p>
+</button>
 
 
 </div>
 
 
 
+
+
 <hr>
 
-
-
-<h3>
-COMMUNICATION RECORD
-</h3>
-
-
-
-<div class="logBox">
-
-
-<p>
-[02:17:04]
-<br>
-진입 완료.
-주변 환경 확인 중.
-</p>
-
-
-<p>
-[02:31:22]
-<br>
-복도 구조 반복 확인.
-출구 확인 불가.
-</p>
-
-
-<p>
-[03:05:19]
-<br>
-벽면 변화 현상 발견.
-사진 기록 진행.
-</p>
-
-
-<p>
-[04:58:40]
-<br>
-귀환 지점 발견.
-탐사 종료.
-</p>
-
-
-</div>
-<hr>
 
 
 
@@ -275,131 +231,24 @@ COMMUNICATION RECORD
 </h2>
 
 
-
-<div class="reportBox">
-
-
 <p>
-<b>DOCUMENT TYPE</b>
-<br>
-MISSING EXPLORATION REPORT
+미확인 구역 탐사 기록
 </p>
 
 
 <p>
-<b>SECURITY LEVEL</b>
-<br>
-LEVEL 4 RESTRICTED
-</p>
-
-
-<p>
-<b>STATUS</b>
-<br>
-
+상태 :
 <span style="color:#ff7070;">
-NO RETURN
+실종
 </span>
-
 </p>
 
 
-</div>
+<button onclick="location.href='./backroom_log_002.html'">
 
+보고서 열람
 
-
-
-<hr>
-
-
-
-<h3>
-EXPLORATION INFORMATION
-</h3>
-
-
-
-<div class="reportBox">
-
-
-<p>
-<b>탐사 팀 :</b>
-DELTA-01
-</p>
-
-
-<p>
-<b>탐사자 :</b>
-STAFF-12
-</p>
-
-
-<p>
-<b>탐사 위치 :</b>
-<br>
-UNKNOWN LEVEL
-</p>
-
-
-<p>
-<b>위험도 :</b>
-A
-</p>
-
-
-</div>
-
-
-
-
-<hr>
-
-
-
-<h3>
-LAST COMMUNICATION
-</h3>
-
-
-
-<div class="logBox">
-
-
-<p>
-[23:41:02]
-<br>
-새로운 구역 진입.
-기존 지도와 일치하지 않음.
-</p>
-
-
-
-<p>
-[23:44:18]
-<br>
-무언가가 뒤에서 따라오는 것을 확인.
-</p>
-
-
-
-<p>
-[23:45:09]
-<br>
-"문이 없어졌다."
-</p>
-
-
-
-<p style="color:#ff7070;">
-[DATA LOST]
-<br>
-이후 교신 없음.
-</p>
-
-
-</div>
-
-
+</button>
 
 
 </div>
@@ -409,7 +258,6 @@ LAST COMMUNICATION
 
 
 <hr>
-
 
 
 
@@ -422,135 +270,24 @@ LAST COMMUNICATION
 </h2>
 
 
-
-<div class="reportBox">
-
-
 <p>
-<b>DOCUMENT TYPE</b>
-<br>
-ABNORMAL AREA INVESTIGATION
+귀환 불가 구역 조사 기록
 </p>
 
 
 <p>
-<b>SECURITY LEVEL</b>
-<br>
-STAFF ONLY
-</p>
-
-
-<p>
-<b>STATUS</b>
-<br>
-
+상태 :
 <span style="color:#ff7070;">
-RECORD TERMINATED
+기록 중단
 </span>
-
 </p>
 
 
-</div>
+<button onclick="location.href='./backroom_log_003.html'">
 
+보고서 열람
 
-
-
-<hr>
-
-
-
-
-<h3>
-AREA ANALYSIS
-</h3>
-
-
-
-
-<div class="reportBox">
-
-
-<p>
-<b>발견 위치 :</b>
-<br>
-LEVEL UNKNOWN
-</p>
-
-
-<p>
-<b>현상 :</b>
-<br>
-공간 좌표 불안정
-</p>
-
-
-<p>
-<b>비고 :</b>
-<br>
-동일 구역 재접근 불가
-</p>
-
-
-</div>
-
-
-
-
-<hr>
-
-
-
-
-<h3>
-ATTACHMENT DATA</h3>
-
-
-
-<div class="imageError">
-
-⚠ IMAGE DATA ERROR
-
-<br>
-
-FILE CORRUPTED
-
-<br>
-
-NO PREVIEW AVAILABLE
-
-</div>
-
-
-
-<div class="logBox">
-
-
-<p>
-
-[SYSTEM]
-
-<br>
-
-탐사 기록 일부 손상.
-
-</p>
-
-
-<p>
-
-[ SYSTEM ]
-
-<br>
-
-음성 데이터 복구 실패.
-
-</p>
-
-
-</div>
-
-
+</button>
 
 
 </div>
@@ -564,19 +301,31 @@ NO PREVIEW AVAILABLE
 
 
 
-<p style="color:#ff7070;">
+<div class="warningBox">
 
-⚠ WARNING :
-UNAUTHORIZED LOG ACCESS PROHIBITED
 
+<h2>
+⚠ WARNING
+</h2>
+
+
+<p>
+허가되지 않은 탐사 기록 접근은
+<br>
+보안 규정 위반으로 처리됩니다.
 </p>
 
 
+</div>
+
+
+
 
 </div>
 
 
 </div>
+
 
 
 
