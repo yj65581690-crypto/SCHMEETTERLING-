@@ -14,88 +14,391 @@
 
 <body class="chemicalPage">
 
-<div class="mainBox">
+<div class="layout">
 
 
-<h1>
+
+<!-- LEFT SIDE MENU -->
+
+<div class="sideMenu">
+
+
+<h3>
 SCHMEETTERLING
-</h1>
+</h3>
 
 
-
-<h2>
-🧪 CHEMICAL DEPARTMENT
-</h2>
-
-
-
-<p>
-<b>부서 코드 :</b> CD-01
+<p style="color:#ff4d4d;">
+● SYSTEM ONLINE
 </p>
-
-
-
-<p>
-<b>열람 권한 :</b> STAFF 이상
-</p>
-
 
 
 <hr>
 
 
 
-<h3>
-CHEMICAL RESEARCH DATABASE
-</h3>
-
-
-
-<div class="recordBox">
-
-
 <p>
-본 부서는 화학 물질 및
-비정상 화합물 연구를 담당합니다.
-</p>
-
-
-<p>
-모든 연구 자료는 보안 규정에 따라
-제한적으로 관리됩니다.
+USER
+<br>
+<b id="userName">
+확인중...
+</b>
 </p>
 
 
 
-</div>
+<p>
+LEVEL
+<br>
+<b id="userLevel">
+확인중...
+</b>
+</p>
 
 
 
 <hr>
 
-
-
-<h3>
-SYSTEM STATUS
-</h3>
-
-
-
-<p class="online">
-● ONLINE
-</p>
 
 
 
 <button onclick="location.href='./main.html'">
 
-← CENTRAL TERMINAL
+🏠 HOME
+
+</button>
+
+
+
+<button onclick="location.href='./radiation.html'">
+
+☢ 방사능 부서
+
+</button>
+
+
+
+<button onclick="location.href='./unknown.html'">
+
+👾 미확인 개체
+
+</button>
+
+
+
+<button onclick="location.href='./bio.html'">
+
+🧫 생물 부서
+
+</button>
+
+
+
+<button onclick="location.href='./chemical.html'">
+
+🧪 화학 부서
+
+</button>
+
+
+
+<button onclick="location.href='./backroom.html'">
+
+📦 백룸 부서
 
 </button>
 
 
 
 </div>
+
+
+
+
+
+<!-- MAIN -->
+
+<div class="mainBox">
+
+
+
+<h2>
+
+CHEMICAL DEPARTMENT
+
+</h2>
+
+
+
+
+<p>
+
+<b>부서 코드 :</b> CH-04
+
+</p>
+
+
+
+<p>
+
+<b>열람 권한 :</b> LEVEL 3 이상
+
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+부서 안내
+
+</h3>
+
+
+
+<p>
+
+화학 물질의 연구 및 관리,
+약품 개발과 위험 물질 보관을 담당합니다.
+
+<br><br>
+
+모든 실험은 내부 안전 규정에 따라
+엄격하게 통제됩니다.
+
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+DATABASE
+
+</h3>
+
+
+
+
+<button onclick="location.href='./chemical_report.html'">
+
+⚗️ 실험 보고서
+
+</button>
+
+
+
+<button onclick="location.href='./chemical_monitor.html'">
+
+🖥 실험실 모니터
+
+</button>
+
+
+
+<button onclick="location.href='./chemical_storage.html'">
+
+🧴 화학물 보관 기록
+
+</button>
+
+
+
+<button onclick="location.href='./chemical_medicine.html'">
+
+💊 약품 관리
+
+</button>
+
+
+
+<button onclick="location.href='./chemical_staff.html'">
+
+👨‍🔬 직원 명단
+
+</button>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+LAB STATUS
+
+</h3>
+
+
+
+
+<div class="recordBox">
+
+
+
+<p>
+
+실험 코드 :
+
+<b>
+
+CHM-018 「PROJECT NARCISSUS」
+
+</b>
+
+</p>
+
+
+
+<p>
+
+담당 책임자 :
+
+<b>
+
+셀레스트
+
+</b>
+
+</p>
+
+
+
+<p>
+
+현재 상태 :
+
+<span id="labStatus">
+
+● ONLINE
+
+</span>
+
+</p>
+
+
+
+<p>
+
+위험도 :
+
+<b>
+
+B
+
+</b>
+
+</p>
+
+
+
+<div id="labInfo">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<p style="color:#ff4d4d;">
+
+⚠ WARNING : HAZARDOUS MATERIALS STORED
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+let user = localStorage.getItem("userName");
+
+let level = localStorage.getItem("userLevel");
+
+
+document.getElementById("userName").innerHTML =
+user || "UNKNOWN";
+
+
+document.getElementById("userLevel").innerHTML =
+level || "NONE";
+
+
+document.getElementById("labInfo").innerHTML = `
+
+<p>
+
+실험실 :
+LAB-A
+
+</p>
+
+<p>
+
+온도 :
+37°C
+
+</p>
+
+<p>
+
+압력 :
+NORMAL
+
+</p>
+
+<p>
+
+안전 등급 :
+LEVEL B
+
+</p>
+
+`;
+
+
+</script>
 
 
 
