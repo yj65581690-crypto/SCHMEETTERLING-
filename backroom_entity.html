@@ -140,33 +140,31 @@ DATABASE OVERVIEW
 <hr>
 
 
-
-
 <h3>
 ENTITY DATABASE
 </h3>
 
 
 
-
 <div class="recordBox">
-
 
 <h2>
 📦 ENTITY-001 「노란 복도 개체」
 </h2>
 
-
 <p>
-상태 : 보관 중
+상태 :
+<span id="status001">
+보관 중
+</span>
 <br>
+
 위험도 : B
 </p>
 
 
 <img src="./entity001.png"
 class="entityImage">
-
 
 
 <p>
@@ -176,7 +174,6 @@ class="entityImage">
 </p>
 
 
-
 <p>
 발견 위치 :
 <br>
@@ -184,7 +181,249 @@ LEVEL 0 - YELLOW HALLWAY
 </p>
 
 
+<hr>
+
+
+<p>
+처리 권한 선택
+</p>
+
+
+<button onclick="changeStatus('status001','격리 완료')">
+🔒 격리
+</button>
+
+
+<button onclick="changeStatus('status001','관찰 유지')">
+👁 관찰
+</button>
+
+
 </div>
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+📦 ENTITY-002 「벽면의 흔적」
+</h2>
+
+
+<p>
+상태 :
+<span id="status002">
+분석 중
+</span>
+
+<br>
+
+위험도 : C
+
+</p>
+
+
+
+<div class="imageError">
+
+⚠ IMAGE DATA ERROR
+<br>
+FILE CORRUPTED
+
+</div>
+
+
+
+<p>
+촬영 데이터 복구 실패.
+<br>
+원본 이미지 확인 불가.
+</p>
+
+
+
+<hr>
+
+
+<p>
+처리 권한 선택
+</p>
+
+
+<button onclick="changeStatus('status002','봉인 완료')">
+🔒 봉인
+</button>
+
+
+<button onclick="changeStatus('status002','매장 완료')">
+⚰ 매장
+</button>
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+📦 ENTITY-003 「귀환 불가 구역의 존재」
+</h2>
+
+
+<p>
+상태 :
+<span id="status003">
+격리
+</span>
+
+<br>
+
+위험도 : A
+
+</p>
+
+
+
+<img src="./entity003.png"
+class="entityImage">
+
+
+
+<p>
+📷 회수 당시 이미지
+<br>
+상태 : 정상
+</p>
+
+
+<p style="color:#ff7070;">
+
+⚠ 접근 제한 구역
+
+</p>
+
+
+
+<p>
+현재 위치 :
+<br>
+CONTAINMENT ROOM B-04
+</p>
+
+
+
+<hr>
+
+
+<p>
+처리 권한 선택
+</p>
+
+
+<button onclick="changeStatus('status003','강제 격리 유지')">
+🔒 격리
+</button>
+
+
+<button onclick="changeStatus('status003','사살 승인 요청')">
+☠ 사살
+</button>
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+📦 ENTITY-004 「기록되지 않은 개체」
+</h2>
+
+
+<p>
+상태 :
+<span id="status004">
+ERROR
+</span>
+
+<br>
+
+위험도 : UNKNOWN
+
+</p>
+
+
+
+<div class="imageError">
+
+⚠ DATA CORRUPTED
+<br>
+ENTITY FILE ERROR
+
+</div>
+
+
+
+<p>
+개체 번호 생성 과정에서
+<br>
+비정상적인 데이터 변동 발생.
+</p>
+
+
+
+<hr>
+
+
+<p>
+처리 권한 선택
+</p>
+
+
+<button onclick="changeStatus('status004','분쇄 완료')">
+⚙ 분쇄
+</button>
+
+
+<button onclick="changeStatus('status004','매장 완료')">
+⚰ 매장
+</button>
+
+
+
+</div>
+
+
+
+
 
 
 
@@ -383,6 +622,11 @@ user || "UNKNOWN";
 document.getElementById("userLevel").innerHTML =
 level || "NONE";
 
+function changeStatus(id,text){
+
+document.getElementById(id).innerHTML=text;
+
+}
 
 
 </script>
