@@ -1202,3 +1202,22 @@ opacity:1;
     background:#050505;
     color:white;
 }
+.reportBox{
+
+border:1px solid #555;
+padding:15px;
+margin:15px 0;
+background:#080808;
+
+}
+
+
+.logBox{
+
+border:1px solid #777;
+padding:15px;
+margin:15px 0;
+background:#030303;
+font-family:monospace;
+
+}
