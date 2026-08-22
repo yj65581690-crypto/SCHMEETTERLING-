@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>CECILIA - STAFF ID</title>
+
+<link rel="stylesheet" href="./style.css">
+
+<style>
+
+body{
+
+background:#050505;
+color:white;
+overflow-x:hidden;
+
+}
+
+/* 장미 */
+
+.rose{
+
+position:fixed;
+top:-60px;
+pointer-events:none;
+z-index:1;
+animation:roseFall linear infinite;
+
+}
+
+@keyframes roseFall{
+
+0%{
+
+transform:translateY(-50px) rotate(0deg);
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+opacity:.2;
+
+}
+
+}
+
+/* 글리치 */
+
+.glitch{
+
+animation:glitch .18s infinite;
+
+}
+
+@keyframes glitch{
+
+0%{transform:translate(0);}
+25%{transform:translate(-3px,2px);}
+50%{transform:translate(3px,-2px);}
+75%{transform:translate(-2px,1px);}
+100%{transform:translate(0);}
+
+}
+
+/* 사진 */
+
+.photo{
+
+position:relative;
+display:inline-block;
+
+}
+
+.photo img{
+
+width:220px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.photo img:hover{
+
+transform:scale(1.03);
+
+}
+
+/* 얼굴 경고 */
+
+#faceWarning{
+
+margin-top:15px;
+color:#6aa8ff;
+font-weight:bold;
+text-align:center;
+animation:warningBlink 1s infinite;
+
+}
+
+@keyframes warningBlink{
+
+0%{opacity:1;}
+50%{opacity:.4;}
+100%{opacity:1;}
+
+}
+
+/* 종이 흔들림 */
+
+.paperFloat{
+
+animation:paperFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes paperFloat{
+
+0%{transform:rotate(-1deg);}
+50%{transform:rotate(1deg);}
+100%{transform:rotate(-1deg);}
+
+}
+
+/* NOTANDUM */
+
+.warningBox{
+
+border:2px solid #990000;
+padding:20px;
+background:#180000;
+animation:notandum 2s infinite;
+
+}
+
+@keyframes notandum{
+
+0%{box-shadow:0 0 5px #500;}
+50%{box-shadow:0 0 20px red;}
+100%{box-shadow:0 0 5px #500;}
+
+}
+
+.hiddenText{
+
+color:#6aa8ff;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="mainBox">
+
+<h2>
+
+STAFF IDENTIFICATION CARD
+
+</h2>
+
+<hr>
+
+<div class="recordBox">
+
+<div class="photo">
+
+<img
+id="ceciliaPhoto"
+class="paperFloat"
+src="cecilia.jpg"
+onclick="faceClick()">
+
+<p id="faceWarning"></p>
+
+</div>
+
+<div class="idInfo">
+
+<h2>세실리아</h2>
+
+<p><b>FULL NAME</b> : Cecilia</p>
+
+<p><b>사번</b> : UE-A899</p>
+
+<p><b>직급</b> : 직원</p>
+
+<p><b>DEPARTMENT</b> : Chemistry</p>
+
+<p>
+
+<b>STATUS</b> :
+
+<span class="online">
+
+● ACTIVE
+
+</span>
+
+</p>
+
+<p>
+
+<b>SPECIES</b> :
+
+Devil
+
+</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="recordBox">
+
+<h2>
+
+STAFF DATABASE
+
+</h2>
+
+<hr>
+
+<h3>
+
+PERSONAL INFORMATION
+
+</h3>
+
+<p>
+
+<b>FULL NAME</b> : Cecilia
+
+</p>
+
+<p>
+
+<b>HEIGHT</b> : 150cm
+
+</p>
+
+<p>
+
+<b>SPECIES</b> : Devil
+
+</p>
+
+<p>
+
+<b>AGE</b> : 25
+
+</p>
+
+<p>
+
+<b>IQ</b> : 160
+
+</p>
+
+<hr>
+
+<h3>
+
+PERSONAL RECORD
+
+</h3>
+
+<p>
+
+<b>#소심한</b>
+
+<br><br>
+
+자기 의견보다도 남의 의견을 따르거나 말을 버벅거릴 때가 많다.
+
+하지만 물건과 대화할 때만큼은 조금 더 편안한 모습을 보인다.
+
+친해진 상대에게는 오히려 활발한 모습을 보인다.
+
+</p>
+
+<hr>
+
+<h3>
+
+PERSONALITY
+
+</h3>
+
+<p>
+
+<b>#엉뚱함</b>
+
+<br><br>
+
+자주 덜렁대며,
+
+단어를 빠뜨리거나
+
+이상한 행동을 자연스럽게 한다.
+
+</p>
+
+<p>
+
+<b>#어린아이같은</b>
+
+<br><br>
+
+순수한 성격으로
+
+놀고 싶다는 말을 자주 하며
+
+귀여운 물건에 관심이 많다.
+
+</p>
+
+<p>
+
+얼굴을 보이는 것을 극도로 싫어하여
+
+항상 얼굴의 종이를 사수하는 모습이 확인된다.
+
+</p>
+
+<hr>
+
+<h3>
+
+SPECIAL OBSERVATION
+
+</h3>
+
+<p>
+
+• 종이 가면을 절대 벗지 않는다.
+
+</p>
+
+<p>
+
+• 물건에게 말을 거는 행동이 자주 확인된다.
+
+</p>
+
+<p>
+
+• 친해질 경우 성격이 크게 달라진다.
+
+</p>
+
+<p>
+
+• 장미를 매우 좋아하는 것으로 확인.
+
+</p>
+
+<hr>
+
+<div class="warningBox">
+
+<h3>
+
+⚠ NOTANDUM
+
+</h3>
+
+<p>
+
+절대로 얼굴을 보려고 하지 마십시오.
+
+</p>
+
+<p>
+
+그녀 앞에서
+
+<strong>
+
+아버지를 모욕하지 마십시오.
+
+</strong>
+
+</p>
+
+<p class="hiddenText">
+
+무단 촬영 및 얼굴 확인 시
+
+예상하지 못한 현상이 발생할 수 있습니다.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<button onclick="location.href='./chemical_staff.html'">
+
+← 연구원 목록
+
+</button>
+
+</div>
+<script>
+
+// =========================
+// BLUE / BLACK ROSE SYSTEM
+// =========================
+
+const roses=["🌹","🥀"];
+
+function createRose(){
+
+let rose=document.createElement("div");
+
+rose.className="rose";
+
+rose.innerHTML=roses[Math.floor(Math.random()*2)];
+
+rose.style.left=Math.random()*100+"vw";
+
+rose.style.fontSize=(18+Math.random()*20)+"px";
+
+rose.style.animationDuration=(6+Math.random()*6)+"s";
+
+rose.style.filter=Math.random()<0.5
+?
+"hue-rotate(220deg)"
+:
+"grayscale(100%) brightness(.25)";
+
+document.body.appendChild(rose);
+
+setTimeout(function(){
+
+rose.remove();
+
+},12000);
+
+}
+
+setInterval(createRose,400);
+
+
+
+// =========================
+// BLUE HEART
+// =========================
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="💙";
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top="100vh";
+
+heart.style.fontSize="22px";
+
+heart.style.pointerEvents="none";
+
+heart.style.zIndex="2";
+
+heart.style.transition="8s linear";
+
+document.body.appendChild(heart);
+
+setTimeout(function(){
+
+heart.style.top="-50px";
+
+heart.style.opacity="0";
+
+},50);
+
+setTimeout(function(){
+
+heart.remove();
+
+},8500);
+
+}
+
+setInterval(function(){
+
+if(Math.random()<0.2){
+
+createHeart();
+
+}
+
+},6000);
+
+
+
+// =========================
+// PAPER CRANE
+// =========================
+
+function createCrane(){
+
+let crane=document.createElement("div");
+
+crane.innerHTML="🕊";
+
+crane.style.position="fixed";
+
+crane.style.left="-50px";
+
+crane.style.top=Math.random()*70+"vh";
+
+crane.style.fontSize="28px";
+
+crane.style.pointerEvents="none";
+
+crane.style.transition="12s linear";
+
+crane.style.zIndex="2";
+
+document.body.appendChild(crane);
+
+setTimeout(function(){
+
+crane.style.left="110vw";
+
+},50);
+
+setTimeout(function(){
+
+crane.remove();
+
+},13000);
+
+}
+
+setInterval(function(){
+
+if(Math.random()<0.08){
+
+createCrane();
+
+}
+
+},15000);
+
+
+
+// =========================
+// RANDOM GLITCH
+// =========================
+
+function randomGlitch(){
+
+document.body.classList.add("glitch");
+
+setTimeout(function(){
+
+document.body.classList.remove("glitch");
+
+},180);
+
+}
+
+setInterval(function(){
+
+if(Math.random()<0.18){
+
+randomGlitch();
+
+}
+
+},12000);
+
+
+
+// =========================
+// SCREEN DARKNESS
+// =========================
+
+let darkness=0;
+
+setInterval(function(){
+
+darkness+=0.002;
+
+if(darkness>0.35)
+
+darkness=0.35;
+
+document.body.style.boxShadow=
+
+"inset 0 0 300px rgba(0,0,0,"+
+
+darkness+")";
+
+},4000);
+
+
+
+// =========================
+// STATUS RANDOM CHANGE
+// =========================
+
+const statusText=[
+
+"● ACTIVE",
+
+"● OBSERVATION",
+
+"● ONLINE",
+
+"● MONITORING"
+
+];
+
+setInterval(function(){
+
+let online=document.querySelector(".online");
+
+if(!online) return;
+
+online.innerHTML=
+
+statusText[Math.floor(Math.random()*statusText.length)];
+
+},8000);
+
+
+
+// =========================
+// RANDOM MESSAGE
+// =========================
+
+const message=[
+
+"...",
+
+"Don't look.",
+
+"Please stop.",
+
+"Who are you?",
+
+"The roses are alive.",
+
+"Leave."
+
+];
+
+setInterval(function(){
+
+let warning=document.getElementById("faceWarning");
+
+if(!warning) return;
+
+if(Math.random()<0.3){
+
+warning.innerHTML=
+
+message[Math.floor(Math.random()*message.length)];
+
+}
+
+},9000);
+
+</script>
+// =====================================
+// FACE PROTECTION SYSTEM
+// =====================================
+
+let faceClickCount=0;
+
+function faceClick(){
+
+faceClickCount++;
+
+let photo=document.getElementById("ceciliaPhoto");
+let warning=document.getElementById("faceWarning");
+
+
+
+if(faceClickCount==1){
+
+warning.innerHTML="...";
+
+}
+
+
+
+else if(faceClickCount==2){
+
+warning.innerHTML="만지지 마.";
+
+}
+
+
+
+else if(faceClickCount==3){
+
+warning.innerHTML="얼굴은 보여줄 수 없어.";
+
+}
+
+
+
+else if(faceClickCount==4){
+
+warning.innerHTML="그만 봐.";
+
+randomGlitch();
+
+}
+
+
+
+else if(faceClickCount==5){
+
+warning.innerHTML="싫어...";
+
+photo.style.filter="brightness(.6)";
+
+}
+
+
+
+else if(faceClickCount==6){
+
+warning.innerHTML="왜 계속 보는 거야?";
+
+photo.style.transform="scale(1.03)";
+
+randomGlitch();
+
+}
+
+
+
+else if(faceClickCount==7){
+
+warning.innerHTML="⚠ 얼굴 보호 프로토콜";
+
+photo.style.filter="contrast(2)";
+
+document.body.classList.add("glitch");
+
+setTimeout(function(){
+
+document.body.classList.remove("glitch");
+
+},300);
+
+}
+
+
+
+else if(faceClickCount==8){
+
+warning.innerHTML="접근 거부";
+
+document.body.style.background="#000";
+
+setTimeout(function(){
+
+document.body.style.background="#050505";
+
+},250);
+
+}
+
+
+
+else if(faceClickCount==9){
+
+warning.innerHTML="████ DATA CORRUPTION ████";
+
+photo.style.opacity=".25";
+
+randomGlitch();
+
+}
+
+
+
+else{
+
+destroyFace();
+
+}
+
+}
+
+
+
+
+
+// =====================================
+// DESTROY FACE
+// =====================================
+
+function destroyFace(){
+
+let photo=document.getElementById("ceciliaPhoto");
+
+let warning=document.getElementById("faceWarning");
+
+
+
+document.body.classList.add("glitch");
+
+
+
+setTimeout(function(){
+
+
+
+photo.remove();
+
+
+
+document.querySelector(".photo").innerHTML=`
+
+<div style="
+
+width:220px;
+height:280px;
+
+background:#000;
+
+border:3px solid #444;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+font-family:Courier New;
+
+font-size:18px;
+
+color:red;
+
+text-align:center;
+
+">
+
+██████████
+
+<br><br>
+
+IMAGE
+
+NOT FOUND
+
+<br><br>
+
+ERROR
+
+CECILIA-404
+
+<br><br>
+
+██████████
+
+</div>
+
+<p id="faceWarning"
+
+style="
+
+margin-top:15px;
+
+color:red;
+
+font-weight:bold;
+
+">
+
+FACE DATA ERASED
+
+</p>
+
+`;
+
+
+
+document.body.classList.remove("glitch");
+
+
+
+},900);
+
+
+
+addLog("⚠ FACE DATA ERASED");
+
+}
+
+
+
+
+
+// =====================================
+// SECRET MESSAGE
+// =====================================
+
+const faceMessages=[
+
+"...",
+
+"Don't look.",
+
+"Stop.",
+
+"Leave.",
+
+"Why?",
+
+"She doesn't like this.",
+
+"The paper protects her."
+
+];
+
+
+
+setInterval(function(){
+
+if(faceClickCount>=1 && faceClickCount<10){
+
+document.getElementById("faceWarning").innerHTML=
+
+faceMessages[
+
+Math.floor(Math.random()*faceMessages.length)
+
+];
+
+}
+
+},13000);
+
+
+
+
+
+// =====================================
+// PAPER SHAKE
+// =====================================
+
+setInterval(function(){
+
+let img=document.getElementById("ceciliaPhoto");
+
+if(!img) return;
+
+
+
+img.style.transform=
+
+"rotate("+
+
+(Math.random()*2-1)
+
++"deg)";
+
+
+
+},3000);
+
+
+
+
+
+// =====================================
+// SCREEN FLASH
+// =====================================
+
+setInterval(function(){
+
+if(faceClickCount>=6){
+
+document.body.style.filter="brightness(1.3)";
+
+
+
+setTimeout(function(){
+
+document.body.style.filter="brightness(1)";
+
+},60);
+
+}
+
+},7000);
+
+
+
+
+
+// =====================================
+// CURSE MODE
+// =====================================
+
+setInterval(function(){
+
+if(faceClickCount>=8){
+
+document.body.classList.add("glitch");
+
+
+
+setTimeout(function(){
+
+document.body.classList.remove("glitch");
+
+},200);
+
+}
+
+},5000);
+
+
+
+
+
+// =====================================
+// ERROR POPUP
+// =====================================
+
+setInterval(function(){
+
+if(faceClickCount>=9){
+
+let popup=document.createElement("div");
+
+popup.innerHTML="MEMORY ERROR";
+
+
+
+popup.style.position="fixed";
+
+popup.style.right="20px";
+
+popup.style.bottom="20px";
+
+popup.style.background="#300";
+
+popup.style.color="red";
+
+popup.style.padding="12px";
+
+popup.style.border="2px solid red";
+
+popup.style.zIndex="9999";
+
+
+
+document.body.appendChild(popup);
+
+
+
+setTimeout(function(){
+
+popup.remove();
+
+},1800);
+
+}
+
+},10000);
