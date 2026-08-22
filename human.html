@@ -9,33 +9,89 @@
 
 <link rel="stylesheet" href="./style.css">
 
+
+<style>
+
+body{
+
+background:#080008;
+
+}
+
+
+
+.humanPage .mainBox h2,
+.humanPage .mainBox h3{
+
+color:#ff69b4;
+
+}
+
+
+
+.humanPage .recordBox{
+
+border:1px solid #ff69b4;
+
+background:#150010;
+
+}
+
+
+
+.humanPage button:hover{
+
+background:#ff69b4;
+
+color:#000;
+
+}
+
+
+
+.humanWarning{
+
+color:#ff69b4;
+
+font-weight:bold;
+
+}
+
+
+
+</style>
+
+
 </head>
 
 
+
 <body class="humanPage">
-<div class="mainBox">
 
 
-<h1>
+<div class="layout">
+
+
+
+<!-- LEFT SIDE MENU -->
+
+
+<div class="sideMenu">
+
+
+
+<h3>
+
 SCHMEETTERLING
-</h1>
+
+</h3>
 
 
 
-<h2>
-🧬 HUMAN MODIFICATION DEPARTMENT
-</h2>
+<p style="color:#ff69b4;">
 
+● SYSTEM ONLINE
 
-
-<p>
-<b>부서 코드 :</b> HM-02
-</p>
-
-
-
-<p>
-<b>열람 권한 :</b> RESEARCHER 이상
 </p>
 
 
@@ -45,9 +101,167 @@ SCHMEETTERLING
 
 
 
+<p>
+
+USER
+
+<br>
+
+<b id="userName">
+
+확인중...
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+LEVEL
+
+<br>
+
+<b id="userLevel">
+
+확인중...
+
+</b>
+
+</p>
+
+
+
+
+<hr>
+
+
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 HOME
+
+</button>
+
+
+
+
+<button onclick="location.href='./radiation.html'">
+
+☢ 방사능 부서
+
+</button>
+
+
+
+
+<button onclick="location.href='./unknown.html'">
+
+👾 미확인 개체
+
+</button>
+
+
+
+
+<button onclick="location.href='./bio.html'">
+
+🧫 생물 부서
+
+</button>
+
+
+
+
+<button onclick="location.href='./chemical.html'">
+
+🧪 화학 부서
+
+</button>
+
+
+
+
+<button onclick="location.href='./backroom.html'">
+
+📦 백룸 부서
+
+</button>
+
+
+
+
+<button onclick="location.href='./human.html'">
+
+🧬 인체 개조 부서
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- MAIN -->
+
+
+<div class="mainBox">
+
+
+
+<h2>
+
+🧬 HUMAN MODIFICATION DEPARTMENT
+
+</h2>
+
+
+
+
+<p>
+
+<b>부서 코드 :</b>
+
+HM-02
+
+</p>
+
+
+
+
+<p>
+
+<b>열람 권한 :</b>
+
+RESEARCHER 이상
+
+</p>
+
+
+
+
+<hr>
+
+
+
+
+
+
 <h3>
+
 HUMAN ALTERATION DATABASE
+
 </h3>
+
 
 
 
@@ -55,24 +269,39 @@ HUMAN ALTERATION DATABASE
 
 
 <p>
+
+<b>
+
 인체 개조 실험 기록 보관소
+
+</b>
+
 </p>
 
 
+
 <p>
+
 본 부서는 생체 개조 및
+
 인체 변화 연구 데이터를 관리합니다.
+
 </p>
 
 
+
 <p>
+
 모든 실험 기록은 내부 보안 규정에 따라
+
 제한적으로 열람됩니다.
+
 </p>
 
 
 
 </div>
+
 
 
 
@@ -80,27 +309,876 @@ HUMAN ALTERATION DATABASE
 
 
 
+
+
 <h3>
-SYSTEM STATUS
+
+DIVISION OVERVIEW
+
 </h3>
 
 
-<p class="online">
-● ONLINE
+
+
+<p>
+
+
+SCHMEETTERLING 내 인체 구조 변화와
+
+생체 개조 연구를 담당하는 부서입니다.
+
+
+<br><br>
+
+
+세포 재구성,
+
+신체 강화,
+
+장기 교체,
+
+감각 개조,
+
+생체 적응 실험을 진행합니다.
+
+
+<br><br>
+
+
+모든 개조 과정은 기록되며,
+
+실험 대상자의 변화 과정은
+
+지속적으로 관찰됩니다.
+
+
 </p>
 
 
 
 
-<button onclick="location.href='./main.html'">
+<hr>
 
-← CENTRAL TERMINAL
+
+
+
+
+
+<h3>
+
+RESEARCH OBJECTIVE
+
+</h3>
+
+
+
+
+<div class="recordBox">
+
+
+<p>
+
+<b>
+
+PROJECT : EVOLUTION
+
+</b>
+
+</p>
+
+
+
+<p>
+
+인간 신체의 한계를 분석하고
+
+새로운 생체 구조를 개발하는 것을
+
+목표로 합니다.
+
+</p>
+
+
+
+<p>
+
+기존 인간의 기준을 넘어선
+
+완성된 생체 형태를 연구합니다.
+
+</p>
+
+
+
+</div>
+
+
+
+
+<hr>
+<h3>
+
+DATABASE
+
+</h3>
+
+
+
+
+<button onclick="location.href='./human_subject.html'">
+
+👤 실험체 기록
 
 </button>
 
 
 
+
+<button onclick="location.href='./human_parts.html'">
+
+🦴 신체부위 보유량
+
+</button>
+
+
+
+
+<button onclick="location.href='./human_log.html'">
+
+📄 개조 일지
+
+</button>
+
+
+
+
+<button onclick="location.href='./human_monitor.html'">
+
+🖥 인체 개조부서 모니터
+
+</button>
+
+
+
+
+<button onclick="location.href='./human_staff.html'">
+
+👨‍🔬 직원 명단
+
+</button>
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<h3>
+
+SYSTEM STATUS
+
+</h3>
+
+
+
+
+
+<div class="recordBox">
+
+
+
+
+
+<p>
+
+현재 프로젝트 :
+
+<b>
+
+HM-02 「PROJECT EVOLUTION」
+
+</b>
+
+</p>
+
+
+
+
+
+<p>
+
+담당 책임자 :
+
+<b>
+
+DR. LILITH
+
+</b>
+
+</p>
+
+
+
+
+
+<p>
+
+주 연구 분야 :
+
+<b>
+
+HUMAN ALTERATION
+
+</b>
+
+</p>
+
+
+
+
+
+<p>
+
+연구 분야 :
+
+<br>
+
+생체 강화
+
+<br>
+
+세포 재구성
+
+<br>
+
+신경 개조
+
+<br>
+
+장기 변환
+
+<br>
+
+유전자 조정
+
+<br>
+
+신체 적응 실험
+
+</p>
+
+
+
+
+
+<p>
+
+현재 상태 :
+
+<span id="humanStatus">
+
+● ONLINE
+
+</span>
+
+</p>
+
+
+
+
+
+<p>
+
+위험 등급 :
+
+<b>
+
+LEVEL A
+
+</b>
+
+</p>
+
+
+
+
+
+<div id="humanInfo">
+
 </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<h3>
+
+EXPERIMENT LOG
+
+</h3>
+
+
+
+
+
+
+<div class="recordBox">
+
+
+
+
+
+<p>
+
+<b>
+
+SUBJECT HM-001
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+상태 :
+
+관찰 중
+
+</p>
+
+
+
+
+<p>
+
+개조 진행률 :
+
+<b>
+
+72%
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+특이사항 :
+
+<br>
+
+신체 재생 능력 증가 확인.
+
+<br>
+
+일부 기억 데이터 손실 발생.
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="recordBox">
+
+
+
+
+
+<p>
+
+<b>
+
+SUBJECT HM-014
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+상태 :
+
+격리
+
+</p>
+
+
+
+
+<p>
+
+개조 진행률 :
+
+<b>
+
+ERROR
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+특이사항 :
+
+<br>
+
+비정상적 생체 변화 확인.
+
+<br>
+
+추가 연구 권한 필요.
+
+</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<h3>
+
+DIRECTOR MESSAGE
+
+</h3>
+
+
+
+
+
+<div class="recordBox">
+
+
+
+
+
+<p>
+
+"인간이라는 기준은
+
+고정된 것이 아니다."
+
+
+<br><br>
+
+
+
+우리는 인간을 바꾸는 것이 아니라,
+
+새로운 가능성을 만드는 것이다.
+
+
+
+</p>
+
+
+
+
+<p>
+
+-
+
+HUMAN MODIFICATION DIRECTOR
+
+<br>
+
+DR. LILITH
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<p class="humanWarning">
+
+⚠ WARNING :
+
+UNAUTHORIZED BIOLOGICAL EXPERIMENT ACCESS PROHIBITED
+
+</p>
+
+
+
+
+</div>
+
+
+
+</div>
+
+<script>
+
+
+// =========================
+// USER DATA
+// =========================
+
+
+let user = localStorage.getItem("userName");
+
+let level = localStorage.getItem("userLevel");
+
+
+
+
+document.getElementById("userName").innerHTML =
+
+user || "UNKNOWN";
+
+
+
+
+document.getElementById("userLevel").innerHTML =
+
+level || "NONE";
+
+
+
+
+
+
+
+// =========================
+// HUMAN DEPARTMENT INFO
+// =========================
+
+
+document.getElementById("humanInfo").innerHTML = `
+
+
+<p>
+
+실험실 :
+
+BIO LAB - HM
+
+</p>
+
+
+
+<p>
+
+생체 안정도 :
+
+NORMAL
+
+</p>
+
+
+
+
+<p>
+
+현재 연구 대상 :
+
+14명
+
+</p>
+
+
+
+
+<p>
+
+개조 시설 상태 :
+
+ACTIVE
+
+</p>
+
+
+
+
+<p>
+
+보안 상태 :
+
+STABLE
+
+</p>
+
+
+`;
+
+
+
+
+
+
+
+// =========================
+// STATUS RANDOM CHANGE
+// =========================
+
+
+
+const humanStatus=[
+
+
+"● ONLINE",
+
+
+"● MONITORING",
+
+
+"● OBSERVATION",
+
+
+"● ACTIVE EXPERIMENT"
+
+
+
+];
+
+
+
+
+
+setInterval(function(){
+
+
+
+let status=document.getElementById("humanStatus");
+
+
+
+if(!status) return;
+
+
+
+status.innerHTML =
+
+humanStatus[
+
+Math.floor(Math.random()*humanStatus.length)
+
+];
+
+
+
+},7000);
+
+
+
+
+
+
+
+// =========================
+// RANDOM WARNING
+// =========================
+
+
+
+const warningText=[
+
+
+"⚠ BIO DATA CHECKING",
+
+
+"⚠ SUBJECT MONITORING",
+
+
+"⚠ CELL ACTIVITY DETECTED",
+
+
+"⚠ ACCESS RESTRICTED",
+
+
+"⚠ EXPERIMENT AREA LOCKED"
+
+
+
+];
+
+
+
+
+
+setInterval(function(){
+
+
+
+let warning=document.querySelector(".humanWarning");
+
+
+
+if(!warning) return;
+
+
+
+if(Math.random()<0.4){
+
+
+
+warning.innerHTML =
+
+warningText[
+
+Math.floor(Math.random()*warningText.length)
+
+];
+
+
+
+}
+
+
+
+},9000);
+
+
+
+
+
+
+
+// =========================
+// HEARTBEAT EFFECT
+// =========================
+
+
+
+setInterval(function(){
+
+
+
+let box=document.querySelector(".mainBox");
+
+
+
+if(!box) return;
+
+
+
+box.style.transform="scale(1.002)";
+
+
+
+setTimeout(function(){
+
+
+box.style.transform="scale(1)";
+
+
+},200);
+
+
+
+},5000);
+
+
+
+
+
+
+
+// =========================
+// DATA GLITCH
+// =========================
+
+
+
+setInterval(function(){
+
+
+
+if(Math.random()<0.15){
+
+
+
+document.body.style.filter="brightness(1.3)";
+
+
+
+setTimeout(function(){
+
+
+document.body.style.filter="brightness(1)";
+
+
+},100);
+
+
+
+}
+
+
+
+},8000);
+
+
+
+
+
+</script>
 
 
 
