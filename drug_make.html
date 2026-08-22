@@ -473,22 +473,8 @@ WAITING
 <script>
 
 
-document.getElementById("userName").innerHTML =
-localStorage.getItem("userName") || "UNKNOWN";
 
-
-document.getElementById("userLevel").innerHTML =
-localStorage.getItem("userLevel") || "NONE";
-
-
-
-
-
-let machine =
-document.getElementById("machine");
-
-
-let currentSample="";
+let touchSample = null;
 
 
 
@@ -496,13 +482,145 @@ document.querySelectorAll(".sampleBox")
 .forEach(sample=>{
 
 
-sample.addEventListener("dragstart",e=>{
+// PC 드래그
 
+sample.addEventListener("dragstart",e=>{
 
 currentSample=e.target.innerHTML;
 
+});
+
+
+
+
+// 모바일 터치 시작
+
+sample.addEventListener("touchstart",e=>{
+
+
+touchSample = sample.innerHTML;
+
+
+sample.style.opacity="0.5";
+
 
 });
+
+
+
+
+// 모바일 터치 이동
+
+sample.addEventListener("touchmove",e=>{
+
+
+e.preventDefault();
+
+
+});
+
+
+
+
+// 모바일 터치 끝
+
+sample.addEventListener("touchend",e=>{
+
+
+sample.style.opacity="1";
+
+
+
+let touch = e.changedTouches[0];
+
+
+let target =
+document.elementFromPoint(
+touch.clientX,
+touch.clientY
+);
+
+
+
+if(target &&
+target.id==="machine"){
+
+
+
+currentSample=touchSample;
+
+
+
+insertSample();
+
+
+}
+
+
+
+});
+
+
+
+});
+
+
+
+
+
+
+// PC용 드롭
+
+machine.addEventListener("dragover",e=>{
+
+e.preventDefault();
+
+});
+
+
+
+machine.addEventListener("drop",()=>{
+
+
+insertSample();
+
+
+});
+
+
+
+
+
+
+
+function insertSample(){
+
+
+machine.classList.add("active");
+
+
+
+machine.innerHTML=
+
+`
+⚗ ANALYZING...
+
+<br><br>
+
+${currentSample}
+
+`;
+
+
+
+log("SAMPLE INSERTED");
+
+
+startProcess();
+
+
+
+}
 
 
 
