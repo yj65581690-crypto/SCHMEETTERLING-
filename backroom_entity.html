@@ -18,8 +18,6 @@
 <div class="layout">
 
 
-<!-- SIDE MENU -->
-
 <div class="sideMenu">
 
 
@@ -93,8 +91,6 @@ LEVEL
 
 
 
-<!-- MAIN -->
-
 
 <div class="mainBox">
 
@@ -128,16 +124,15 @@ DATABASE OVERVIEW
 
 
 <p>
-
 백룸 내부에서 회수된 변칙 개체의
 <br>
 수거 / 운송 / 보관 기록을 관리합니다.
-
 </p>
 
 
 
 <hr>
+
 
 
 <h3>
@@ -146,25 +141,32 @@ ENTITY DATABASE
 
 
 
+
 <div class="recordBox">
+
 
 <h2>
 📦 ENTITY-001 「노란 복도 개체」
 </h2>
+
 
 <p>
 상태 :
 <span id="status001">
 보관 중
 </span>
+
 <br>
 
 위험도 : B
+
 </p>
+
 
 
 <img src="./entity001.png"
 class="entityImage">
+
 
 
 <p>
@@ -174,11 +176,13 @@ class="entityImage">
 </p>
 
 
+
 <p>
 발견 위치 :
 <br>
 LEVEL 0 - YELLOW HALLWAY
 </p>
+
 
 
 <hr>
@@ -199,7 +203,9 @@ LEVEL 0 - YELLOW HALLWAY
 </button>
 
 
+
 </div>
+
 
 
 
@@ -216,6 +222,7 @@ LEVEL 0 - YELLOW HALLWAY
 <h2>
 📦 ENTITY-002 「벽면의 흔적」
 </h2>
+
 
 
 <p>
@@ -235,7 +242,9 @@ LEVEL 0 - YELLOW HALLWAY
 <div class="imageError">
 
 ⚠ IMAGE DATA ERROR
+
 <br>
+
 FILE CORRUPTED
 
 </div>
@@ -253,6 +262,7 @@ FILE CORRUPTED
 <hr>
 
 
+
 <p>
 처리 권한 선택
 </p>
@@ -268,15 +278,9 @@ FILE CORRUPTED
 </button>
 
 
+
 </div>
-
-
-
-
-
 <hr>
-
-
 
 
 
@@ -286,6 +290,7 @@ FILE CORRUPTED
 <h2>
 📦 ENTITY-003 「귀환 불가 구역의 존재」
 </h2>
+
 
 
 <p>
@@ -314,6 +319,7 @@ class="entityImage">
 </p>
 
 
+
 <p style="color:#ff7070;">
 
 ⚠ 접근 제한 구역
@@ -323,9 +329,11 @@ class="entityImage">
 
 
 <p>
+
 현재 위치 :
 <br>
 CONTAINMENT ROOM B-04
+
 </p>
 
 
@@ -333,9 +341,11 @@ CONTAINMENT ROOM B-04
 <hr>
 
 
+
 <p>
 처리 권한 선택
 </p>
+
 
 
 <button onclick="changeStatus('status003','강제 격리 유지')">
@@ -343,9 +353,17 @@ CONTAINMENT ROOM B-04
 </button>
 
 
+
 <button onclick="changeStatus('status003','사살 승인 요청')">
 ☠ 사살
 </button>
+
+
+
+<div id="adminApproval003">
+
+</div>
+
 
 
 </div>
@@ -368,13 +386,16 @@ CONTAINMENT ROOM B-04
 </h2>
 
 
+
 <p>
 상태 :
 <span id="status004">
 ERROR
 </span>
 
+
 <br>
+
 
 위험도 : UNKNOWN
 
@@ -385,7 +406,9 @@ ERROR
 <div class="imageError">
 
 ⚠ DATA CORRUPTED
+
 <br>
+
 ENTITY FILE ERROR
 
 </div>
@@ -403,14 +426,17 @@ ENTITY FILE ERROR
 <hr>
 
 
+
 <p>
 처리 권한 선택
 </p>
 
 
+
 <button onclick="changeStatus('status004','분쇄 완료')">
 ⚙ 분쇄
 </button>
+
 
 
 <button onclick="changeStatus('status004','매장 완료')">
@@ -425,166 +451,8 @@ ENTITY FILE ERROR
 
 
 
-
-
-
-
 <hr>
 
-
-
-
-
-<div class="recordBox">
-
-
-<h2>
-📦 ENTITY-002 「벽면의 흔적」
-</h2>
-
-
-<p>
-상태 : 분석 중
-<br>
-위험도 : C
-</p>
-
-
-
-<div class="imageError">
-
-⚠ IMAGE DATA ERROR
-<br>
-FILE CORRUPTED
-
-</div>
-
-
-
-<p>
-
-촬영 데이터 복구 실패.
-<br>
-원본 이미지 확인 불가.
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-<hr>
-
-
-
-
-
-<div class="recordBox">
-
-
-<h2>
-📦 ENTITY-003 「귀환 불가 구역의 존재」
-</h2>
-
-
-<p>
-상태 : 격리
-<br>
-위험도 : A
-</p>
-
-
-
-<img src="./entity003.png"
-class="entityImage">
-
-
-
-<p>
-📷 회수 당시 이미지
-<br>
-상태 : 정상
-</p>
-
-
-
-<p style="color:#ff7070;">
-
-⚠ 접근 제한 구역
-
-</p>
-
-
-
-<p>
-
-현재 위치 :
-<br>
-CONTAINMENT ROOM B-04
-
-</p>
-
-
-</div>
-
-
-
-
-
-<hr>
-
-
-
-
-
-<div class="recordBox">
-
-
-<h2>
-📦 ENTITY-004 「기록되지 않은 개체」
-</h2>
-
-
-
-<p>
-상태 : ERROR
-<br>
-위험도 : UNKNOWN
-</p>
-
-
-
-<div class="imageError">
-
-⚠ DATA CORRUPTED
-<br>
-ENTITY FILE ERROR
-
-</div>
-
-
-
-<p>
-
-개체 번호 생성 과정에서
-<br>
-비정상적인 데이터 변동 발생.
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-<hr>
 
 
 
@@ -600,6 +468,8 @@ ENTITY FILE ERROR
 
 
 </div>
+
+
 
 
 
@@ -622,14 +492,134 @@ user || "UNKNOWN";
 document.getElementById("userLevel").innerHTML =
 level || "NONE";
 
+
+
+
+
 function changeStatus(id,text){
 
-document.getElementById(id).innerHTML=text;
+
+document.getElementById(id).innerHTML = text;
+
 
 }
 
 
+
+
+
+// 관리자 : 오닉스
+
+if(user === "오닉스"){
+
+
+document.getElementById("adminApproval003").innerHTML = `
+
+
+<hr>
+
+
+<p>
+<b>
+관리자 승인 권한
+</b>
+</p>
+
+
+
+<button onclick="approveEntity003()">
+
+✓ 사살 승인
+
+</button>
+
+
+
+<button onclick="denyEntity003()">
+
+✕ 승인 거부
+
+</button>
+
+
+`;
+
+
+
+}
+
+
+
+
+
+function approveEntity003(){
+
+
+document.getElementById("status003").innerHTML =
+"사살 승인 완료";
+
+
+
+document.getElementById("adminApproval003").innerHTML = `
+
+
+<p style="color:#7ef7b7;">
+
+✔ 관리자 승인 완료
+
+<br>
+
+승인자 : 오닉스
+
+<br>
+
+처리 상태 : 대기 중
+
+</p>
+
+
+`;
+
+
+
+}
+
+
+
+
+
+function denyEntity003(){
+
+
+document.getElementById("status003").innerHTML =
+"승인 거부";
+
+
+
+document.getElementById("adminApproval003").innerHTML = `
+
+
+<p style="color:#ff7070;">
+
+✕ 관리자 승인 거부
+
+<br>
+
+승인자 : 오닉스
+
+</p>
+
+
+`;
+
+
+
+}
+
+
+
 </script>
+
 
 
 
