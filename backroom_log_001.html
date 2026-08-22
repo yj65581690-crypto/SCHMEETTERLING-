@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>BACKROOM LOG-001</title>
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body class="backroomPage">
+
+
+<div class="layout">
+
+
+
+<!-- SIDE MENU -->
+
+<div class="sideMenu">
+
+
+<h3>
+SCHMEETTERLING
+</h3>
+
+
+<p style="color:#7ef7b7;">
+● SYSTEM ONLINE
+</p>
+
+
+<hr>
+
+
+<p>
+USER
+<br>
+<b id="userName">
+확인중...
+</b>
+</p>
+
+
+<p>
+LEVEL
+<br>
+<b id="userLevel">
+확인중...
+</b>
+</p>
+
+
+<hr>
+
+
+
+<button onclick="location.href='./main.html'">
+🏠 HOME
+</button>
+
+
+<button onclick="location.href='./radiation.html'">
+☢ 방사능 부서
+</button>
+
+
+<button onclick="location.href='./unknown.html'">
+👾 미확인 개체
+</button>
+
+
+<button onclick="location.href='./bio.html'">
+🧫 생물 부서
+</button>
+
+
+<button onclick="location.href='./chemical.html'">
+🧪 화학 부서
+</button>
+
+
+<button onclick="location.href='./backroom.html'">
+📦 백룸 부서
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- MAIN -->
+
+<div class="mainBox">
+
+
+
+<h2>
+📄 BACKROOM EXPLORATION REPORT
+</h2>
+
+
+
+<p>
+<b>DOCUMENT CODE :</b>
+BR-LOG-001
+</p>
+
+
+<p>
+<b>ACCESS LEVEL :</b>
+STAFF ONLY
+</p>
+
+
+<hr>
+
+
+
+
+<h3>
+「LEVEL 0 최초 탐사 기록」
+</h3>
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+EXPLORATION INFORMATION
+</h2>
+
+
+
+<p>
+<b>탐사 번호 :</b>
+BRAVO-03
+</p>
+
+
+<p>
+<b>탐사 구역 :</b>
+<br>
+LEVEL 0
+<br>
+YELLOW HALLWAY
+</p>
+
+
+<p>
+<b>탐사 일시 :</b>
+<br>
+2026.08.01
+<br>
+02:14:33 ~ 05:02:11
+</p>
+
+
+<p>
+<b>탐사 인원 :</b>
+<br>
+STAFF-04
+<br>
+STAFF-07
+</p>
+
+
+<p>
+<b>위험 등급 :</b>
+<br>
+B
+</p>
+
+
+<p>
+<b>결과 :</b>
+<br>
+
+<span style="color:#7ef7b7;">
+귀환 성공
+</span>
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+ENVIRONMENT ANALYSIS
+</h3>
+
+
+
+<div class="recordBox">
+
+
+<p>
+LEVEL 0 내부는 노란색 벽지와
+<br>
+불규칙적인 형광등 구조로 구성됨.
+</p>
+
+
+<p>
+공간 내부에서 반복적인 복도 구조가
+확인되었으며,
+일부 구간에서 방향 감각 손실 발생.
+</p>
+
+
+<p>
+개체 접촉 기록 없음.
+</p>
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+COMMUNICATION LOG
+</h3>
+
+
+
+<div class="recordBox">
+
+
+
+<p>
+<b>[02:17:04]</b>
+<br>
+진입 완료.
+현재 위치 확인 중.
+</p>
+
+
+
+<hr>
+
+
+
+<p>
+<b>[02:31:22]</b>
+<br>
+동일한 구조의 복도가 반복되고 있음.
+지도 데이터와 불일치 발생.
+</p>
+
+
+
+<hr>
+
+
+
+<p>
+<b>[03:05:19]</b>
+<br>
+벽면에서 미세한 구조 변화 확인.
+사진 기록 진행.
+</p>
+
+
+
+<hr>
+
+
+
+<p>
+<b>[04:58:40]</b>
+<br>
+귀환 지점 발견.
+탐사 종료 절차 진행.
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+FINAL REPORT
+</h3>
+
+
+
+<div class="recordBox">
+
+
+<p>
+<b>최종 판정 :</b>
+<br>
+정상 귀환
+</p>
+
+
+<p>
+<b>피해 사항 :</b>
+<br>
+없음
+</p>
+
+
+<p>
+<b>추가 조치 :</b>
+<br>
+LEVEL 0 반복 구조에 대한
+추가 탐사 필요.
+</p>
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<button onclick="location.href='./backroom_log.html'">
+
+📁 기록 목록
+
+</button>
+
+
+
+<button onclick="location.href='./backroom_log_002.html'">
+
+다음 기록 ▶
+
+</button>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+let user = localStorage.getItem("userName");
+
+let level = localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+user || "UNKNOWN";
+
+
+
+document.getElementById("userLevel").innerHTML =
+level || "NONE";
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
