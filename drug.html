@@ -11,6 +11,49 @@ DRUG DEPARTMENT
 
 <link rel="stylesheet" href="./style.css">
 
+
+<style>
+
+body.drugPage{
+
+background:#050b18;
+
+}
+
+
+.drugStatus{
+
+color:#00aaff;
+
+}
+
+
+.blueBox{
+
+border:1px solid #00aaff;
+
+background:#00111f;
+
+padding:20px;
+
+box-shadow:0 0 15px #0077ff;
+
+}
+
+
+
+.warningBlue{
+
+color:#00aaff;
+
+font-weight:bold;
+
+}
+
+
+</style>
+
+
 </head>
 
 
@@ -25,7 +68,11 @@ DRUG DEPARTMENT
 
 
 
-<!-- LEFT SIDE MENU -->
+<!-- =========================
+LEFT SIDE MENU
+========================= -->
+
+
 
 <div class="sideMenu">
 
@@ -36,6 +83,7 @@ DRUG DEPARTMENT
 SCHMEETTERLING
 
 </h3>
+
 
 
 
@@ -88,6 +136,7 @@ LEVEL
 
 
 
+
 <hr>
 
 
@@ -103,11 +152,13 @@ LEVEL
 
 
 
+
 <button onclick="location.href='./radiation.html'">
 
 ☢ 방사능 부서
 
 </button>
+
 
 
 
@@ -121,11 +172,13 @@ LEVEL
 
 
 
+
 <button onclick="location.href='./bio.html'">
 
 🧫 생물 부서
 
 </button>
+
 
 
 
@@ -139,11 +192,13 @@ LEVEL
 
 
 
+
 <button onclick="location.href='./backroom.html'">
 
 📦 백룸 부서
 
 </button>
+
 
 
 
@@ -157,6 +212,7 @@ LEVEL
 
 
 
+
 </div>
 
 
@@ -165,9 +221,9 @@ LEVEL
 
 
 
-
-
-<!-- MAIN -->
+<!-- =========================
+MAIN
+========================= -->
 
 
 
@@ -221,8 +277,6 @@ LEVEL 4 이상
 
 
 
-
-
 <h3>
 
 부서 안내
@@ -233,46 +287,46 @@ LEVEL 4 이상
 
 
 
-
 <div class="recordBox">
-
 
 
 <p>
 
 SCHMEETTERLING 내부
 
-위험 약물 및 특수 물질 관리를 담당하는 부서입니다.
+위험 물질 및 특수 화합물 관리 부서입니다.
 
 </p>
 
 
 
-
 <p>
 
-본 부서는
+담당 분야 :
 
 <br>
 
-마약 식물 재배,
+🌱 식물 기반 물질 연구
 
 <br>
 
-특수 화합물 제작,
+⚗ 특수 화합물 분석
 
 <br>
 
-약물 보관 및 유통 데이터를 관리합니다.
+🧬 생체 영향 물질 기록
+
+<br>
+
+📦 위험 물질 관리
 
 </p>
 
 
 
-
 <p>
 
-모든 기록은 보안 규정에 의해
+모든 자료는 보안 등급에 따라
 
 제한적으로 열람됩니다.
 
@@ -286,11 +340,7 @@ SCHMEETTERLING 내부
 
 
 
-
-
 <hr>
-
-
 
 
 
@@ -300,7 +350,6 @@ SCHMEETTERLING 내부
 DATABASE
 
 </h3>
-
 
 
 
@@ -316,13 +365,11 @@ DATABASE
 
 
 
-
 <button onclick="location.href='./drug_distribution.html'">
 
 📦 마약 유통 기록
 
 </button>
-
 
 
 
@@ -338,7 +385,6 @@ DATABASE
 
 
 
-
 <button onclick="location.href='./drug_trade.html'">
 
 📄 마약 매매 일지
@@ -349,13 +395,11 @@ DATABASE
 
 
 
-
 <button onclick="location.href='./drug_greenhouse.html'">
 
 🌿 온실
 
 </button>
-
 
 
 
@@ -372,6 +416,7 @@ DATABASE
 
 
 <hr>
+
 <h3>
 
 FACILITY STATUS
@@ -383,6 +428,8 @@ FACILITY STATUS
 
 
 <div class="recordBox">
+
+
 
 
 
@@ -401,6 +448,23 @@ DRUG LAB - 07
 
 
 
+
+<p>
+
+시설 위치 :
+
+<b>
+
+SECTOR D
+
+</b>
+
+</p>
+
+
+
+
+
 <p>
 
 주 연구 분야 :
@@ -415,11 +479,11 @@ DRUG LAB - 07
 
 <br>
 
-🧬 생체 영향 물질
+🧬 생체 반응 데이터
 
 <br>
 
-📦 위험 물질 관리
+📦 보관 및 관리 시스템
 
 </p>
 
@@ -473,7 +537,10 @@ STABLE
 
 
 
+
+
 </div>
+
 
 
 
@@ -483,6 +550,99 @@ STABLE
 
 <hr>
 
+
+
+
+
+<h3>
+
+GREENHOUSE CONNECTION
+
+</h3>
+
+
+
+
+
+<div class="blueBox">
+
+
+
+
+
+<p>
+
+🌿 연결 시설 :
+
+<b>
+
+DRUG GREENHOUSE
+
+</b>
+
+</p>
+
+
+
+
+
+<p>
+
+온실 상태 :
+
+<span id="greenStatus">
+
+정상
+
+</span>
+
+</p>
+
+
+
+
+
+<p>
+
+식물 데이터 :
+
+<b>
+
+SYNC COMPLETE
+
+</b>
+
+</p>
+
+
+
+
+
+<p>
+
+환경 제어 :
+
+<b>
+
+AUTO MODE
+
+</b>
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
 
 
 
@@ -502,6 +662,8 @@ RESEARCH LOG
 
 
 
+
+
 <p>
 
 최근 기록 :
@@ -517,9 +679,10 @@ DR-07 PROJECT DATA
 
 
 
+
 <p>
 
-담당 :
+담당 부서 :
 
 <b>
 
@@ -528,6 +691,7 @@ DRUG DEPARTMENT
 </b>
 
 </p>
+
 
 
 
@@ -547,9 +711,10 @@ DRUG DEPARTMENT
 
 
 
+
 <p>
 
-현재 연구 상태 :
+연구 상태 :
 
 <span id="researchState">
 
@@ -561,8 +726,9 @@ DRUG DEPARTMENT
 
 
 
-</div>
 
+
+</div>
 
 
 
@@ -572,6 +738,103 @@ DRUG DEPARTMENT
 
 <hr>
 
+
+
+
+
+<h3>
+
+LIVE MONITOR
+
+</h3>
+
+
+
+
+
+<div class="blueBox">
+
+
+
+
+
+<p>
+
+PLANT ACTIVITY :
+
+<span id="plant">
+
+87
+
+</span>
+
+%
+
+</p>
+
+
+
+
+
+<p>
+
+SECURITY LEVEL :
+
+<span id="level">
+
+A
+
+</span>
+
+</p>
+
+
+
+
+
+<p>
+
+AIR QUALITY :
+
+<span id="air">
+
+NORMAL
+
+</span>
+
+</p>
+
+
+
+
+
+<p>
+
+SYSTEM LOAD :
+
+<span id="load">
+
+42
+
+</span>
+
+%
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
 
 
 
@@ -591,17 +854,24 @@ DIRECTOR MESSAGE
 
 
 
+
+
 <p>
 
-"모든 물질에는 가능성이 존재한다.
+
+"모든 물질은 관리되어야 한다.
 
 <br><br>
 
-중요한 것은 그것을 어떻게 이해하고
+통제되지 않은 가능성은
 
-관리하는가이다."
+위험 요소가 된다."
+
+
 
 </p>
+
+
 
 
 
@@ -615,8 +885,9 @@ DRUG DEPARTMENT DIRECTOR
 
 
 
-</div>
 
+
+</div>
 
 
 
@@ -628,8 +899,7 @@ DRUG DEPARTMENT DIRECTOR
 
 
 
-
-<p style="color:#00aaff;">
+<p class="warningBlue">
 
 ⚠ WARNING :
 
@@ -640,15 +910,23 @@ RESTRICTED MATERIAL STORAGE
 
 
 
+
 <p>
 
-허가되지 않은 접근은 기록되며
+허가되지 않은 접근 기록은 저장되며
 
-보안 규정에 따라 처리됩니다.
+보안 시스템에 의해 관리됩니다.
 
 </p>
 
+<br>
 
+
+<button onclick="location.href='./main.html'">
+
+← CENTRAL TERMINAL
+
+</button>
 
 
 
@@ -673,15 +951,22 @@ RESTRICTED MATERIAL STORAGE
 <script>
 
 
+// ========================
+// USER DATA
+// ========================
+
+
 let user = localStorage.getItem("userName");
 
 let level = localStorage.getItem("userLevel");
 
 
 
+
 document.getElementById("userName").innerHTML =
 
 user || "UNKNOWN";
+
 
 
 
@@ -695,11 +980,14 @@ level || "NONE";
 
 
 
-// 실시간 상태 변화
-
+// ========================
+// LIVE FACILITY SYSTEM
+// ========================
 
 
 setInterval(function(){
+
+
 
 
 
@@ -719,10 +1007,15 @@ let status = [
 
 
 
+
 document.getElementById("drugStatus").innerHTML =
 
 
 status[Math.floor(Math.random()*status.length)];
+
+
+
+
 
 
 
@@ -743,10 +1036,13 @@ let security = [
 
 
 
+
 document.getElementById("security").innerHTML =
 
 
 security[Math.floor(Math.random()*security.length)];
+
+
 
 
 
@@ -762,10 +1058,13 @@ let research = [
 
 "데이터 기록 중",
 
-"실험 준비 중"
+"실험 준비 중",
+
+"보안 검사 중"
 
 
 ];
+
 
 
 
@@ -773,6 +1072,96 @@ document.getElementById("researchState").innerHTML =
 
 
 research[Math.floor(Math.random()*research.length)];
+
+
+
+
+
+
+
+
+let greenhouse = [
+
+
+"정상",
+
+"환경 조정 중",
+
+"자동 관리 중",
+
+"데이터 분석 중"
+
+
+];
+
+
+
+
+document.getElementById("greenStatus").innerHTML =
+
+
+greenhouse[Math.floor(Math.random()*greenhouse.length)];
+
+
+
+
+
+
+
+// 식물 활성도
+
+
+document.getElementById("plant").innerHTML =
+
+
+Math.floor(70 + Math.random()*30);
+
+
+
+
+
+
+
+
+// 공기 상태
+
+
+let air = [
+
+
+"NORMAL",
+
+"FILTERING",
+
+"CHECKING"
+
+
+];
+
+
+
+
+document.getElementById("air").innerHTML =
+
+
+air[Math.floor(Math.random()*air.length)];
+
+
+
+
+
+
+
+
+// 시스템 부하
+
+
+document.getElementById("load").innerHTML =
+
+
+Math.floor(20 + Math.random()*70);
+
+
 
 
 
@@ -786,25 +1175,31 @@ research[Math.floor(Math.random()*research.length)];
 
 
 
-// 시간 표시
+
+
+// ========================
+// TIME
+// ========================
+
 
 
 setInterval(function(){
 
 
 
-let date = new Date();
+let time = new Date();
 
 
 
 document.getElementById("updateTime").innerHTML =
 
 
-date.toLocaleTimeString();
+time.toLocaleTimeString();
 
 
 
 },1000);
+
 
 
 
