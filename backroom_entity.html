@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>BACKROOM ENTITY STORAGE REPORT</title>
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body class="unknownPage">
+
+
+<div class="layout">
+
+
+<!-- SIDE MENU -->
+
+<div class="sideMenu">
+
+
+<h3>
+SCHMEETTERLING
+</h3>
+
+
+<p style="color:#7ef7b7;">
+● SYSTEM ONLINE
+</p>
+
+
+<hr>
+
+
+<p>
+USER
+<br>
+<b id="userName">
+확인중...
+</b>
+</p>
+
+
+<p>
+LEVEL
+<br>
+<b id="userLevel">
+확인중...
+</b>
+</p>
+
+
+<hr>
+
+
+
+<button onclick="location.href='./main.html'">
+🏠 HOME
+</button>
+
+
+<button onclick="location.href='./radiation.html'">
+☢ 방사능 부서
+</button>
+
+
+<button onclick="location.href='./unknown.html'">
+👾 미확인 개체
+</button>
+
+
+<button onclick="location.href='./bio.html'">
+🧫 생물 부서
+</button>
+
+
+<button onclick="location.href='./chemical.html'">
+🧪 화학 부서
+</button>
+
+
+<button onclick="location.href='./backroom.html'">
+📦 백룸 부서
+</button>
+
+
+</div>
+
+
+
+
+<!-- MAIN -->
+
+
+<div class="mainBox">
+
+
+
+<h2>
+BACKROOM ENTITY STORAGE REPORT
+</h2>
+
+
+
+<p>
+<b>CODE :</b> BR-ENTITY
+</p>
+
+
+<p>
+<b>ACCESS LEVEL :</b> STAFF ONLY
+</p>
+
+
+
+<hr>
+
+
+
+<h3>
+DATABASE OVERVIEW
+</h3>
+
+
+
+<p>
+
+백룸 내부에서 회수된 변칙 개체의
+<br>
+수거 / 운송 / 보관 기록을 관리합니다.
+
+</p>
+
+
+
+<hr>
+
+
+
+
+<h3>
+ENTITY DATABASE
+</h3>
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+📦 ENTITY-001 「노란 복도 개체」
+</h2>
+
+
+<p>
+상태 : 보관 중
+<br>
+위험도 : B
+</p>
+
+
+<img src="./entity001.png"
+class="entityImage">
+
+
+
+<p>
+📷 회수 이미지
+<br>
+상태 : 정상
+</p>
+
+
+
+<p>
+발견 위치 :
+<br>
+LEVEL 0 - YELLOW HALLWAY
+</p>
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+📦 ENTITY-002 「벽면의 흔적」
+</h2>
+
+
+<p>
+상태 : 분석 중
+<br>
+위험도 : C
+</p>
+
+
+
+<div class="imageError">
+
+⚠ IMAGE DATA ERROR
+<br>
+FILE CORRUPTED
+
+</div>
+
+
+
+<p>
+
+촬영 데이터 복구 실패.
+<br>
+원본 이미지 확인 불가.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+📦 ENTITY-003 「귀환 불가 구역의 존재」
+</h2>
+
+
+<p>
+상태 : 격리
+<br>
+위험도 : A
+</p>
+
+
+
+<img src="./entity003.png"
+class="entityImage">
+
+
+
+<p>
+📷 회수 당시 이미지
+<br>
+상태 : 정상
+</p>
+
+
+
+<p style="color:#ff7070;">
+
+⚠ 접근 제한 구역
+
+</p>
+
+
+
+<p>
+
+현재 위치 :
+<br>
+CONTAINMENT ROOM B-04
+
+</p>
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+📦 ENTITY-004 「기록되지 않은 개체」
+</h2>
+
+
+
+<p>
+상태 : ERROR
+<br>
+위험도 : UNKNOWN
+</p>
+
+
+
+<div class="imageError">
+
+⚠ DATA CORRUPTED
+<br>
+ENTITY FILE ERROR
+
+</div>
+
+
+
+<p>
+
+개체 번호 생성 과정에서
+<br>
+비정상적인 데이터 변동 발생.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+<p style="color:#ff7070;">
+
+⚠ WARNING : UNAUTHORIZED ACCESS PROHIBITED
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+let user = localStorage.getItem("userName");
+
+let level = localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+user || "UNKNOWN";
+
+
+
+document.getElementById("userLevel").innerHTML =
+level || "NONE";
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
