@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+BIO RESEARCH PAPER ARCHIVE
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+body.bioPage{
+
+background:#020d06;
+
+}
+
+
+.paperBox{
+
+border:1px solid #00ff66;
+
+background:#001a08;
+
+padding:25px;
+
+box-shadow:
+0 0 20px rgba(0,255,100,.3);
+
+}
+
+
+
+.paperTitle{
+
+color:#00ff66;
+
+text-align:center;
+
+font-size:25px;
+
+}
+
+
+
+.document{
+
+border-left:3px solid #00ff66;
+
+padding-left:15px;
+
+}
+
+
+
+.status{
+
+color:#00ff66;
+
+font-weight:bold;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body class="bioPage">
+
+
+
+<div class="layout">
+
+
+
+<div class="sideMenu">
+
+
+<h3>
+
+SCHMEETTERLING
+
+</h3>
+
+
+<p style="color:#00ff66;">
+
+● RESEARCH ONLINE
+
+</p>
+
+
+
+<hr>
+
+
+<button onclick="location.href='./bio.html'">
+
+← BIO DEPARTMENT
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="mainBox">
+
+
+
+<h2>
+
+📄 BIOLOGICAL RESEARCH ARCHIVE
+
+</h2>
+
+
+
+<p>
+
+<b>DATABASE :</b>
+
+BIO-PAPER SYSTEM
+
+</p>
+
+
+
+<hr>
+
+
+
+
+<div class="paperBox">
+
+
+<p id="number">
+
+PAPER 001 / 005
+
+</p>
+
+
+
+<h2 class="paperTitle" id="title">
+
+비세포성 생명체의 구조 분석
+
+</h2>
+
+
+
+<hr>
+
+
+
+<div class="document">
+
+
+<p>
+
+<b>연구 대상 :</b>
+
+<span id="target">
+
+BIO-004 역세포 개체
+
+</span>
+
+</p>
+
+
+
+<p>
+
+<b>작성자 :</b>
+
+BIO RESEARCH TEAM
+
+</p>
+
+
+
+<p>
+
+<b>상태 :</b>
+
+<span class="status" id="state">
+
+APPROVED
+
+</span>
+
+</p>
+
+
+
+</div>
+
+
+
+<hr>
+
+
+
+<h3>
+
+ABSTRACT
+
+</h3>
+
+
+<p id="abstract">
+
+기존 생물 분류 체계에 포함되지 않는
+비세포성 생명체의 생체 활동을 분석한다.
+
+</p>
+
+
+
+
+<h3>
+
+RESULT
+
+</h3>
+
+
+<p id="result">
+
+생명 활동은 확인되었으나
+세포 구조는 발견되지 않음.
+
+</p>
+
+
+
+
+<h3>
+
+RESEARCH NOTE
+
+</h3>
+
+
+<div class="paperBox">
+
+
+<p id="note">
+
+"생명이란 반드시 세포로 이루어져야 하는가?"
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+<button onclick="prevPaper()">
+
+◀ 이전 논문
+
+</button>
+
+
+
+<button onclick="nextPaper()">
+
+다음 논문 ▶
+
+</button>
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+let index=0;
+
+
+let papers=[
+
+
+{
+
+title:"비세포성 생명체의 구조 분석",
+
+target:"BIO-004 역세포 개체",
+
+abstract:"기존 생물 분류 체계에 포함되지 않는 비세포성 생명체의 생체 활동을 분석한다.",
+
+result:"생명 활동은 확인되었으나 세포 구조는 발견되지 않음.",
+
+note:"생명이란 반드시 세포로 이루어져야 하는가?"
+
+},
+
+
+{
+
+title:"변칙 균사체 성장 패턴 연구",
+
+target:"BIO-001 검은 균사체",
+
+abstract:"일반 균류와 다른 성장 방식을 가진 변칙 균사체 분석.",
+
+result:"주변 환경 변화에 따라 성장 속도가 변화함.",
+
+note:"대상은 주변 환경을 인식하는 것으로 추정됨."
+
+},
+
+
+{
+
+title:"액체 형태 생명 구조 논문",
+
+target:"BIO-002 액체 생명체",
+
+abstract:"고정된 형태를 가지지 않는 생명체의 구조 연구.",
+
+result:"형태 변화와 생체 반응 확인.",
+
+note:"현재까지 안정적인 보관 방법 없음."
+
+},
+
+
+{
+
+title:"미확인 미생물 군집 분석",
+
+target:"BIO-005 검은 포자 군집",
+
+abstract:"비정상적인 증식 능력을 가진 미생물 연구.",
+
+result:"격리 환경에서 지속적인 활동 확인.",
+
+note:"추가 연구 필요."
+
+},
+
+
+{
+
+title:"신규 생명 분류 기준 연구",
+
+target:"UNKNOWN LIFEFORM",
+
+abstract:"기존 생물학적 기준으로 분류할 수 없는 생명체 연구.",
+
+result:"새로운 생명 분류 기준 필요.",
+
+note:"학계 제출 준비 중."
+
+}
+
+
+];
+
+
+
+
+function updatePaper(){
+
+
+let p=papers[index];
+
+
+document.getElementById("number").innerHTML=
+
+"PAPER 00"+(index+1)+" / 005";
+
+
+document.getElementById("title").innerHTML=p.title;
+
+document.getElementById("target").innerHTML=p.target;
+
+document.getElementById("abstract").innerHTML=p.abstract;
+
+document.getElementById("result").innerHTML=p.result;
+
+document.getElementById("note").innerHTML=p.note;
+
+
+}
+
+
+
+
+
+function nextPaper(){
+
+
+index++;
+
+
+if(index>=papers.length){
+
+index=0;
+
+}
+
+
+updatePaper();
+
+
+}
+
+
+
+
+
+function prevPaper(){
+
+
+index--;
+
+
+if(index<0){
+
+index=papers.length-1;
+
+}
+
+
+updatePaper();
+
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
