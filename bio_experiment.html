@@ -906,6 +906,7 @@ microbes.length;
 
 
 function startMicroscope(){
+function startMicroscope(){
 
 
 if(microscopeTimer)return;
@@ -914,7 +915,6 @@ if(microscopeTimer)return;
 logText(
 
 "> MICROSCOPE CONNECTED\n\n"+
-
 "> CELL OBSERVATION START"
 
 );
@@ -932,6 +932,19 @@ drawMicrobes,
 );
 
 
+
+scanTimer=
+
+setInterval(
+
+scanEffect,
+
+30
+
+);
+
+
+
 }
 
 
@@ -942,8 +955,12 @@ function stopMicroscope(){
 
 clearInterval(microscopeTimer);
 
+clearInterval(scanTimer);
+
 
 microscopeTimer=null;
+
+scanTimer=null;
 
 
 logText(
@@ -953,7 +970,10 @@ logText(
 );
 
 
-}
+  }
+
+
+
 // ==========================
 // LIFE DATABASE
 // ==========================
@@ -1873,36 +1893,7 @@ logText(
 // ==========================
 
 
-let scanY=0;
 
-let scanTimer=null;
-
-
-function startMicroscope(){
-
-
-if(microscopeTimer)return;
-
-
-logText(
-
-"> MICROSCOPE CONNECTED\n\n"+
-
-"> CELL OBSERVATION START"
-
-);
-
-
-
-microscopeTimer=
-
-setInterval(
-
-drawMicrobes,
-
-30
-
-);
 
 
 
