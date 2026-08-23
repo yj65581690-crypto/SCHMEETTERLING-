@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+BELPHEGOR - STAFF ID
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+<style>
+
+/* ===========================
+BELPHEGOR SPECIAL THEME
+=========================== */
+
+body{
+
+margin:0;
+
+background:
+radial-gradient(circle at top,#31103b 0%,#120814 35%,#050505 100%);
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+
+/* 보라 안개 */
+
+.fog{
+
+position:fixed;
+
+bottom:-100px;
+
+left:0;
+
+width:100%;
+
+height:300px;
+
+background:radial-gradient(circle,
+rgba(170,80,255,.25),
+transparent 70%);
+
+filter:blur(60px);
+
+animation:fogMove 14s ease-in-out infinite;
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+@keyframes fogMove{
+
+0%{
+
+transform:translateX(-80px);
+
+opacity:.3;
+
+}
+
+50%{
+
+transform:translateX(80px);
+
+opacity:.7;
+
+}
+
+100%{
+
+transform:translateX(-80px);
+
+opacity:.3;
+
+}
+
+}
+
+
+
+/* 환각 입자 */
+
+.particle{
+
+position:fixed;
+
+color:#c78fff;
+
+font-size:18px;
+
+pointer-events:none;
+
+animation:floatParticle linear infinite;
+
+opacity:.7;
+
+}
+
+@keyframes floatParticle{
+
+0%{
+
+transform:translateY(100vh) rotate(0deg);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:.8;
+
+}
+
+85%{
+
+opacity:.8;
+
+}
+
+100%{
+
+transform:translateY(-120px) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+
+
+/* 카드 */
+
+.belphegorBox{
+
+border:2px solid #8d45ff;
+
+background:linear-gradient(135deg,#121212,#1d1128);
+
+box-shadow:0 0 35px rgba(145,80,255,.35);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+/* 사진 */
+
+.photo{
+
+text-align:center;
+
+margin-bottom:20px;
+
+}
+
+.photo img{
+
+width:220px;
+
+border:2px solid #9b66ff;
+
+box-shadow:0 0 25px rgba(180,120,255,.5);
+
+transition:.4s;
+
+cursor:pointer;
+
+}
+
+.photo img:hover{
+
+transform:scale(1.02);
+
+}
+
+
+
+/* 이름 */
+
+.belphegorTitle{
+
+color:#e6d2ff;
+
+letter-spacing:4px;
+
+animation:titleGlow 3s infinite;
+
+}
+
+@keyframes titleGlow{
+
+0%{
+
+text-shadow:0 0 5px #b16dff;
+
+}
+
+50%{
+
+text-shadow:0 0 25px #b16dff;
+
+}
+
+100%{
+
+text-shadow:0 0 5px #b16dff;
+
+}
+
+}
+
+
+
+/* 상태 */
+
+.online{
+
+color:#8fd4ff;
+
+font-weight:bold;
+
+}
+
+
+
+/* 경고 */
+
+.warningBox{
+
+border:2px solid #7d42d9;
+
+padding:20px;
+
+background:rgba(120,60,255,.12);
+
+box-shadow:0 0 20px rgba(160,100,255,.3);
+
+}
+
+
+
+/* 문서 깨짐 */
+
+.glitch{
+
+transition:.3s;
+
+}
+
+
+
+/* 화면 환각 */
+
+.hallucination{
+
+filter:invert(1)
+hue-rotate(180deg)
+blur(2px);
+
+transition:.3s;
+
+}
+
+
+
+/* 메시지 */
+
+.secretMessage{
+
+position:fixed;
+
+top:25px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+padding:12px 25px;
+
+border:1px solid #b56cff;
+
+background:black;
+
+color:#e7c8ff;
+
+display:none;
+
+z-index:999;
+
+box-shadow:0 0 20px #9a52ff;
+
+font-weight:bold;
+
+letter-spacing:2px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="fog"></div>
+
+<div id="particles"></div>
+
+<div class="secretMessage" id="secretMessage">
+
+YOUR DESIRE HAS BEEN RECORDED.
+
+</div>
+
+<div class="mainBox">
+
+<h2>
+
+STAFF IDENTIFICATION CARD
+
+</h2>
+
+<hr>
+
+<div class="recordBox belphegorBox">
+
+<div class="photo">
+
+<img
+id="belphegorPhoto"
+src="belphegor.jpg">
+
+</div>
+
+<div class="idInfo">
+
+<h2 class="belphegorTitle">
+
+BELPHEGOR
+
+</h2>
+
+<p>
+
+<b>FULL NAME</b> :
+
+Belphegor
+
+</p>
+
+<p>
+
+<b>사번</b> :
+
+UE-T618
+
+</p>
+
+<p>
+
+<b>직급</b> :
+
+책임자
+
+</p>
+
+<p>
+
+<b>DEPARTMENT</b> :
+
+Drug Department
+
+</p>
+
+<p>
+
+<b>STATUS</b> :
+
+<span class="online" id="status">
+
+● OBSERVING
+
+</span>
+
+</p>
+
+<p>
+
+<b>SECURITY LEVEL</b> :
+
+LEVEL 5
+
+</p>
+
+<p>
+
+<b>SPECIES</b> :
+
+Devil
+
+</p>
+
+</div>
+
+</div>
+
+<hr>
+<div class="recordBox glitch" id="recordBox">
+
+<h2>
+
+STAFF DATABASE
+
+</h2>
+
+<hr>
+
+<h3>
+
+PERSONAL INFORMATION
+
+</h3>
+
+<p>
+
+<b>FULL NAME</b> :
+
+Belphegor
+
+</p>
+
+<p>
+
+<b>HEIGHT</b> :
+
+208 cm
+
+</p>
+
+<p>
+
+<b>SPECIES</b> :
+
+Devil
+
+</p>
+
+<p>
+
+<b>AGE</b> :
+
+4,360,000,000
+
+</p>
+
+<p>
+
+<b>IQ</b> :
+
+210
+
+</p>
+
+<p>
+
+<b>FAMILY RELATIONS</b> :
+
+Cecilia
+
+</p>
+
+<hr>
+
+<h3>
+
+PERSONALITY
+
+</h3>
+
+<p>
+
+<b>나태한</b>
+
+</p>
+
+<p>
+
+그는 아주 사소한 일마저 스스로 하려는 의지가 없습니다.
+어떻게든 직접 움직이지 않으려 하며,
+다른 이들에게 대신 하라 명령조로 말하는 일이 잦습니다.
+
+</p>
+
+<br>
+
+<p>
+
+<b>무관심한</b>
+
+</p>
+
+<p>
+
+자신이 손해를 보지 않는 일이라면
+대부분의 상황에 관심을 두지 않습니다.
+상대가 어떤 일을 겪더라도
+'내 알 바 아니다.'라는 태도를 보이는 경우가 많습니다.
+
+</p>
+
+<br>
+
+<p>
+
+<b>냉정한</b>
+
+</p>
+
+<p>
+
+감정보다 결과를 우선시하며,
+필요한 선택을 망설이지 않습니다.
+효율과 실리를 가장 중요하게 여기며
+어떤 상황에서도 침착함을 유지합니다.
+
+</p>
+
+<br>
+
+<p>
+
+<b>무력한</b>
+
+</p>
+
+<p>
+
+겉으로는 모든 일에 흥미를 잃은 듯한 모습을 보입니다.
+항상 귀찮다는 말을 입에 달고 살며
+필요 이상의 행동을 하지 않습니다.
+
+</p>
+
+<br>
+
+<p>
+
+<b>느긋한</b>
+
+</p>
+
+<p>
+
+위험한 상황에서도 크게 당황하지 않습니다.
+느린 말투와 행동을 유지하지만,
+필요한 순간에는 누구보다 빠르게 움직입니다.
+
+</p>
+
+<hr>
+
+<h3>
+
+SPECIAL CHARACTERISTICS
+
+</h3>
+
+<p>
+
+<b>기원</b>
+
+</p>
+
+<p>
+
+기원전 ████년 6월 6일
+06시 ██분
+
+</p>
+
+<br>
+
+<p>
+
+<b>상징</b>
+
+</p>
+
+<p>
+
+나태를 관장하는 군주.
+
+대표적인 상징물은
+<b>쿠션</b>으로 기록되어 있습니다.
+
+</p>
+
+<br>
+
+<p>
+
+<b>민첩</b>
+
+</p>
+
+<p>
+
+평소에는 거의 움직이지 않지만,
+신체 능력만 놓고 보면
+매우 빠른 속도를 가진 존재입니다.
+
+</p>
+
+<br>
+
+<p>
+
+<b>염소 뿔</b>
+
+</p>
+
+<p>
+
+얼굴이 뿔에 찔리는 사고를 방지하기 위해
+주기적으로 관리하고 있습니다.
+
+</p>
+
+<br>
+
+<p>
+
+<b>꼬리</b>
+
+</p>
+
+<p>
+
+몸 전체는 매우 예민하지만
+꼬리는 상대적으로 둔감합니다.
+
+통증보다 압박감만 느끼며,
+접촉 자체는 크게 반응하지 않습니다.
+
+다만 원하지 않는 접촉은
+불쾌하게 받아들입니다.
+
+</p>
+
+<br>
+
+<p>
+
+<b>발명 능력</b>
+
+</p>
+
+<p>
+
+움직이기 싫다는 이유 하나만으로
+다양한 장치와 기계를 발명해 왔습니다.
+
+그 결과 현재는
+SCHMEETTERLING 내부에서도
+손꼽히는 발명 능력을 보유하고 있습니다.
+
+</p>
+
+<br>
+
+<p>
+
+<b>손</b>
+
+</p>
+
+<p>
+
+손끝은 태어날 때부터 붉은색을 띠고 있으며,
+항상 차가운 체온을 유지합니다.
+
+</p>
+
+<hr>
+
+<h3>
+
+SPECIAL OBSERVATION
+
+</h3>
+
+<p>
+
+- 악마 군주로 분류됨
+
+</p>
+
+<p>
+
+- 극단적인 나태 성향 확인
+
+</p>
+
+<p>
+
+- 움직임을 최소화하려는 행동 지속
+
+</p>
+
+<p>
+
+- 높은 지능으로 대부분의 업무를 자동화
+
+</p>
+
+<p>
+
+- 인간과 다른 시간 감각을 보유
+
+</p>
+
+<p>
+
+- 위험성보다 예측 불가능성이 더 높음
+
+</p>
+
+<hr>
+
+<div class="warningBox">
+
+<h3>
+
+⚠ NOTANDUM
+
+</h3>
+
+<p>
+
+계약, 소원,
+대가와 관련된 대화를
+권장하지 않습니다.
+
+</p>
+
+<p>
+
+해당 개체는
+상대의 욕망을 매우 빠르게 파악하는 것으로
+확인되었습니다.
+
+</p>
+
+<p>
+
+불필요한 흥미를 보이는 경우
+즉시 대화를 종료하십시오.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>
+
+FINAL SECURITY NOTE
+
+</h3>
+
+<div class="recordBox">
+
+<p>
+
+관리 대상 :
+
+<b style="color:#c785ff;">
+
+DEMON LORD
+
+</b>
+
+</p>
+
+<p>
+
+위험도 :
+
+<b style="color:#ff66aa;">
+
+CLASS S
+
+</b>
+
+</p>
+
+<p>
+
+권장 조치 :
+
+불필요한 계약 및 흥미 유발 금지.
+
+</p>
+
+</div>
+
+<br>
+
+<button onclick="location.href='./drug_staff.html'">
+
+← 마약 부서 직원 목록
+
+</button>
+<script>
+
+// =======================
+// PARTICLE EFFECT
+// =======================
+
+const particleContainer =
+document.getElementById("particles");
+
+const symbols = [
+"✦","✧","◆","◈","✶"
+];
+
+setInterval(()=>{
+
+let p=document.createElement("div");
+
+p.className="particle";
+
+p.innerHTML=
+symbols[Math.floor(Math.random()*symbols.length)];
+
+p.style.left=
+Math.random()*100+"vw";
+
+p.style.animationDuration=
+(8+Math.random()*6)+"s";
+
+p.style.fontSize=
+(12+Math.random()*18)+"px";
+
+particleContainer.appendChild(p);
+
+setTimeout(()=>{
+
+p.remove();
+
+},15000);
+
+},350);
+
+
+
+
+// =======================
+// STATUS CHANGE
+// =======================
+
+let statusList=[
+
+"● OBSERVING",
+
+"● WATCHING",
+
+"● ACTIVE",
+
+"● UNKNOWN"
+
+];
+
+setInterval(()=>{
+
+document.getElementById("status").innerHTML=
+
+statusList[
+Math.floor(Math.random()*statusList.length)
+];
+
+},4000);
+
+
+
+
+// =======================
+// 30 SECOND MESSAGE
+// =======================
+
+setTimeout(()=>{
+
+let msg=
+document.getElementById("secretMessage");
+
+msg.style.display="block";
+
+setTimeout(()=>{
+
+msg.style.display="none";
+
+},5000);
+
+},30000);
+
+
+
+
+// =======================
+// HALLUCINATION EFFECT
+// =======================
+
+let clickCount=0;
+
+const photo=
+document.getElementById("belphegorPhoto");
+
+photo.onclick=function(){
+
+clickCount++;
+
+
+
+
+// 5번 클릭
+
+if(clickCount==5){
+
+document.body.classList.add("hallucination");
+
+setTimeout(()=>{
+
+document.body.classList.remove("hallucination");
+
+},2000);
+
+}
+
+
+
+
+// 7번 클릭
+
+if(clickCount>=7){
+
+alert(
+
+"ENTITY IDENTIFIED\n\nBELPHEGOR\n\nDO NOT MAKE A CONTRACT."
+
+);
+
+clickCount=0;
+
+}
+
+};
+
+
+
+
+// =======================
+// DOCUMENT GLITCH
+// =======================
+
+let original=
+
+document.getElementById("recordBox").innerHTML;
+
+setInterval(()=>{
+
+let box=
+document.getElementById("recordBox");
+
+box.innerHTML=
+
+box.innerHTML.replace(
+
+"Belphegor",
+
+"████████"
+
+);
+
+setTimeout(()=>{
+
+box.innerHTML=original;
+
+},1200);
+
+},18000);
+
+</script>
+
+</body>
+</html>
