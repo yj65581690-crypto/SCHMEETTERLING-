@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+BIO EXPERIMENT LAB
+</title>
+
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+body.bioPage{
+
+background:#020d06;
+
+}
+
+
+
+.labBox{
+
+border:1px solid #00ff66;
+
+background:#001a08;
+
+padding:20px;
+
+margin:20px 0;
+
+box-shadow:
+
+0 0 20px rgba(0,255,100,.25);
+
+}
+
+
+
+.monitor{
+
+background:#000;
+
+border:1px solid #00ff66;
+
+padding:15px;
+
+height:150px;
+
+overflow:auto;
+
+font-family:monospace;
+
+color:#00ff66;
+
+}
+
+
+
+.status{
+
+color:#00ff66;
+
+font-weight:bold;
+
+}
+
+
+
+.warning{
+
+color:#ff5555;
+
+font-weight:bold;
+
+}
+
+
+
+button{
+
+margin:5px;
+
+}
+
+
+
+#microscope{
+
+background:#000;
+
+border:2px solid #00ff66;
+
+width:100%;
+
+}
+
+
+
+.progress{
+
+height:12px;
+
+background:#111;
+
+border:1px solid #00ff66;
+
+}
+
+
+.progress div{
+
+height:100%;
+
+width:0%;
+
+background:#00ff66;
+
+transition:.5s;
+
+}
+
+
+
+.specimen{
+
+text-align:center;
+
+font-size:30px;
+
+color:#00ff66;
+
+text-shadow:
+
+0 0 10px #00ff66;
+
+}
+
+
+
+.saved{
+
+background:#000;
+
+border:1px solid #00ff66;
+
+padding:10px;
+
+height:180px;
+
+overflow:auto;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body class="bioPage">
+
+
+<div class="layout">
+
+
+
+<!-- SIDE MENU -->
+
+
+<div class="sideMenu">
+
+
+<h3>
+
+SCHMEETTERLING
+
+</h3>
+
+
+
+<p class="status">
+
+● BIO SYSTEM ONLINE
+
+</p>
+
+
+<hr>
+
+
+<p>
+
+USER
+
+<br>
+
+<b id="userName">
+
+UNKNOWN
+
+</b>
+
+</p>
+
+
+<p>
+
+LEVEL
+
+<br>
+
+<b id="userLevel">
+
+NONE
+
+</b>
+
+</p>
+
+
+<hr>
+
+
+
+<button onclick="location.href='./bio.html'">
+
+← BIO DEPARTMENT
+
+</button>
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 CENTRAL TERMINAL
+
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- MAIN -->
+
+
+<div class="mainBox">
+
+
+
+<h2>
+
+🧫 BIO EXPERIMENT LAB
+
+</h2>
+
+
+
+<p>
+
+<b>시설 코드 :</b>
+
+BIO-LAB-04
+
+</p>
+
+
+
+<p>
+
+<b>연구 상태 :</b>
+
+<span class="status">
+
+ACTIVE
+
+</span>
+
+</p>
+
+
+
+<hr>
+
+
+
+<h3>
+
+🧬 SPECIMEN CREATION
+
+</h3>
+
+
+
+<div class="labBox">
+
+
+<div class="specimen"
+
+id="lifeName">
+
+UNKNOWN LIFEFORM
+
+</div>
+
+
+<br>
+
+
+<p>
+
+등록 번호 :
+
+<b id="lifeCode">
+
+BIO-000
+
+</b>
+
+</p>
+
+
+<p>
+
+분류 :
+
+<b id="lifeType">
+
+UNKNOWN
+
+</b>
+
+</p>
+
+
+<p>
+
+위험 등급 :
+
+<b id="lifeRisk">
+
+UNKNOWN
+
+</b>
+
+</p>
+
+
+<p>
+
+생존 가능성 :
+
+<b id="lifeRate">
+
+0%
+
+</b>
+
+</p>
+
+
+
+<button onclick="createLife()">
+
+🧬 신규 생명체 생성
+
+</button>
+
+
+<button onclick="saveLife()">
+
+💾 연구 데이터 저장
+
+</button>
+
+<button onclick="registerCatalog()">
+
+📖 생명체 도감 등록
+
+</button>
+
+</div>
+
+
+
+<hr>
+
+
+<h3>
+
+🔬 LIVE MICROSCOPE
+
+</h3>
+
+
+
+<div class="labBox">
+
+
+<canvas
+
+id="microscope"
+
+width="700"
+
+height="400">
+
+</canvas>
+
+
+<br>
+
+
+<button onclick="startMicroscope()">
+
+🔍 현미경 시작
+
+</button>
+
+
+<button onclick="stopMicroscope()">
+
+⏹ 관찰 종료
+
+</button>
+
+
+
+</div>
+<hr>
+
+
+<h3>
+
+🧫 CULTURE CHAMBER
+
+</h3>
+
+
+
+<div class="labBox">
+
+
+<p>
+
+배양 상태 :
+
+<b id="cultureState">
+
+대기중
+
+</b>
+
+</p>
+
+
+
+<div class="progress">
+
+<div id="cultureProgress">
+
+</div>
+
+</div>
+
+
+
+<br>
+
+
+<button onclick="startCulture()">
+
+🧫 배양 시작
+
+</button>
+
+
+
+<button onclick="mutationEvent()">
+
+☣ 돌연변이 유도
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+🦠 SPECIMEN INFORMATION
+
+</h3>
+
+
+
+<div class="labBox">
+
+
+
+<p>
+
+현재 개체 :
+
+<b id="specimen">
+
+없음
+
+</b>
+
+</p>
+
+<button onclick="dnaAnalyze()">
+
+🧬 DNA 분석
+
+</button>
+
+
+
+
+<p>
+
+세포 활동 :
+
+<b id="cellActivity">
+
+WAITING
+
+</b>
+
+</p>
+
+
+
+<p>
+
+DNA 안정도 :
+
+<b id="dna">
+
+0%
+
+</b>
+
+</p>
+
+
+
+<p>
+
+변이 가능성 :
+
+<b id="mutation">
+
+0%
+
+</b>
+
+</p>
+
+
+
+<p>
+
+개체 수 :
+
+<b id="count">
+
+0
+
+</b>
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<h3>
+
+📡 RESEARCH MONITOR
+
+</h3>
+
+
+
+<div class="monitor"
+
+id="log">
+
+SYSTEM READY...
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+<h3>
+
+📁 SAVED BIO DATABASE
+
+</h3>
+
+
+
+<div class="labBox">
+
+
+
+<div class="saved"
+
+id="savedList">
+
+저장된 연구 데이터 없음
+
+</div>
+
+
+
+<br>
+
+
+
+<button onclick="clearDatabase()">
+
+🗑 데이터 삭제
+
+</button>
+
+
+</div>
+
+
+
+
+<hr>
+
+
+
+
+<button onclick="location.href='./bio.html'">
+
+← BIO DEPARTMENT
+
+</button>
+
+
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+// ==========================
+// USER
+// ==========================
+
+
+document.getElementById("userName").innerHTML =
+
+localStorage.getItem("userName") || "UNKNOWN";
+
+
+document.getElementById("userLevel").innerHTML =
+
+localStorage.getItem("userLevel") || "NONE";
+
+
+
+
+// ==========================
+// MICROBE ENGINE
+// ==========================
+
+
+let canvas =
+
+document.getElementById("microscope");
+
+
+let ctx =
+
+canvas.getContext("2d");
+
+
+
+let microbes=[];
+
+
+let microscopeTimer=null;
+
+
+
+function createMicrobe(){
+
+
+microbes.push({
+
+x:Math.random()*700,
+
+y:Math.random()*400,
+
+speed:(Math.random()*2)+0.5,
+
+size:3+Math.random()*8,
+
+life:100,
+
+type:
+
+Math.floor(Math.random()*3)
+
+});
+
+
+}
+
+
+
+
+for(let i=0;i<15;i++){
+
+createMicrobe();
+
+}
+
+
+
+
+function drawMicrobes(){
+
+
+ctx.clearRect(
+
+0,
+
+0,
+
+700,
+
+400
+
+);
+
+
+
+/* 현미경 원 */
+
+ctx.beginPath();
+
+ctx.strokeStyle="#00ff66";
+
+ctx.arc(
+
+350,
+
+200,
+
+170,
+
+0,
+
+Math.PI*2
+
+);
+
+ctx.stroke();
+
+
+
+
+
+for(let i=0;i<microbes.length;i++){
+
+
+let m=microbes[i];
+
+
+
+ctx.beginPath();
+
+
+ctx.fillStyle="#00ff66";
+
+
+ctx.arc(
+
+m.x,
+
+m.y,
+
+m.size,
+
+0,
+
+Math.PI*2
+
+);
+
+
+
+ctx.fill();
+
+
+
+
+
+// 움직임
+
+
+m.x+=
+
+Math.cos(Date.now()/500+m.x)
+
+*m.speed;
+
+
+m.y+=
+
+Math.sin(Date.now()/700+m.y)
+
+*m.speed;
+
+
+
+
+// 화면 밖 이동 방지
+
+
+if(m.x<0)m.x=700;
+
+if(m.x>700)m.x=0;
+
+if(m.y<0)m.y=400;
+
+if(m.y>400)m.y=0;
+
+
+
+
+// 가끔 분열
+
+
+if(Math.random()<0.001){
+
+createMicrobe();
+
+}
+
+
+
+}
+
+
+
+
+document.getElementById("count").innerHTML=
+
+microbes.length;
+
+
+}
+
+
+
+
+
+function startMicroscope(){
+
+
+if(microscopeTimer)return;
+
+
+logText(
+
+"> MICROSCOPE CONNECTED\n\n"+
+
+"> CELL OBSERVATION START"
+
+);
+
+
+
+microscopeTimer=
+
+setInterval(
+
+drawMicrobes,
+
+30
+
+);
+
+
+}
+
+
+
+
+function stopMicroscope(){
+
+
+clearInterval(microscopeTimer);
+
+
+microscopeTimer=null;
+
+
+logText(
+
+"> OBSERVATION STOPPED"
+
+);
+
+
+}
+// ==========================
+// LIFE DATABASE
+// ==========================
+
+
+let currentLife={};
+
+
+
+let firstNames=[
+
+"Umbra",
+
+"Nox",
+
+"Myco",
+
+"Xeno",
+
+"Proto",
+
+"Void",
+
+"Nano",
+
+"Astra",
+
+"Echo",
+
+"Terra",
+
+"Vita",
+
+"Omega"
+
+];
+
+
+
+let lastNames=[
+
+"spora",
+
+"cell",
+
+"bacteria",
+
+"entity",
+
+"organism",
+
+"colony",
+
+"fungi",
+
+"mass",
+
+"life",
+
+"proto"
+
+];
+
+
+
+let lifeTypes=[
+
+"미확인 미생물",
+
+"변칙 균류",
+
+"비세포성 생명체",
+
+"액체 생명체",
+
+"광물성 생명체",
+
+"세포 군집",
+
+"기생 생명체",
+
+"심해 미생물"
+
+];
+
+
+
+let lifeRisk=[
+
+"SAFE",
+
+"LOW",
+
+"CAUTION",
+
+"HIGH",
+
+"EXTREME"
+
+];
+
+
+
+let researchNotes=[
+
+"기존 생물 분류 체계에 포함되지 않음.",
+
+"세포 구조가 지속적으로 변화함.",
+
+"관찰자를 인식하는 반응 확인.",
+
+"배양 환경에서 높은 적응성 확인.",
+
+"DNA 배열 불안정 상태."
+
+];
+
+
+
+
+
+// ==========================
+// CREATE SPECIMEN
+// ==========================
+
+
+function createLife(){
+
+
+
+let name=
+
+firstNames[
+
+Math.floor(Math.random()*firstNames.length)
+
+]
+
++
+
+"-"
+
++
+
+lastNames[
+
+Math.floor(Math.random()*lastNames.length)
+
+];
+
+
+
+
+currentLife={
+
+
+name:name,
+
+
+code:
+
+"BIO-"
+
++
+
+Math.floor(100+Math.random()*900),
+
+
+
+type:
+
+lifeTypes[
+
+Math.floor(Math.random()*lifeTypes.length)
+
+],
+
+
+
+risk:
+
+lifeRisk[
+
+Math.floor(Math.random()*lifeRisk.length)
+
+],
+
+
+
+rate:
+
+Math.floor(
+
+40+Math.random()*60
+
+)
+
+
+
+};
+
+
+
+
+document.getElementById("lifeName").innerHTML=
+
+currentLife.name;
+
+
+
+document.getElementById("lifeCode").innerHTML=
+
+currentLife.code;
+
+
+
+document.getElementById("lifeType").innerHTML=
+
+currentLife.type;
+
+
+
+document.getElementById("lifeRisk").innerHTML=
+
+currentLife.risk;
+
+
+
+document.getElementById("lifeRate").innerHTML=
+
+currentLife.rate+"%";
+
+
+
+document.getElementById("specimen").innerHTML=
+
+currentLife.name;
+
+
+
+logText(
+
+"> NEW SPECIMEN CREATED\n\n"+
+
+"NAME : "+currentLife.name+
+
+"\nTYPE : "+currentLife.type
+
+);
+
+
+
+}
+
+
+
+
+// ==========================
+// SAVE
+// ==========================
+
+
+function saveLife(){
+
+
+if(!currentLife.name){
+
+alert("생명체를 먼저 생성하세요.");
+
+return;
+
+}
+
+
+
+let data=
+
+JSON.parse(
+
+localStorage.getItem("BIO_DATA")
+
+)
+
+|| [];
+
+
+
+
+data.push(currentLife);
+
+
+
+localStorage.setItem(
+
+"BIO_DATA",
+
+JSON.stringify(data)
+
+);
+
+
+
+loadDatabase();
+
+
+
+logText(
+
+"> DATABASE SAVED\n\n"+
+
+currentLife.code
+
+);
+
+
+
+}
+
+
+
+
+// ==========================
+// LOAD DATABASE
+// ==========================
+
+
+function loadDatabase(){
+
+
+
+let data=
+
+JSON.parse(
+
+localStorage.getItem("BIO_DATA")
+
+)
+
+|| [];
+
+
+
+let box=
+
+document.getElementById("savedList");
+
+
+
+if(data.length===0){
+
+box.innerHTML=
+
+"저장된 데이터 없음";
+
+return;
+
+}
+
+
+
+let text="";
+
+
+
+data.forEach(function(x){
+
+
+text+=
+
+`
+
+<br>
+
+<b>${x.code}</b>
+
+<br>
+
+${x.name}
+
+<br>
+
+${x.type}
+
+<br>
+
+위험도 : ${x.risk}
+
+<hr>
+
+`;
+
+
+});
+
+
+
+box.innerHTML=text;
+
+
+
+}
+
+
+
+
+// ==========================
+// DNA ANALYSIS
+// ==========================
+
+
+function dnaAnalyze(){
+
+
+if(!currentLife.name){
+
+alert("표본 없음");
+
+return;
+
+}
+
+
+
+let value=
+
+Math.floor(Math.random()*100);
+
+
+
+document.getElementById("dna").innerHTML=
+
+value+"%";
+
+
+
+document.getElementById("cellActivity").innerHTML=
+
+"ACTIVE";
+
+
+
+if(value<30){
+
+
+logText(
+
+"⚠ DNA FAILURE\n\n"+
+
+"불안정한 세포 구조"
+
+);
+
+
+
+}
+
+else{
+
+
+logText(
+
+"✔ DNA ANALYSIS COMPLETE\n\n"+
+
+"GENE STABLE"
+
+);
+
+
+}
+
+
+
+}
+
+
+
+
+// ==========================
+// CULTURE
+// ==========================
+
+
+function startCulture(){
+
+
+
+if(!currentLife.name){
+
+alert("표본 없음");
+
+return;
+
+}
+
+
+
+let progress=0;
+
+
+let bar=
+
+document.getElementById("cultureProgress");
+
+
+
+let timer=
+
+setInterval(function(){
+
+
+
+progress+=2;
+
+
+
+bar.style.width=
+
+progress+"%";
+
+
+
+document.getElementById("cultureState").innerHTML=
+
+progress+"%";
+
+
+
+if(progress>=100){
+
+
+clearInterval(timer);
+
+
+
+let result=Math.random();
+
+
+
+if(result<0.25){
+
+
+document.getElementById("cultureState").innerHTML=
+
+"☠ 배양 실패";
+
+
+logText(
+
+"WARNING\n\nCELL COLLAPSE"
+
+);
+
+
+
+}
+
+else{
+
+
+document.getElementById("cultureState").innerHTML=
+
+"✔ 배양 성공";
+
+
+
+logText(
+
+"CULTURE COMPLETE\n\nSPECIMEN STABLE"
+
+);
+
+
+
+}
+
+
+}
+
+
+
+},80);
+
+
+
+}
+
+
+
+
+
+// ==========================
+// MUTATION
+// ==========================
+
+
+function mutationEvent(){
+
+
+let chance=
+
+Math.floor(
+
+Math.random()*100
+
+);
+
+
+
+document.getElementById("mutation").innerHTML=
+
+chance+"%";
+
+
+
+if(chance>70){
+
+
+logText(
+
+"☣ MUTATION DETECTED\n\n새로운 변이 구조 발견"
+
+);
+
+
+
+}
+
+else{
+
+
+logText(
+
+"변이 반응 없음"
+
+);
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+// ==========================
+// LOG TYPING
+// ==========================
+
+
+function logText(text){
+
+
+let box=
+
+document.getElementById("log");
+
+
+box.innerHTML="";
+
+
+let i=0;
+
+
+
+let timer=
+
+setInterval(function(){
+
+
+
+box.innerHTML+=text[i];
+
+
+i++;
+
+
+
+if(i>=text.length){
+
+clearInterval(timer);
+
+}
+
+
+
+},30);
+
+
+
+}
+
+
+
+// ==========================
+// START
+// ==========================
+
+
+loadDatabase();
+// ==========================
+// MICROSCOPE CLICK ANALYSIS
+// ==========================
+
+
+canvas.addEventListener(
+
+"click",
+
+function(e){
+
+
+if(microbes.length===0){
+
+return;
+
+}
+
+
+
+let rect=
+
+canvas.getBoundingClientRect();
+
+
+
+let mx=
+
+e.clientX-rect.left;
+
+
+
+let my=
+
+e.clientY-rect.top;
+
+
+
+let target=null;
+
+
+
+for(let m of microbes){
+
+
+
+let distance=
+
+Math.sqrt(
+
+(mx-m.x)*(mx-m.x)+
+
+(my-m.y)*(my-m.y)
+
+);
+
+
+
+if(distance < m.size+10){
+
+
+target=m;
+
+break;
+
+
+}
+
+
+
+}
+
+
+
+if(target){
+
+
+logText(
+
+"🔬 CELL TARGET FOUND\n\n"+
+
+"SIZE : "+
+
+Math.floor(target.size)+
+
+"\nACTIVITY : ACTIVE\n\n"+
+
+"세포 분석 가능"
+
+);
+
+
+
+}
+
+else{
+
+
+logText(
+
+"검색 대상 없음\n\n"
+
++
+
+"다른 위치를 선택하세요."
+
+);
+
+
+
+}
+
+
+
+}
+
+);
+
+
+
+
+
+
+// ==========================
+// MICROBE EVOLUTION
+// ==========================
+
+
+setInterval(function(){
+
+
+if(microbes.length===0){
+
+return;
+
+}
+
+
+
+let target=
+
+microbes[
+
+Math.floor(
+
+Math.random()*microbes.length
+
+)
+
+];
+
+
+
+let event=
+
+Math.random();
+
+
+
+if(event<0.05){
+
+
+
+target.size+=2;
+
+
+
+logText(
+
+"☣ MUTATION EVENT\n\n"+
+
+"세포 크기 증가 확인"
+
+);
+
+
+
+}
+
+
+
+
+if(event>0.95){
+
+
+
+createMicrobe();
+
+
+
+logText(
+
+"🦠 CELL DIVISION\n\n"+
+
+"새로운 개체 생성"
+
+);
+
+
+
+}
+
+
+
+},5000);
+
+
+
+
+
+
+// ==========================
+// SCAN EFFECT
+// ==========================
+
+
+let scanY=0;
+
+let scanTimer=null;
+
+
+function startMicroscope(){
+
+
+if(microscopeTimer)return;
+
+
+logText(
+
+"> MICROSCOPE CONNECTED\n\n"+
+
+"> CELL OBSERVATION START"
+
+);
+
+
+
+microscopeTimer=
+
+setInterval(
+
+drawMicrobes,
+
+30
+
+);
+
+
+
+scanTimer=
+
+setInterval(
+
+scanEffect,
+
+30
+
+);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// ==========================
+// SPECIMEN CATALOG READY
+// ==========================
+
+
+function registerCatalog(){
+
+
+
+if(!currentLife.name){
+
+alert(
+
+"등록할 생명체가 없습니다."
+
+);
+
+return;
+
+}
+
+
+
+let catalog=
+
+JSON.parse(
+
+localStorage.getItem(
+
+"BIO_CATALOG"
+
+)
+
+)
+
+|| [];
+
+
+
+
+catalog.push(currentLife);
+
+
+
+localStorage.setItem(
+
+"BIO_CATALOG",
+
+JSON.stringify(catalog)
+
+);
+
+
+
+logText(
+
+"📖 CATALOG REGISTERED\n\n"+
+
+currentLife.name+
+
+"\n도감 등록 완료"
+
+);
+
+
+
+}
+
+
+
+
+
+// ==========================
+// RANDOM BIO EVENT
+// ==========================
+
+
+setInterval(function(){
+
+
+
+let event=
+
+Math.random();
+
+
+
+if(event<0.03){
+
+
+
+logText(
+
+"⚠ WARNING\n\n"+
+
+"알 수 없는 생체 반응 감지"
+
+);
+
+
+
+}
+
+
+
+if(event>0.97){
+
+
+
+logText(
+
+"🧬 NEW DATA FOUND\n\n"+
+
+"추가 연구 필요"
+
+);
+
+
+
+}
+
+
+
+},7000);
+
+</script>
+
+
+</div>
+
+</div>
+
+
+</body>
+
+</html>
+
