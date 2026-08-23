@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+BIOLOGICAL ENCYCLOPEDIA
+</title>
+
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+
+body.bioPage{
+
+background:#020d06;
+
+}
+
+
+
+.book{
+
+border:1px solid #00ff66;
+
+background:
+
+linear-gradient(
+90deg,
+#061b0d,
+#020d06
+);
+
+padding:30px;
+
+box-shadow:
+
+0 0 30px rgba(0,255,100,.3);
+
+}
+
+
+
+.pageNumber{
+
+text-align:center;
+
+color:#00ff66;
+
+letter-spacing:5px;
+
+}
+
+
+
+.specimenImage{
+
+height:200px;
+
+border:1px solid #00ff66;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:80px;
+
+margin:20px 0;
+
+background:#000;
+
+
+}
+
+
+
+.title{
+
+text-align:center;
+
+color:#00ff66;
+
+font-size:25px;
+
+}
+
+
+
+.info{
+
+border-left:3px solid #00ff66;
+
+padding-left:15px;
+
+}
+
+
+
+.note{
+
+background:#001a08;
+
+border:1px solid #006633;
+
+padding:15px;
+
+font-style:italic;
+
+}
+
+
+
+button{
+
+margin-top:10px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body class="bioPage">
+
+
+
+<div class="mainBox">
+
+
+
+<h2>
+
+📖 SCHMEETTERLING BIOLOGICAL ENCYCLOPEDIA
+
+</h2>
+
+
+
+<p class="pageNumber" id="page">
+
+PAGE 001 / 006
+
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<div class="book">
+
+
+
+<div class="specimenImage" id="image">
+
+🕸
+
+</div>
+
+
+
+
+<h2 class="title" id="name">
+
+검은 균사체
+
+</h2>
+
+
+
+
+<div class="info">
+
+
+<p>
+
+<b>등록 번호 :</b>
+
+<span id="code">
+
+BIO-001
+
+</span>
+
+</p>
+
+
+<p>
+
+<b>분류 :</b>
+
+<span id="type">
+
+미확인 균류
+
+</span>
+
+</p>
+
+
+
+<p>
+
+<b>위험 등급 :</b>
+
+<span id="risk">
+
+★★★☆☆
+
+</span>
+
+</p>
+
+
+
+<p>
+
+<b>발견 장소 :</b>
+
+<span id="place">
+
+UNKNOWN AREA
+
+</span>
+
+</p>
+
+
+
+<p>
+
+<b>세포 구조 :</b>
+
+<span id="cell">
+
+다세포 균사 구조
+
+</span>
+
+</p>
+
+
+
+</div>
+
+
+
+<hr>
+
+
+
+<h3>
+
+📄 생태 기록
+
+</h3>
+
+
+<p id="description">
+
+어두운 환경에서 성장하며
+주변 유기물을 흡수하는 변칙 균류.
+
+</p>
+
+
+
+
+<h3>
+
+🧪 연구원 기록
+
+</h3>
+
+
+<div class="note" id="note">
+
+"생명체인지,
+단순한 성장 현상인지 확인 필요."
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<button onclick="prevLife()">
+
+◀ 이전 생명체
+
+</button>
+
+
+
+<button onclick="nextLife()">
+
+다음 생명체 ▶
+
+</button>
+
+
+
+
+<hr>
+
+
+
+
+<button onclick="location.href='./bio.html'">
+
+← BIO DEPARTMENT
+
+</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+let index=0;
+
+
+
+let data=[
+
+
+{
+
+code:"BIO-001",
+
+name:"검은 균사체",
+
+type:"미확인 균류",
+
+risk:"★★★☆☆",
+
+place:"SECTOR B-12",
+
+cell:"다세포 균사 구조",
+
+image:"🕸",
+
+desc:"어두운 환경에서 성장하며 주변 유기물을 흡수하는 변칙 균류.",
+
+note:"살아있는 것인지, 단순한 성장 현상인지 판단 불가."
+
+},
+
+
+
+{
+
+code:"BIO-002",
+
+name:"액체 생명체",
+
+type:"비고체 생명",
+
+risk:"★★★★☆",
+
+place:"LAB-AQUA",
+
+cell:"액체 세포 구조",
+
+image:"💧",
+
+desc:"고정된 형태가 없으며 주변 환경에 따라 형태가 변화한다.",
+
+note:"샘플 보관 중 지속적으로 형태 변화 확인."
+
+},
+
+
+
+{
+
+code:"BIO-003",
+
+name:"유리 미생물",
+
+type:"광물성 생명체",
+
+risk:"★★☆☆☆",
+
+place:"CRYSTAL ZONE",
+
+cell:"결정형 세포",
+
+image:"💎",
+
+desc:"빛을 흡수하여 에너지로 변환하는 특수 생명체.",
+
+note:"기존 생물 분류 기준과 맞지 않음."
+
+},
+
+
+
+{
+
+code:"BIO-004",
+
+name:"역세포 개체",
+
+type:"비세포성 생명",
+
+risk:"★★★★★",
+
+place:"RESTRICTED AREA",
+
+cell:"분류 불가",
+
+image:"🧬",
+
+desc:"세포 구조가 존재하지 않으나 생명 활동 확인.",
+
+note:"연구 금지 요청 기록 존재."
+
+},
+
+
+
+{
+
+code:"BIO-005",
+
+name:"검은 포자 군집",
+
+type:"미생물 군집",
+
+risk:"★★★★☆",
+
+place:"GREENHOUSE-03",
+
+cell:"포자 기반",
+
+image:"⚫",
+
+desc:"빠른 증식 능력을 가진 미확인 미생물.",
+
+note:"격리 상태 유지 중."
+
+},
+
+
+
+{
+
+code:"BIO-006",
+
+name:"심해 변이 생물",
+
+type:"변칙 생명체",
+
+risk:"★★★☆☆",
+
+place:"DEEP SEA PROJECT",
+
+cell:"고밀도 세포",
+
+image:"🐟",
+
+desc:"극한 환경에서도 생존 가능한 변이 생명체.",
+
+note:"추가 연구 예정."
+
+}
+
+
+];
+
+
+
+
+
+function updatePage(){
+
+
+
+let d=data[index];
+
+
+
+document.getElementById("page").innerHTML=
+
+"PAGE 00"+(index+1)+" / 006";
+
+
+
+document.getElementById("image").innerHTML=d.image;
+
+document.getElementById("code").innerHTML=d.code;
+
+document.getElementById("name").innerHTML=d.name;
+
+document.getElementById("type").innerHTML=d.type;
+
+document.getElementById("risk").innerHTML=d.risk;
+
+document.getElementById("place").innerHTML=d.place;
+
+document.getElementById("cell").innerHTML=d.cell;
+
+document.getElementById("description").innerHTML=d.desc;
+
+document.getElementById("note").innerHTML=d.note;
+
+
+}
+
+
+
+
+function nextLife(){
+
+
+index++;
+
+
+if(index>=data.length){
+
+index=0;
+
+}
+
+
+updatePage();
+
+
+}
+
+
+
+
+function prevLife(){
+
+
+index--;
+
+
+if(index<0){
+
+index=data.length-1;
+
+}
+
+
+updatePage();
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
