@@ -6,163 +6,187 @@
 <meta charset="UTF-8">
 
 <title>
-BIO DEPARTMENT
+BIOLOGICAL DEPARTMENT
 </title>
 
 
 <link rel="stylesheet" href="./style.css">
 
 
-
-<style>
-
-
-body.bioPage{
-
-background:#020d06;
-
-}
-
-
-
-
-.bioBox{
-
-
-border:1px solid #00ff66;
-
-background:#001a08;
-
-padding:20px;
-
-
-box-shadow:
-
-0 0 20px rgba(0,255,100,.3);
-
-
-}
-
-
-
-.bioText{
-
-color:#00ff66;
-
-font-weight:bold;
-
-}
-
-
-
-
-.dna{
-
-font-size:25px;
-
-letter-spacing:8px;
-
-color:#00ff66;
-
-animation:dnaGlow 2s infinite;
-
-
-}
-
-
-
-
-@keyframes dnaGlow{
-
-
-0%{
-
-opacity:.3;
-
-}
-
-
-50%{
-
-opacity:1;
-
-}
-
-
-100%{
-
-opacity:.3;
-
-}
-
-
-}
-
-
-
-
-
-.scanLine{
-
-
-height:3px;
-
-background:#00ff66;
-
-animation:scan 2s infinite;
-
-
-}
-
-
-
-
-@keyframes scan{
-
-
-0%{
-
-transform:translateX(-100%);
-
-}
-
-
-100%{
-
-transform:translateX(100%);
-
-}
-
-
-}
-
-
-
-</style>
-
-
 </head>
-
-
-
 
 
 
 <body class="bioPage">
 
 
-
-<div class="mainBox">
-
+<div class="layout">
 
 
 
 
-<h1>
+
+<!-- LEFT SIDE MENU -->
+
+
+<div class="sideMenu">
+
+
+
+<h3>
 
 SCHMEETTERLING
 
-</h1>
+</h3>
+
+
+
+<p style="color:#00ff66;">
+
+● SYSTEM ONLINE
+
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<p>
+
+USER
+
+<br>
+
+<b id="userName">
+
+확인중...
+
+</b>
+
+</p>
+
+
+
+
+<p>
+
+LEVEL
+
+<br>
+
+<b id="userLevel">
+
+확인중...
+
+</b>
+
+</p>
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 HOME
+
+</button>
+
+
+
+
+
+
+<button onclick="location.href='./radiation.html'">
+
+☢ 방사능 부서
+
+</button>
+
+
+
+
+
+
+<button onclick="location.href='./unknown.html'">
+
+👾 미확인 개체
+
+</button>
+
+
+
+
+
+
+<button onclick="location.href='./bio.html'">
+
+🧫 생물 부서
+
+</button>
+
+
+
+
+
+
+<button onclick="location.href='./chemical.html'">
+
+🧪 화학 부서
+
+</button>
+
+
+
+
+
+
+<button onclick="location.href='./backroom.html'">
+
+📦 백룸 부서
+
+</button>
+
+
+
+
+
+
+<button onclick="location.href='./drug.html'">
+
+⚗ 마약 부서
+
+</button>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- MAIN -->
+
+
+
+<div class="mainBox">
 
 
 
@@ -207,9 +231,10 @@ RESEARCHER 이상
 
 
 
+
 <h3>
 
-BIOLOGICAL RESEARCH DATABASE
+부서 안내
 
 </h3>
 
@@ -223,178 +248,7 @@ BIOLOGICAL RESEARCH DATABASE
 
 <p>
 
-생물 및 변이 개체 연구 기록
-
-</p>
-
-
-
-<p>
-
-본 부서는 존재하지 않는 생명의 발견,
-
-미확인 생물 및 생체 구조 연구를
-
-담당합니다.
-
-</p>
-
-
-
-
-<p>
-
-세포성 생물과 비세포성 생물,
-
-변칙 생명체의 구조 분석 및
-
-학계 보고 작성을 진행합니다.
-
-</p>
-
-
-
-
-<p>
-
-모든 연구 자료는 보안 규정에 따라
-
-제한적으로 열람됩니다.
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-<hr>
-
-
-
-
-
-<h3>
-
-🧬 GENETIC SYSTEM
-
-</h3>
-
-
-
-
-
-
-<div class="bioBox">
-
-
-
-
-
-<div class="dna">
-
-◆◇◆◇◆◇◆◇
-
-</div>
-
-
-
-
-<br>
-
-
-
-
-<p>
-
-GENETIC DATABASE :
-
-<b>
-
-CONNECTED
-
-</b>
-
-</p>
-
-
-
-
-<p>
-
-SPECIMEN SERVER :
-
-<b>
-
-ONLINE
-
-</b>
-
-</p>
-
-
-
-
-<p>
-
-CELL ANALYSIS :
-
-<b>
-
-READY
-
-</b>
-
-</p>
-
-
-
-
-
-<div class="scanLine"></div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<hr>
-
-
-
-
-
-<h3>
-
-🔬 RESEARCH OBJECTIVE
-
-</h3>
-
-
-
-
-
-<div class="recordBox">
-
-
-
-<p>
-
-<b>
-
-주요 목표
-
-</b>
+SCHMEETTERLING 생물 연구 부서.
 
 </p>
 
@@ -405,7 +259,7 @@ READY
 
 목표는 존재하지 않는 생명의 발견과
 
-미확인 생물의 과학적인 연구 논문 작성입니다.
+미확인 생물의 과학적인 연구입니다.
 
 </p>
 
@@ -414,24 +268,13 @@ READY
 
 <p>
 
-여러 생물계를 담당하며,
+세포성 생물,
 
-세포성 생물과 비세포성 생물을
+비세포성 생물,
 
-분류하고 분석합니다.
+변칙 생명체의 구조 분석 및
 
-</p>
-
-
-
-
-<p>
-
-생물 간 조합 가능성 및
-
-새로운 생명 구조 연구를
-
-진행합니다.
+연구 논문 작성을 담당합니다.
 
 </p>
 
@@ -443,7 +286,6 @@ READY
 
 
 
-
 <hr>
 
 
@@ -452,29 +294,14 @@ READY
 
 <h3>
 
-🧪 RESEARCH DATABASE
-
-</h3>
-<hr>
-
-
-
-<h3>
-
-🖥 ACTIVE RESEARCH SYSTEM
+DATABASE
 
 </h3>
 
 
 
 
-<div class="bioBox">
-
-
-
-
-
-<button onclick="analyzeLife()">
+<button onclick="location.href='./bio_analysis.html'">
 
 🔬 미확인 생물 분석
 
@@ -484,19 +311,9 @@ READY
 
 
 
-<button onclick="cellMix()">
+<button onclick="location.href='./bio_lifeform.html'">
 
-🧬 세포 조합 시뮬레이션
-
-</button>
-
-
-
-
-
-<button onclick="writePaper()">
-
-📄 연구 논문 생성
+🧬 생명체 도감
 
 </button>
 
@@ -504,9 +321,9 @@ READY
 
 
 
-<button onclick="openObservation()">
+<button onclick="location.href='./bio_paper.html'">
 
-👁 생물 관찰실 접속
+📄 연구 논문 기록
 
 </button>
 
@@ -514,141 +331,138 @@ READY
 
 
 
+<button onclick="location.href='./bio_experiment.html'">
 
-</div>
+🧪 세포 조합 실험
 
+</button>
 
-
-
-
-
-
-<hr>
-
-
-
-
-
-<h3>
-
-📡 LIVE BIO MONITOR
-
-</h3>
-
-
-
-
-
-<div class="recordBox">
-
-
-
-
-
-<p>
-
-현재 표본 :
-
-<b id="sample">
-
-대기중
-
-</b>
-
-</p>
-
-
-
-
-<p>
-
-세포 활동 :
-
-<b id="cell">
-
-CHECKING...
-
-</b>
-
-</p>
-
-
-
-
-<p>
-
-연구 상태 :
-
-<b id="research">
-
-WAITING
-
-</b>
-
-</p>
-
-
-
-
-<p>
-
-발견 확률 :
-
-<b id="chance">
-
-0%
-
-</b>
-
-</p>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<hr>
-
-
-
-
-
-<h3>
-
-👤 STAFF DATABASE
-
-</h3>
-
-
-
-
-
-<div class="recordBox">
-
-
-
-<p>
-
-생물 부서 연구원 정보
-
-</p>
 
 
 
 
 <button onclick="location.href='./bio_staff.html'">
 
-👤 직원 명단 열람
+👥 연구원 명단
 
 </button>
+
+
+
+
+<hr>
+<h3>
+
+LIVE BIO MONITOR
+
+</h3>
+
+
+
+
+<div class="recordBox">
+
+
+
+<p>
+
+<b>
+
+현재 연구 상태 :
+
+</b>
+
+
+<span id="researchStatus">
+
+분석 대기
+
+</span>
+
+</p>
+
+
+
+
+
+<p>
+
+<b>
+
+현재 표본 :
+
+</b>
+
+
+<span id="sample">
+
+UNKNOWN
+
+</span>
+
+</p>
+
+
+
+
+
+<p>
+
+<b>
+
+세포 활동 :
+
+</b>
+
+
+<span id="cellActivity">
+
+CHECKING...
+
+</span>
+
+</p>
+
+
+
+
+
+<p>
+
+<b>
+
+발견 확률 :
+
+</b>
+
+
+<span id="discover">
+
+0%
+
+</span>
+
+</p>
+
+
+
+
+<p>
+
+<b>
+
+위험 등급 :
+
+</b>
+
+
+<span id="risk">
+
+UNKNOWN
+
+</span>
+
+</p>
 
 
 
@@ -660,7 +474,9 @@ WAITING
 
 
 
+
 <hr>
+
 
 
 
@@ -668,27 +484,20 @@ WAITING
 
 <h3>
 
-⚠ RESTRICTED BIOLOGICAL NOTE
+BIO RESEARCH SYSTEM
 
 </h3>
 
 
 
 
-
-<div class="bioBox">
-
-
+<div class="recordBox">
 
 
 
 <p>
 
-일부 발견 생명체는
-
-기존 생물 분류 기준에
-
-포함되지 않습니다.
+최근 발견 기록
 
 </p>
 
@@ -697,19 +506,44 @@ WAITING
 
 <p>
 
-새로운 생명 구조 확인 시
+문서 코드 :
 
-즉시 최고 관리자에게
+<b>
 
-보고해야 합니다.
+BIO-UNKNOWN DATA
+
+</b>
 
 </p>
 
+
+
+
+<p>
+
+상태 :
+
+<span id="document">
+
+검토 대기
+
+</span>
+
+</p>
+
+
+
+
+
+<div id="bioButton">
+
+</div>
 
 
 
 
 </div>
+
 
 
 
@@ -722,12 +556,160 @@ WAITING
 
 
 
-<p class="online">
 
-● BIO SYSTEM ONLINE
+<h3>
+
+RESEARCH FACILITY
+
+</h3>
+
+
+
+
+<div class="recordBox">
+
+
+
+<p>
+
+관리 시설 :
 
 </p>
 
+
+
+<p>
+
+🧬 BIO LAB-04
+
+<br>
+
+🔬 CELL ANALYSIS ROOM
+
+<br>
+
+🧫 SPECIMEN STORAGE
+
+<br>
+
+📄 RESEARCH ARCHIVE
+
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<p>
+
+주 연구 분야 :
+
+</p>
+
+
+
+<p>
+
+미확인 생명체 분석
+
+<br>
+
+생체 구조 연구
+
+<br>
+
+세포 변이 관찰
+
+<br>
+
+학계 보고 작성
+
+</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<h3>
+
+BIOLOGICAL WARNING
+
+</h3>
+
+
+
+
+<div class="recordBox">
+
+
+
+<p style="color:#00ff66;">
+
+
+⚠ 일부 생명체는
+
+기존 생물 분류 기준에
+
+포함되지 않습니다.
+
+
+</p>
+
+
+
+<p>
+
+
+새로운 생명 구조 발견 시
+
+즉시 연구 책임자에게
+
+보고해야 합니다.
+
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<p style="color:#00ff66;">
+
+
+● BIO SYSTEM ONLINE
+
+
+</p>
 
 
 
@@ -738,119 +720,237 @@ WAITING
 ← CENTRAL TERMINAL
 
 </button>
+
+
+
+
+
+</div>
+
+
+</div>
 <script>
 
 
-function analyzeLife(){
+// USER DATA
 
 
-let samples = [
+let user = localStorage.getItem("userName");
 
-"검은색 액체 생명체",
-"역세포 구조 개체",
-"비세포성 미확인 생물",
-"빛을 흡수하는 생명체",
-"변이 균사체"
+let level = localStorage.getItem("userLevel");
+
+
+
+document.getElementById("userName").innerHTML =
+
+user || "UNKNOWN";
+
+
+
+document.getElementById("userLevel").innerHTML =
+
+level || "NONE";
+
+
+
+
+
+
+
+// 연구 승인 시스템
+
+
+if(user === "미아"){
+
+
+document.getElementById("bioButton").innerHTML = `
+
+
+<button onclick="approveResearch()">
+
+✓ 연구 보고서 승인 요청
+
+</button>
+
+
+`;
+
+
+}
+
+
+
+
+
+
+function approveResearch(){
+
+
+
+document.getElementById("document").innerHTML =
+
+"✔ 승인 요청 완료";
+
+
+
+document.getElementById("bioButton").innerHTML = `
+
+
+<p>
+
+요청자 :
+
+미아
+
+</p>
+
+
+<p>
+
+최고 연구 관리자 검토 대기 중
+
+</p>
+
+
+`;
+
+
+
+}
+
+
+
+
+
+
+
+
+// LIVE BIO RANDOM SYSTEM
+
+
+
+setInterval(function(){
+
+
+
+let status=[
+
+
+"분석 진행 중",
+
+"표본 관찰 중",
+
+"데이터 기록 중",
+
+"논문 작성 중",
+
+"신규 발견 대기"
+
 
 ];
 
 
+
+document.getElementById("researchStatus").innerHTML =
+
+
+status[Math.floor(Math.random()*status.length)];
+
+
+
+
+
+
+
+let samples=[
+
+
+"UNKNOWN LIFEFORM-01",
+
+"비세포성 생명체",
+
+"변칙 균사 구조",
+
+"미확인 해양 생물",
+
+"광합성 변이 생명체"
+
+
+];
+
+
+
 document.getElementById("sample").innerHTML =
+
+
 samples[Math.floor(Math.random()*samples.length)];
 
 
-document.getElementById("cell").innerHTML =
-"ACTIVE";
 
 
-document.getElementById("research").innerHTML =
-"분석 진행 중";
 
 
-document.getElementById("chance").innerHTML =
+
+document.getElementById("cellActivity").innerHTML =
+
+
+Math.floor(30+Math.random()*70)+"%";
+
+
+
+
+
+
+
+document.getElementById("discover").innerHTML =
+
+
 Math.floor(Math.random()*100)+"%";
 
 
-}
 
 
 
 
-function cellMix(){
+
+let risk=[
 
 
-let result=[
+"SAFE",
 
-"조합 실패",
-"새로운 세포 구조 발견",
-"변칙 세포 생성",
-"안정적인 생체 반응 확인"
+"LOW",
+
+"CAUTION",
+
+"HIGH",
+
+"UNKNOWN"
+
 
 ];
 
 
-document.getElementById("sample").innerHTML =
-result[Math.floor(Math.random()*result.length)];
+
+document.getElementById("risk").innerHTML =
 
 
-document.getElementById("cell").innerHTML =
-"HYBRID";
-
-
-document.getElementById("research").innerHTML =
-"세포 조합 실험";
-
-
-document.getElementById("chance").innerHTML =
-Math.floor(50+Math.random()*50)+"%";
-
-
-}
+risk[Math.floor(Math.random()*risk.length)];
 
 
 
 
 
-function writePaper(){
 
-
-let papers=[
-
-"논문 작성 완료 : UNKNOWN LIFEFORM REPORT",
-"자료 저장 완료 : CELL STRUCTURE THEORY",
-"학계 제출 대기 : NEW SPECIES DOCUMENT",
-"보안 기록 생성 : BIO-04 DATA"
-
-];
-
-
-document.getElementById("research").innerHTML =
-papers[Math.floor(Math.random()*papers.length)];
-
-
-}
-
-
-
-
-
-function openObservation(){
-
-
-alert(
-"관찰실 연결 중...\n\n생체 반응 감지됨.\n\n주의 : 대상이 연구자를 관찰하고 있습니다."
-);
-
-
-}
+},4000);
 
 
 
 
 </script>
-</div>
+
 
 
 </body>
+
 
 </html>
