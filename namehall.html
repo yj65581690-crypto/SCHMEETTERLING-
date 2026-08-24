@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>冥牌馆 - MYOUMYAKUKAN</title>
+
+<link rel="stylesheet" href="./namehall.css">
+
+</head>
+
+
+<body>
+
+
+<!-- 입장 연출 -->
+
+<div id="entryEffect">
+
+<div class="floatingCard">
+🃏
+</div>
+
+
+<h1>
+冥牌馆
+</h1>
+
+
+<p>
+TAROT PHENOMENON VERIFIED
+</p>
+
+
+<p>
+DESTINY SPACE CONNECTED
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- 별 배경 -->
+
+<div id="starArea"></div>
+
+
+
+
+<!-- 촛불 -->
+
+<div id="lampArea">
+
+
+<div class="lamp">
+🕯
+</div>
+
+
+<div class="lamp">
+🕯
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="hallWrapper">
+
+
+
+
+
+<!-- 상단 -->
+
+<header>
+
+
+<h1>
+🃏 冥牌馆
+</h1>
+
+
+<p>
+운명은 정해져 있지만,
+그 길을 걷는 방식은 당신에게 달려있습니다.
+</p>
+
+
+</header>
+
+
+
+
+
+
+<!-- 점술사 -->
+
+<section class="fortuneTeller">
+
+
+<div class="teller">
+
+🧙‍♀️
+
+</div>
+
+
+
+<div id="tellerTalk">
+
+"어서 오십시오.
+카드는 거짓말을 하지 않습니다."
+
+</div>
+
+
+
+<button onclick="talkTeller()">
+
+점술사의 말 듣기
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+<!-- 돈 -->
+
+<div class="moneyBox">
+
+
+💰 보유 금액 :
+
+<span id="money">
+
+0
+
+</span>
+
+원
+
+
+</div>
+
+
+
+
+
+
+<!-- 운세 -->
+
+<section>
+
+
+<h2>
+🔮 기본 운세
+</h2>
+
+
+
+<div class="fortuneList">
+
+
+
+<button onclick="readFortune('오늘의 운세',9000000000)">
+
+🃏 오늘의 운세
+
+<br>
+
+90억
+
+</button>
+
+
+
+<button onclick="readFortune('이번 주 운세',150000000)">
+
+🃏 이번 주 운세
+
+<br>
+
+1억 5천만
+
+</button>
+
+
+
+<button onclick="readFortune('이번 달 운세',300000000)">
+
+🃏 이번 달 운세
+
+<br>
+
+3억
+
+</button>
+
+
+
+<button onclick="readFortune('올해의 운세',500000000)">
+
+🃏 올해의 운세
+
+<br>
+
+5억
+
+</button>
+
+
+
+<button onclick="readFortune('평생 운세',1000000000)">
+
+🃏 평생 운세
+
+<br>
+
+10억
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- 타로 -->
+
+<hr>
+
+
+<section>
+
+
+<h2>
+🃏 TAROT READING
+</h2>
+
+
+<p>
+카드를 선택하세요.
+</p>
+
+
+
+<div class="tarotArea">
+
+
+<button onclick="drawCard(0)">
+🂠
+</button>
+
+
+<button onclick="drawCard(1)">
+🂠
+</button>
+
+
+<button onclick="drawCard(2)">
+🂠
+</button>
+
+
+</div>
+
+
+<div id="tarotResult">
+
+카드가 아직 선택되지 않았습니다.
+
+</div>
+
+
+
+</section>
+<!-- 사후 운세 -->
+
+<hr>
+
+
+<section>
+
+
+<h2>
+🌙 사후
+</h2>
+
+
+
+<div class="fortuneList">
+
+
+<button onclick="readFortune('영혼의 행방',80000000000)">
+
+🌙 영혼의 행방
+
+<br>
+
+800억
+
+</button>
+
+
+
+<button onclick="readFortune('사후 심판',150000000000)">
+
+🌙 사후 심판
+
+<br>
+
+1500억
+
+</button>
+
+
+
+<button onclick="readFortune('다음 생',300000000000)">
+
+🌙 다음 생
+
+<br>
+
+3000억
+
+</button>
+
+
+
+<button onclick="readFortune('죽은 자의 목소리',800000000000)">
+
+🌙 죽은 자의 목소리
+
+<br>
+
+8000억
+
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- 운명 -->
+
+<hr>
+
+
+<section>
+
+
+<h2>
+✨ 운명
+</h2>
+
+
+
+<div class="fortuneList">
+
+
+<button onclick="readFortune('선택의 갈림길',70000000000)">
+
+✨ 선택의 갈림길
+
+<br>
+
+700억
+
+</button>
+
+
+
+<button onclick="readFortune('운명의 붉은 실',120000000000)">
+
+✨ 운명의 붉은 실
+
+<br>
+
+1200억
+
+</button>
+
+
+
+<button onclick="readFortune('운명의 책',500000000000)">
+
+✨ 운명의 책
+
+<br>
+
+5000억
+
+</button>
+
+
+
+<button onclick="readFortune('천명',1000000000000)">
+
+✨ 천명
+
+<br>
+
+1조
+
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- 특별 점술 -->
+
+
+<hr>
+
+
+<section>
+
+
+<h2>
+🌌 특별 점술
+</h2>
+
+
+
+
+<div class="fortuneList">
+
+
+
+<button onclick="readFortune('명계 초대',1500000000000)">
+
+『명계 초대』
+
+<br>
+
+1조 5천억
+
+</button>
+
+
+
+<button onclick="readFortune('최후의 카드',1800000000000)">
+
+『최후의 카드』
+
+<br>
+
+1조 8천억
+
+</button>
+
+
+
+<button onclick="readFortune('윤회의 바퀴',2000000000000)">
+
+『윤회의 바퀴』
+
+<br>
+
+2조
+
+</button>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- 점술 도구 -->
+
+<hr>
+
+
+<section>
+
+
+<h2>
+🪄 대표 점술 도구
+</h2>
+
+
+
+<div class="fortuneList">
+
+
+
+<button onclick="buyItem('🃏 명패',30000000000)">
+
+🃏 『명패』
+
+<br>
+
+300억
+
+</button>
+
+
+
+<button onclick="buyItem('🔮 천성 수정구',60000000000)">
+
+🔮 『천성 수정구』
+
+<br>
+
+600억
+
+</button>
+
+
+
+<button onclick="buyItem('🧵 홍연실',90000000000)">
+
+🧵 『홍연실』
+
+<br>
+
+900억
+
+</button>
+
+
+
+<button onclick="buyItem('🪞 황천경',150000000000)">
+
+🪞 『황천경』
+
+<br>
+
+1500억
+
+</button>
+
+
+
+<button onclick="buyItem('🕯 혼등',200000000000)">
+
+🕯 『혼등』
+
+<br>
+
+2000억
+
+</button>
+
+
+
+<button onclick="buyItem('📿 윤회 염주',300000000000)">
+
+📿 『윤회 염주』
+
+<br>
+
+3000억
+
+</button>
+
+
+
+<button onclick="buyItem('📖 운명첩',500000000000)">
+
+📖 『운명첩』
+
+<br>
+
+5000억
+
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- 타로 보관함 -->
+
+
+<hr>
+
+
+<section>
+
+
+<h2>
+🎒 운명 보관함
+</h2>
+
+
+
+<button onclick="openInventory()">
+
+🎒 획득한 물품 확인
+
+</button>
+
+
+
+<div id="inventory">
+
+
+보유 물품 없음
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- 중앙 터미널 -->
+
+
+<hr>
+
+
+<button onclick="location.href='./main.html'">
+
+← CENTRAL TERMINAL
+
+</button>
+
+
+
+
+
+
+<!-- 애정 운세 -->
+
+<hr>
+
+
+<h2>
+❤️ 애정
+</h2>
+
+
+<div class="fortuneList">
+
+
+<button onclick="readFortune('인연 한 장',200000000)">
+❤️ 인연 한 장
+<br>
+2억
+</button>
+
+
+
+<button onclick="readFortune('상대의 마음',500000000)">
+❤️ 상대의 마음
+<br>
+5억
+</button>
+
+
+
+<button onclick="readFortune('운명의 상대',2000000000)">
+❤️ 운명의 상대
+<br>
+20억
+</button>
+
+
+
+<button onclick="readFortune('사랑의 갈림길',5000000000)">
+❤️ 사랑의 갈림길
+<br>
+50억
+</button>
+
+
+
+<button onclick="readFortune('전생의 연',12000000000)">
+❤️ 전생의 연
+<br>
+120억
+</button>
+
+
+</div>
+
+
+
+
+
+
+<!-- 죽음 -->
+
+
+<hr>
+
+
+<h2>
+☠ 죽음
+</h2>
+
+
+<div class="fortuneList">
+
+
+<button onclick="readFortune('죽음의 그림자',15000000000)">
+☠ 죽음의 그림자
+<br>
+150억
+</button>
+
+
+<button onclick="readFortune('마지막 순간',50000000000)">
+☠ 마지막 순간
+<br>
+500억
+</button>
+
+
+<button onclick="readFortune('죽음의 원인',90000000000)">
+☠ 죽음의 원인
+<br>
+900억
+</button>
+
+
+<button onclick="readFortune('죽음을 피하는 길',200000000000)">
+☠ 죽음을 피하는 길
+<br>
+2000억
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- 결과창 -->
+
+
+<div id="resultWindow">
+
+
+<h2>
+🔮 명패관 기록
+</h2>
+
+
+<p id="resultText">
+
+운명을 확인하세요.
+
+</p>
+
+
+
+<button onclick="closeResult()">
+
+닫기
+
+</button>
+
+
+</div>
+
+
+
+
+<script src="./namehall.js"></script>
+
+
+</body>
+
+</html>
