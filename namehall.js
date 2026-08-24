@@ -676,3 +676,331 @@ area.appendChild(star);
 
 
 }
+// ===============================
+// 冥牌館 MINI GAME
+// ===============================
+
+
+function startMyeongGame(){
+
+
+let box =
+document.getElementById(
+"myeongGameWindow"
+);
+
+
+box.style.display="block";
+
+
+let game =
+Math.floor(Math.random()*3);
+
+
+
+if(game===0){
+
+tarotGame();
+
+}
+
+else if(game===1){
+
+crystalGame();
+
+}
+
+else{
+
+lampGame();
+
+}
+
+
+}
+
+
+
+// 🃏 타로 카드
+function tarotGame(){
+
+
+document.getElementById(
+"myeongGameContent"
+).innerHTML=
+
+`
+
+<h3>
+🃏 운명의 카드
+</h3>
+
+<p>
+카드를 선택하세요.
+</p>
+
+
+<div class="tarotArea">
+
+
+<div class="tarotCard"
+onclick="flipTarot(0)">
+
+🂠
+
+</div>
+
+
+<div class="tarotCard"
+onclick="flipTarot(1)">
+
+🂠
+
+</div>
+
+
+<div class="tarotCard"
+onclick="flipTarot(2)">
+
+🂠
+
+</div>
+
+
+</div>
+
+`;
+
+}
+
+function flipTarot(num){
+
+
+let cards =
+document.querySelectorAll(".tarotCard");
+
+
+cards[num].classList.add(
+"flip"
+);
+
+
+
+let answer =
+Math.floor(Math.random()*3);
+
+
+
+setTimeout(function(){
+
+
+if(num===answer){
+
+
+cards[num].innerHTML=
+"✨";
+
+
+myeongSuccess();
+
+
+}
+
+else{
+
+
+cards[num].innerHTML=
+"☠";
+
+
+myeongFail();
+
+
+}
+
+
+},800);
+
+
+}
+
+// 🔮 수정구
+
+function crystalGame(){
+
+
+document.getElementById(
+"myeongGameContent"
+).innerHTML=
+
+
+`
+
+<h3>
+🔮 천성 수정구
+</h3>
+
+<p>
+빛나는 미래를 선택하세요.
+</p>
+
+
+<button onclick="pickCrystal(0)">
+🔵
+</button>
+
+<button onclick="pickCrystal(1)">
+🟣
+</button>
+
+<button onclick="pickCrystal(2)">
+⚪
+</button>
+
+`;
+
+}
+
+
+
+function pickCrystal(num){
+
+
+if(num===Math.floor(Math.random()*3)){
+
+
+myeongSuccess();
+
+
+}
+
+else{
+
+
+myeongFail();
+
+}
+
+
+}
+
+
+
+
+
+// 🕯 혼등
+
+function lampGame(){
+
+
+document.getElementById(
+"myeongGameContent"
+).innerHTML=
+
+
+`
+
+<h3>
+🕯 혼등
+</h3>
+
+<p>
+진짜 영혼의 불꽃을 찾으세요.
+</p>
+
+
+<button onclick="pickLamp(0)">
+🕯
+</button>
+
+<button onclick="pickLamp(1)">
+🕯
+</button>
+
+<button onclick="pickLamp(2)">
+🕯
+</button>
+
+<button onclick="pickLamp(3)">
+🕯
+</button>
+
+
+`;
+
+}
+
+
+
+function pickLamp(num){
+
+
+if(num===Math.floor(Math.random()*4)){
+
+
+myeongSuccess();
+
+
+}
+
+else{
+
+
+myeongFail();
+
+}
+
+
+}
+
+
+
+
+
+// 성공
+
+function myeongSuccess(){
+
+
+money += 40000000000;
+
+
+updateMoney();
+
+
+showResult(
+
+"✨ 운명이 허락했습니다.\n\n400억 원 획득."
+
+);
+
+
+document.getElementById(
+"tellerTalk"
+).innerHTML=
+
+"축하드립니다.\n카드는 당신의 가능성을 보여주었습니다.";
+
+}
+
+
+
+// 실패
+
+function myeongFail(){
+
+
+showResult(
+
+"🃏 카드가 침묵합니다.\n\n운명은 아직 닫혀 있습니다."
+
+);
+
+
+document.getElementById(
+"tellerTalk"
+).innerHTML=
+
+"아직은 그 카드가 당신의 것이 아니군요.";
+
+}
