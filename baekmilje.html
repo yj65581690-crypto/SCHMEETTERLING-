@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>百密斋 - BAekmilje Archive</title>
+
+<link rel="stylesheet" href="./baekmilje.css">
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- 입장 연출 -->
+
+<div id="entry">
+
+
+<p>
+EYE PHENOMENON VERIFIED
+</p>
+
+
+<p>
+MIRROR CONNECTION OPEN
+</p>
+
+
+<h1>
+📖 百密斋
+</h1>
+
+
+<p>
+SECRET INFORMATION ARCHIVE
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- 배경 효과 -->
+
+<div id="moon"></div>
+
+
+<div id="dust"></div>
+
+
+
+
+
+
+<!-- 메인 -->
+
+<div class="archive">
+
+
+
+
+
+<!-- 상단 -->
+
+<header>
+
+
+<h1>
+📖 百密斋
+</h1>
+
+
+<p>
+THE ARCHIVE BEYOND THE MIRROR
+</p>
+
+
+<p class="warning">
+
+ALL INFORMATION HAS A PRICE.
+
+</p>
+
+
+</header>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<!-- 상태 -->
+
+<div class="statusBox">
+
+
+<p>
+
+💰 보유 금액 :
+
+<span id="money">
+
+0
+
+</span>
+
+원
+
+</p>
+
+
+
+<button onclick="openBag()">
+
+🎒 정보 보관함
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- 관리자 -->
+
+<section class="owner">
+
+
+<div class="ownerIcon"
+onclick="talkOwner()">
+
+🕯
+
+</div>
+
+
+<div id="ownerTalk">
+
+
+"모든 정보에는 값이 있습니다."
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- 검색 -->
+
+<section class="searchBox">
+
+
+<h2>
+🔍 정보 검색
+</h2>
+
+
+
+<p>
+
+이름 또는 단서를 입력하십시오.
+
+</p>
+
+
+
+<input 
+id="searchInput"
+placeholder="대상 이름 입력">
+
+
+
+<button onclick="searchPerson()">
+
+검색
+
+</button>
+
+
+
+<div id="searchResult">
+
+
+검색 대기중...
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<!-- 여기까지 1/3 -->
+  <!-- 정보 열람 메뉴 -->
+
+
+<section class="priceList">
+
+
+<h2>
+📜 INFORMATION SERVICE
+</h2>
+
+
+
+<div class="service">
+
+
+<button onclick="buyInfo('개인 단편 정보',10000000000)">
+
+📄 개인 단편 정보
+
+<br>
+
+10억 원
+
+</button>
+
+
+
+<button onclick="buyInfo('현재 상태 확인',50000000000)">
+
+📄 현재 상태 확인
+
+<br>
+
+50억 원
+
+</button>
+
+
+
+
+<button onclick="buyInfo('과거 기록 열람',100000000000)">
+
+📄 과거 기록 열람
+
+<br>
+
+100억 원
+
+</button>
+
+
+
+
+<button onclick="buyInfo('일상 기록 열람',300000000000)">
+
+📄 일상 기록 열람
+
+<br>
+
+300억 원
+
+</button>
+
+
+
+
+<button onclick="buyInfo('기업·단체 기록',600000000000)">
+
+📄 기업·단체 기록
+
+<br>
+
+600억 원
+
+</button>
+
+
+
+
+<button onclick="buyInfo('위험 등급 정보',1200000000000)">
+
+📄 위험 등급 정보
+
+<br>
+
+1200억 원
+
+</button>
+
+
+
+
+<button onclick="buyInfo('전생애 기록',2000000000000)">
+
+📄 전생애 기록
+
+<br>
+
+2조 원
+
+</button>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<section class="special">
+
+
+<h2>
+☾ SPECIAL INFORMATION
+</h2>
+
+
+
+
+<button onclick="buyInfo('사망 정보',200000000000)">
+
+☾ 사망 정보
+
+<br>
+
+200억 원
+
+</button>
+
+
+
+
+<button onclick="buyInfo('실종자 정보',300000000000)">
+
+☾ 실종자 정보
+
+<br>
+
+300억 원
+
+</button>
+
+
+
+
+<button onclick="buyInfo('최상위 기밀 정보',1000000000000)">
+
+☾ 최상위 기밀 정보
+
+<br>
+
+1조 원
+
+</button>
+
+
+
+
+<button onclick="buyInfo('조직 내부 기밀',800000000000)">
+
+☾ 조직 내부 기밀
+
+<br>
+
+8000억 원
+
+</button>
+
+
+
+
+<button onclick="buyInfo('미래 예측 정보',1000000000000)">
+
+☾ 미래 예측 정보
+
+<br>
+
+1조 원
+
+</button>
+
+
+
+
+<button onclick="buyInfo('특수 개체 정보',2000000000000)">
+
+☾ 특수 개체 정보
+
+<br>
+
+2조 원
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<!-- 직원 검색 결과 -->
+
+<section>
+
+
+<h2>
+👤 SCHMEETTERLING STAFF DATABASE
+</h2>
+
+
+
+<div id="staffInfo">
+
+
+직원 이름을 검색하면 기록이 표시됩니다.
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<!-- 주문 -->
+
+
+<section class="orderBox">
+
+
+<h2>
+📜 REQUEST ORDER
+</h2>
+
+
+
+<input 
+id="orderInput"
+placeholder="찾는 정보를 입력">
+
+
+<button onclick="makeOrder()">
+
+주문 요청
+
+</button>
+
+
+
+<div id="orderResult">
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- 여기까지 2/3 -->
+  <!-- 특별 물품 -->
+
+
+<section class="itemList">
+
+
+<h2>
+📖 BAekMILJE ARTIFACT
+</h2>
+
+
+
+<button onclick="buyInfo('운명의 열람서',2000000000000)">
+
+📖 『운명의 열람서』
+
+<br>
+
+2조 원
+
+</button>
+
+
+
+<button onclick="buyInfo('심연 기록서',1500000000000)">
+
+📓 『심연 기록서』
+
+<br>
+
+1조 5천억 원
+
+</button>
+
+
+
+<button onclick="buyInfo('진실의 렌즈',120000000000)">
+
+👁 『진실의 렌즈』
+
+<br>
+
+1200억 원
+
+</button>
+
+
+
+<button onclick="buyInfo('기억 회귀 거울',1000000000000)">
+
+🪞 『기억 회귀 거울』
+
+<br>
+
+1조 원
+
+</button>
+
+
+
+<button onclick="buyInfo('침묵의 만년필',800000000000)">
+
+🖋 『침묵의 만년필』
+
+<br>
+
+8000억 원
+
+</button>
+
+
+
+<button onclick="buyInfo('백지 계약서',1200000000000)">
+
+🔖 『백지 계약서』
+
+<br>
+
+1조 2천억 원
+
+</button>
+
+
+
+<button onclick="buyInfo('봉인의 열쇠',900000000000)">
+
+🗝 『봉인의 열쇠』
+
+<br>
+
+9000억 원
+
+</button>
+
+
+
+<button onclick="buyInfo('망각의 서류철',700000000000)">
+
+📂 『망각의 서류철』
+
+<br>
+
+7000억 원
+
+</button>
+
+
+
+<button onclick="buyInfo('회고의 회중시계',1000000000000)">
+
+🕰 『회고의 회중시계』
+
+<br>
+
+1조 원
+
+</button>
+
+
+
+<button onclick="buyInfo('무명의 촛불',650000000000)">
+
+🕯 『무명의 촛불』
+
+<br>
+
+6500억 원
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+<!-- 가방 -->
+
+
+<div id="bag">
+
+
+<h2>
+🎒 INFORMATION BAG
+</h2>
+
+
+<div id="bagList">
+
+보관된 정보 없음
+
+</div>
+
+
+<button onclick="closeBag()">
+
+닫기
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 결과창 -->
+
+
+<div id="resultWindow">
+
+
+<h2>
+📖 ARCHIVE RESULT
+</h2>
+
+
+<p id="resultText">
+
+</p>
+
+
+
+<button onclick="closeResult()">
+
+닫기
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<script src="./baekmilje.js"></script>
+
+
+</body>
+
+</html>
