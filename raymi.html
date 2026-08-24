@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+雷米 - BIO STAFF ID
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+
+body{
+
+margin:0;
+
+background:
+radial-gradient(circle at top,#3a0000,#050505 70%);
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+
+/* 중국풍 안개 */
+
+.chinaFog{
+
+position:fixed;
+
+bottom:-100px;
+
+left:0;
+
+width:100%;
+
+height:300px;
+
+background:
+
+radial-gradient(circle,
+rgba(180,0,0,.35),
+transparent 70%);
+
+filter:blur(60px);
+
+animation:fogMove 12s infinite;
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+
+@keyframes fogMove{
+
+0%{
+
+transform:translateX(-100px);
+
+opacity:.4;
+
+}
+
+
+50%{
+
+transform:translateX(100px);
+
+opacity:.8;
+
+}
+
+
+100%{
+
+transform:translateX(-100px);
+
+opacity:.4;
+
+}
+
+}
+
+
+
+
+/* 중국 문양 */
+
+.symbol{
+
+position:fixed;
+
+font-size:120px;
+
+opacity:.12;
+
+z-index:0;
+
+}
+
+
+.dragon{
+
+right:40px;
+
+top:100px;
+
+}
+
+
+.lotus{
+
+left:40px;
+
+bottom:100px;
+
+}
+
+
+
+
+
+/* 프로필 */
+
+.staffBox{
+
+position:relative;
+
+border:
+
+2px solid #d4af37;
+
+background:
+
+linear-gradient(
+135deg,
+#180000,
+#080808
+);
+
+
+box-shadow:
+
+0 0 30px rgba(212,175,55,.5);
+
+padding:25px;
+
+}
+
+
+
+.photo{
+
+text-align:center;
+
+}
+
+
+.photo img{
+
+
+width:260px;
+
+
+border:
+
+3px solid #d4af37;
+
+
+box-shadow:
+
+0 0 25px #d4af37;
+
+
+transition:.5s;
+
+
+}
+
+
+
+.photo img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+.chinaTitle{
+
+text-align:center;
+
+color:#ffd966;
+
+letter-spacing:6px;
+
+text-shadow:
+
+0 0 15px #d4af37;
+
+}
+
+
+
+
+.online{
+
+color:#00ff66;
+
+font-weight:bold;
+
+}
+
+
+
+.warningBox{
+
+
+border:
+
+2px solid #aa0000;
+
+
+background:
+
+rgba(150,0,0,.15);
+
+
+padding:20px;
+
+
+box-shadow:
+
+0 0 20px rgba(255,0,0,.3);
+
+
+}
+
+
+
+.recordBox{
+
+margin-top:20px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="chinaFog"></div>
+
+
+<div class="symbol dragon">
+🐉
+</div>
+
+
+<div class="symbol lotus">
+🪷
+</div>
+
+
+
+
+
+<div class="mainBox">
+
+
+
+<h2>
+STAFF IDENTIFICATION CARD
+</h2>
+
+
+<hr>
+
+
+
+<div class="recordBox staffBox">
+
+
+
+<div class="photo">
+
+<img src="./raymi.png">
+
+</div>
+
+
+
+
+<h2 class="chinaTitle">
+
+🐉 雷米 (RAYMI)
+
+</h2>
+
+
+
+<p>
+
+<b>사번</b> :
+
+UE-M001
+
+</p>
+
+
+<p>
+
+<b>직급</b> :
+
+책임자
+
+</p>
+
+
+<p>
+
+<b>DEPARTMENT</b> :
+
+BIO DEPARTMENT
+
+</p>
+
+
+
+<p>
+
+<b>STATUS</b> :
+
+<span class="online">
+
+● ACTIVE
+
+</span>
+
+</p>
+
+
+
+<p>
+
+<b>SECURITY LEVEL</b> :
+
+LEVEL 5
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+<div class="recordBox">
+
+
+
+<h2>
+
+PERSONAL INFORMATION
+
+</h2>
+
+
+
+<hr>
+
+
+
+<p>
+
+<b>FULL NAME</b> :
+
+雷米
+
+</p>
+
+
+<p>
+
+<b>HEIGHT</b> :
+
+200cm
+
+</p>
+
+
+<p>
+
+<b>SPECIES</b> :
+
+Human
+
+</p>
+
+
+<p>
+
+<b>AGE</b> :
+
+30
+
+</p>
+
+
+<p>
+
+<b>IQ</b> :
+
+???
+
+</p>
+
+
+<p>
+
+<b>FAMILY RELATIONS</b> :
+
+부모님,
+고양이 두 마리
+(앵두, 앵화)
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+<div class="recordBox">
+
+
+
+<h2>
+
+BIOGRAPHICAL RECORD
+
+</h2>
+
+
+<p>
+
+
+어릴 적부터 생물 연구 분야에 관심을 가지고
+성장한 연구자.
+
+
+</p>
+
+
+<br>
+
+
+<p>
+
+
+레이미를 전담 관리해왔으며,
+그녀의 입사 이후 SCHMEETTERLING에
+동반 입사.
+
+
+</p>
+
+
+<br>
+
+
+<p>
+
+
+생물학 분야에 높은 흥미를 가지고 있으며
+다수의 연구 논문 발표 기록 존재.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+<div class="recordBox">
+
+
+<h2>
+
+PERSONALITY
+
+</h2>
+
+
+
+<p>
+
+<b>예의 바른 연구자</b>
+
+</p>
+
+
+<p>
+
+타인과의 접촉은 많지 않지만
+항상 존댓말을 사용하며
+친절하게 설명하는 태도를 유지.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>침착함</b>
+
+</p>
+
+
+<p>
+
+감정보다는 관찰과 분석을 우선하며
+연구 상황에서도 냉정함 유지.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>생명 연구 집착</b>
+
+</p>
+
+
+<p>
+
+생명체의 구조와 변화에 대해
+강한 호기심을 보임.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+
+RELATIONSHIP RECORD
+
+</h2>
+
+
+
+<p>
+
+<b>양메이</b>
+
+</p>
+
+
+<p>
+
+장기간 전담 관리 대상.
+
+현재 높은 신뢰 관계 유지.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>칭위</b>
+
+</p>
+
+
+<p>
+
+충성도가 높은 직원으로 확인.
+
+다소 시끄럽다고 평가하지만
+협력 관계 유지.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="warningBox">
+
+
+<h2>
+
+⚠ NOTANDUM
+
+</h2>
+
+
+<p>
+
+매수 시도를 권장하지 않습니다.
+
+</p>
+
+
+<p>
+
+해당 인물은 이미 특정 대상에게
+완전히 신뢰를 보이고 있습니다.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+흰 머리에 대한 질문 금지.
+
+</p>
+
+
+<p>
+
+개인 기밀 사항으로 분류됩니다.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+<div class="recordBox">
+
+
+<h2>
+
+FINAL SECURITY NOTE
+
+</h2>
+
+
+<p>
+
+관리 등급 :
+
+<b>
+
+BIO CORE RESEARCHER
+
+</b>
+
+</p>
+
+
+<p>
+
+위험도 :
+
+<b style="color:#ffd966;">
+
+CLASS A
+
+</b>
+
+</p>
+
+
+<p>
+
+권장 사항 :
+
+연구 방해 금지.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<br>
+
+
+
+<button onclick="location.href='./bio_staff.html'">
+
+← 생물 부서 직원 목록
+
+</button>
+
+
+
+
+
+</div>
+
+
+</body>
+
+
+</html>
