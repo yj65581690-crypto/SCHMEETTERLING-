@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+BIO STAFF DATABASE
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+body.bioPage{
+
+background:#020d06;
+
+}
+
+
+.status{
+
+color:#00ff66;
+
+font-weight:bold;
+
+}
+
+
+.staffCard{
+
+border:1px solid #00ff66;
+
+background:#001a08;
+
+padding:20px;
+
+margin:20px 0;
+
+box-shadow:
+
+0 0 15px rgba(0,255,100,.2);
+
+}
+
+
+
+input{
+
+background:#000;
+
+color:#00ff66;
+
+border:1px solid #00ff66;
+
+padding:10px;
+
+width:90%;
+
+}
+
+
+
+.restricted{
+
+border:1px solid #ff5555;
+
+background:#150000;
+
+padding:20px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body class="bioPage">
+
+
+
+<div class="layout">
+
+
+
+<!-- SIDE MENU -->
+
+
+<div class="sideMenu">
+
+
+<h3>
+SCHMEETTERLING
+</h3>
+
+
+<p class="status">
+
+● BIO SYSTEM ONLINE
+
+</p>
+
+
+<hr>
+
+
+<p>
+
+USER
+
+<br>
+
+<b id="userName">
+UNKNOWN
+</b>
+
+</p>
+
+
+
+<p>
+
+LEVEL
+
+<br>
+
+<b id="userLevel">
+NONE
+</b>
+
+</p>
+
+
+<hr>
+
+
+
+<button onclick="location.href='./bio.html'">
+
+← BIO DEPARTMENT
+
+</button>
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 CENTRAL TERMINAL
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- MAIN -->
+
+
+<div class="mainBox">
+
+
+<h2>
+
+🧬 BIO STAFF DATABASE
+
+</h2>
+
+
+<hr>
+
+
+<p>
+
+SCHMEETTERLING 생물 부서 직원 정보
+
+</p>
+
+
+<hr>
+
+
+
+<h3>
+
+STAFF SEARCH
+
+</h3>
+
+
+
+<input
+
+type="text"
+
+id="searchInput"
+
+placeholder="이름 / 직급 / 사번 검색"
+
+onkeyup="searchStaff()"
+
+>
+
+
+
+<hr>
+
+
+
+<h3>
+
+STAFF LIST
+
+</h3>
+
+
+
+<div id="staffContainer">
+  <div class="recordBox staffCard">
+
+
+<h2>
+레이미
+</h2>
+
+
+<p>
+<b>사번</b> : UE-M189
+</p>
+
+
+<p>
+<b>직급</b> : 직원
+</p>
+
+
+<p>
+<b>소속</b> : 생물 부서
+</p>
+
+
+<button onclick="location.href='./leimi.html'">
+
+프로필 열람
+
+</button>
+
+
+  </div>
