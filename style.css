@@ -1221,3 +1221,32 @@ background:#030303;
 font-family:monospace;
 
 }
+.photo{
+
+text-align:center;
+
+margin-bottom:20px;
+
+}
+
+
+.staffImage{
+
+width:240px;
+
+border:2px solid #d4af37;
+
+box-shadow:
+0 0 20px rgba(212,175,55,.5);
+
+transition:.4s;
+
+}
+
+
+
+.staffImage:hover{
+
+transform:scale(1.05);
+
+}
