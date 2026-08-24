@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+杨梅 - STAFF ID
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+/* ===========================
+ YANGMEI CHINESE BIO THEME
+=========================== */
+
+
+body{
+
+margin:0;
+
+background:
+radial-gradient(circle at top,#20382b,#050505 60%);
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+
+
+/* 용 그림자 */
+
+.dragon{
+
+position:fixed;
+
+right:-100px;
+
+top:100px;
+
+font-size:300px;
+
+opacity:0.08;
+
+animation:dragonMove 18s infinite alternate;
+
+pointer-events:none;
+
+}
+
+
+@keyframes dragonMove{
+
+from{
+
+transform:translateX(0);
+
+}
+
+to{
+
+transform:translateX(-100px);
+
+}
+
+}
+
+
+
+
+/* 음양 문양 */
+
+
+.yinyang{
+
+position:fixed;
+
+left:40px;
+
+bottom:80px;
+
+font-size:120px;
+
+opacity:.12;
+
+animation:rotateYin 20s linear infinite;
+
+}
+
+
+@keyframes rotateYin{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+
+
+
+/* 꽃잎 */
+
+
+.petal{
+
+position:fixed;
+
+top:-50px;
+
+color:#ff5577;
+
+font-size:22px;
+
+animation:fall linear infinite;
+
+pointer-events:none;
+
+}
+
+
+@keyframes fall{
+
+
+0%{
+
+transform:translateY(-50px) rotate(0deg);
+
+opacity:0;
+
+}
+
+
+20%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+
+/* 붉은 실 */
+
+
+.redThread{
+
+position:fixed;
+
+width:200%;
+
+height:2px;
+
+background:#aa0000;
+
+top:40%;
+
+left:-50%;
+
+opacity:.3;
+
+animation:threadMove 8s infinite;
+
+}
+
+
+@keyframes threadMove{
+
+
+0%{
+
+transform:translateX(-200px);
+
+}
+
+
+50%{
+
+transform:translateX(200px);
+
+}
+
+
+100%{
+
+transform:translateX(-200px);
+
+}
+
+
+}
+
+
+
+
+/* 메인 카드 */
+
+
+.yangmeiBox{
+
+border:2px solid #d4af37;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(0,0,0,.95),
+
+rgba(20,50,35,.9)
+
+);
+
+
+box-shadow:
+
+0 0 35px rgba(212,175,55,.35);
+
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+
+
+/* 금색 제목 */
+
+
+.goldTitle{
+
+color:#ffe58a;
+
+letter-spacing:5px;
+
+text-shadow:
+
+0 0 15px #d4af37;
+
+}
+
+
+
+
+/* 상태 */
+
+
+.online{
+
+color:#00ff66;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* 경고 */
+
+
+.warningBox{
+
+border:2px solid #b30000;
+
+background:rgba(150,0,0,.15);
+
+padding:20px;
+
+box-shadow:
+
+0 0 20px rgba(255,0,0,.3);
+
+}
+
+
+
+
+/* 정보 박스 */
+
+
+.infoBox{
+
+border:1px solid #d4af37;
+
+padding:20px;
+
+background:#090909;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<div class="dragon">
+
+🐉
+
+</div>
+
+
+<div class="yinyang">
+
+☯
+
+</div>
+
+
+<div class="redThread"></div>
+
+
+<div id="petals"></div>
+
+
+
+
+
+<div class="layout">
+
+
+
+<!-- SIDE MENU -->
+
+
+<div class="sideMenu">
+
+
+<h3>
+
+SCHMEETTERLING
+
+</h3>
+
+
+
+<p class="online">
+
+● BIO SYSTEM ONLINE
+
+</p>
+
+
+
+<hr>
+
+
+
+<p>
+
+USER
+
+<br>
+
+<b id="userName">
+
+UNKNOWN
+
+</b>
+
+</p>
+
+
+
+<p>
+
+LEVEL
+
+<br>
+
+<b id="userLevel">
+
+NONE
+
+</b>
+
+</p>
+
+
+
+
+<hr>
+
+
+
+<button onclick="location.href='./bio_staff.html'">
+
+← BIO STAFF DATABASE
+
+</button>
+
+
+
+<button onclick="location.href='./bio.html'">
+
+← BIO DEPARTMENT
+
+</button>
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 CENTRAL TERMINAL
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<!-- MAIN -->
+
+
+<div class="mainBox">
+
+
+<h2>
+
+STAFF IDENTIFICATION CARD
+
+</h2>
+
+
+
+<hr>
+
+
+
+<div class="recordBox yangmeiBox">
+
+<h2 class="goldTitle">
+
+杨梅
+
+</h2>
+
+
+<p>
+
+<b>FULL NAME</b> :
+
+YANG MEI
+
+</p>
+
+
+<p>
+
+<b>사번</b> :
+
+UE-M890
+
+</p>
+
+
+<p>
+
+<b>직급</b> :
+
+책임자
+
+</p>
+
+
+<p>
+
+<b>DEPARTMENT</b> :
+
+BIO DEPARTMENT
+
+</p>
+
+
+<p>
+
+<b>STATUS</b> :
+
+<span class="online">
+
+● ACTIVE
+
+</span>
+
+</p>
+
+
+<p>
+
+<b>SECURITY LEVEL</b> :
+
+LEVEL 5
+
+</p>
+
+
+<p>
+
+<b>SPECIES</b> :
+
+HUMAN
+
+</p>
+
+
+</div>
+  <hr>
+
+
+<div class="recordBox infoBox">
+
+
+<h2 class="goldTitle">
+
+STAFF DATABASE
+
+</h2>
+
+
+<hr>
+
+
+<h3>
+
+PERSONAL INFORMATION
+
+</h3>
+
+
+
+<p>
+
+<b>FULL NAME</b>
+
+:
+
+杨梅 / YANG MEI
+
+</p>
+
+
+
+<p>
+
+<b>HEIGHT</b>
+
+:
+
+168 cm
+
+</p>
+
+
+
+<p>
+
+<b>SPECIES</b>
+
+:
+
+HUMAN
+
+</p>
+
+
+
+<p>
+
+<b>AGE</b>
+
+:
+
+28
+
+</p>
+
+
+
+<p>
+
+<b>IQ</b>
+
+:
+
+190
+
+</p>
+
+
+
+<p>
+
+<b>FAMILY RELATIONS</b>
+
+:
+
+언니, 부모님, 고모
+
+</p>
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox infoBox">
+
+
+<h3>
+
+BACKGROUND
+
+</h3>
+
+
+
+<p>
+
+중국 3대 부호 가문의 후계자로,
+막대한 재력을 보유한 인물.
+
+</p>
+
+
+<br>
+
+
+
+<p>
+
+생명공학 분야를 중심으로
+여러 사업을 운영하고 있으며,
+
+SCHMEETTERLING 내부에서도
+상당한 영향력을 가진 책임자로 기록되어 있습니다.
+
+</p>
+
+
+<br>
+
+
+
+<p>
+
+공식적으로는 BIO DEPARTMENT의 책임자지만,
+그 영향력과 정보력은 일반 직원의 범위를 넘어섭니다.
+
+</p>
+
+
+<br>
+
+
+
+<p>
+
+무엇이든 가능하다고 평가될 정도의
+판단력과 실행력을 보유하고 있습니다.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox infoBox">
+
+
+<h3>
+
+PERSONALITY
+
+</h3>
+
+
+
+<p>
+
+<b>계산적인 판단</b>
+
+</p>
+
+
+
+<p>
+
+모든 상황을 분석하고,
+가장 효율적인 결과를 선택합니다.
+
+감정보다는 결과와 가능성을 우선하며
+불필요한 위험을 피하는 성향을 보입니다.
+
+</p>
+
+
+
+
+<br>
+
+
+
+
+<p>
+
+<b>높은 경계심</b>
+
+</p>
+
+
+
+<p>
+
+타인과 쉽게 신뢰 관계를 형성하지 않습니다.
+
+모든 관계를 분석하며,
+상대의 의도와 목적을 먼저 파악하려 합니다.
+
+</p>
+
+
+
+
+<br>
+
+
+
+
+<p>
+
+<b>전지적인 시야</b>
+
+</p>
+
+
+
+<p>
+
+정보 수집 능력과 판단력이 뛰어나며,
+대부분의 상황에서 여러 가능성을 계산합니다.
+
+</p>
+
+
+
+<br>
+
+
+
+
+<p>
+
+<b>물질적인 관계관</b>
+
+</p>
+
+
+
+<p>
+
+대부분의 관계는 거래와 가치 교환으로
+판단하는 경향이 있습니다.
+
+다만 본질적으로 악한 성격은 아니며,
+단순히 감정보다 확실한 것을 선호합니다.
+
+</p>
+
+
+
+</div>
+  <hr>
+
+
+<div class="recordBox infoBox">
+
+
+<h3>
+
+SPECIAL CHARACTERISTICS
+
+</h3>
+
+
+
+<p>
+
+<b>🐉 용의 상징</b>
+
+</p>
+
+
+<p>
+
+중국 전통 상징인 용과 관련된 이미지가
+다수의 기록에서 확인됩니다.
+
+강한 권위와 지배력을 의미하는 것으로 추정됩니다.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>🌸 매화</b>
+
+</p>
+
+
+<p>
+
+이름 「杨梅」와 연관된 상징으로,
+인내와 고귀함을 나타내는 표식으로 사용됩니다.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>🪷 연꽃</b>
+
+</p>
+
+
+<p>
+
+외부 환경에 영향을 받지 않고
+자신만의 기준을 유지하는 성향을 의미합니다.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>☯ 음양 문양</b>
+
+</p>
+
+
+<p>
+
+균형과 계산을 상징하는 문양.
+
+양메이의 판단 방식과
+상황 분석 능력을 나타냅니다.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>🧬 BIO AUTHORITY</b>
+
+</p>
+
+
+<p>
+
+생명공학 분야에서 높은 이해도를 보유하고 있으며,
+생물 연구 및 관리 능력은 최고 등급으로 평가됩니다.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>💰 BUSINESS RECORD</b>
+
+</p>
+
+
+<p>
+
+사업 관련 정보는 기밀로 분류됩니다.
+
+공식 기록 외의 활동에 대해서는
+접근 권한이 제한됩니다.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="warningBox">
+
+
+<h3>
+
+⚠ NOTANDUM
+
+</h3>
+
+
+<p>
+
+사업 및 개인 조직과 관련된 질문은
+권장하지 않습니다.
+
+</p>
+
+
+
+<p>
+
+해당 정보는 SCHMEETTERLING 내부에서도
+제한적으로 관리되고 있습니다.
+
+</p>
+
+
+
+<p>
+
+불필요한 접근 시
+보안 기록이 생성됩니다.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="recordBox">
+
+
+<h3>
+
+FINAL SECURITY NOTE
+
+</h3>
+
+
+
+<p>
+
+관리 대상 :
+
+<b style="color:#ffd700">
+
+BIO DIRECTOR
+
+</b>
+
+</p>
+
+
+
+<p>
+
+위험도 :
+
+<b style="color:#ff5555">
+
+CLASS S
+
+</b>
+
+</p>
+
+
+
+<p>
+
+권장 조치 :
+
+정보 거래 시
+항상 공식 절차를 따를 것.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<br>
+
+
+
+<button onclick="location.href='./bio_staff.html'">
+
+← 생물 부서 직원 목록
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+
+// =======================
+// USER LOAD
+// =======================
+
+
+document.getElementById("userName").innerHTML =
+
+localStorage.getItem("userName") || "UNKNOWN";
+
+
+document.getElementById("userLevel").innerHTML =
+
+localStorage.getItem("userLevel") || "NONE";
+
+
+
+
+
+
+
+// =======================
+// FLOWER PARTICLE
+// =======================
+
+
+const petals =
+
+document.getElementById("petals");
+
+
+
+setInterval(()=>{
+
+
+let p=document.createElement("div");
+
+
+p.className="petal";
+
+
+p.innerHTML="🌸";
+
+
+p.style.left=
+
+Math.random()*100+"vw";
+
+
+p.style.animationDuration=
+
+(7+Math.random()*8)+"s";
+
+
+p.style.fontSize=
+
+(15+Math.random()*20)+"px";
+
+
+
+petals.appendChild(p);
+
+
+
+setTimeout(()=>{
+
+p.remove();
+
+},15000);
+
+
+
+},500);
+
+
+
+
+
+
+
+// =======================
+// STATUS CHANGE
+// =======================
+
+
+let statusText=[
+
+"● ACTIVE",
+
+"● MONITORING",
+
+"● CALCULATING",
+
+"● BIO DIRECTOR ONLINE"
+
+];
+
+
+
+setInterval(()=>{
+
+
+let target=document.querySelector(".online");
+
+
+if(target){
+
+
+target.innerHTML=
+
+statusText[
+
+Math.floor(Math.random()*statusText.length)
+
+];
+
+
+}
+
+
+
+},4000);
+
+
+
+
+
+// =======================
+// SECRET MESSAGE
+// =======================
+
+
+setTimeout(()=>{
+
+
+alert(
+
+"YANG MEI DATABASE CONNECTED\n\nBIO AUTHORITY VERIFIED."
+
+);
+
+
+},30000);
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
