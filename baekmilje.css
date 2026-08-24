@@ -669,3 +669,30 @@ flex-direction:column;
 
 
 }
+
+.sideBar{
+
+position:fixed;
+
+left:20px;
+
+top:20px;
+
+width:180px;
+
+background:#080808;
+
+border:1px solid #777;
+
+padding:20px;
+
+z-index:5;
+
+}
+
+
+.sideBar button{
+
+width:100%;
+
+}
