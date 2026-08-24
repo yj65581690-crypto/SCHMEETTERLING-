@@ -500,7 +500,8 @@ document.getElementById("chatLog").innerHTML = oldChat;
 
 }
 
-
+loadBroadcast();
+  
 };
 
 
@@ -616,16 +617,14 @@ document.getElementById("time").innerHTML =
 
 },1000);
 
-
 function loadBroadcast(){
 
-
-let message = localStorage.getItem("broadcast");
+let message =
+localStorage.getItem("broadcast");
 
 
 let box =
 document.getElementById("broadcastText");
-
 
 
 if(message){
@@ -633,23 +632,110 @@ if(message){
 box.innerHTML = message;
 
 }
-  function openMirror(type){
+
+else{
+
+box.innerHTML =
+"● SYSTEM ONLINE<br>● ALL FACILITY CONNECTED";
+
+}
+
+}
+
+
+
+function openMirror(type){
+
 
 switch(type){
 
+
+
 case "cat":
 
+
 alert(
-"거울 표면이 물결처럼 흔들립니다...\n\n『묘월상회』"
+"거울 표면이 물결처럼 흔들립니다...\n\n🐈 猫月商會 ACCESS"
 );
+
+
 
 setTimeout(function(){
 
+
 location.href="./catshop.html";
+
 
 },1200);
 
+
+
 break;
+
+
+
+
+case "name":
+
+
+alert(
+"수많은 명패가 거울 너머로 보입니다...\n\n『명패관』"
+);
+
+
+
+setTimeout(function(){
+
+
+location.href="./namehall.html";
+
+
+},1200);
+
+
+
+break;
+
+
+
+
+case "secret":
+
+
+alert(
+"문서들이 공중을 떠다닙니다...\n\n『백밀제』"
+);
+
+
+
+setTimeout(function(){
+
+
+location.href="./baekmilje.html";
+
+
+},1200);
+
+
+
+break;
+
+
+}
+
+
+}
+
+
+
+
+function closeBroadcast(){
+
+
+document.getElementById("broadcastBox").style.display="none";
+
+
+}8
 
 case "name":
 
