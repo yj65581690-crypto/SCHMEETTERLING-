@@ -90,7 +90,6 @@ let talks=[
 
 ];
 
-
 let text =
 talks[
 Math.floor(Math.random()*talks.length)
@@ -100,9 +99,8 @@ Math.floor(Math.random()*talks.length)
 
 document.getElementById(
 "tellerTalk"
-).innerHTML=text;
-
-
+).innerHTML =
+text.replace(/\n/g,"<br>");
 
 }
 
