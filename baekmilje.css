@@ -1,4 +1,4 @@
-body{
+tbody{
 
 margin:0;
 
@@ -686,11 +686,16 @@ border:1px solid #777;
 
 padding:20px;
 
-z-index:5;
-
+z-index:50;
 }
 
+button,
+input{
 
+position:relative;
+z-index:100;
+
+}
 .sideBar button{
 
 width:100%;
