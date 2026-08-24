@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>猫月商會 - MYOWOL SECRET STORE</title>
+
+<link rel="stylesheet" href="./myowol.css">
+
+</head>
+
+
+<body>
+
+
+<!-- 입장 연출 -->
+
+<div id="entryEffect">
+
+<p>
+CAT STICKER VERIFIED
+</p>
+
+<p>
+UNKNOWN SPACE CONNECTED
+</p>
+
+<h1>
+🐈 猫月商會
+</h1>
+
+</div>
+
+
+
+
+<!-- 촛불 -->
+
+<div id="candleArea">
+
+</div>
+
+
+
+
+<!-- 먼지 -->
+
+<div id="dustArea">
+
+</div>
+
+
+
+
+
+<!-- 이동하는 고양이 -->
+
+<div id="walkingCat">
+
+🐈
+
+</div>
+
+
+
+
+
+
+<!-- 메인 -->
+
+<div class="shopWrapper">
+
+
+
+
+
+<!-- 사이드바 -->
+
+<div class="sideBar">
+
+
+<h2>
+
+🐈 猫月商會
+
+</h2>
+
+
+<p>
+MYOWOL SECRET STORE
+</p>
+
+
+<hr>
+
+
+<p>
+● SECRET FACILITY
+</p>
+
+
+<p>
+ENTRY
+
+<br>
+
+AUTHORIZED
+
+</p>
+
+
+<p>
+PASS
+
+<br>
+
+CAT STICKER
+
+</p>
+
+
+<p>
+STATUS
+
+<br>
+
+<span>
+● OPEN
+</span>
+
+</p>
+
+
+
+<button onclick="location.href='./main.html'">
+
+← CENTRAL TERMINAL
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 중앙 -->
+
+<div class="shopMain">
+
+
+
+<h1>
+
+🐈 猫月商會
+
+</h1>
+
+
+<p>
+
+MYOWOL SECRET STORE
+
+</p>
+
+
+<p class="warning">
+
+OFFICIAL RECORD DOES NOT EXIST.
+
+</p>
+
+
+
+<hr>
+
+
+
+
+
+<!-- 점장 -->
+
+<section class="ownerBox">
+
+
+<div class="ownerCharacter"
+onclick="talkOwner()">
+
+🐈‍⬛
+
+</div>
+
+
+<div class="speech" id="ownerSpeech">
+
+어서오라냥~
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- 돈 -->
+
+<div class="moneyBox">
+
+
+💰 BALANCE
+
+<br>
+
+
+<span id="money">
+
+0
+
+</span>
+
+원
+
+
+</div>
+
+
+
+
+
+
+<!-- 가방 -->
+
+<button class="bagButton"
+onclick="openBag()">
+
+🎒 INVENTORY
+
+</button>
+
+
+
+
+
+
+<!-- 판매 목록 -->
+
+
+<h2>
+
+🛒 판매 물품
+
+</h2>
+
+
+
+<div class="itemList">
+
+
+
+<div class="item">
+
+<h3>
+🧪 완전 탈모 치료제
+</h3>
+
+<p>
+200억
+</p>
+
+
+<button onclick="buyItem('완전 탈모 치료제',20000000000)">
+
+구매
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="item">
+
+<h3>
+👁 황금 의안
+</h3>
+
+<p>
+230억
+</p>
+
+
+<button onclick="buyItem('황금 의안',23000000000)">
+
+구매
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="item">
+
+
+<h3>
+💀 사자의 부활약
+</h3>
+
+
+<p>
+1조
+</p>
+
+
+<button onclick="buyItem('사자의 부활약',1000000000000)">
+
+구매
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 주문 -->
+
+
+<hr>
+
+
+<h2>
+
+📜 ORDER SYSTEM
+
+</h2>
+
+
+
+<input 
+id="orderInput"
+placeholder="찾는 물건을 입력하세요">
+
+
+<button onclick="makeOrder()">
+
+주문 요청
+
+</button>
+
+
+
+
+
+
+<!-- 게임 -->
+
+
+<hr>
+
+
+<h2>
+
+🎲 猫月 GAME
+
+</h2>
+
+
+<p>
+
+성공 보상 : 400억
+
+</p>
+
+
+<button onclick="startGame()">
+
+게임 시작
+
+</button>
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- 가방 창 -->
+
+
+<div id="inventory">
+
+
+<h2>
+
+🎒 INVENTORY
+
+</h2>
+
+
+<div id="inventoryList">
+
+보유 아이템 없음
+
+</div>
+
+
+
+<button onclick="closeBag()">
+
+닫기
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 게임 창 -->
+
+<div id="gameWindow">
+
+
+<h2>
+
+UNKNOWN GAME
+
+</h2>
+
+
+<div id="gameContent">
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 방치 이벤트 -->
+
+<div id="idleMessage">
+
+무엇을 찾고 계십니까?
+
+</div>
+
+
+
+
+
+
+
+<script src="./myowol.js"></script>
+
+
+</body>
+
+</html>
