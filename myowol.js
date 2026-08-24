@@ -298,24 +298,104 @@ JSON.stringify(inventory)
 
 // 아이템 사용
 
-
 function useItem(index){
 
 
-let item=inventory[index];
+let item = inventory[index];
+
+let text="";
 
 
 
-alert(
+switch(item){
 
+
+case "💊 기억 복원 캡슐":
+
+text=
+"잊어버린 기억이 돌아오기 시작한다...\n\n하지만 가장 슬픈 기억부터 떠오른다.";
+
+break;
+
+
+
+case "💉 청춘 혈청":
+
+text=
+"몸이 가벼워진다.\n\n시간이 되돌아간 느낌이 든다.";
+
+break;
+
+
+
+case "⏳ 시간 정지 모래시계":
+
+text=
+"주변의 시간이 멈췄다.\n\n30초 동안 당신만 움직일 수 있다.";
+
+break;
+
+
+
+case "🌌 차원 열쇠":
+
+text=
+"공간이 갈라진다.\n\n어딘가로 이어지는 문이 열렸다.";
+
+break;
+
+
+
+case "🪽 천사의 날개":
+
+text=
+"등 뒤에서 날개가 펼쳐진다.\n\n하늘을 날 수 있을 것 같다.";
+
+break;
+
+
+
+case "💀 사자의 부활약":
+
+
+text=
+"점장이 조용히 바라본다냥.\n\n"+
+"정말... 돌아오길 원하는 존재가 있나냥?";
+
+
+break;
+
+
+
+default:
+
+
+text=
 item+
-"\n\n사용되었습니다."
+"\n\n사용되었다냥.";
+
+break;
+
+
+}
+
+
+
+
+alert(text);
+
+
+
+ownerTalk(
+
+"사용 완료했다냥~"
 
 );
 
 
 
 inventory.splice(index,1);
+
 
 
 updateInventory();
