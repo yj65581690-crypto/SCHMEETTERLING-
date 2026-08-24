@@ -677,6 +677,9 @@ break;
 
 case "name":
 
+mirrorEntry();
+
+break;
 
 alert(
 "수많은 명패가 거울 너머로 보입니다...\n\n『명패관』"
@@ -744,6 +747,81 @@ document.getElementById("broadcastBox").style.display="none";
 document.getElementById("broadcastBox").style.display="none";
 
   }
+  // =============================
+// 🃏 冥牌館 거울 입장 연출
+// =============================
+
+
+function mirrorEntry(){
+
+
+let effect =
+document.createElement("div");
+
+
+effect.id="mirrorGate";
+
+
+effect.innerHTML=
+
+
+`
+
+<div class="floatingTarot">
+
+🃏
+
+</div>
+
+
+<p>
+TAROT PHENOMENON VERIFIED
+</p>
+
+
+<p>
+DESTINY MIRROR OPENING...
+</p>
+
+
+<h1>
+冥牌館
+</h1>
+
+
+`;
+
+
+
+document.body.appendChild(effect);
+
+
+
+
+setTimeout(function(){
+
+
+effect.classList.add("open");
+
+
+},100);
+
+
+
+
+
+setTimeout(function(){
+
+
+location.href="./namehall.html";
+
+
+},2500);
+
+
+
+}
+  
 </script>
 
 
