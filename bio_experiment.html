@@ -9,7 +9,6 @@
 BIO EXPERIMENT LAB
 </title>
 
-
 <link rel="stylesheet" href="./style.css">
 
 
@@ -33,9 +32,7 @@ padding:20px;
 
 margin:20px 0;
 
-box-shadow:
-
-0 0 20px rgba(0,255,100,.25);
+box-shadow:0 0 20px rgba(0,255,100,.25);
 
 }
 
@@ -64,16 +61,6 @@ color:#00ff66;
 .status{
 
 color:#00ff66;
-
-font-weight:bold;
-
-}
-
-
-
-.warning{
-
-color:#ff5555;
 
 font-weight:bold;
 
@@ -112,6 +99,7 @@ border:1px solid #00ff66;
 }
 
 
+
 .progress div{
 
 height:100%;
@@ -134,9 +122,7 @@ font-size:30px;
 
 color:#00ff66;
 
-text-shadow:
-
-0 0 10px #00ff66;
+text-shadow:0 0 10px #00ff66;
 
 }
 
@@ -157,11 +143,10 @@ overflow:auto;
 }
 
 
-
 </style>
 
-
 </head>
+
 
 
 <body class="bioPage">
@@ -170,25 +155,16 @@ overflow:auto;
 <div class="layout">
 
 
-
-<!-- SIDE MENU -->
-
-
 <div class="sideMenu">
 
 
 <h3>
-
 SCHMEETTERLING
-
 </h3>
 
 
-
 <p class="status">
-
 ● BIO SYSTEM ONLINE
-
 </p>
 
 
@@ -196,30 +172,22 @@ SCHMEETTERLING
 
 
 <p>
-
 USER
-
 <br>
 
 <b id="userName">
-
 UNKNOWN
-
 </b>
 
 </p>
 
 
 <p>
-
 LEVEL
-
 <br>
 
 <b id="userLevel">
-
 NONE
-
 </b>
 
 </p>
@@ -228,18 +196,13 @@ NONE
 <hr>
 
 
-
 <button onclick="location.href='./bio.html'">
-
 ← BIO DEPARTMENT
-
 </button>
 
 
 <button onclick="location.href='./main.html'">
-
 🏠 CENTRAL TERMINAL
-
 </button>
 
 
@@ -248,445 +211,127 @@ NONE
 
 
 
-
-<!-- MAIN -->
-
-
 <div class="mainBox">
 
 
-
 <h2>
-
 🧫 BIO EXPERIMENT LAB
-
 </h2>
 
 
-
 <p>
-
 <b>시설 코드 :</b>
-
 BIO-LAB-04
-
 </p>
 
 
-
 <p>
-
 <b>연구 상태 :</b>
 
 <span class="status">
-
 ACTIVE
-
 </span>
 
 </p>
 
 
-
 <hr>
 
 
-
 <h3>
-
 🧬 SPECIMEN CREATION
-
 </h3>
-
 
 
 <div class="labBox">
 
 
-<div class="specimen"
-
-id="lifeName">
+<div class="specimen" id="lifeName">
 
 UNKNOWN LIFEFORM
 
 </div>
 
 
-<br>
-
-
 <p>
-
 등록 번호 :
-
 <b id="lifeCode">
-
 BIO-000
-
 </b>
-
 </p>
 
 
 <p>
-
 분류 :
-
 <b id="lifeType">
-
 UNKNOWN
-
 </b>
-
 </p>
 
 
 <p>
-
 위험 등급 :
-
 <b id="lifeRisk">
-
 UNKNOWN
-
 </b>
-
 </p>
 
 
 <p>
-
 생존 가능성 :
-
 <b id="lifeRate">
-
 0%
-
 </b>
-
 </p>
 
 
 
 <button onclick="createLife()">
-
 🧬 신규 생명체 생성
-
 </button>
 
 
 <button onclick="saveLife()">
-
 💾 연구 데이터 저장
-
 </button>
+
 
 <button onclick="registerCatalog()">
-
 📖 생명체 도감 등록
-
 </button>
 
-</div>
 
+</div>
 
 
 <hr>
 
 
 <h3>
-
 🔬 LIVE MICROSCOPE
-
 </h3>
-
 
 
 <div class="labBox">
 
 
-<canvas
-
-id="microscope"
-
-width="700"
-
-height="400">
-
-</canvas>
+<canvas id="microscope" width="700" height="400"></canvas>
 
 
 <br>
 
 
 <button onclick="startMicroscope()">
-
 🔍 현미경 시작
-
 </button>
 
 
 <button onclick="stopMicroscope()">
-
 ⏹ 관찰 종료
-
-</button>
-
-
-
-</div>
-<hr>
-
-
-<h3>
-
-🧫 CULTURE CHAMBER
-
-</h3>
-
-
-
-<div class="labBox">
-
-
-<p>
-
-배양 상태 :
-
-<b id="cultureState">
-
-대기중
-
-</b>
-
-</p>
-
-
-
-<div class="progress">
-
-<div id="cultureProgress">
-
-</div>
-
-</div>
-
-
-
-<br>
-
-
-<button onclick="startCulture()">
-
-🧫 배양 시작
-
-</button>
-
-
-
-<button onclick="mutationEvent()">
-
-☣ 돌연변이 유도
-
-</button>
-
-
-
-</div>
-
-
-
-
-
-<hr>
-
-
-
-
-<h3>
-
-🦠 SPECIMEN INFORMATION
-
-</h3>
-
-
-
-<div class="labBox">
-
-
-
-<p>
-
-현재 개체 :
-
-<b id="specimen">
-
-없음
-
-</b>
-
-</p>
-
-<button onclick="dnaAnalyze()">
-
-🧬 DNA 분석
-
-</button>
-
-
-
-
-<p>
-
-세포 활동 :
-
-<b id="cellActivity">
-
-WAITING
-
-</b>
-
-</p>
-
-
-
-<p>
-
-DNA 안정도 :
-
-<b id="dna">
-
-0%
-
-</b>
-
-</p>
-
-
-
-<p>
-
-변이 가능성 :
-
-<b id="mutation">
-
-0%
-
-</b>
-
-</p>
-
-
-
-<p>
-
-개체 수 :
-
-<b id="count">
-
-0
-
-</b>
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-<hr>
-
-
-
-
-
-<h3>
-
-📡 RESEARCH MONITOR
-
-</h3>
-
-
-
-<div class="monitor"
-
-id="log">
-
-SYSTEM READY...
-
-</div>
-
-
-
-
-
-<hr>
-
-
-
-
-<h3>
-
-📁 SAVED BIO DATABASE
-
-</h3>
-
-
-
-<div class="labBox">
-
-
-
-<div class="saved"
-
-id="savedList">
-
-저장된 연구 데이터 없음
-
-</div>
-
-
-
-<br>
-
-
-
-<button onclick="clearDatabase()">
-
-🗑 데이터 삭제
-
 </button>
 
 
 </div>
-
-
-
-
-<hr>
-
-
-
-
-<button onclick="location.href='./bio.html'">
-
-← BIO DEPARTMENT
-
-</button>
-
-
-
-
-</div>
-
-</div>
-
-
-
 <script>
 
 
@@ -696,12 +341,10 @@ id="savedList">
 
 
 document.getElementById("userName").innerHTML =
-
 localStorage.getItem("userName") || "UNKNOWN";
 
 
 document.getElementById("userLevel").innerHTML =
-
 localStorage.getItem("userLevel") || "NONE";
 
 
@@ -712,22 +355,19 @@ localStorage.getItem("userLevel") || "NONE";
 // ==========================
 
 
-let canvas =
+let canvas = document.getElementById("microscope");
 
-document.getElementById("microscope");
-
-
-let ctx =
-
-canvas.getContext("2d");
+let ctx = canvas.getContext("2d");
 
 
+let microbes = [];
 
-let microbes=[];
+let microscopeTimer = null;
 
+let scanTimer = null;
 
-let microscopeTimer=null;
-let scanTimer=null;
+let scanY = 0;
+
 
 
 
@@ -740,21 +380,14 @@ x:Math.random()*700,
 
 y:Math.random()*400,
 
-speed:(Math.random()*2)+0.5,
+speed:0.5+Math.random()*2,
 
-size:3+Math.random()*8,
-
-life:100,
-
-type:
-
-Math.floor(Math.random()*3)
+size:3+Math.random()*8
 
 });
 
 
 }
-
 
 
 
@@ -767,41 +400,26 @@ createMicrobe();
 
 
 
+
+// 미생물 그리기
+
 function drawMicrobes(){
 
 
-ctx.clearRect(
-
-0,
-
-0,
-
-700,
-
-400
-
-);
+ctx.clearRect(0,0,700,400);
 
 
-
-/* 현미경 원 */
 
 ctx.beginPath();
 
 ctx.strokeStyle="#00ff66";
 
 ctx.arc(
-
 350,
-
 200,
-
 170,
-
 0,
-
 Math.PI*2
-
 );
 
 ctx.stroke();
@@ -809,62 +427,31 @@ ctx.stroke();
 
 
 
-
-for(let i=0;i<microbes.length;i++){
-
-
-let m=microbes[i];
-
+for(let m of microbes){
 
 
 ctx.beginPath();
-
 
 ctx.fillStyle="#00ff66";
 
 
 ctx.arc(
-
 m.x,
-
 m.y,
-
 m.size,
-
 0,
-
 Math.PI*2
-
 );
-
 
 
 ctx.fill();
 
 
 
+m.x += Math.cos(Date.now()/500+m.x)*m.speed;
 
+m.y += Math.sin(Date.now()/700+m.y)*m.speed;
 
-// 움직임
-
-
-m.x+=
-
-Math.cos(Date.now()/500+m.x)
-
-*m.speed;
-
-
-m.y+=
-
-Math.sin(Date.now()/700+m.y)
-
-*m.speed;
-
-
-
-
-// 화면 밖 이동 방지
 
 
 if(m.x<0)m.x=700;
@@ -876,26 +463,11 @@ if(m.y<0)m.y=400;
 if(m.y>400)m.y=0;
 
 
-
-
-// 가끔 분열
-
-
-if(Math.random()<0.001){
-
-createMicrobe();
-
 }
 
 
 
-}
-
-
-
-
-document.getElementById("count").innerHTML=
-
+document.getElementById("count").innerHTML =
 microbes.length;
 
 
@@ -904,26 +476,71 @@ microbes.length;
 
 
 
+// 스캔선
+
+function scanEffect(){
+
+
+ctx.beginPath();
+
+
+ctx.strokeStyle="rgba(0,255,100,0.5)";
+
+
+ctx.moveTo(
+0,
+scanY
+);
+
+
+ctx.lineTo(
+700,
+scanY
+);
+
+
+ctx.stroke();
+
+
+
+scanY += 5;
+
+
+
+if(scanY>400){
+
+scanY=0;
+
+}
+
+
+}
+
+
+
+
+
+// 현미경 시작
 
 function startMicroscope(){
-function startMicroscope(){
 
 
-if(microscopeTimer)return;
+if(microscopeTimer){
+
+return;
+
+}
+
 
 
 logText(
-
 "> MICROSCOPE CONNECTED\n\n"+
 "> CELL OBSERVATION START"
-
 );
 
 
 
-microscopeTimer=
-
-setInterval(
+microscopeTimer=setInterval(
 
 drawMicrobes,
 
@@ -933,9 +550,7 @@ drawMicrobes,
 
 
 
-scanTimer=
-
-setInterval(
+scanTimer=setInterval(
 
 scanEffect,
 
@@ -950,6 +565,8 @@ scanEffect,
 
 
 
+// 현미경 종료
+
 function stopMicroscope(){
 
 
@@ -963,18 +580,16 @@ microscopeTimer=null;
 scanTimer=null;
 
 
+drawMicrobes();
+
+
 logText(
-
 "> OBSERVATION STOPPED"
-
 );
 
 
-  }
-
-
-
-// ==========================
+}
+  // ==========================
 // LIFE DATABASE
 // ==========================
 
@@ -986,27 +601,16 @@ let currentLife={};
 let firstNames=[
 
 "Umbra",
-
 "Nox",
-
 "Myco",
-
 "Xeno",
-
 "Proto",
-
 "Void",
-
 "Nano",
-
 "Astra",
-
 "Echo",
-
 "Terra",
-
 "Vita",
-
 "Omega"
 
 ];
@@ -1016,24 +620,11 @@ let firstNames=[
 let lastNames=[
 
 "spora",
-
 "cell",
-
 "bacteria",
-
 "entity",
-
 "organism",
-
-"colony",
-
-"fungi",
-
-"mass",
-
-"life",
-
-"proto"
+"life"
 
 ];
 
@@ -1042,20 +633,11 @@ let lastNames=[
 let lifeTypes=[
 
 "미확인 미생물",
-
 "변칙 균류",
-
-"비세포성 생명체",
-
 "액체 생명체",
-
 "광물성 생명체",
-
 "세포 군집",
-
-"기생 생명체",
-
-"심해 미생물"
+"기생 생명체"
 
 ];
 
@@ -1064,53 +646,27 @@ let lifeTypes=[
 let lifeRisk=[
 
 "SAFE",
-
 "LOW",
-
 "CAUTION",
-
 "HIGH",
-
 "EXTREME"
 
 ];
 
 
 
-let researchNotes=[
-
-"기존 생물 분류 체계에 포함되지 않음.",
-
-"세포 구조가 지속적으로 변화함.",
-
-"관찰자를 인식하는 반응 확인.",
-
-"배양 환경에서 높은 적응성 확인.",
-
-"DNA 배열 불안정 상태."
-
-];
-
-
-
-
 
 // ==========================
-// CREATE SPECIMEN
+// CREATE LIFE
 // ==========================
 
 
 function createLife(){
 
 
+let name =
 
-let name=
-
-firstNames[
-
-Math.floor(Math.random()*firstNames.length)
-
-]
+firstNames[Math.floor(Math.random()*firstNames.length)]
 
 +
 
@@ -1118,12 +674,7 @@ Math.floor(Math.random()*firstNames.length)
 
 +
 
-lastNames[
-
-Math.floor(Math.random()*lastNames.length)
-
-];
-
+lastNames[Math.floor(Math.random()*lastNames.length)];
 
 
 
@@ -1133,100 +684,51 @@ currentLife={
 name:name,
 
 
-code:
-
-"BIO-"
-
-+
-
-Math.floor(100+Math.random()*900),
-
+code:"BIO-"+Math.floor(100+Math.random()*900),
 
 
 type:
 
-lifeTypes[
-
-Math.floor(Math.random()*lifeTypes.length)
-
-],
-
+lifeTypes[Math.floor(Math.random()*lifeTypes.length)],
 
 
 risk:
 
-lifeRisk[
-
-Math.floor(Math.random()*lifeRisk.length)
-
-],
-
+lifeRisk[Math.floor(Math.random()*lifeRisk.length)],
 
 
 rate:
 
-Math.floor(
-
-40+Math.random()*60
-
-)
-
+Math.floor(40+Math.random()*60)
 
 
 };
 
 
 
+document.getElementById("lifeName").innerHTML=currentLife.name;
 
-document.getElementById("lifeName").innerHTML=
+document.getElementById("lifeCode").innerHTML=currentLife.code;
 
-currentLife.name;
+document.getElementById("lifeType").innerHTML=currentLife.type;
 
+document.getElementById("lifeRisk").innerHTML=currentLife.risk;
 
-
-document.getElementById("lifeCode").innerHTML=
-
-currentLife.code;
-
+document.getElementById("lifeRate").innerHTML=currentLife.rate+"%";
 
 
-document.getElementById("lifeType").innerHTML=
-
-currentLife.type;
-
-
-
-document.getElementById("lifeRisk").innerHTML=
-
-currentLife.risk;
-
-
-
-document.getElementById("lifeRate").innerHTML=
-
-currentLife.rate+"%";
-
-
-
-document.getElementById("specimen").innerHTML=
-
-currentLife.name;
+document.getElementById("specimen").innerHTML=currentLife.name;
 
 
 
 logText(
-
 "> NEW SPECIMEN CREATED\n\n"+
-
-"NAME : "+currentLife.name+
-
-"\nTYPE : "+currentLife.type
-
+currentLife.name
 );
 
 
-
 }
+
 
 
 
@@ -1251,14 +753,9 @@ return;
 
 let data=
 
-JSON.parse(
-
-localStorage.getItem("BIO_DATA")
-
-)
+JSON.parse(localStorage.getItem("BIO_DATA"))
 
 || [];
-
 
 
 
@@ -1279,15 +776,9 @@ JSON.stringify(data)
 loadDatabase();
 
 
-
 logText(
-
-"> DATABASE SAVED\n\n"+
-
-currentLife.code
-
+"> DATABASE SAVED"
 );
-
 
 
 }
@@ -1295,38 +786,25 @@ currentLife.code
 
 
 
-// ==========================
-// LOAD DATABASE
-// ==========================
-
 
 function loadDatabase(){
 
 
-
 let data=
 
-JSON.parse(
-
-localStorage.getItem("BIO_DATA")
-
-)
+JSON.parse(localStorage.getItem("BIO_DATA"))
 
 || [];
 
 
 
-let box=
-
-document.getElementById("savedList");
+let box=document.getElementById("savedList");
 
 
 
 if(data.length===0){
 
-box.innerHTML=
-
-"저장된 데이터 없음";
+box.innerHTML="저장된 연구 데이터 없음";
 
 return;
 
@@ -1338,7 +816,7 @@ let text="";
 
 
 
-data.forEach(function(x){
+data.forEach(x=>{
 
 
 text+=
@@ -1346,19 +824,12 @@ text+=
 `
 
 <br>
-
 <b>${x.code}</b>
-
 <br>
-
 ${x.name}
-
 <br>
-
 ${x.type}
-
 <br>
-
 위험도 : ${x.risk}
 
 <hr>
@@ -1369,9 +840,7 @@ ${x.type}
 });
 
 
-
 box.innerHTML=text;
-
 
 
 }
@@ -1379,8 +848,9 @@ box.innerHTML=text;
 
 
 
+
 // ==========================
-// DNA ANALYSIS
+// DNA
 // ==========================
 
 
@@ -1397,9 +867,7 @@ return;
 
 
 
-let value=
-
-Math.floor(Math.random()*100);
+let value=Math.floor(Math.random()*100);
 
 
 
@@ -1415,29 +883,11 @@ document.getElementById("cellActivity").innerHTML=
 
 
 
-if(value<30){
-
-
 logText(
 
-"⚠ DNA FAILURE\n\n"+
+"🧬 DNA ANALYSIS COMPLETE\n\n"+
 
-"불안정한 세포 구조"
-
-);
-
-
-
-}
-
-else{
-
-
-logText(
-
-"✔ DNA ANALYSIS COMPLETE\n\n"+
-
-"GENE STABLE"
+"STABILITY : "+value+"%"
 
 );
 
@@ -1445,8 +895,6 @@ logText(
 }
 
 
-
-}
 
 
 
@@ -1457,7 +905,6 @@ logText(
 
 
 function startCulture(){
-
 
 
 if(!currentLife.name){
@@ -1473,26 +920,17 @@ return;
 let progress=0;
 
 
-let bar=
-
-document.getElementById("cultureProgress");
+let bar=document.getElementById("cultureProgress");
 
 
 
-let timer=
-
-setInterval(function(){
-
+let timer=setInterval(()=>{
 
 
 progress+=2;
 
 
-
-bar.style.width=
-
-progress+"%";
-
+bar.style.width=progress+"%";
 
 
 document.getElementById("cultureState").innerHTML=
@@ -1507,47 +945,14 @@ if(progress>=100){
 clearInterval(timer);
 
 
-
-let result=Math.random();
-
-
-
-if(result<0.25){
-
-
 document.getElementById("cultureState").innerHTML=
 
-"☠ 배양 실패";
+"✔ 배양 완료";
 
 
 logText(
-
-"WARNING\n\nCELL COLLAPSE"
-
+"CULTURE COMPLETE"
 );
-
-
-
-}
-
-else{
-
-
-document.getElementById("cultureState").innerHTML=
-
-"✔ 배양 성공";
-
-
-
-logText(
-
-"CULTURE COMPLETE\n\nSPECIMEN STABLE"
-
-);
-
-
-
-}
 
 
 }
@@ -1555,7 +960,6 @@ logText(
 
 
 },80);
-
 
 
 }
@@ -1572,13 +976,7 @@ logText(
 function mutationEvent(){
 
 
-let chance=
-
-Math.floor(
-
-Math.random()*100
-
-);
+let chance=Math.floor(Math.random()*100);
 
 
 
@@ -1588,34 +986,15 @@ chance+"%";
 
 
 
-if(chance>70){
-
-
 logText(
 
-"☣ MUTATION DETECTED\n\n새로운 변이 구조 발견"
+"☣ MUTATION CHECK\n\n"+
+
+chance+"%"
 
 );
 
 
-
-}
-
-else{
-
-
-logText(
-
-"변이 반응 없음"
-
-);
-
-
-
-}
-
-
-
 }
 
 
@@ -1623,320 +1002,16 @@ logText(
 
 
 // ==========================
-// LOG TYPING
-// ==========================
-
-
-function logText(text){
-
-
-let box=
-
-document.getElementById("log");
-
-
-box.innerHTML="";
-
-
-let i=0;
-
-
-
-let timer=
-
-setInterval(function(){
-
-
-
-box.innerHTML+=text[i];
-
-
-i++;
-
-
-
-if(i>=text.length){
-
-clearInterval(timer);
-
-}
-
-
-
-},30);
-
-
-
-}
-
-
-
-// ==========================
-// START
-// ==========================
-
-
-loadDatabase();
-// ==========================
-// MICROSCOPE CLICK ANALYSIS
-// ==========================
-
-
-canvas.addEventListener(
-
-"click",
-
-function(e){
-
-
-if(microbes.length===0){
-
-return;
-
-}
-
-
-
-let rect=
-
-canvas.getBoundingClientRect();
-
-
-
-let mx=
-
-e.clientX-rect.left;
-
-
-
-let my=
-
-e.clientY-rect.top;
-
-
-
-let target=null;
-
-
-
-for(let m of microbes){
-
-
-
-let distance=
-
-Math.sqrt(
-
-(mx-m.x)*(mx-m.x)+
-
-(my-m.y)*(my-m.y)
-
-);
-
-
-
-if(distance < m.size+10){
-
-
-target=m;
-
-break;
-
-
-}
-
-
-
-}
-
-
-
-if(target){
-
-
-logText(
-
-"🔬 CELL TARGET FOUND\n\n"+
-
-"SIZE : "+
-
-Math.floor(target.size)+
-
-"\nACTIVITY : ACTIVE\n\n"+
-
-"세포 분석 가능"
-
-);
-
-
-
-}
-
-else{
-
-
-logText(
-
-"검색 대상 없음\n\n"
-
-+
-
-"다른 위치를 선택하세요."
-
-);
-
-
-
-}
-
-
-
-}
-
-);
-
-
-
-
-
-
-// ==========================
-// MICROBE EVOLUTION
-// ==========================
-
-
-setInterval(function(){
-
-
-if(microbes.length===0){
-
-return;
-
-}
-
-
-
-let target=
-
-microbes[
-
-Math.floor(
-
-Math.random()*microbes.length
-
-)
-
-];
-
-
-
-let event=
-
-Math.random();
-
-
-
-if(event<0.05){
-
-
-
-target.size+=2;
-
-
-
-logText(
-
-"☣ MUTATION EVENT\n\n"+
-
-"세포 크기 증가 확인"
-
-);
-
-
-
-}
-
-
-
-
-if(event>0.95){
-
-
-
-createMicrobe();
-
-
-
-logText(
-
-"🦠 CELL DIVISION\n\n"+
-
-"새로운 개체 생성"
-
-);
-
-
-
-}
-
-
-
-},5000);
-
-
-
-
-
-
-// ==========================
-// SCAN EFFECT
-// ==========================
-
-
-
-
-
-
-scanTimer=
-
-setInterval(
-
-scanEffect,
-
-30
-
-);
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-// ==========================
-// SPECIMEN CATALOG READY
+// CATALOG
 // ==========================
 
 
 function registerCatalog(){
 
 
-
 if(!currentLife.name){
 
-alert(
-
-"등록할 생명체가 없습니다."
-
-);
+alert("등록할 개체 없음");
 
 return;
 
@@ -1946,18 +1021,9 @@ return;
 
 let catalog=
 
-JSON.parse(
-
-localStorage.getItem(
-
-"BIO_CATALOG"
-
-)
-
-)
+JSON.parse(localStorage.getItem("BIO_CATALOG"))
 
 || [];
-
 
 
 
@@ -1976,15 +1042,8 @@ JSON.stringify(catalog)
 
 
 logText(
-
-"📖 CATALOG REGISTERED\n\n"+
-
-currentLife.name+
-
-"\n도감 등록 완료"
-
+"📖 CATALOG REGISTERED"
 );
-
 
 
 }
@@ -1994,57 +1053,77 @@ currentLife.name+
 
 
 // ==========================
-// RANDOM BIO EVENT
+// LOG
 // ==========================
 
 
-setInterval(function(){
+function logText(text){
 
 
-
-let event=
-
-Math.random();
+let box=document.getElementById("log");
 
 
-
-if(event<0.03){
-
+box.innerHTML="";
 
 
-logText(
+let i=0;
 
-"⚠ WARNING\n\n"+
 
-"알 수 없는 생체 반응 감지"
+let timer=setInterval(()=>{
 
-);
 
+box.innerHTML+=text[i];
+
+
+i++;
+
+
+if(i>=text.length){
+
+clearInterval(timer);
+
+}
+
+
+},30);
 
 
 }
 
 
 
-if(event>0.97){
+
+// ==========================
+// RANDOM EVENT
+// ==========================
 
 
+setInterval(()=>{
+
+
+let r=Math.random();
+
+
+
+if(r<0.03){
 
 logText(
-
-"🧬 NEW DATA FOUND\n\n"+
-
-"추가 연구 필요"
-
+"⚠ UNKNOWN BIO SIGNAL"
 );
 
-
-
 }
-
 
 
 },7000);
+
+
+
+
+// START
+
+loadDatabase();
+
+
 
 </script>
 
@@ -2057,4 +1136,3 @@ logText(
 </body>
 
 </html>
-
