@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+晴渝 - STAFF ID
+</title>
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+/* ===========================
+ QINGYU CHINESE WARRIOR THEME
+=========================== */
+
+
+body{
+
+margin:0;
+
+background:
+radial-gradient(circle at top,#3b1015,#080808 65%);
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+
+
+/* 검은 늑대 그림자 */
+
+.wolf{
+
+position:fixed;
+
+right:-80px;
+
+top:100px;
+
+font-size:260px;
+
+opacity:.08;
+
+pointer-events:none;
+
+animation:wolfMove 12s infinite alternate;
+
+}
+
+
+@keyframes wolfMove{
+
+from{
+
+transform:translateX(0);
+
+}
+
+to{
+
+transform:translateX(-80px);
+
+}
+
+}
+
+
+
+/* 음양 */
+
+.yinyang{
+
+position:fixed;
+
+left:40px;
+
+bottom:80px;
+
+font-size:120px;
+
+opacity:.12;
+
+animation:rotateYin 20s linear infinite;
+
+}
+
+
+
+@keyframes rotateYin{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+
+/* 붉은 꽃잎 */
+
+
+.petal{
+
+position:fixed;
+
+top:-50px;
+
+color:#ff3344;
+
+font-size:20px;
+
+animation:fall linear infinite;
+
+pointer-events:none;
+
+}
+
+
+
+@keyframes fall{
+
+
+0%{
+
+transform:translateY(-50px) rotate(0);
+
+opacity:0;
+
+}
+
+
+20%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+
+/* 붉은 실 */
+
+
+.redThread{
+
+position:fixed;
+
+top:45%;
+
+left:-50%;
+
+width:200%;
+
+height:2px;
+
+background:#b30000;
+
+opacity:.35;
+
+animation:thread 8s infinite;
+
+}
+
+
+
+@keyframes thread{
+
+
+0%{
+
+transform:translateX(-200px);
+
+}
+
+
+50%{
+
+transform:translateX(200px);
+
+}
+
+
+100%{
+
+transform:translateX(-200px);
+
+}
+
+
+}
+
+
+
+
+
+/* 메인 카드 */
+
+
+.qingyuBox{
+
+border:2px solid #d4af37;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#120707,
+
+#171717
+
+);
+
+
+box-shadow:
+
+0 0 35px rgba(255,40,40,.35);
+
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+
+.goldTitle{
+
+color:#ffe58a;
+
+letter-spacing:5px;
+
+text-shadow:
+
+0 0 15px #d4af37;
+
+}
+
+
+
+
+
+.online{
+
+color:#00ff66;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+.warningBox{
+
+border:2px solid #ff3333;
+
+background:rgba(150,0,0,.15);
+
+padding:20px;
+
+box-shadow:
+
+0 0 20px rgba(255,0,0,.3);
+
+}
+
+
+
+
+.infoBox{
+
+border:1px solid #d4af37;
+
+background:#080808;
+
+padding:20px;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="wolf">
+
+🐺
+
+</div>
+
+
+<div class="yinyang">
+
+☯
+
+</div>
+
+
+<div class="redThread"></div>
+
+
+<div id="petals"></div>
+
+
+
+
+
+<div class="layout">
+
+
+<!-- SIDE MENU -->
+
+
+<div class="sideMenu">
+
+
+<h3>
+
+SCHMEETTERLING
+
+</h3>
+
+
+<p class="online">
+
+● BIO SYSTEM ONLINE
+
+</p>
+
+
+<hr>
+
+
+<p>
+
+USER
+
+<br>
+
+<b id="userName">
+
+UNKNOWN
+
+</b>
+
+</p>
+
+
+<p>
+
+LEVEL
+
+<br>
+
+<b id="userLevel">
+
+NONE
+
+</b>
+
+</p>
+
+
+<hr>
+
+
+<button onclick="location.href='./bio_staff.html'">
+
+← BIO STAFF DATABASE
+
+</button>
+
+
+
+<button onclick="location.href='./bio.html'">
+
+← BIO DEPARTMENT
+
+</button>
+
+
+
+<button onclick="location.href='./main.html'">
+
+🏠 CENTRAL TERMINAL
+
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- MAIN -->
+
+
+<div class="mainBox">
+
+
+<h2>
+
+STAFF IDENTIFICATION CARD
+
+</h2>
+
+
+<hr>
+
+
+
+<div class="recordBox qingyuBox">
+
+
+<h2 class="goldTitle">
+
+晴渝
+
+</h2>
+
+
+
+<p>
+
+<b>FULL NAME</b> :
+
+QINGYU
+
+</p>
+
+
+
+<p>
+
+<b>사번</b> :
+
+UE-M404
+
+</p>
+
+
+
+<p>
+
+<b>직급</b> :
+
+직원
+
+</p>
+
+
+
+<p>
+
+<b>DEPARTMENT</b> :
+
+BIO DEPARTMENT
+
+</p>
+
+
+
+<p>
+
+<b>STATUS</b> :
+
+<span class="online">
+
+● ACTIVE
+
+</span>
+
+</p>
+
+
+
+<p>
+
+<b>SECURITY LEVEL</b> :
+
+LEVEL 4
+
+</p>
+
+
+
+<p>
+
+<b>SPECIES</b> :
+
+HUMAN
+
+</p>
+
+
+</div>
+  <hr>
+
+
+
+<div class="recordBox infoBox">
+
+
+<h2>
+
+STAFF DATABASE
+
+</h2>
+
+
+<hr>
+
+
+
+<h3>
+
+PERSONAL INFORMATION
+
+</h3>
+
+
+
+<p>
+
+<b>FULL NAME</b> :
+
+晴渝 (QINGYU)
+
+</p>
+
+
+
+<p>
+
+<b>HEIGHT</b> :
+
+198 cm
+
+</p>
+
+
+
+<p>
+
+<b>SPECIES</b> :
+
+Human
+
+</p>
+
+
+
+<p>
+
+<b>AGE</b> :
+
+26
+
+</p>
+
+
+
+<p>
+
+<b>IQ</b> :
+
+160
+
+</p>
+
+
+
+<p>
+
+<b>FAMILY RELATIONS</b> :
+
+햄스터
+
+</p>
+
+
+
+<hr>
+
+
+
+<h3>
+
+BACKGROUND
+
+</h3>
+
+
+
+<p>
+
+본래 노직 소속으로 활동하였으나,
+레이미를 따라 SCHMEETTERLING에 입사.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+자신을 거둬준 레이미에게
+강한 충성심을 가지고 있으며,
+
+그녀의 명령과 판단을
+가장 우선시하는 모습을 보입니다.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+일부 직원 기록에서는
+레이미에 대한 감정이 단순한 존경을 넘어섰다는
+의견도 존재합니다.
+
+</p>
+
+
+<hr>
+
+
+
+<h3>
+
+PERSONALITY
+
+</h3>
+
+
+
+<p>
+
+<b>충성심</b>
+
+</p>
+
+
+<p>
+
+자신에게 도움을 준 대상에게
+절대적인 신뢰를 보입니다.
+
+특히 레이미에 대한 충성도는
+일반적인 직원 수준을 넘어선 것으로 확인됩니다.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>감정적인 성향</b>
+
+</p>
+
+
+<p>
+
+계산적인 판단을 할 수 있지만,
+결국 사람과 관계를 중요하게 생각합니다.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>상냥함</b>
+
+</p>
+
+
+<p>
+
+평소에는 주변 사람들에게 친절하며
+신뢰하는 대상에게는 매우 다정한 태도를 보입니다.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>경계심</b>
+
+</p>
+
+
+<p>
+
+특정 대상에 대한 경계 수준이 높습니다.
+
+특히 남성 직원에 대해서는
+강한 의심 반응을 보입니다.
+
+</p>
+
+
+
+<hr>
+
+
+
+<h3>
+
+COMBAT RECORD
+
+</h3>
+
+
+
+<p>
+
+<b>무술 단련자</b>
+
+</p>
+
+
+<p>
+
+오랜 기간 무술을 수련한 기록이 있으며,
+
+근접 전투 상황에서 높은 능력을 보유하고 있습니다.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+<b>전투 평가</b>
+
+</p>
+
+
+<p>
+
+위험도 :
+
+<span style="color:#ff5555">
+
+HIGH
+
+</span>
+
+</p>
+
+
+<p>
+
+권장 사항 :
+
+불필요한 도발 금지.
+
+</p>
+
+
+
+<hr>
+
+
+
+<h3>
+
+SPECIAL CHARACTERISTICS
+
+</h3>
+
+
+
+<p>
+
+<b>🐕 충성 기록</b>
+
+</p>
+
+
+<p>
+
+레이미와 관련된 상황에서
+평소보다 높은 집중력과 공격성을 보입니다.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+<b>🗡 무술 능력</b>
+
+</p>
+
+
+<p>
+
+무기를 사용하지 않는 근접 전투에서도
+높은 효율을 보이는 것으로 확인.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+
+
+</div>
+  <hr>
+
+
+
+<div class="warningBox">
+
+
+<h3>
+
+⚠ NOTANDUM
+
+</h3>
+
+
+
+<p>
+
+레이미에 관한 발언에 주의하십시오.
+
+</p>
+
+
+
+<p>
+
+해당 인물에 대한 모욕,
+비난 또는 불필요한 언급 발생 시
+
+즉각적인 적대 반응이 확인될 수 있습니다.
+
+</p>
+
+
+
+<p>
+
+"그녀를 입에 담지 마라."
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+<h3>
+
+FINAL SECURITY NOTE
+
+</h3>
+
+
+
+<div class="recordBox">
+
+
+<p>
+
+관리 대상 :
+
+<b style="color:#ff4444">
+
+LOYAL GUARD
+
+</b>
+
+</p>
+
+
+
+<p>
+
+위험도 :
+
+<b style="color:#ff5555">
+
+CLASS A
+
+</b>
+
+</p>
+
+
+
+<p>
+
+관찰 결과 :
+
+</p>
+
+
+<p>
+
+- 레이미 관련 상황에서 행동 변화 확인
+
+</p>
+
+
+<p>
+
+- 감정보다 충성심이 우선되는 경향
+
+</p>
+
+
+<p>
+
+- 전투 능력으로 인한 접근 주의 필요
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<br>
+
+
+
+<button onclick="location.href='./bio_staff.html'">
+
+← 생물 부서 직원 목록
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+// =======================
+// USER LOAD
+// =======================
+
+
+document.getElementById("userName").innerHTML =
+
+localStorage.getItem("userName") || "UNKNOWN";
+
+
+
+document.getElementById("userLevel").innerHTML =
+
+localStorage.getItem("userLevel") || "NONE";
+
+
+
+
+
+
+// =======================
+// RED PETAL EFFECT
+// =======================
+
+
+const petalBox =
+
+document.getElementById("petals");
+
+
+
+setInterval(()=>{
+
+
+let petal=document.createElement("div");
+
+
+petal.className="petal";
+
+
+petal.innerHTML=
+
+["🌸","✿","❀"][
+
+Math.floor(Math.random()*3)
+
+];
+
+
+
+petal.style.left=
+
+Math.random()*100+"vw";
+
+
+
+petal.style.animationDuration=
+
+(6+Math.random()*8)+"s";
+
+
+
+petal.style.fontSize=
+
+(15+Math.random()*20)+"px";
+
+
+
+petalBox.appendChild(petal);
+
+
+
+setTimeout(()=>{
+
+petal.remove();
+
+},15000);
+
+
+
+},400);
+
+
+
+
+
+
+// =======================
+// STATUS CHANGE
+// =======================
+
+
+let statusText=[
+
+
+"● ACTIVE",
+
+
+"● GUARDING",
+
+
+"● OBSERVING",
+
+
+"● ALERT"
+
+
+
+];
+
+
+
+let status=document.querySelector(".online");
+
+
+
+setInterval(()=>{
+
+
+status.innerHTML=
+
+statusText[
+
+Math.floor(Math.random()*statusText.length)
+
+];
+
+
+},4000);
+
+
+
+
+
+
+// =======================
+// SECRET MESSAGE
+// =======================
+
+
+let count=0;
+
+
+
+document.querySelector(".qingyuBox").onclick=function(){
+
+
+count++;
+
+
+if(count>=5){
+
+
+alert(
+
+"SECURITY WARNING\n\n"+
+"TARGET : 晴渝\n\n"+
+"DO NOT INSULT RAYMI."
+
+);
+
+
+count=0;
+
+
+}
+
+
+
+};
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
